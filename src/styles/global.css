@@ -35,6 +35,11 @@ h3 {
   font-weight: 500;
   color: var(--accent-dark);
   line-height: 1.15;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 h1 {
@@ -88,7 +93,7 @@ main {
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .btn {
@@ -96,14 +101,28 @@ img {
   background: var(--accent);
   color: var(--card);
   padding: 0.7rem 1.6rem;
-  border-radius: 4px;
+  border-radius: 6px;
   text-decoration: none;
-  font-family: system-ui, sans-serif;
-  font-size: 1rem;
+  font-family: "Fraunces Variable", Georgia, serif;
+  font-variation-settings: "SOFT" 60, "WONK" 0;
+  font-weight: 500;
+  font-size: 1.05rem;
 }
 
 .btn:hover {
   background: var(--accent-dark);
+}
+
+/* Secondary action: outlined, transparent fill. */
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: var(--card);
 }
 
 /* On dark surfaces (accent cards, the deep band). */

@@ -11,10 +11,18 @@ const { paragraphs } = Astro.props;
 
 <style>
   .arrival {
-    max-width: 40rem;
-    margin: 0 0 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 3.5rem;
+    margin: 0 0 4rem;
   }
   .arrival p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    margin: 0;
+  }
+  @media (max-width: 40rem) {
+    .arrival {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

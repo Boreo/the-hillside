@@ -34,19 +34,19 @@ const factsLine = (f: (typeof cards)[number]["facts"]) =>
         <h3>{card.facts.name}</h3>
         <p class="facts-line">{factsLine(card.facts)}</p>
         <p>{card.line}</p>
-        <a class="editorial-link" href={card.href}>See {card.facts.name}</a>
+        <a class="btn" href={card.href}>See {card.facts.name}</a>
       </article>
     ))}
   </div>
-  <p class="combined">
-    {combinedLine}
-    <a class="editorial-link" href="/house-and-villa/">About House &amp; Villa</a>
-  </p>
+  <div class="combined">
+    <p>{combinedLine}</p>
+    <a class="btn btn-outline" href="/house-and-villa/">About House &amp; Villa</a>
+  </div>
 </section>
 
 <style>
   .dwellings {
-    margin: 0 0 5rem;
+    margin: 0 0 4rem;
   }
   .pair {
     display: grid;
@@ -64,7 +64,7 @@ const factsLine = (f: (typeof cards)[number]["facts"]) =>
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    border-radius: 3px;
+    border-radius: 8px;
   }
   article h3 {
     margin: 1rem 0 0.25rem;
@@ -77,12 +77,19 @@ const factsLine = (f: (typeof cards)[number]["facts"]) =>
     font-weight: 600;
     margin: 0 0 0.75rem;
   }
+  article .btn {
+    margin-top: 0.5rem;
+  }
   .combined {
     max-width: 44rem;
     margin-top: 3rem;
     padding-top: 1rem;
     border-top: 1px solid var(--line);
     color: var(--muted);
+  }
+  .combined p {
+    text-wrap: balance;
+    margin: 0 0 0.5rem;
   }
   @media (max-width: 40rem) {
     .pair {

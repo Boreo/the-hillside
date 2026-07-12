@@ -24,9 +24,9 @@ homepage:
       line: "A self-contained villa with its own entry, a private courtyard, and a fireplace for cold mountain nights."
   combinedLine: "Travelling as a group? A connecting door joins the House and Villa into one stay for up to eight guests. Combined bookings are arranged directly with us."
   photoBand:
-    - src: /images/external/goldcoast-skyline-over-ocean.jpeg
-      alt: "Gold Coast skyline on the horizon, seen over the treeline"
-      caption: "The Gold Coast on the horizon."
+    - src: /images/external/goldcoast-at-dusk.jpeg
+      alt: "Gold Coast skyline lit up at dusk, seen from the mountain"
+      caption: "The Gold Coast at dusk, from the hillside."
     - src: /images/external/resident-koala.jpg
       alt: "The resident koala resting in a gum tree on the property"
       caption: "The resident koala, most often in the gum beside the drive."
