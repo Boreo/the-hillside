@@ -1,24 +1,30 @@
 ---
-// Temporary palette preview page — delete before deploy.
+// Palette showcase for client review. Unlinked from nav.
 import Base from "../layouts/Base.astro";
 
 const swatches = [
   { token: "--paper", hex: "#FAF8F4", job: "page background" },
-  { token: "--ink", hex: "#131711", job: "body text" },
-  { token: "--accent", hex: "#3B5A38", job: "Book Now, links" },
-  { token: "--accent-dark", hex: "#2C4727", job: "hover states (logo green)" },
-  { token: "--accent-tint", hex: "#EAF0E6", job: "card/section wash" },
-  { token: "--secondary", hex: "#4A562C", job: "supporting elements" },
-  { token: "--highlight", hex: "#967D58", job: "borders, rules" },
+  { token: "--card", hex: "#FFFEFA", job: "card surfaces" },
+  { token: "--ink", hex: "#252B21", job: "body text (warm green-black)" },
+  { token: "--accent", hex: "#3A523A", job: "Book Now, links" },
+  { token: "--accent-dark", hex: "#2A3D2A", job: "hover states" },
+  { token: "--deep", hex: "#092F1C", job: "dark bands, footer" },
+  { token: "--wash", hex: "#CDDDD3", job: "pale eucalyptus backgrounds" },
+  { token: "--mint", hex: "#C2D8CC", job: "borders, highlights" },
+  { token: "--highlight", hex: "#967D58", job: "tan warm pop (decorative)" },
   { token: "--muted", hex: "#585E58", job: "secondary text" },
   { token: "--line", hex: "#E7E2D6", job: "hairlines" },
 ];
 ---
 
 <Base title="Palette demo">
-  <h1>Palette demo</h1>
+  <h1>Palette</h1>
+  <p class="muted">
+    Warm white base, gum-leaf greens from the logo, eucalyptus mint from the
+    pool and foliage, tan as the sparing warm pop.
+  </p>
 
-  <h2>Swatches</h2>
+  <h2>Tokens</h2>
   <div class="swatch-grid">
     {swatches.map((s) => (
       <div class="swatch">
@@ -36,36 +42,61 @@ const swatches = [
       <div class="card-body">
         <h3>Hillside House</h3>
         <p class="muted">Sleeps 6 · 3 bedrooms · heated pool and spa</p>
-        <p>Secluded hinterland home with coastal views from the deck.</p>
+        <p>Warm card white, mint border, accent media band.</p>
         <a class="btn" href="#">Book Now</a>
       </div>
     </div>
-    <div class="card card-accent">
-      <div class="card-media" style="background:#4A562C"></div>
+    <div class="card card-deep">
+      <div class="card-media" style="background:var(--deep)"></div>
       <div class="card-body">
-        <h3 style="color:#fff">Hillside Villa</h3>
-        <p style="color:#E7E2D6">Sleeps 2 · 1 bedroom · private retreat</p>
-        <p style="color:#fff">Card on solid gum-leaf green, white text.</p>
+        <h3>Hillside Villa</h3>
+        <p class="card-deep-sub">Sleeps 2 · 1 bedroom · private retreat</p>
+        <p>Accent green card, paper text, inverse button.</p>
         <a class="btn btn-inverse" href="#">Book Now</a>
       </div>
     </div>
-    <div class="card card-tint">
+    <div class="card card-wash">
+      <div class="card-media" style="background:var(--mint)"></div>
       <div class="card-body">
         <h3>House &amp; Villa</h3>
         <p class="muted">Sleeps 8 combined · direct bookings only</p>
-        <p>Tinted card — accent at ~8% over paper, tan border.</p>
+        <p>Pale eucalyptus wash card.</p>
         <a class="btn" href="#">Enquire</a>
       </div>
     </div>
   </div>
 
+  <h2>Wash section band</h2>
+  <div class="wash-band">
+    <h3>Mountain Mobile Massage</h3>
+    <p>
+      Full-width section on the pale eucalyptus wash with ink text,
+      an <a href="#">accent link</a>, and a highlight-ruled detail below.
+    </p>
+    <p class="tan-note">Treatments available in-suite, seven days.</p>
+    <a class="btn" href="#">Book a treatment</a>
+  </div>
+
   <h2>In-context text</h2>
-  <p>Body ink with an <a href="#" style="color:var(--accent)">accent link</a> in a sentence, plus <span class="muted">muted caption text</span> alongside.</p>
+  <p>
+    Body ink on paper with an <a href="#" class="accent-link">accent link</a> in
+    a sentence, plus <span class="muted">muted caption text</span> alongside.
+  </p>
   <blockquote>
     "A blockquote with the tan highlight rule on its left."
     <footer>— Guest review</footer>
   </blockquote>
-  <p class="facts">Facts strip · olive secondary border · muted text</p>
+  <p class="facts">Facts strip · mint border · muted text</p>
+
+  <h2>Deep band</h2>
+  <div class="deep-band">
+    <h3>Stay on the mountain</h3>
+    <p>
+      Footer treatment on the deep forest green with paper text,
+      a <a href="#">mint-tinted link</a>, and the inverse button.
+    </p>
+    <a class="btn btn-inverse" href="#">Book Now</a>
+  </div>
 </Base>
 
 <style>
@@ -91,11 +122,14 @@ const swatches = [
   .muted {
     color: var(--muted);
   }
+  .accent-link {
+    color: var(--accent);
+  }
   .card {
-    border: 1px solid var(--line);
+    border: 1px solid var(--mint);
     border-radius: 6px;
     overflow: hidden;
-    background: #fff;
+    background: var(--card);
   }
   .card-media {
     height: 8rem;
@@ -106,19 +140,53 @@ const swatches = [
   .card-body h3 {
     margin-top: 0;
   }
-  .card-accent {
+  .card-deep {
     background: var(--accent);
     border-color: var(--accent-dark);
+    color: var(--paper);
   }
-  .card-tint {
-    background: var(--accent-tint);
-    border-color: var(--highlight);
+  .card-deep h3 {
+    color: var(--card);
   }
-  .btn-inverse {
-    background: var(--paper);
+  .card-deep-sub {
+    color: var(--wash);
+  }
+  .card-wash {
+    background: var(--wash);
+    border-color: var(--wash);
+  }
+  .card-wash .muted {
+    color: var(--accent-dark);
+  }
+  .wash-band {
+    background: var(--wash);
+    border-radius: 6px;
+    padding: 1.75rem;
+    margin: 1rem 0 2.5rem;
+  }
+  .wash-band h3 {
+    margin-top: 0;
+  }
+  .wash-band a:not(.btn) {
     color: var(--accent);
   }
-  .btn-inverse:hover {
-    background: #fff;
+  .tan-note {
+    border-left: 3px solid var(--highlight);
+    padding-left: 0.8rem;
+    font-size: 0.9rem;
+  }
+  .deep-band {
+    background: var(--deep);
+    color: var(--paper);
+    border-radius: 6px;
+    padding: 2rem;
+    margin: 1rem 0 2.5rem;
+  }
+  .deep-band h3 {
+    margin-top: 0;
+    color: var(--card);
+  }
+  .deep-band a:not(.btn) {
+    color: var(--mint);
   }
 </style>

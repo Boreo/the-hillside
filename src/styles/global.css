@@ -1,14 +1,17 @@
 :root {
   color-scheme: light;
-  --ink: #131711;
-  --paper: #faf8f4;
-  --accent: #3b5a38;
-  --accent-dark: #2c4727;
-  --accent-tint: #eaf0e6; /* pale accent wash for card/section backgrounds */
-  --secondary: #4a562c;
-  --highlight: #967d58; /* decorative only — 3.7:1 on paper, fails AA as text */
-  --muted: #585e58;
-  --line: #e7e2d6;
+  /* Warm palette: no pure black or white anywhere. */
+  --ink: #252b21; /* body text */
+  --card: #fffefa; /* card surfaces */
+  --paper: #faf8f4; /* page background */
+  --accent: #3a523a; /* buttons, links */
+  --accent-dark: #2a3d2a; /* hover */
+  --deep: #092f1c; /* dark bands, footer */
+  --wash: #cdddd3; /* section/card backgrounds */
+  --mint: #c2d8cc; /* borders, highlights — fails AA as text */
+  --highlight: #967d58; /* warm pop, decorative only — fails AA as text */
+  --muted: #585e58; /* secondary text */
+  --line: #e7e2d6; /* hairlines */
   --max-width: 72rem;
 }
 
@@ -73,7 +76,7 @@ img {
 .btn {
   display: inline-block;
   background: var(--accent);
-  color: #fff;
+  color: var(--card);
   padding: 0.7rem 1.6rem;
   border-radius: 4px;
   text-decoration: none;
@@ -83,6 +86,17 @@ img {
 
 .btn:hover {
   background: var(--accent-dark);
+}
+
+/* On dark surfaces (accent cards, the deep band). */
+.btn-inverse {
+  background: var(--paper);
+  color: var(--deep);
+}
+
+.btn-inverse:hover {
+  background: var(--card);
+  color: var(--accent-dark);
 }
 
 footer {
@@ -98,7 +112,7 @@ footer {
   font-family: system-ui, sans-serif;
   font-size: 0.9rem;
   color: var(--muted);
-  border-left: 3px solid var(--secondary);
+  border-left: 3px solid var(--mint);
   padding-left: 0.8rem;
   margin: 1.5rem 0 0;
 }
