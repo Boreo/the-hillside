@@ -5,7 +5,7 @@ description: "Discover Tamborine Mountain with The Hillside Retreat. Explore lus
 
 # Visit Tamborine Mountain
 
-![Aerial view of Tamborine Mountain and the surrounding hinterland](/images/aerial-view-tamborine-mountain.jpg)
+![Aerial view of Tamborine Mountain and the surrounding hinterland](/images/drone/aerial-view-tamborine-mountain.jpg)
 
 Welcome to Tamborine Mountain, a captivating destination nestled in the heart of Queensland's Gold Coast Hinterland. Known for its lush rainforests, stunning vistas, and charming village atmosphere, Tamborine Mountain offers a unique and enchanting escape for travellers seeking natural beauty and relaxation.
 

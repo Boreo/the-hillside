@@ -18,7 +18,7 @@ Nestled in the heart of the Gold Coast Hinterland, The Hillside Retreat is perfe
 
 ## Hillside House
 
-![Verandah deck with sweeping coastal views](/images/verandah-sweeping-coastal-views.jpg)
+![Verandah deck with sweeping coastal views](/images/external/verandah-sweeping-coastal-views.jpg)
 
 This incredible spacious 3 bedroom family home boasts breathtaking views of the coastline and Guanaba Valley.
 
@@ -28,7 +28,7 @@ The open plan living space comprises a comfortable lounge area with 60’’ fla
 
 ## Hillside Villa
 
-![Hillside Villa living area with cosy furnishings](/images/hillside-villa-living-area.jpeg)
+![Hillside Villa living area with cosy furnishings](/images/villa/hillside-villa-living-area.jpeg)
 
 A self-contained 1 bedroom villa with private entry, courtyard, living area with fireplace and kitchenette.
 
@@ -38,7 +38,7 @@ Ideal for relaxing getaways, with a comfortable and clean place to call home whi
 
 ## Hillside House & Villa
 
-![Aerial view of the property and surrounding hinterland](/images/aerial-view-tamborine-mountain.jpg)
+![Aerial view of the property and surrounding hinterland](/images/drone/aerial-view-tamborine-mountain.jpg)
 
 For larger groups or families, we're delighted to offer Hillside House and Hillside Villa as a combined booking.
 
@@ -52,7 +52,7 @@ To book this exclusive combination, please [reach out to us directly](/contact-u
 >
 > — Steph, Paul, Sian & Andy
 
-![Heated pool in the evening light](/images/heated-pool-evening-glow.jpg)
+![Heated pool in the evening light](/images/external/heated-pool-evening-glow.jpg)
 
 ## This hidden Hinterland gem will amaze and delight.
 

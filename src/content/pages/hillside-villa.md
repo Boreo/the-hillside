@@ -18,13 +18,13 @@ dwelling:
 
 # Hillside Villa
 
-![Front of Hillside Villa](/images/hillside-villa-front.jpg)
+![Front of Hillside Villa](/images/villa/hillside-villa-front.jpg)
 
 Indulge in the ultimate romantic getaway at our self-contained 1-bedroom Hillside Villa in the heart of Tamborine Mountain. This intimate retreat is thoughtfully designed for couples, making it the perfect setting for a romantic honeymoon or a special escape for two.
 
 **Your private oasis** — Step inside to discover a cozy haven complete with a well-appointed kitchenette, allowing you to prepare delicious meals together. Spacious Queen sized bedroom provides the perfect space for some R&R, whilst the bathroom provides both comfort and convenience, ensuring your stay is as enjoyable as it is romantic. The interior is tastefully and neutrally decorated, creating an ambiance of serenity and sophistication. Modern fixtures and fittings ensure your stay is as comfortable as it is stylish.
 
-![Villa entrance and private frontage](/images/hillside-villa-entrance.jpg)
+![Villa entrance and private frontage](/images/villa/hillside-villa-entrance.jpg)
 
 **Secluded courtyard** — Unwind in your very own private courtyard, where you can enjoy quiet moments together amidst the lush surroundings of Tamborine Mountain. Whether it's a morning coffee or a glass of wine under the stars, this space is yours to savor.
 
@@ -40,7 +40,7 @@ Arriving by electric vehicle? Our on-site 7.3 kW Type 2 charger means you can sp
 
 The pièce de résistance is the breathtaking view. Whether you're seeking relaxation, adventure, or simply a romantic break from the ordinary, our Hillside Villa accommodation promises an unforgettable experience and vista amidst the stunning landscapes of Tamborine Mountain and beyond.
 
-![Deck with sweeping coastal views](/images/verandah-sweeping-coastal-views.jpg)
+![Deck with sweeping coastal views](/images/external/verandah-sweeping-coastal-views.jpg)
 
 [Book Now](https://book-directonline.com/properties/thehillsideretreatdirect)
 
@@ -59,45 +59,45 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 - EV charging on site (7.3 kW, Type 2) – fully recharges most vehicles overnight.
 - Free private parking on site.
 
-![Villa lounge with wood burning fireplace](/images/villa-lounge-fireplace.jpg)
+![Villa lounge with wood burning fireplace](/images/villa/villa-lounge-fireplace.jpg)
 
-![Well-appointed kitchenette](/images/villa-kitchenette.jpg)
+![Well-appointed kitchenette](/images/villa/villa-kitchenette.jpg)
 
-![Villa dining area](/images/villa-dining-area.jpg)
+![Villa dining area](/images/villa/villa-dining-area.jpg)
 
-![Spacious queen bedroom](/images/villa-queen-bedroom.jpg)
+![Spacious queen bedroom](/images/villa/villa-queen-bedroom.jpg)
 
-![Queen bedroom detail](/images/villa-queen-bedroom-detail.jpg)
+![Queen bedroom detail](/images/villa/villa-queen-bedroom-detail.jpg)
 
-![Shower room with fresh linen and toiletries](/images/villa-shower-room.jpg)
+![Shower room with fresh linen and toiletries](/images/villa/villa-shower-room.jpg)
 
-![Private courtyard seating](/images/villa-courtyard-seating.jpg)
+![Private courtyard seating](/images/villa/villa-courtyard-seating.jpg)
 
-![Villa interior detail](/images/villa-interior-detail.jpg)
+![Villa interior detail](/images/villa/villa-interior-detail.jpg)
 
-![Heated pool in the evening light](/images/heated-pool-evening-glow.jpg)
+![Heated pool in the evening light](/images/external/heated-pool-evening-glow.jpg)
 
-![Gated entrance to the pool area](/images/gated-pool-entrance.jpg)
+![Gated entrance to the pool area](/images/external/gated-pool-entrance.jpg)
 
-![Gas BBQ for outdoor dining](/images/gas-bbq-outdoor-dining.jpg)
+![Gas BBQ for outdoor dining](/images/external/gas-bbq-outdoor-dining.jpg)
 
-![EV charging on site](/images/ev-charging-on-site.jpeg)
+![EV charging on site](/images/external/ev-charging-on-site.jpeg)
 
-![Sunrise over the coast](/images/sunrise-over-gold-coast.jpeg)
+![Sunrise over the coast](/images/external/sunrise-over-gold-coast.jpeg)
 
-![Coastal views from the property](/images/coastal-views.jpeg)
+![Coastal views from the property](/images/external/coastal-views.jpeg)
 
-![Morning view across the valley](/images/morning-valley-view.jpeg)
+![Morning view across the valley](/images/external/morning-valley-view.jpeg)
 
-![Guest enjoying the view](/images/guest-enjoying-sunrise.jpeg)
+![Guest enjoying the view](/images/external/guest-enjoying-sunrise.jpeg)
 
-![Villa courtyard surrounded by greenery](/images/villa-courtyard-greenery.jpg)
+![Villa courtyard surrounded by greenery](/images/villa/villa-courtyard-greenery.jpg)
 
-![Relaxing in the courtyard](/images/villa-courtyard-relaxing.jpg)
+![Relaxing in the courtyard](/images/villa/villa-courtyard-relaxing.jpg)
 
-![Exterior of the villa and gardens](/images/villa-exterior-gardens.jpg)
+![Exterior of the villa and gardens](/images/villa/villa-exterior-gardens.jpg)
 
-![Evening ambience at the villa](/images/hillside-villa-evening.jpg)
+![Evening ambience at the villa](/images/villa/hillside-villa-evening.jpg)
 
 ## Bringing the family?
 

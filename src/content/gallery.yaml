@@ -1,152 +1,152 @@
 # Gallery images, rendered in order on /gallery/. Every entry needs non-empty
 # alt text — the build fails otherwise. id = the image filename without extension.
 - id: hillside-retreat-exterior.jpg
-  src: /images/hillside-retreat-exterior.jpg
+  src: /images/external/hillside-retreat-exterior.jpg
   alt: Exterior of The Hillside Retreat
 - id: retreat-entrance.jpg
-  src: /images/retreat-entrance.jpg
+  src: /images/external/retreat-entrance.jpg
   alt: Entrance to the retreat
 - id: aerial-view-tamborine-mountain.jpg
-  src: /images/aerial-view-tamborine-mountain.jpg
+  src: /images/drone/aerial-view-tamborine-mountain.jpg
   alt: Aerial view of the property and hinterland
 - id: resort-style-pool.jpg
-  src: /images/resort-style-pool.jpg
+  src: /images/external/resort-style-pool.jpg
   alt: Resort-style inground pool
 - id: pool-spa-aerial-view.jpg
-  src: /images/pool-spa-aerial-view.jpg
+  src: /images/drone/pool-spa-aerial-view.jpg
   alt: Pool and spa from above
 - id: heated-pool-evening-light.jpg
-  src: /images/heated-pool-evening-light.jpg
+  src: /images/external/heated-pool-evening-light.jpg
   alt: Heated pool in the evening light
 - id: poolside-loungers.jpg
-  src: /images/poolside-loungers.jpg
+  src: /images/external/poolside-loungers.jpg
   alt: Poolside seating and loungers
 - id: deck-beside-pool.jpg
-  src: /images/deck-beside-pool.jpg
+  src: /images/external/deck-beside-pool.jpg
   alt: Deck beside the pool
 - id: hillside-villa-front.jpg
-  src: /images/hillside-villa-front.jpg
+  src: /images/villa/hillside-villa-front.jpg
   alt: Front of Hillside Villa
 - id: house-side-view.jpg
-  src: /images/house-side-view.jpg
+  src: /images/external/house-side-view.jpg
   alt: Side view of the house
 - id: open-plan-living-kitchen.jpeg
-  src: /images/open-plan-living-kitchen.jpeg
+  src: /images/house/open-plan-living-kitchen.jpeg
   alt: Open plan living area
 - id: guest-enjoying-sunrise.jpeg
-  src: /images/guest-enjoying-sunrise.jpeg
+  src: /images/external/guest-enjoying-sunrise.jpeg
   alt: Guest enjoying the sunrise
 - id: aerial-view-property-front.jpg
-  src: /images/aerial-view-property-front.jpg
+  src: /images/drone/aerial-view-property-front.jpg
   alt: Aerial view of the front of the property
 - id: resident-koala.jpg
-  src: /images/resident-koala.jpg
+  src: /images/external/resident-koala.jpg
   alt: Resident koala in the trees
 - id: verandah-al-fresco-dining.jpeg
-  src: /images/verandah-al-fresco-dining.jpeg
+  src: /images/external/verandah-al-fresco-dining.jpeg
   alt: Al fresco dining on the verandah
 - id: garden-and-grounds.jpg
-  src: /images/garden-and-grounds.jpg
+  src: /images/external/garden-and-grounds.jpg
   alt: Garden and grounds
 - id: driveway-approach.jpg
-  src: /images/driveway-approach.jpg
+  src: /images/external/driveway-approach.jpg
   alt: Driveway approach to the retreat
 - id: retreat-evening-ambience.jpg
-  src: /images/retreat-evening-ambience.jpg
+  src: /images/external/retreat-evening-ambience.jpg
   alt: Evening ambience at the retreat
 - id: house-exterior-gardens.jpg
-  src: /images/house-exterior-gardens.jpg
+  src: /images/external/house-exterior-gardens.jpg
   alt: House exterior and gardens
 - id: sunrise-over-gold-coast.jpeg
-  src: /images/sunrise-over-gold-coast.jpeg
+  src: /images/external/sunrise-over-gold-coast.jpeg
   alt: Sunrise over the Gold Coast
 - id: coastal-views.jpeg
-  src: /images/coastal-views.jpeg
+  src: /images/external/coastal-views.jpeg
   alt: Coastal views from the property
 - id: lounge-interior.jpeg
-  src: /images/lounge-interior.jpeg
+  src: /images/house/lounge-interior.jpeg
   alt: Lounge area interior
 - id: guanaba-valley-view.jpg
-  src: /images/guanaba-valley-view.jpg
+  src: /images/external/guanaba-valley-view.jpg
   alt: View across the Guanaba Valley
 - id: dining-area-interior.jpeg
-  src: /images/dining-area-interior.jpeg
+  src: /images/house/dining-area-interior.jpeg
   alt: Dining area interior
 - id: bedroom-interior-house.jpeg
-  src: /images/bedroom-interior-house.jpeg
+  src: /images/house/bedroom-interior-house.jpeg
   alt: Bedroom interior
 - id: morning-valley-view.jpeg
-  src: /images/morning-valley-view.jpeg
+  src: /images/external/morning-valley-view.jpeg
   alt: Morning view across the valley
 - id: interior-detail.jpg
-  src: /images/interior-detail.jpg
+  src: /images/house/interior-detail.jpg
   alt: Interior detail
 - id: hinterland-scenery.jpeg
-  src: /images/hinterland-scenery.jpeg
+  src: /images/external/hinterland-scenery.jpeg
   alt: Hinterland scenery
 - id: aerial-drone-view.jpg
-  src: /images/aerial-drone-view.jpg
+  src: /images/drone/aerial-drone-view.jpg
   alt: Aerial drone view of The Hillside Retreat
 - id: verandah-dining-area.jpg
-  src: /images/verandah-dining-area.jpg
+  src: /images/external/verandah-dining-area.jpg
   alt: Verandah dining area
 - id: verandah-coastal-views.jpg
-  src: /images/verandah-coastal-views.jpg
+  src: /images/external/verandah-coastal-views.jpg
   alt: Wraparound verandah with coastal views
 - id: deck-with-view-3.jpg
-  src: /images/deck-with-view-3.jpg
+  src: /images/external/deck-with-view-3.jpg
   alt: Deck seating with hinterland views
 - id: guest-taking-in-coastal-view.jpg
-  src: /images/guest-taking-in-coastal-view.jpg
+  src: /images/external/guest-taking-in-coastal-view.jpg
   alt: Guest taking in the coastal view
 - id: hinterland-sunset.jpg
-  src: /images/hinterland-sunset.jpg
+  src: /images/external/hinterland-sunset.jpg
   alt: Sunset over the hinterland
 - id: gas-bbq-outdoor-dining.jpg
-  src: /images/gas-bbq-outdoor-dining.jpg
+  src: /images/external/gas-bbq-outdoor-dining.jpg
   alt: Gas BBQ for outdoor dining
 - id: ev-charging-on-site.jpeg
-  src: /images/ev-charging-on-site.jpeg
+  src: /images/external/ev-charging-on-site.jpeg
   alt: EV charging on site
 - id: cosy-evening-by-fireplace.jpg
-  src: /images/cosy-evening-by-fireplace.jpg
+  src: /images/house/cosy-evening-by-fireplace.jpg
   alt: Cosy evening by the fireplace
 - id: wood-burning-fireplace.jpg
-  src: /images/wood-burning-fireplace.jpg
+  src: /images/house/wood-burning-fireplace.jpg
   alt: Wood burning fireplace
 - id: hillside-house-interior-detail.jpg
-  src: /images/hillside-house-interior-detail.jpg
+  src: /images/house/hillside-house-interior-detail.jpg
   alt: Interior detail of Hillside House
 - id: queen-bedroom-air-conditioned.jpeg
-  src: /images/queen-bedroom-air-conditioned.jpeg
+  src: /images/house/queen-bedroom-air-conditioned.jpeg
   alt: Queen bedroom
 - id: family-bathroom-bath-shower.jpeg
-  src: /images/family-bathroom-bath-shower.jpeg
+  src: /images/house/family-bathroom-bath-shower.jpeg
   alt: Family bathroom
 - id: master-bedroom-queen-bed.jpeg
-  src: /images/master-bedroom-queen-bed.jpeg
+  src: /images/house/master-bedroom-queen-bed.jpeg
   alt: Master bedroom with queen bed
 - id: villa-bedroom-detail.jpg
-  src: /images/villa-bedroom-detail.jpg
+  src: /images/villa/villa-bedroom-detail.jpg
   alt: Villa bedroom detail
 - id: lounge-flat-screen-tv.jpg
-  src: /images/lounge-flat-screen-tv.jpg
+  src: /images/house/lounge-flat-screen-tv.jpg
   alt: Lounge area with flat screen TV
 - id: bedroom-interior.jpg
-  src: /images/bedroom-interior.jpg
+  src: /images/house/bedroom-interior.jpg
   alt: Bedroom interior
 - id: hallway-living-space.jpg
-  src: /images/hallway-living-space.jpg
+  src: /images/house/hallway-living-space.jpg
   alt: Hallway and living space
 - id: open-plan-dining.jpeg
-  src: /images/open-plan-dining.jpeg
+  src: /images/house/open-plan-dining.jpeg
   alt: Open plan dining area
 - id: kitchen-interior.jpeg
-  src: /images/kitchen-interior.jpeg
+  src: /images/house/kitchen-interior.jpeg
   alt: Kitchen interior
 - id: bedroom-garden-outlook.jpeg
-  src: /images/bedroom-garden-outlook.jpeg
+  src: /images/house/bedroom-garden-outlook.jpeg
   alt: Bedroom with garden outlook
 - id: bathroom-detail.jpeg
-  src: /images/bathroom-detail.jpeg
+  src: /images/house/bathroom-detail.jpeg
   alt: Bathroom detail
