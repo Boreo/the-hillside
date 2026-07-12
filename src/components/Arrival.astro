@@ -1,0 +1,20 @@
+---
+interface Props {
+  paragraphs: string[];
+}
+const { paragraphs } = Astro.props;
+---
+
+<section class="arrival">
+  {paragraphs.map((p) => <p>{p}</p>)}
+</section>
+
+<style>
+  .arrival {
+    max-width: 40rem;
+    margin: 0 0 5rem;
+  }
+  .arrival p {
+    font-size: 1.1rem;
+  }
+</style>

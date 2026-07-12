@@ -1,0 +1,42 @@
+---
+import { getEntry } from "astro:content";
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import Arrival from "../components/Arrival.astro";
+import DwellingCards from "../components/DwellingCards.astro";
+import PhotoBand from "../components/PhotoBand.astro";
+import PullQuote from "../components/PullQuote.astro";
+import Closing from "../components/Closing.astro";
+
+const page = await getEntry("pages", "index");
+if (!page?.data.homepage || !page.data.heroVideo) {
+  throw new Error("index.md needs homepage and heroVideo frontmatter");
+}
+const home = page.data.homepage;
+---
+
+<Base title={page.data.title} description={page.data.description}>
+  <div class="home">
+    <Hero video={page.data.heroVideo} line={home.heroLine} />
+    <Arrival paragraphs={home.arrival} />
+    <DwellingCards dwellings={home.dwellings} combinedLine={home.combinedLine} />
+    <PhotoBand photos={home.photoBand} />
+    <PullQuote reviewId={home.pullQuote.reviewId} excerpt={home.pullQuote.excerpt} />
+    <Closing image={home.closing.image} line={home.closing.line} />
+  </div>
+</Base>
+
+<style is:global>
+  /* Editorial link treatment, shared by homepage sections. */
+  .home .editorial-link {
+    font-family: "Fraunces Variable", Georgia, serif;
+    font-style: italic;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--highlight);
+  }
+  .home .editorial-link:hover {
+    color: var(--accent-dark);
+    border-bottom-color: var(--accent-dark);
+  }
+</style>

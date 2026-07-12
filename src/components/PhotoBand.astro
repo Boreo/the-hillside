@@ -1,0 +1,69 @@
+---
+interface Props {
+  photos: { src: string; alt: string; caption: string }[];
+}
+const { photos } = Astro.props;
+const [big, ...rest] = photos;
+---
+
+<section class="band">
+  <h2>Life here</h2>
+  <div class="grid">
+    <figure class="big">
+      <img src={big.src} alt={big.alt} loading="lazy" />
+      <figcaption>{big.caption}</figcaption>
+    </figure>
+    {rest.map((p) => (
+      <figure>
+        <img src={p.src} alt={p.alt} loading="lazy" />
+        <figcaption>{p.caption}</figcaption>
+      </figure>
+    ))}
+  </div>
+</section>
+
+<style>
+  .band {
+    margin: 0 0 5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: repeat(2, minmax(0, 14rem));
+    gap: 1.25rem;
+  }
+  .big {
+    grid-row: span 2;
+  }
+  figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    flex: 1;
+    object-fit: cover;
+    border-radius: 3px;
+  }
+  figcaption {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+  @media (max-width: 40rem) {
+    .grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: none;
+    }
+    .big {
+      grid-row: auto;
+    }
+    img {
+      height: 14rem;
+      flex: none;
+    }
+  }
+</style>

@@ -1,0 +1,36 @@
+---
+import { BOOKING_URL } from "../consts";
+
+interface Props {
+  image: { src: string; alt: string };
+  line: string;
+}
+const { image, line } = Astro.props;
+---
+
+<section class="closing">
+  <img src={image.src} alt={image.alt} loading="lazy" />
+  <p>{line}</p>
+  <a class="btn" href={BOOKING_URL}>Book Now</a>
+</section>
+
+<style>
+  .closing {
+    text-align: center;
+    margin: 0 0 2rem;
+  }
+  img {
+    width: 100%;
+    max-height: 24rem;
+    object-fit: cover;
+    border-radius: 3px;
+  }
+  .closing p {
+    font-family: "Fraunces Variable", Georgia, serif;
+    font-variation-settings: "SOFT" 60, "WONK" 0;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    color: var(--accent-dark);
+    margin: 1.5rem 0 1.25rem;
+  }
+</style>

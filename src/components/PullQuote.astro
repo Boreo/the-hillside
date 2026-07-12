@@ -1,0 +1,51 @@
+---
+import { getEntry } from "astro:content";
+
+interface Props {
+  reviewId: string;
+  excerpt: string;
+}
+const { reviewId, excerpt } = Astro.props;
+
+const review = await getEntry("reviews", reviewId);
+if (!review) throw new Error(`Review ${reviewId} not found in reviews.yaml`);
+---
+
+<section class="pull-quote">
+  <blockquote>
+    <p>“{excerpt}”</p>
+    <footer>
+      — {review.data.author}, {review.data.location} ·
+      <a class="editorial-link" href="/reviews/">more reviews</a>
+    </footer>
+  </blockquote>
+</section>
+
+<style>
+  .pull-quote {
+    margin: 0 auto 5rem;
+    max-width: 34rem;
+    text-align: center;
+  }
+  blockquote {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  blockquote p {
+    font-family: "Fraunces Variable", Georgia, serif;
+    font-variation-settings: "SOFT" 60, "WONK" 0;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    line-height: 1.4;
+    color: var(--accent-dark);
+    margin: 0 0 1rem;
+  }
+  footer {
+    border: none;
+    padding: 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+</style>

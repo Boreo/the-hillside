@@ -1,0 +1,40 @@
+---
+import { BOOKING_URL } from "../consts";
+
+interface Props {
+  video: { src: string; poster: string };
+  line: string;
+}
+const { video, line } = Astro.props;
+---
+
+<section class="hero">
+  <video
+    class="hero-video"
+    src={video.src}
+    poster={video.poster}
+    autoplay
+    muted
+    loop
+    playsinline
+    aria-label="Aerial drone view over The Hillside Retreat towards the Gold Coast skyline"
+  />
+  <h1 class="hero-line">{line}</h1>
+  <a class="btn" href={BOOKING_URL}>Check availability</a>
+</section>
+
+<style>
+  .hero {
+    margin: 0 0 4rem;
+  }
+  .hero-line {
+    font-family: "Fraunces Variable", Georgia, serif;
+    font-variation-settings: "SOFT" 60, "WONK" 0;
+    font-weight: 500;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    line-height: 1.25;
+    color: var(--accent-dark);
+    max-width: 38rem;
+    margin: 1.75rem 0 1.25rem;
+  }
+</style>

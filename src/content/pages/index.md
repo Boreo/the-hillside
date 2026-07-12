@@ -1,61 +1,44 @@
 ---
 title: "Tamborine Mountain Accommodation | The Hillside Retreat"
-description: "Discover tranquil accommodation options at The Hillside Retreat in Tamborine Mountain, offering stunning views, bushwalks, and easy access to Gold Coast attractions. Book your getaway today."
+description: "The Hillside Retreat — a house and a villa on the eastern edge of Tamborine Mountain, looking down the Guanaba Valley to the Gold Coast. Heated pool and spa, wood fires, resident koala."
 heroVideo:
   src: /videos/hero.mp4
   poster: /images/hero-poster.jpg
+homepage:
+  heroLine: "A house and a villa on a hillside above the Guanaba Valley, Tamborine Mountain."
+  arrival:
+    - "The Hillside Retreat sits on the eastern edge of Tamborine Mountain, looking down the Guanaba Valley to the coast. On a clear morning you can watch the sun come up over the Gold Coast from the verandah."
+    - "Surfers Paradise is a 30-minute drive; Brisbane is an hour. Up here it is quiet — birdsong, the heated pool, and sometimes a koala in the gum beside the drive."
+  dwellings:
+    - slug: hillside-house
+      href: /hillside-house/
+      image:
+        src: /images/external/verandah-sweeping-coastal-views.jpg
+        alt: "Wraparound verandah at Hillside House with sweeping coastal views"
+      line: "A family home with a wraparound verandah, a wood fireplace, and the full sweep of the valley and coastline from the living room."
+    - slug: hillside-villa
+      href: /hillside-villa/
+      image:
+        src: /images/villa/hillside-villa-living-area.jpeg
+        alt: "Hillside Villa living area with fireplace and cosy furnishings"
+      line: "A self-contained villa with its own entry, a private courtyard, and a fireplace for cold mountain nights."
+  combinedLine: "Travelling as a group? A connecting door joins the House and Villa into one stay for up to eight guests. Combined bookings are arranged directly with us."
+  photoBand:
+    - src: /images/external/sunrise-over-gold-coast.jpeg
+      alt: "Sunrise over the Gold Coast seen from the verandah"
+      caption: "Sunrise over the Gold Coast, from the verandah."
+    - src: /images/external/resident-koala.jpg
+      alt: "The resident koala resting in a gum tree on the property"
+      caption: "The resident koala, most often in the gum beside the drive."
+    - src: /images/external/heated-pool-evening-glow.jpg
+      alt: "Heated pool glowing in the evening light"
+      caption: "The heated pool and spa, warm year-round."
+  pullQuote:
+    reviewId: glen-au
+    excerpt: "Rowena even showed me a resident koala with her umbrella when I first arrived which was sensational. Even kindling for the fire so it started so easily. Felt very welcome and enjoyed every minute."
+  closing:
+    image:
+      src: /images/external/hinterland-sunset.jpg
+      alt: "Sunset over the hinterland from The Hillside Retreat"
+    line: "Wine in the fridge, kindling by the fire, and the valley out every window."
 ---
-
-# The Hillside Retreat
-
-Escape into the beautiful Gold Coast Hinterland and immerse yourself in the natural beauty of Tamborine Mountain at The Hillside Retreat.
-
-This secluded, tranquil, and intimate location offers stunning coastal and hinterland views. Guests can also enjoy everything Tamborine Mountain has to offer, including bush walks, wildlife, waterfalls, and exceptional dining and winery experiences.
-
-Nestled in the heart of the Gold Coast Hinterland, The Hillside Retreat is perfectly situated, just a 30-minute drive from the vibrant Surfers Paradise and a convenient 60-minute journey from the bustling city of Brisbane. Our meticulously maintained and privately secluded home provides the ideal haven for your hinterland getaway.
-
-[Book Now](https://book-directonline.com/properties/thehillsideretreatdirect)
-
-## Hillside House
-
-![Verandah deck with sweeping coastal views](/images/external/verandah-sweeping-coastal-views.jpg)
-
-This incredible spacious 3 bedroom family home boasts breathtaking views of the coastline and Guanaba Valley.
-
-The open plan living space comprises a comfortable lounge area with 60’’ flat screen TV, a fully equipped kitchen with breakfast bar and dining area. A large wrap around verandah with seating and gas BBQ provides the perfect spot for dining al fresco.
-
-[Explore Hillside House](/hillside-house/)
-
-## Hillside Villa
-
-![Hillside Villa living area with cosy furnishings](/images/villa/hillside-villa-living-area.jpeg)
-
-A self-contained 1 bedroom villa with private entry, courtyard, living area with fireplace and kitchenette.
-
-Ideal for relaxing getaways, with a comfortable and clean place to call home while you explore everything the hinterland has to offer.
-
-[Explore Hillside Villa](/hillside-villa/)
-
-## Hillside House & Villa
-
-![Aerial view of the property and surrounding hinterland](/images/drone/aerial-view-tamborine-mountain.jpg)
-
-For larger groups or families, we're delighted to offer Hillside House and Hillside Villa as a combined booking.
-
-A connecting door joins the two, creating one spacious retreat for up to 8 guests.
-
-To book this exclusive combination, please [reach out to us directly](/contact-us/) and we'll confirm availability of both properties.
-
-[Learn more about House and Villa](/house-and-villa/)
-
-> “Thank you for a wonderful stay in your perfect house. We enjoyed every minute, the views are amazing and the house is clean and very comfortable with lots of thoughtful touches. Thank you for showing us the wild Koala.”
->
-> — Steph, Paul, Sian & Andy
-
-![Heated pool in the evening light](/images/external/heated-pool-evening-glow.jpg)
-
-## This hidden Hinterland gem will amaze and delight.
-
-We can’t wait to welcome you to The Hillside Retreat. If you have any questions please do not hesitate to [get in touch](/contact-us/).
-
-[Book Now](https://book-directonline.com/properties/thehillsideretreatdirect)

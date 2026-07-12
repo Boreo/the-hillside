@@ -16,6 +16,43 @@ const dwellingSchema = z.object({
   amenities: z.array(z.string().min(1)),
 });
 
+// Homepage-only content: section copy, image picks, captions and the
+// pull-quote id live here so all content edits stay in markdown.
+const homepageSchema = z.object({
+  heroLine: z.string().min(1),
+  arrival: z.array(z.string().min(1)).min(1).max(3),
+  dwellings: z.array(
+    z.object({
+      slug: z.string(),
+      href: z.string().startsWith("/"),
+      image: z.object({
+        src: z.string().startsWith("/images/"),
+        alt: z.string().min(1),
+      }),
+      line: z.string().min(1),
+    }),
+  ).length(2),
+  combinedLine: z.string().min(1),
+  photoBand: z.array(
+    z.object({
+      src: z.string().startsWith("/images/"),
+      alt: z.string().min(1),
+      caption: z.string().min(1),
+    }),
+  ).length(3),
+  pullQuote: z.object({
+    reviewId: z.string(),
+    excerpt: z.string().min(1),
+  }),
+  closing: z.object({
+    image: z.object({
+      src: z.string().startsWith("/images/"),
+      alt: z.string().min(1),
+    }),
+    line: z.string().min(1),
+  }),
+});
+
 const pages = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
   schema: z.object({
@@ -28,6 +65,7 @@ const pages = defineCollection({
         poster: z.string().startsWith("/images/"),
       })
       .optional(),
+    homepage: homepageSchema.optional(),
   }),
 });
 
