@@ -8,7 +8,7 @@ Static Astro site for a two-dwelling holiday accommodation business on Tamborine
 - Content is markdown in `src/content/pages/` (collection `pages`, schema in `src/content.config.ts` with `title` required and `description` optional). `src/pages/[...slug].astro` renders each entry and `index.md` is the homepage.
 - `src/layouts/Base.astro` carries the nav, footer, `LodgingBusiness` JSON-LD with the full business details, and the booking URL constant.
 - Styles are plain CSS with custom properties in `src/styles/global.css`.
-- Images live in `public/images/`, named `<uuid8>-<descriptive-name>.<ext>` and pre-resized to 2000px or less.
+- Images live in `public/images/`, named `<descriptive-name>.<ext>` and pre-resized to 2000px or less.
 
 ## Development
 

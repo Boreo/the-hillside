@@ -1,0 +1,124 @@
+---
+// Temporary palette preview page — delete before deploy.
+import Base from "../layouts/Base.astro";
+
+const swatches = [
+  { token: "--paper", hex: "#FAF8F4", job: "page background" },
+  { token: "--ink", hex: "#131711", job: "body text" },
+  { token: "--accent", hex: "#3B5A38", job: "Book Now, links" },
+  { token: "--accent-dark", hex: "#2C4727", job: "hover states (logo green)" },
+  { token: "--accent-tint", hex: "#EAF0E6", job: "card/section wash" },
+  { token: "--secondary", hex: "#4A562C", job: "supporting elements" },
+  { token: "--highlight", hex: "#967D58", job: "borders, rules" },
+  { token: "--muted", hex: "#585E58", job: "secondary text" },
+  { token: "--line", hex: "#E7E2D6", job: "hairlines" },
+];
+---
+
+<Base title="Palette demo">
+  <h1>Palette demo</h1>
+
+  <h2>Swatches</h2>
+  <div class="swatch-grid">
+    {swatches.map((s) => (
+      <div class="swatch">
+        <div class="chip" style={`background:${s.hex}`}></div>
+        <strong>{s.token}</strong>
+        <span class="muted">{s.hex} — {s.job}</span>
+      </div>
+    ))}
+  </div>
+
+  <h2>Dwelling cards</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-media" style="background:var(--accent)"></div>
+      <div class="card-body">
+        <h3>Hillside House</h3>
+        <p class="muted">Sleeps 6 · 3 bedrooms · heated pool and spa</p>
+        <p>Secluded hinterland home with coastal views from the deck.</p>
+        <a class="btn" href="#">Book Now</a>
+      </div>
+    </div>
+    <div class="card card-accent">
+      <div class="card-media" style="background:#4A562C"></div>
+      <div class="card-body">
+        <h3 style="color:#fff">Hillside Villa</h3>
+        <p style="color:#E7E2D6">Sleeps 2 · 1 bedroom · private retreat</p>
+        <p style="color:#fff">Card on solid gum-leaf green, white text.</p>
+        <a class="btn btn-inverse" href="#">Book Now</a>
+      </div>
+    </div>
+    <div class="card card-tint">
+      <div class="card-body">
+        <h3>House &amp; Villa</h3>
+        <p class="muted">Sleeps 8 combined · direct bookings only</p>
+        <p>Tinted card — accent at ~8% over paper, tan border.</p>
+        <a class="btn" href="#">Enquire</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>In-context text</h2>
+  <p>Body ink with an <a href="#" style="color:var(--accent)">accent link</a> in a sentence, plus <span class="muted">muted caption text</span> alongside.</p>
+  <blockquote>
+    "A blockquote with the tan highlight rule on its left."
+    <footer>— Guest review</footer>
+  </blockquote>
+  <p class="facts">Facts strip · olive secondary border · muted text</p>
+</Base>
+
+<style>
+  .swatch-grid,
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 2.5rem;
+  }
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+  }
+  .chip {
+    height: 4rem;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+  }
+  .muted {
+    color: var(--muted);
+  }
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .card-media {
+    height: 8rem;
+  }
+  .card-body {
+    padding: 1rem 1.25rem 1.5rem;
+  }
+  .card-body h3 {
+    margin-top: 0;
+  }
+  .card-accent {
+    background: var(--accent);
+    border-color: var(--accent-dark);
+  }
+  .card-tint {
+    background: var(--accent-tint);
+    border-color: var(--highlight);
+  }
+  .btn-inverse {
+    background: var(--paper);
+    color: var(--accent);
+  }
+  .btn-inverse:hover {
+    background: #fff;
+  }
+</style>

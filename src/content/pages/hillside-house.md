@@ -21,13 +21,13 @@ dwelling:
 
 # Hillside House
 
-![Hillside House open-plan living area](/images/12d36988-362798658.jpeg)
+![Hillside House open-plan living area](/images/hillside-house-open-plan-living.jpeg)
 
 Discover the epitome of hillside luxury with our stunning 3-bedroom accommodation option Hillside House. Nestled in the serene embrace of nature, this retreat offers a haven of tranquility on the slopes of Tamborine Mountain, Queensland, Australia and offers breathtaking views of the coastline and Guanaba Valley.
 
 Step inside, and you'll find yourself in a beautifully appointed private space where modernity meets cleanliness and comfort. With 2 queen bedrooms and 1 twin bedroom, there's ample room for up to six guests to enjoy a restful night's sleep. The brand new fully fitted kitchen is a culinary enthusiast's dream, while the large, spacious, and open-plan dining and lounge area beckons you to unwind and enjoy the breathtaking views that surround you. Our master bedroom, complete with an ensuite shower room and large walk-in wardrobe provides a spacious and comfortable stay. Hillside House provides all the conveniences of home, including a well-equipped laundry room featuring a washer, dryer, iron and ironing board. Stay fresh and wrinkle-free throughout your visit.
 
-![Entrance to Hillside House](/images/4ae7af88-entrancenew.jpg)
+![Entrance to Hillside House](/images/retreat-entrance.jpg)
 
 For those who relish outdoor dining, our BBQ and expansive al fresco dining area provide the perfect setting to savor a meal while soaking in the natural beauty of the hillside at our shared heated pool and spa. The interior is tastefully and neutrally decorated, creating an ambiance of serenity and sophistication. Modern fixtures and fittings ensure your stay is as comfortable as it is stylish.
 
@@ -35,7 +35,7 @@ Arriving by electric vehicle? Our on-site 7.3 kW Type 2 charger means you can sp
 
 The pièce de résistance is the breathtaking view, seen from the full length of the house. Whether you're seeking relaxation, adventure, or simply a break from the ordinary, our Hillside House accommodation promises an unforgettable experience and vista amidst the stunning landscapes of Tamborine Mountain and beyond.
 
-![Wraparound verandah with coastal views](/images/70f95156-deck-with-view.jpg)
+![Wraparound verandah with coastal views](/images/verandah-coastal-views.jpg)
 
 [Book Now](https://book-directonline.com/properties/thehillsideretreatdirect)
 
@@ -58,59 +58,59 @@ The pièce de résistance is the breathtaking view, seen from the full length of
 - EV charging on site (7.3 kW, Type 2) – fully recharges most vehicles overnight.
 - Free private parking on site.
 
-![Fully fitted kitchen in Hillside House](/images/90126aa8-362798658.jpeg)
+![Fully fitted kitchen in Hillside House](/images/open-plan-living-kitchen.jpeg)
 
-![Wood burning fireplace in the lounge](/images/4bc33dae-hillside-house-new-fireplace.jpg)
+![Wood burning fireplace in the lounge](/images/wood-burning-fireplace.jpg)
 
-![Cosy evening by the fireplace](/images/479d7308-hillside-house-new-fireplace-2.jpg)
+![Cosy evening by the fireplace](/images/cosy-evening-by-fireplace.jpg)
 
-![Master bedroom with queen bed](/images/3ae2455b-362798655.jpeg)
+![Master bedroom with queen bed](/images/master-bedroom-queen-bed.jpeg)
 
-![Queen bedroom with air-conditioning](/images/4926813c-362798637.jpeg)
+![Queen bedroom with air-conditioning](/images/queen-bedroom-air-conditioned.jpeg)
 
-![Twin bedroom sleeping two guests](/images/5009d199-362798645.jpeg)
+![Twin bedroom sleeping two guests](/images/twin-bedroom.jpeg)
 
-![Family bathroom with bath and shower](/images/04c518a2-362798648.jpeg)
+![Family bathroom with bath and shower](/images/family-bathroom-bath-shower.jpeg)
 
-![Ensuite shower room](/images/9b2c1e3d-362798642.jpeg)
+![Ensuite shower room](/images/ensuite-shower-room.jpeg)
 
-![Open plan dining area](/images/d1dca819-374698665.jpeg)
+![Open plan dining area](/images/open-plan-dining.jpeg)
 
-![Lounge area with flat screen TV](/images/ebb96d26-img-4929.jpg)
+![Lounge area with flat screen TV](/images/lounge-flat-screen-tv.jpg)
 
-![Verandah dining and seating area](/images/59c0c80e-deck.jpg)
+![Verandah dining and seating area](/images/verandah-dining-area.jpg)
 
-![Guest enjoying the sunrise over the coast](/images/635ec373-img-8125.jpeg)
+![Guest enjoying the sunrise over the coast](/images/guest-enjoying-sunrise.jpeg)
 
-![Resort-style inground pool at night](/images/5cff3fcb-pool-dark.jpg)
+![Resort-style inground pool at night](/images/pool-at-night.jpg)
 
-![Pool and spa seen from above](/images/6066ac28-pool-top.jpg)
+![Pool and spa seen from above](/images/pool-and-spa-from-above.jpg)
 
-![Heated pool in evening light](/images/0ffb5115-pool-light.jpg)
+![Heated pool in evening light](/images/heated-pool-evening.jpg)
 
-![Fire pit glowing at dusk](/images/bd8f7654-fire.jpg)
+![Fire pit glowing at dusk](/images/fire-pit-at-dusk.jpg)
 
-![Relaxing by the outdoor fire](/images/17581929-fire-man.jpg)
+![Relaxing by the outdoor fire](/images/relaxing-by-outdoor-fire.jpg)
 
-![Interior detail of Hillside House](/images/31df0220-img-4946.jpg)
+![Interior detail of Hillside House](/images/hillside-house-interior-detail.jpg)
 
-![Hallway and living space](/images/4e93b7c4-img-4931.jpg)
+![Hallway and living space](/images/hallway-living-space.jpg)
 
-![Bedroom interior](/images/2599c9f0-img-4932.jpg)
+![Bedroom interior](/images/bedroom-interior.jpg)
 
-![Guest taking in the coastal view](/images/73b83d35-man-looking-at-view.jpg)
+![Guest taking in the coastal view](/images/guest-taking-in-coastal-view.jpg)
 
-![Sunrise over the Gold Coast from the verandah](/images/e345d34c-img-8037.jpeg)
+![Sunrise over the Gold Coast from the verandah](/images/sunrise-over-gold-coast.jpeg)
 
-![Morning view across the Guanaba Valley](/images/1d07f6db-img-8032.jpeg)
+![Morning view across the Guanaba Valley](/images/morning-valley-view.jpeg)
 
-![Coastal views from the property](/images/bfb35675-img-8046.jpeg)
+![Coastal views from the property](/images/coastal-views.jpeg)
 
-![Electric vehicle charging on site](/images/42c74bf6-ev-pic.jpeg)
+![Electric vehicle charging on site](/images/ev-charging-on-site.jpeg)
 
-![Outdoor seating in the garden](/images/9cd72bf3-tempimageeabngt.jpg)
+![Outdoor seating in the garden](/images/garden-outdoor-seating.jpg)
 
-![Al fresco dining on the verandah](/images/82b43f62-395031726.jpeg)
+![Al fresco dining on the verandah](/images/al-fresco-verandah-dining.jpeg)
 
 ## Just the two of you?
 

@@ -1,9 +1,14 @@
 :root {
-  --ink: #2b2b28;
+  color-scheme: light;
+  --ink: #131711;
   --paper: #faf8f4;
-  --accent: #4a6b4f;
-  --accent-dark: #3a553e;
-  --muted: #6b6a64;
+  --accent: #3b5a38;
+  --accent-dark: #2c4727;
+  --accent-tint: #eaf0e6; /* pale accent wash for card/section backgrounds */
+  --secondary: #4a562c;
+  --highlight: #967d58; /* decorative only — 3.7:1 on paper, fails AA as text */
+  --muted: #585e58;
+  --line: #e7e2d6;
   --max-width: 72rem;
 }
 
@@ -86,14 +91,14 @@ footer {
   padding: 1.5rem;
   color: var(--muted);
   font-size: 0.9rem;
-  border-top: 1px solid #e4e1da;
+  border-top: 1px solid var(--line);
 }
 
 .facts {
   font-family: system-ui, sans-serif;
   font-size: 0.9rem;
   color: var(--muted);
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--secondary);
   padding-left: 0.8rem;
   margin: 1.5rem 0 0;
 }
@@ -113,7 +118,7 @@ footer {
 blockquote {
   margin: 1.5rem 0;
   padding-left: 1rem;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--highlight);
 }
 
 blockquote footer {

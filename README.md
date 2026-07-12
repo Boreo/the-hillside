@@ -40,5 +40,5 @@ The target end state: the non-technical owner emails a change request → GitHub
 ## Content editing
 
 - Content lives in `src/content/pages/*.md`. `index.md` is the homepage and other files map to routes by filename.
-- Images go in `public/images/`, named `<uuid8>-<descriptive-name>.<ext>` and pre-resized to 2000px or less.
+- Images go in `public/images/`, named `<descriptive-name>.<ext>` and pre-resized to 2000px or less.
 - Legacy Squarespace paths (`/home`, `/further-inform`) redirect via `astro.config.mjs`.
