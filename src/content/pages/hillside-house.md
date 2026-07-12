@@ -21,7 +21,7 @@ dwelling:
 
 # Hillside House
 
-![Deck dining at night under a full moon](/images/external/night-deck-dining-moonlit-valley.jpeg)
+![Covered deck at dusk with valley and coastal views](/images/external/covered-deck-dusk-coastal-view.jpeg)
 
 Discover the epitome of hillside luxury with our stunning 3-bedroom accommodation option Hillside House. Nestled in the serene embrace of nature, this retreat offers a haven of tranquility on the slopes of Tamborine Mountain, Queensland, Australia and offers breathtaking views of the coastline and Guanaba Valley.
 

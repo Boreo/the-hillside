@@ -65,10 +65,6 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 
 ![Villa kitchenette](/images/villa/villa-kitchenette-cabinetry.jpg)
 
-![Villa living room with fireplace](/images/villa/villa-living-room-clock-fireplace.jpg)
-
-![Villa lounge with fireplace and TV](/images/villa/villa-lounge-fireplace-tv.jpg)
-
 ![Shower room with fresh linen and toiletries](/images/villa/villa-shower-room.jpg)
 
 ![Complimentary bathroom amenities](/images/amenities/amenities-on-towel.jpg)
@@ -93,7 +89,7 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 
 ![Coastal view through the palms](/images/external/coastal-view-through-palms.jpg)
 
-![Eucalypt hillside with coastal views](/images/external/eucalypt-hillside-coastal-view.jpg)
+![Eucalypt hillside below the retreat](/images/external/eucalypt-hillside.jpg)
 
 ![Palm-framed coastal view](/images/external/palm-framed-coastal-view.jpg)
 
