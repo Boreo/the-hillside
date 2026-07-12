@@ -1,0 +1,85 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Page-specific structured data, emitted alongside the LodgingBusiness JSON-LD. */
+  extraJsonLd?: object;
+}
+
+const { title, description = "The Hillside Retreat — secluded accommodation on Tamborine Mountain in the Gold Coast Hinterland, with coastal views, heated pool and spa.", extraJsonLd } = Astro.props;
+const BOOKING_URL = "https://book-directonline.com/properties/thehillsideretreatdirect";
+
+const nav = [
+  { href: "/hillside-house/", label: "Hillside House" },
+  { href: "/hillside-villa/", label: "Hillside Villa" },
+  { href: "/house-and-villa/", label: "House & Villa" },
+  { href: "/location/", label: "Location" },
+  { href: "/guest-info/", label: "Guest Info" },
+  { href: "/mountain-mobile-massage/", label: "Mobile Massage" },
+  { href: "/gallery/", label: "Gallery" },
+  { href: "/reviews/", label: "Reviews" },
+  { href: "/contact-us/", label: "Contact" },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  name: "The Hillside Retreat",
+  url: "https://www.thehillside.com.au/",
+  description:
+    "Secluded, tranquil accommodation on Tamborine Mountain in the Gold Coast Hinterland. Hillside House (3-bedroom, sleeps 6) and Hillside Villa (1-bedroom, sleeps 2), bookable separately or combined for up to 8 guests.",
+  email: "Stay@thehillside.com.au",
+  telephone: "+61466990185",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "25 Leona Court",
+    addressLocality: "Tamborine Mountain",
+    addressRegion: "QLD",
+    postalCode: "4272",
+    addressCountry: "AU",
+  },
+  amenityFeature: [
+    { "@type": "LocationFeatureSpecification", name: "Heated pool and spa", value: true },
+    { "@type": "LocationFeatureSpecification", name: "EV charging (7.3 kW Type 2)", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Free private parking", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Wi-Fi", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Wood fireplace", value: true },
+  ],
+  potentialAction: {
+    "@type": "ReserveAction",
+    target: BOOKING_URL,
+  },
+};
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="icon" href="/favicon.ico" />
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+{extraJsonLd && <script type="application/ld+json" set:html={JSON.stringify(extraJsonLd)} />}
+
+<header>
+  <a href="/" class="brand">The Hillside Retreat</a>
+  <nav>
+    {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    <a class="btn" href={BOOKING_URL}>Book Now</a>
+  </nav>
+</header>
+
+<main>
+  <slot />
+</main>
+
+<footer>
+  <p><strong>The Hillside Retreat</strong> — 25 Leona Court, Tamborine Mountain, Queensland 4272</p>
+  <p>
+    Tel: <a href="tel:+61466990185">(+61) 0466 990 185</a> · Email:
+    <a href="mailto:stay@thehillside.com.au?subject=Enquiry%3A%20Hillside%20Retreat">stay@thehillside.com.au</a>
+    · <a href={BOOKING_URL}>Book Now</a>
+  </p>
+  <p>© {new Date().getFullYear()} The Hillside Retreat</p>
+</footer>

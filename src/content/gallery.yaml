@@ -1,0 +1,152 @@
+# Gallery images, rendered in order on /gallery/. Every entry needs non-empty
+# alt text — the build fails otherwise. id = the image filename's uuid prefix.
+- id: 9edd317d
+  src: /images/9edd317d-img-2987.jpg
+  alt: Exterior of The Hillside Retreat
+- id: 4ae7af88
+  src: /images/4ae7af88-entrancenew.jpg
+  alt: Entrance to the retreat
+- id: 3d22308e
+  src: /images/3d22308e-aerial-view.jpg
+  alt: Aerial view of the property and hinterland
+- id: 3ff5edae
+  src: /images/3ff5edae-pool.jpg
+  alt: Resort-style inground pool
+- id: 916fd3e8
+  src: /images/916fd3e8-pool-top.jpg
+  alt: Pool and spa from above
+- id: 3915c32b
+  src: /images/3915c32b-pool-light.jpg
+  alt: Heated pool in the evening light
+- id: b0807862
+  src: /images/b0807862-pool2.jpg
+  alt: Poolside seating and loungers
+- id: e742fe2e
+  src: /images/e742fe2e-deckside.jpg
+  alt: Deck beside the pool
+- id: c18fa9d3
+  src: /images/c18fa9d3-front.jpg
+  alt: Front of Hillside Villa
+- id: 5cb30a0a
+  src: /images/5cb30a0a-side.jpg
+  alt: Side view of the house
+- id: 90126aa8
+  src: /images/90126aa8-362798658.jpeg
+  alt: Open plan living area
+- id: 635ec373
+  src: /images/635ec373-img-8125.jpeg
+  alt: Guest enjoying the sunrise
+- id: b7316cc7
+  src: /images/b7316cc7-aerial-view-front.jpg
+  alt: Aerial view of the front of the property
+- id: b18359b2
+  src: /images/b18359b2-koala.jpg
+  alt: Resident koala in the trees
+- id: 3cb7224e
+  src: /images/3cb7224e-395031726.jpeg
+  alt: Al fresco dining on the verandah
+- id: 7228cad8
+  src: /images/7228cad8-tempimaget77f1k.jpg
+  alt: Garden and grounds
+- id: 67af370f
+  src: /images/67af370f-drive.jpg
+  alt: Driveway approach to the retreat
+- id: 17581932
+  src: /images/17581932-tempimagewkrpjw.jpg
+  alt: Evening ambience at the retreat
+- id: 874dc424
+  src: /images/874dc424-img-2987.jpg
+  alt: House exterior and gardens
+- id: e345d34c
+  src: /images/e345d34c-img-8037.jpeg
+  alt: Sunrise over the Gold Coast
+- id: bfb35675
+  src: /images/bfb35675-img-8046.jpeg
+  alt: Coastal views from the property
+- id: f9827a0e
+  src: /images/f9827a0e-362798661.jpeg
+  alt: Lounge area interior
+- id: 8750b0f4
+  src: /images/8750b0f4-view2.jpg
+  alt: View across the Guanaba Valley
+- id: e589e93a
+  src: /images/e589e93a-374698577.jpeg
+  alt: Dining area interior
+- id: 8d718e85
+  src: /images/8d718e85-374698603.jpeg
+  alt: Bedroom interior
+- id: 1d07f6db
+  src: /images/1d07f6db-img-8032.jpeg
+  alt: Morning view across the valley
+- id: da4c2248
+  src: /images/da4c2248-img-4953.jpg
+  alt: Interior detail
+- id: e00da8ed
+  src: /images/e00da8ed-img-8083.jpeg
+  alt: Hinterland scenery
+- id: cf14adea
+  src: /images/cf14adea-drone-placeholder.jpg
+  alt: Aerial drone view of The Hillside Retreat
+- id: 59c0c80e
+  src: /images/59c0c80e-deck.jpg
+  alt: Verandah dining area
+- id: 70f95156
+  src: /images/70f95156-deck-with-view.jpg
+  alt: Wraparound verandah with coastal views
+- id: ee177755
+  src: /images/ee177755-deck-with-view-3.jpg
+  alt: Deck seating with hinterland views
+- id: 73b83d35
+  src: /images/73b83d35-man-looking-at-view.jpg
+  alt: Guest taking in the coastal view
+- id: a351ab33
+  src: /images/a351ab33-img-9981.jpg
+  alt: Sunset over the hinterland
+- id: e231da17
+  src: /images/e231da17-bbq.jpg
+  alt: Gas BBQ for outdoor dining
+- id: 42c74bf6
+  src: /images/42c74bf6-ev-pic.jpeg
+  alt: EV charging on site
+- id: 479d7308
+  src: /images/479d7308-hillside-house-new-fireplace-2.jpg
+  alt: Cosy evening by the fireplace
+- id: 4bc33dae
+  src: /images/4bc33dae-hillside-house-new-fireplace.jpg
+  alt: Wood burning fireplace
+- id: 31df0220
+  src: /images/31df0220-img-4946.jpg
+  alt: Interior detail of Hillside House
+- id: 4926813c
+  src: /images/4926813c-362798637.jpeg
+  alt: Queen bedroom
+- id: 04c518a2
+  src: /images/04c518a2-362798648.jpeg
+  alt: Family bathroom
+- id: 3ae2455b
+  src: /images/3ae2455b-362798655.jpeg
+  alt: Master bedroom with queen bed
+- id: f7787878
+  src: /images/f7787878-img-3013.jpg
+  alt: Villa bedroom detail
+- id: ebb96d26
+  src: /images/ebb96d26-img-4929.jpg
+  alt: Lounge area with flat screen TV
+- id: 2599c9f0
+  src: /images/2599c9f0-img-4932.jpg
+  alt: Bedroom interior
+- id: 4e93b7c4
+  src: /images/4e93b7c4-img-4931.jpg
+  alt: Hallway and living space
+- id: d1dca819
+  src: /images/d1dca819-374698665.jpeg
+  alt: Open plan dining area
+- id: a057b540
+  src: /images/a057b540-362798662.jpeg
+  alt: Kitchen interior
+- id: 004e8a66
+  src: /images/004e8a66-362798637.jpeg
+  alt: Bedroom with garden outlook
+- id: 1a632640
+  src: /images/1a632640-374698649.jpeg
+  alt: Bathroom detail

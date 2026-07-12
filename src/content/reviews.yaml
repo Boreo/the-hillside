@@ -1,0 +1,37 @@
+# Guest reviews, rendered in order on /reviews/ and emitted as Review JSON-LD.
+- id: maria-nz
+  quote: "Amazing place. full size house. outdoors spaces fantastic with views to die for. Pool and spa very clean, House beautifully furnished and clean. Owner very friendly and knowledgeable.. Koala in the tree."
+  author: Maria
+  location: New Zealand
+- id: deborah-au
+  quote: "Everything in the home was so practical, combined with the absolutely stunning location and lovely hosts we had the most PERFECT weekend!"
+  author: Deborah
+  location: Australia
+- id: christina-au
+  quote: "Great views and fireplace. Comfortable and self contained and had all the conveniences needed. Comfy bed. Wonderful hosts."
+  author: Christina
+  location: Australia
+- id: federico-au
+  quote: "The Villa was spotless, comfortable, with pool, spa and a fantastic view. The host was available for our needs and caring. I would recommend this accommodation to any couple looking for a quiet escape in beautiful Mt Tambourine."
+  author: Federico
+  location: Australia
+- id: raquel-es
+  quote: "I loved the location, the views, and the space. An absolute bliss. Rowena was an excellent host, very kind and helpful."
+  author: Raquel
+  location: Spain
+- id: seamus-au
+  quote: "Owners were lovely people! Place was a nice and cozy little get away with AMAZING views!"
+  author: Seamus
+  location: Australia
+- id: glen-au
+  quote: "The friendliness, how clean and spacious it was, the fire was a beautiful night. The free wine and choccies in the fridge which were not \"mini bar\" items, they were freebies which was such a nice touch. I felt very welcome. Rowena even showed me a resident koala with her umbrella when I first arrived which was sensational. Even kindling for the fire so it started so easily. Felt very welcome and enjoyed every minute. If I am ever up that way again, I would definitely consider going back."
+  author: Glen
+  location: Australia
+- id: margo-au
+  quote: "Very clean and comfortable. everything was available to use that you could possibly need. The views were stunning. Very quiet and the staff were very helpful and friendly. Loved it."
+  author: Margo
+  location: Australia
+- id: cassandra-my
+  quote: "The owner is extremely hospitable and she goes out of her way in making us feel at home. Facilities are very well maintained and the house is very cozy and well furnished. Definitely a great choice for family getaway, and it comes with an amazing view for sunrise too!"
+  author: Cassandra
+  location: Malaysia

@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+
+const images = await getCollection("gallery");
+---
+
+<Base
+  title="Gallery — The Hillside Retreat"
+  description="Photo gallery of The Hillside Retreat — the house, villa, pool, views and wildlife of Tamborine Mountain."
+>
+  <h1>Gallery</h1>
+  <div class="gallery-grid">
+    {images.map(({ data }) => <img src={data.src} alt={data.alt} loading="lazy" />)}
+  </div>
+</Base>
