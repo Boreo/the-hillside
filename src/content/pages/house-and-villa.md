@@ -5,7 +5,7 @@ description: "Book Hillside House and Villa together as one retreat sleeping up 
 
 # House and Villa
 
-![The Hillside Retreat house and villa exterior](/images/external/house-and-villa-exterior.jpg)
+![Coastline and Gold Coast skyline through the palms](/images/external/goldcoast-in-background.jpg)
 
 For larger groups and families, we're delighted to offer our spacious 3-bedroom [Hillside House](/hillside-house/) and intimate 1-bedroom [Hillside Villa](/hillside-villa/) as a combined booking. A connecting door joins the two accommodations, opening them up into one expansive retreat that sleeps up to 8 guests across 4 bedrooms.
 
@@ -19,21 +19,21 @@ Your combined booking gives you exclusive use of the heated spa and pool, adding
 
 Nestled amidst the lush landscapes of Tamborine Mountain, the retreat makes the perfect base for exploring the area's wineries, waterfalls, and walking trails, or simply enjoying the coastal and hinterland views from the verandah.
 
-![Wraparound verandah with coastal views](/images/external/verandah-coastal-views.jpg)
+![Wraparound verandah with coastal views](/images/external/verandah-dining-views.jpg)
 
 This combination can only be booked directly with us, so we can confirm availability of both properties and tailor the stay to your group. Contact us at [stay@thehillside.com.au](mailto:stay@thehillside.com.au?subject=Enquiry%3A%20Hillside%20Retreat) or on [0466 990 185](tel:+61466990185), and we'll be delighted to help with availability, pricing, and any special requests.
 
-![Open plan living in Hillside House](/images/house/open-plan-living-kitchen.jpeg)
+![Open plan living in Hillside House](/images/external/outdoor-dining-moonlit-valley.jpeg)
 
-![Villa living area](/images/villa/hillside-villa-living-area.jpeg)
+![Villa living area](/images/villa/hillside-villa-dining-area.jpeg)
 
-![Wood burning fireplace](/images/house/wood-burning-fireplace.jpg)
+![Wood burning fireplace](/images/house/dining-area-lounge-tv.jpg)
 
-![Pool and spa from above](/images/drone/pool-and-spa-from-above.jpg)
+![Pool and spa from above](/images/external/pool-and-spa.jpg)
 
-![Verandah dining area](/images/external/verandah-dining-area.jpg)
+![Verandah dining area](/images/external/verandah-lounge-area.jpg)
 
-![Fire pit at dusk](/images/external/fire-pit-at-dusk.jpg)
+![Fire pit at dusk](/images/house/wood-fireplace-burning.jpg)
 
 ![Guest taking in the coastal view](/images/external/guest-taking-in-coastal-view.jpg)
 

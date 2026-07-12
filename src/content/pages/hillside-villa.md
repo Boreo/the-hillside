@@ -40,7 +40,7 @@ Arriving by electric vehicle? Our on-site 7.3 kW Type 2 charger means you can sp
 
 The pièce de résistance is the breathtaking view. Whether you're seeking relaxation, adventure, or simply a romantic break from the ordinary, our Hillside Villa accommodation promises an unforgettable experience and vista amidst the stunning landscapes of Tamborine Mountain and beyond.
 
-![Deck with sweeping coastal views](/images/external/verandah-sweeping-coastal-views.jpg)
+![Deck bar seating with panoramic valley views](/images/external/deck-with-view-day.jpg)
 
 [Book Now](https://book-directonline.com/properties/thehillsideretreatdirect)
 
@@ -61,21 +61,21 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 
 ![Villa lounge with wood burning fireplace](/images/villa/villa-lounge-fireplace.jpg)
 
-![Well-appointed kitchenette](/images/villa/villa-kitchenette.jpg)
+![Open-plan kitchen, dining and lounge](/images/villa/villa-open-plan-kitchen-lounge.jpg)
 
-![Villa dining area](/images/villa/villa-dining-area.jpg)
+![Villa kitchenette](/images/villa/villa-kitchenette-cabinetry.jpg)
 
-![Spacious queen bedroom](/images/villa/villa-queen-bedroom.jpg)
+![Villa living room with fireplace](/images/villa/villa-living-room-clock-fireplace.jpg)
 
-![Queen bedroom detail](/images/villa/villa-queen-bedroom-detail.jpg)
+![Villa lounge with fireplace and TV](/images/villa/villa-lounge-fireplace-tv.jpg)
 
 ![Shower room with fresh linen and toiletries](/images/villa/villa-shower-room.jpg)
 
-![Private courtyard seating](/images/villa/villa-courtyard-seating.jpg)
+![Complimentary bathroom amenities](/images/amenities/amenities-on-towel.jpg)
 
-![Villa interior detail](/images/villa/villa-interior-detail.jpg)
+![Queen bedroom with teal linen](/images/villa/villa-queen-bedroom-teal-linen.jpg)
 
-![Heated pool in the evening light](/images/external/heated-pool-evening-glow.jpg)
+![Heated pool in the evening light](/images/external/heated-pool-evening.jpg)
 
 ![Gated entrance to the pool area](/images/external/gated-pool-entrance.jpg)
 
@@ -83,21 +83,20 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 
 ![EV charging on site](/images/external/ev-charging-on-site.jpeg)
 
-![Sunrise over the coast](/images/external/sunrise-over-gold-coast.jpeg)
+![Gold Coast skyline over the ocean](/images/external/goldcoast-skyline-over-ocean.jpeg)
 
-![Coastal views from the property](/images/external/coastal-views.jpeg)
+![Sunset over the Gold Coast](/images/external/goldcoast-sunset.jpeg)
 
-![Morning view across the valley](/images/external/morning-valley-view.jpeg)
+![Sunset sky over the coastal hills](/images/external/sunset-coastal-hills.jpeg)
 
-![Guest enjoying the view](/images/external/guest-enjoying-sunrise.jpeg)
+![The Gold Coast at dusk](/images/external/goldcoast-at-dusk.jpeg)
 
-![Villa courtyard surrounded by greenery](/images/villa/villa-courtyard-greenery.jpg)
+![Coastal view through the palms](/images/external/coastal-view-through-palms.jpg)
 
-![Relaxing in the courtyard](/images/villa/villa-courtyard-relaxing.jpg)
+![Eucalypt hillside with coastal views](/images/external/eucalypt-hillside-coastal-view.jpg)
 
-![Exterior of the villa and gardens](/images/villa/villa-exterior-gardens.jpg)
+![Palm-framed coastal view](/images/external/palm-framed-coastal-view.jpg)
 
-![Evening ambience at the villa](/images/villa/hillside-villa-evening.jpg)
 
 ## Bringing the family?
 
