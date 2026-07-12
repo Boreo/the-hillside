@@ -36,6 +36,20 @@ const dwellingJsonLd = dwelling && {
 
 <Base title={page.data.title} description={page.data.description} extraJsonLd={dwellingJsonLd}>
   {
+    page.data.heroVideo && (
+      <video
+        class="hero-video"
+        src={page.data.heroVideo.src}
+        poster={page.data.heroVideo.poster}
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-label="Aerial drone view over The Hillside Retreat towards the Gold Coast skyline"
+      />
+    )
+  }
+  {
     dwelling && (
       <p class="facts">
         Sleeps {dwelling.sleeps} · {dwelling.bedrooms.length}{" "}

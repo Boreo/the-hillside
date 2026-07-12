@@ -1,11 +1,12 @@
 ---
 title: "Tamborine Mountain Accommodation | The Hillside Retreat"
 description: "Discover tranquil accommodation options at The Hillside Retreat in Tamborine Mountain, offering stunning views, bushwalks, and easy access to Gold Coast attractions. Book your getaway today."
+heroVideo:
+  src: /videos/hero.mp4
+  poster: /images/hero-poster.jpg
 ---
 
 # The Hillside Retreat
-
-![Aerial drone view of The Hillside Retreat on Tamborine Mountain](/images/cf14adea-drone-placeholder.jpg)
 
 Escape into the beautiful Gold Coast Hinterland and immerse yourself in the natural beauty of Tamborine Mountain at The Hillside Retreat.
 

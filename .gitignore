@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # Pre-migration Squarespace snapshot (local only)
 archive/
+
+# Raw marketing assets (video masters, drone footage)
+marketing/

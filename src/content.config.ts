@@ -22,6 +22,12 @@ const pages = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     dwelling: dwellingSchema.optional(),
+    heroVideo: z
+      .object({
+        src: z.string().startsWith("/videos/"),
+        poster: z.string().startsWith("/images/"),
+      })
+      .optional(),
   }),
 });
 
