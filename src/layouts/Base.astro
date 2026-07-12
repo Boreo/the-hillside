@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import "@fontsource-variable/fraunces";
+import "@fontsource-variable/fraunces/index.css";
 import { BOOKING_URL } from "../consts";
 
 interface Props {
@@ -60,8 +60,8 @@ const jsonLd = {
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="icon" href="/favicon.ico" />
-<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-{extraJsonLd && <script type="application/ld+json" set:html={JSON.stringify(extraJsonLd)} />}
+<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+{extraJsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(extraJsonLd)} />}
 
 <header>
   <a href="/" class="brand">The Hillside Retreat</a>

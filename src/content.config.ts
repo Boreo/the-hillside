@@ -1,4 +1,5 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 import { glob, file } from "astro/loaders";
 
 // Machine-readable facts for a bookable dwelling. Drives the facts strip on
