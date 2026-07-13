@@ -5,14 +5,15 @@ Static Astro site for a two-dwelling holiday accommodation business on Tamborine
 ## Stack
 
 - Astro with static output, no client JS frameworks.
-- Content is markdown in `src/content/pages/` (collection `pages`, schema in `src/content.config.ts` with `title` required and `description` optional). `src/pages/[...slug].astro` renders each entry and `index.md` is the homepage.
-- `src/layouts/Base.astro` carries the nav, footer, `LodgingBusiness` JSON-LD with the full business details, and the booking URL constant.
-- Styles are plain CSS with custom properties in `src/styles/global.css`.
-- Images live in `public/images/`, named `<descriptive-name>.<ext>` and pre-resized to 2000px or less.
+- Content is markdown in `src/content/pages/` (collection `pages`, schema in `src/content.config.ts` with `title` required and `description` optional). `src/pages/[...slug].astro` renders each entry.
+- The homepage is `src/pages/index.astro`, composed from `src/components/` (Hero, Arrival, DwellingCards, PhotoBand, PullQuote, Closing) with copy from `src/content/pages/index.md`.
+- `src/layouts/Base.astro` carries the nav (dropdowns grouped Accommodation / Your Stay), footer, `LodgingBusiness` JSON-LD with the full business details, and the booking URL constant. New pages must be added to a nav group.
+- Styles are plain CSS with custom properties (brand palette tokens) in `src/styles/global.css`; body font is Fraunces via `@fontsource-variable/fraunces`. `/palette-demo` previews the tokens.
+- Images live in `public/images/<category>/` (`house`, `villa`, `external`, `drone`, `amenities`; logo/emblem at root), named `<descriptive-name>.<ext>` and pre-resized to 2000px or less. The hero drone video is in `public/videos/`.
 
 ## Development
 
-Run the dev server in background mode with `astro dev --background` and manage it with `astro dev stop|status|logs`. `npm run build` produces the static build in `dist/` and validates the content schema.
+Run the dev server in background mode with `astro dev --background` and manage it with `astro dev stop|status|logs`. `npm run build` produces the static build in `dist/` and validates the content schema. `npm test` runs Playwright tests in `tests/`.
 
 ## Hosting
 

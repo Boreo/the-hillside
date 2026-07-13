@@ -1,15 +1,35 @@
 # The Hillside Retreat (thehillside.com.au)
 
-Static site for a two-dwelling holiday accommodation business on Tamborine Mountain, QLD. Built with Astro, deployed on Cloudflare Pages, and maintained through an AI-assisted editing workflow where a human approves every change.
+Static site for a two-dwelling holiday accommodation business on Tamborine Mountain, QLD. Built with Astro, deployed on Cloudflare Workers, and maintained through an AI-assisted editing workflow where a human approves every change.
 
 ## Stack
 
 - **Astro**: static output. Pages render from markdown at build time and no client-side JS frameworks ship.
-- **Content**: markdown in `src/content/pages/`, a content collection whose frontmatter is schema-validated by `src/content.config.ts`.
-- **Layout**: a single base layout carries the nav, footer, and `LodgingBusiness` JSON-LD for search engines and AI answer engines.
-- **Styles**: plain CSS with custom properties.
-- **Hosting**: Cloudflare Pages, which runs `npm run build` and serves `dist/`.
+- **Content**: markdown in `src/content/pages/`, a content collection whose frontmatter is schema-validated by `src/content.config.ts`. The homepage is composed from components in `src/components/` with copy from `index.md` frontmatter.
+- **Layout**: a single base layout carries the nav (dropdowns grouped Accommodation / Your Stay), footer, and `LodgingBusiness` JSON-LD for search engines and AI answer engines.
+- **Styles**: plain CSS with custom properties (brand palette tokens); Fraunces variable font.
+- **Hosting**: Cloudflare Workers (GitHub-connected), which runs `npm run build` and serves `dist/`. Staging: https://the-hillside.github-e53.workers.dev/
+- **Tests**: Playwright in `tests/`.
 - **Booking**: SiteMinder/Little Hotelier direct booking engine. Pending domain whitelist approval.
+
+## Structure
+
+```
+src/
+  components/        Homepage sections (Hero, Arrival, DwellingCards, …)
+  content/
+    pages/           Page content as markdown; index.md holds homepage copy
+    gallery.yaml     Gallery images with alt text
+    reviews.yaml     Guest reviews
+  layouts/           Base.astro — nav, footer, JSON-LD
+  pages/             Routes: index.astro, [...slug].astro, gallery, reviews
+  styles/            global.css with brand palette tokens
+  content.config.ts  Content schemas
+public/
+  images/<category>/ house, villa, external, drone, amenities
+  videos/            Hero drone video
+tests/               Playwright specs
+```
 
 ## Why this architecture
 
@@ -23,10 +43,10 @@ An AI coding agent maintains the content under human control. Four rules make th
 
 1. **Approval**: git is the gate. The agent proposes changes as commits and PRs, a human reviews and merges, and the deploy pipeline builds only from `main`.
 2. **Provenance**: AI-assisted commits carry a `Co-Authored-By` trailer.
-3. **Instructions**: the agent follows checked-in rules. `AGENTS.md` defines them and is versioned.
+3. **Instructions**: the agent follows checked-in rules. `CLAUDE.md` defines them (`AGENTS.md` is a symlink to it) and is versioned.
 4. **Validation**: `npm run build` validates all content frontmatter.
 
-The target end state: the non-technical owner emails a change request → GitHub issue → agent drafts a PR → human approves → Cloudflare Pages deploys. Each arrow is an explicit gate.
+The target end state: the non-technical owner emails a change request → GitHub issue → agent drafts a PR → human approves → Cloudflare Workers deploys. Each arrow is an explicit gate.
 
 ## Development
 
@@ -36,9 +56,10 @@ The target end state: the non-technical owner emails a change request → GitHub
 | `npm run dev` | Dev server at `localhost:4321` |
 | `npm run build` | Static build to `dist/`, validates content schema |
 | `npm run preview` | Preview the production build locally |
+| `npm test` | Playwright tests |
 
 ## Content editing
 
-- Content lives in `src/content/pages/*.md`. `index.md` is the homepage and other files map to routes by filename.
-- Images go in `public/images/`, named `<descriptive-name>.<ext>` and pre-resized to 2000px or less.
+- Content lives in `src/content/pages/*.md`; files map to routes by filename. Homepage copy is frontmatter in `index.md`.
+- Images go in `public/images/<category>/` (`house`, `villa`, `external`, `drone`, `amenities`), named `<descriptive-name>.<ext>` and pre-resized to 2000px or less. The hero video is in `public/videos/`.
 - Legacy Squarespace paths (`/home`, `/further-inform`) redirect via `astro.config.mjs`.
