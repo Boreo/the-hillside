@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 
 import cloudflare from '@astrojs/cloudflare';
 
+const isDev = process.argv.includes('dev');
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.thehillside.com.au',
@@ -14,5 +16,5 @@ export default defineConfig({
     '/further-inform': '/location/',
   },
 
-  adapter: cloudflare(),
+  adapter: isDev ? undefined : cloudflare(),
 });
