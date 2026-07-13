@@ -45,6 +45,12 @@ const homepageSchema = z.object({
     reviewId: z.string(),
     excerpt: z.string().min(1),
   }),
+  reviewBand: z.array(
+    z.object({
+      reviewId: z.string(),
+      excerpt: z.string().min(1),
+    }),
+  ).length(3),
   closing: z.object({
     image: z.object({
       src: z.string().startsWith("/images/"),

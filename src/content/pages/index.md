@@ -36,6 +36,13 @@ homepage:
   pullQuote:
     reviewId: glen-au
     excerpt: "Rowena even showed me a resident koala with her umbrella when I first arrived which was sensational. Even kindling for the fire so it started so easily. Felt very welcome and enjoyed every minute."
+  reviewBand:
+    - reviewId: federico-au
+      excerpt: "I would recommend this accommodation to any couple looking for a quiet escape"
+    - reviewId: maria-nz
+      excerpt: "outdoors spaces fantastic with views to die for"
+    - reviewId: cassandra-my
+      excerpt: "a great choice for family getaway, and it comes with an amazing view for sunrise too"
   closing:
     image:
       src: /images/external/goldcoast-sunset.jpeg
