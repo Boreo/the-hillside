@@ -20,12 +20,12 @@ const resolved = await Promise.all(
     <div class="quotes">
       {resolved.map((q) => (
         <blockquote>
-          <p>"{q.excerpt}"</p>
+          <p>“{q.excerpt}”</p>
           <footer>— {q.author}, {q.location}</footer>
         </blockquote>
       ))}
     </div>
-    <p class="more"><a class="editorial-link" href="/reviews/">more reviews</a></p>
+    <p class="more"><a class="editorial-link" href="/reviews/">read more guest reviews&nbsp;&rarr;</a></p>
   </div>
 </section>
 
@@ -33,7 +33,7 @@ const resolved = await Promise.all(
   /* Full-bleed mint band: breaks out of main's max-width to span the viewport. */
   .review-band {
     margin: 0 calc(50% - 50vw) 4rem;
-    padding: 3.5rem 1.5rem;
+    padding: 2.75rem 1.5rem;
     background: var(--wash);
   }
   .band-inner {
@@ -53,9 +53,9 @@ const resolved = await Promise.all(
   blockquote p {
     font-family: "Fraunces Variable", Georgia, serif;
     font-style: italic;
-    font-size: 1.05rem;
+    font-size: clamp(1.1rem, 1.6vw, 1.25rem);
     line-height: 1.5;
-    text-wrap: balance;
+    text-wrap: pretty;
     color: var(--ink);
     margin: 0 0 0.75rem;
   }
@@ -66,8 +66,9 @@ const resolved = await Promise.all(
     color: var(--muted);
   }
   .more {
-    margin: 2rem 0 0;
+    margin: 1.75rem 0 0;
     text-align: center;
+    font-size: 1.1rem;
   }
   @media (max-width: 40rem) {
     .quotes {

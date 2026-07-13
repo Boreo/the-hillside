@@ -1,6 +1,5 @@
 ---
 import { getEntry } from "astro:content";
-import { DEMO_MODE } from "../consts";
 
 interface Props {
   reviewId: string;
@@ -15,10 +14,7 @@ if (!review) throw new Error(`Review ${reviewId} not found in reviews.yaml`);
 <section class="pull-quote">
   <blockquote>
     <p>“{excerpt}”</p>
-    <footer>
-      — {review.data.author}, {review.data.location} ·
-      <a class="quote-link" href={DEMO_MODE ? undefined : "/reviews/"} aria-disabled={DEMO_MODE ? "true" : undefined}>more reviews</a>
-    </footer>
+    <footer>— {review.data.author}, {review.data.location}</footer>
   </blockquote>
 </section>
 
@@ -26,7 +22,7 @@ if (!review) throw new Error(`Review ${reviewId} not found in reviews.yaml`);
   /* Full-bleed dark band: breaks out of main's max-width to span the viewport. */
   .pull-quote {
     margin: 0 calc(50% - 50vw) 4rem;
-    padding: 4rem 1.5rem;
+    padding: 2.75rem 1.5rem;
     background: var(--deep);
     text-align: center;
   }
@@ -34,7 +30,7 @@ if (!review) throw new Error(`Review ${reviewId} not found in reviews.yaml`);
     margin: 0 auto;
     padding: 0;
     border: none;
-    max-width: 34rem;
+    max-width: 38rem;
   }
   blockquote p {
     font-family: "Fraunces Variable", Georgia, serif;
@@ -43,7 +39,7 @@ if (!review) throw new Error(`Review ${reviewId} not found in reviews.yaml`);
     font-weight: 500;
     font-size: clamp(1.35rem, 3vw, 1.8rem);
     line-height: 1.4;
-    text-wrap: balance;
+    text-wrap: pretty;
     color: var(--paper);
     margin: 0 0 1rem;
   }
@@ -52,12 +48,5 @@ if (!review) throw new Error(`Review ${reviewId} not found in reviews.yaml`);
     padding: 0;
     font-size: 0.9rem;
     color: var(--wash);
-  }
-  .quote-link {
-    font-family: "Fraunces Variable", Georgia, serif;
-    font-style: italic;
-    color: var(--wash);
-    text-decoration: none;
-    border-bottom: 1px solid var(--highlight);
   }
 </style>

@@ -69,15 +69,27 @@ const factsParts = (f: (typeof cards)[number]["facts"]) => ({
   }
   .pair {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    grid-template-columns: 1.15fr 1fr;
+    column-gap: 2.5rem;
   }
   article {
     border-top: 2px solid var(--highlight);
     padding-top: 1.25rem;
   }
-  article:nth-child(2) {
-    margin-top: 2.5rem;
+  /* Both image blocks end at the same y: the Villa image's top margin
+     (11.25% of its column) equals the height its narrower 4:3 image loses
+     against the wider House column, so titles and facts lines align while
+     the top edge staggers. Buttons bottom-align via margin-top: auto. */
+  .pair article {
+    display: flex;
+    flex-direction: column;
+  }
+  .pair article:nth-child(2) img {
+    margin-top: 11.25%;
+  }
+  .pair article .btn {
+    margin-top: auto;
+    align-self: flex-start;
   }
   article img {
     width: 100%;
@@ -130,7 +142,10 @@ const factsParts = (f: (typeof cards)[number]["facts"]) => ({
     .pair {
       grid-template-columns: 1fr;
     }
-    article:nth-child(2) {
+    .pair article:nth-child(2) {
+      margin-top: 2.5rem;
+    }
+    .pair article:nth-child(2) img {
       margin-top: 0;
     }
     .combined {
