@@ -1,6 +1,6 @@
 ---
 title: "House and Villa — The Hillside Retreat"
-description: "Book Hillside House and Villa together as one retreat sleeping up to 8, with exclusive use of the heated pool and spa. Contact us directly to book."
+description: "Book Hillside House and Villa together as one retreat sleeping up to 8, with exclusive use of the pool and heated spa. Contact us directly to book."
 ---
 
 # House and Villa
@@ -15,7 +15,7 @@ The combination gives you the best of both worlds: plenty of shared living space
 
 Your combined booking gives you exclusive use of the heated spa and pool, adding an extra touch of luxury to your stay.
 
-![Heated pool in the evening light](/images/external/heated-pool-evening.jpg)
+![Pool and heated spa in the evening light](/images/external/heated-pool-evening.jpg)
 
 Nestled amidst the lush landscapes of Tamborine Mountain, the retreat makes the perfect base for exploring the area's wineries, waterfalls, and walking trails, or simply enjoying the coastal and hinterland views from the verandah.
 

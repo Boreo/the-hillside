@@ -1,6 +1,6 @@
 ---
 title: "Hillside House — The Hillside Retreat"
-description: "Spacious 3-bedroom house on Tamborine Mountain sleeping up to 6, with coastal views, wood fireplace, wraparound verandah, EV charging, and heated pool and spa."
+description: "Spacious 3-bedroom house on Tamborine Mountain sleeping up to 6, with coastal views, wood fireplace, wraparound verandah, EV charging, and pool and heated spa."
 dwelling:
   name: Hillside House
   sleeps: 6
@@ -11,7 +11,7 @@ dwelling:
     - bed: twin
   amenities:
     - Wood fireplace
-    - Heated pool & spa (shared)
+    - Pool & heated spa (shared)
     - EV charging (7.3 kW Type 2)
     - Wraparound verandah
     - Full kitchen & laundry
@@ -29,7 +29,7 @@ Step inside, and you'll find yourself in a beautifully appointed private space w
 
 ![Entrance to Hillside House](/images/external/retreat-entrance.jpg)
 
-For those who relish outdoor dining, our BBQ and expansive al fresco dining area provide the perfect setting to savor a meal while soaking in the natural beauty of the hillside at our shared heated pool and spa. The interior is tastefully and neutrally decorated, creating an ambiance of serenity and sophistication. Modern fixtures and fittings ensure your stay is as comfortable as it is stylish.
+For those who relish outdoor dining, our BBQ and expansive al fresco dining area provide the perfect setting to savor a meal while soaking in the natural beauty of the hillside at our shared pool and heated spa. The interior is tastefully and neutrally decorated, creating an ambiance of serenity and sophistication. Modern fixtures and fittings ensure your stay is as comfortable as it is stylish.
 
 Arriving by electric vehicle? Our on-site 7.3 kW Type 2 charger means you can spend the day exploring the mountain's wineries and waterfalls and wake to a fully charged car.
 
@@ -84,7 +84,7 @@ The pièce de résistance is the breathtaking view, seen from the full length of
 
 ![Pool and spa seen from above](/images/external/pool-and-spa.jpg)
 
-![Heated pool in evening light](/images/external/heated-pool-evening.jpg)
+![Pool and heated spa in evening light](/images/external/heated-pool-evening.jpg)
 
 ![Wood fireplace burning](/images/house/wood-fireplace-burning.jpg)
 

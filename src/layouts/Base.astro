@@ -10,7 +10,7 @@ interface Props {
   extraJsonLd?: object;
 }
 
-const { title, description = "The Hillside Retreat — secluded accommodation on Tamborine Mountain in the Gold Coast Hinterland, with coastal views, heated pool and spa.", extraJsonLd } = Astro.props;
+const { title, description = "The Hillside Retreat — secluded accommodation on Tamborine Mountain in the Gold Coast Hinterland, with coastal views, pool and heated spa.", extraJsonLd } = Astro.props;
 
 const nav = [
   {
@@ -54,7 +54,7 @@ const jsonLd = {
     addressCountry: "AU",
   },
   amenityFeature: [
-    { "@type": "LocationFeatureSpecification", name: "Heated pool and spa", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Pool and heated spa", value: true },
     { "@type": "LocationFeatureSpecification", name: "EV charging (7.3 kW Type 2)", value: true },
     { "@type": "LocationFeatureSpecification", name: "Free private parking", value: true },
     { "@type": "LocationFeatureSpecification", name: "Wi-Fi", value: true },

@@ -1,6 +1,6 @@
 ---
 title: "Tamborine Mountain Accommodation | The Hillside Retreat"
-description: "The Hillside Retreat is a house and a villa on the eastern edge of Tamborine Mountain, looking down the Guanaba Valley to the Gold Coast. Heated pool and spa, wood fires, resident koala."
+description: "The Hillside Retreat is a house and a villa on the eastern edge of Tamborine Mountain, looking down the Guanaba Valley to the Gold Coast. Pool and heated spa, wood fires, resident koala."
 heroVideo:
   src: /videos/hero.mp4
   poster: /images/hero-poster.jpg
@@ -8,7 +8,7 @@ homepage:
   heroLine: "A house and a villa on the hillside above Guanaba Valley, Tamborine Mountain."
   arrival:
     - "The Hillside Retreat sits on the eastern edge of Tamborine Mountain, looking down the Guanaba Valley to the coast.\nOn a clear morning you can watch the sun come up over the Gold Coast from the verandah."
-    - "Surfers Paradise is a 30-minute drive and Brisbane about an hour. Up here it stays private and quiet.\nThe gums are full of birds and wildlife, and the pool and spa are heated year-round."
+    - "Surfers Paradise is a 30-minute drive and Brisbane about an hour. Up here it stays private and quiet.\nThe gums are full of birds and wildlife, and the spa is heated year-round."
   dwellings:
     - slug: hillside-house
       href: /hillside-house/
@@ -31,8 +31,8 @@ homepage:
       alt: "A resident koala resting in a gum tree on the property"
       caption: "A resident koala in the gums."
     - src: /images/external/heated-pool-evening.jpg
-      alt: "Heated pool glowing in the evening light"
-      caption: "The heated pool and spa, warm year-round."
+      alt: "Pool and heated spa glowing in the evening light"
+      caption: "The pool and heated spa."
   pullQuote:
     reviewId: glen-au
     excerpt: "Rowena even showed me a resident koala with her umbrella when I first arrived which was sensational. Even kindling for the fire so it started so easily. Felt very welcome and enjoyed every minute."

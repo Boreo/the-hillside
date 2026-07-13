@@ -10,7 +10,7 @@ dwelling:
     - Wood fireplace
     - Private courtyard
     - Kitchenette
-    - Heated pool & spa (shared)
+    - Pool & heated spa (shared)
     - EV charging (7.3 kW Type 2)
     - Wi-Fi
     - Free private parking
@@ -71,7 +71,7 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 
 ![Queen bedroom with teal linen](/images/villa/villa-queen-bedroom-teal-linen.jpg)
 
-![Heated pool in the evening light](/images/external/heated-pool-evening.jpg)
+![Pool and heated spa in the evening light](/images/external/heated-pool-evening.jpg)
 
 ![Gated entrance to the pool area](/images/external/gated-pool-entrance.jpg)
 
