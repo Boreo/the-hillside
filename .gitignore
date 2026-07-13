@@ -29,3 +29,7 @@ archive/
 
 # Raw marketing assets (video masters, drone footage)
 marketing/
+
+# playwright output
+test-results/
+playwright-report/

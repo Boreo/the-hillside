@@ -13,12 +13,24 @@ interface Props {
 const { title, description = "The Hillside Retreat — secluded accommodation on Tamborine Mountain in the Gold Coast Hinterland, with coastal views, heated pool and spa.", extraJsonLd } = Astro.props;
 
 const nav = [
-  { href: "/hillside-house/", label: "Hillside House" },
-  { href: "/hillside-villa/", label: "Hillside Villa" },
-  { href: "/house-and-villa/", label: "House & Villa" },
-  { href: "/location/", label: "Location" },
-  { href: "/guest-info/", label: "Guest Info" },
-  { href: "/mountain-mobile-massage/", label: "Mobile Massage" },
+  {
+    href: "/#accommodation",
+    label: "Accommodation",
+    children: [
+      { href: "/hillside-house/", label: "Hillside House" },
+      { href: "/hillside-villa/", label: "Hillside Villa" },
+      { href: "/house-and-villa/", label: "House & Villa" },
+    ],
+  },
+  {
+    href: "/guest-info/",
+    label: "Your Stay",
+    children: [
+      { href: "/location/", label: "Location" },
+      { href: "/guest-info/", label: "Guest Info" },
+      { href: "/mountain-mobile-massage/", label: "Mobile Massage" },
+    ],
+  },
   { href: "/gallery/", label: "Gallery" },
   { href: "/reviews/", label: "Reviews" },
   { href: "/contact-us/", label: "Contact" },
@@ -64,23 +76,86 @@ const jsonLd = {
 {extraJsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(extraJsonLd)} />}
 
 <header>
-  <a href="/" class="brand">The Hillside Retreat</a>
+  <a href="/" class="brand">
+    <img src="/images/the-hillside-retreat-emblem.png" alt="" height="64" />
+    <span class="brand-name">The Hillside Retreat</span>
+  </a>
   <nav>
-    {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    {nav.map((item) =>
+      "children" in item && item.children ? (
+        <div class="nav-drop">
+          <a class="nav-parent" href={item.href} aria-haspopup="true">
+            {item.label} <span class="caret" aria-hidden="true">▾</span>
+          </a>
+          <div class="drop-menu">
+            {item.children.map((c) => <a href={c.href}>{c.label}</a>)}
+          </div>
+        </div>
+      ) : (
+        <a href={item.href}>{item.label}</a>
+      ),
+    )}
     <a class="btn" href={BOOKING_URL}>Book Now</a>
   </nav>
 </header>
+
+<script>
+  // Touch devices get no hover: first tap opens the dropdown, a second tap
+  // on the parent follows its link (anchor). Desktop keeps hover + plain click.
+  if (window.matchMedia("(hover: none)").matches) {
+    const drops = document.querySelectorAll<HTMLElement>(".nav-drop");
+    drops.forEach((drop) => {
+      const parent = drop.querySelector<HTMLAnchorElement>(".nav-parent");
+      parent?.addEventListener("click", (e) => {
+        if (!drop.classList.contains("open")) {
+          e.preventDefault();
+          drops.forEach((d) => d.classList.remove("open"));
+          drop.classList.add("open");
+        }
+      });
+    });
+    document.addEventListener("click", (e) => {
+      if (!(e.target as Element).closest(".nav-drop"))
+        drops.forEach((d) => d.classList.remove("open"));
+    });
+  }
+</script>
 
 <main>
   <slot />
 </main>
 
 <footer>
-  <p><strong>The Hillside Retreat</strong> — 25 Leona Court, Tamborine Mountain, Queensland 4272</p>
-  <p>
-    Tel: <a href="tel:+61466990185">(+61) 0466 990 185</a> · Email:
-    <a href="mailto:stay@thehillside.com.au?subject=Enquiry%3A%20Hillside%20Retreat">stay@thehillside.com.au</a>
-    · <a href={BOOKING_URL}>Book Now</a>
-  </p>
-  <p>© {new Date().getFullYear()} The Hillside Retreat</p>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-brand-row">
+        <img src="/images/the-hillside-retreat-emblem.png" alt="" />
+        <span class="footer-wordmark">The Hillside Retreat</span>
+      </span>
+      <p>Secluded, tranquil accommodation on Tamborine Mountain, in the Gold Coast Hinterland.</p>
+    </div>
+    <nav class="footer-col" aria-label="Footer">
+      <h2>Explore</h2>
+      <a href="/#accommodation">Accommodation</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/reviews/">Reviews</a>
+      <a href="/location/">Location</a>
+      <a href="/guest-info/">Guest Info</a>
+      <a href="/mountain-mobile-massage/">Mobile Massage</a>
+    </nav>
+    <div class="footer-col">
+      <h2>Contact</h2>
+      <p>25 Leona Court<br />Tamborine Mountain QLD 4272</p>
+      <a href="tel:+61466990185">(+61) 0466 990 185</a>
+      <a href="mailto:stay@thehillside.com.au?subject=Enquiry%3A%20Hillside%20Retreat">stay@thehillside.com.au</a>
+    </div>
+    <div class="footer-col">
+      <h2>Book</h2>
+      <p>Two hillside dwellings — book one, or both together.</p>
+      <a class="btn btn-inverse" href={BOOKING_URL}>Book Now</a>
+    </div>
+  </div>
+  <div class="footer-base">
+    <p>© {new Date().getFullYear()} The Hillside Retreat · Tamborine Mountain, Queensland</p>
+  </div>
 </footer>

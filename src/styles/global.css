@@ -19,6 +19,21 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Anchor targets land clear of the top edge. */
+:target {
+  scroll-margin-top: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -53,24 +68,43 @@ h2 {
 header {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
   gap: 1rem 2rem;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 
 .brand {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
   text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  height: 64px;
+  width: auto;
+  border-radius: 0;
+}
+
+.brand-name {
+  font-family: "Fraunces Variable", Georgia, serif;
+  font-variation-settings: "SOFT" 60, "WONK" 0;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.35rem;
+  color: var(--accent-dark);
+  white-space: nowrap;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 1.1rem;
+  align-items: center;
+  gap: 0.25rem 1.4rem;
 }
 
 nav a {
@@ -82,6 +116,69 @@ nav a {
 nav a:hover {
   color: var(--accent-dark);
   text-decoration: underline;
+}
+
+nav a.btn,
+nav a.btn:hover {
+  color: var(--card);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.55rem 1.3rem;
+}
+
+.nav-drop {
+  position: relative;
+}
+
+.nav-parent .caret {
+  font-size: 0.7em;
+  color: var(--muted);
+}
+
+.drop-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -1rem;
+  min-width: 11rem;
+  padding: 0.45rem 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgb(37 43 33 / 0.12);
+  z-index: 20;
+}
+
+/* Hairline hover bridge so the menu doesn't close crossing the gap. */
+.nav-drop::after {
+  content: "";
+  position: absolute;
+  inset: 100% 0 auto;
+  height: 0.5rem;
+}
+
+.drop-menu a {
+  display: block;
+  padding: 0.45rem 1rem;
+  white-space: nowrap;
+}
+
+.drop-menu a:hover {
+  background: var(--paper);
+  text-decoration: none;
+  color: var(--accent-dark);
+}
+
+/* Touch devices open via the .open class (set by the header script) instead. */
+@media (hover: hover) {
+  .nav-drop:hover .drop-menu,
+  .nav-drop:focus-within .drop-menu {
+    display: block;
+  }
+}
+
+.nav-drop.open .drop-menu {
+  display: block;
 }
 
 main {
@@ -137,12 +234,123 @@ img {
 }
 
 footer {
+  margin-top: 3rem;
+  background: var(--deep);
+  color: var(--wash);
+  font-size: 0.95rem;
+}
+
+.footer-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.5rem;
-  color: var(--muted);
+  padding: 3rem 1.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 2.5rem 2rem;
+}
+
+@media (max-width: 56rem) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 34rem) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-brand-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-brand img {
+  display: block;
+  height: 44px;
+  width: auto;
+  border-radius: 0;
+  /* Emblem ink is near-black; render it pale on the dark band. */
+  filter: brightness(0) invert(92%);
+}
+
+.footer-wordmark {
+  font-family: "Fraunces Variable", Georgia, serif;
+  font-variation-settings: "SOFT" 60, "WONK" 0;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--paper);
+}
+
+.footer-brand p {
+  margin: 0.85rem 0 0;
+  color: var(--mint);
   font-size: 0.9rem;
-  border-top: 1px solid var(--line);
+  max-width: 34ch;
+}
+
+.footer-col h2 {
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--mint);
+  margin: 0 0 0.85rem;
+}
+
+.footer-col p {
+  margin: 0 0 0.75rem;
+  color: var(--wash);
+  font-size: 0.9rem;
+}
+
+/* Global nav is flex; the footer link list stacks instead. */
+nav.footer-col {
+  display: block;
+}
+
+.footer-col a {
+  display: block;
+  padding: 0.15rem 0;
+  color: var(--wash);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-col a:hover {
+  color: var(--card);
+  text-decoration: underline;
+}
+
+.footer-col a.btn-inverse {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.55rem 1.3rem;
+  font-size: 0.95rem;
+  background: var(--paper);
+  color: var(--deep);
+}
+
+.footer-col a.btn-inverse:hover {
+  background: var(--card);
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.footer-base {
+  border-top: 1px solid rgb(250 248 244 / 0.14);
+}
+
+.footer-base p {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  font-size: 0.85rem;
+  color: var(--mint);
 }
 
 .facts {
@@ -172,10 +380,15 @@ blockquote {
   border-left: 3px solid var(--highlight);
 }
 
+/* Review attributions use <footer> inside blockquote; keep them plain text. */
 blockquote footer {
   border: none;
   padding: 0;
   max-width: none;
+  margin: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .hero-video {

@@ -25,7 +25,7 @@ const factsLine = (f: (typeof cards)[number]["facts"]) =>
   `Sleeps ${f.sleeps} · ${f.bedrooms.length} ${f.bedrooms.length === 1 ? "bedroom" : "bedrooms"}`;
 ---
 
-<section class="dwellings">
+<section class="dwellings" id="accommodation">
   <h2>Two places to stay</h2>
   <div class="pair">
     {cards.map((card) => (
@@ -38,10 +38,19 @@ const factsLine = (f: (typeof cards)[number]["facts"]) =>
       </article>
     ))}
   </div>
-  <div class="combined">
-    <p>{combinedLine}</p>
-    <a class="btn btn-outline" href="/house-and-villa/">About House &amp; Villa</a>
-  </div>
+  <article class="combined">
+    <img
+      src="/images/drone/aerial-view-whole-property.jpg"
+      alt="Aerial view of the whole property, House and Villa together on the hillside"
+      loading="lazy"
+    />
+    <div>
+      <h3>House &amp; Villa combined</h3>
+      <p class="facts-line">Sleeps 8 · 4 bedrooms</p>
+      <p>{combinedLine}</p>
+      <a class="btn btn-outline" href="/house-and-villa/">About House &amp; Villa</a>
+    </div>
+  </article>
 </section>
 
 <style>
@@ -81,11 +90,19 @@ const factsLine = (f: (typeof cards)[number]["facts"]) =>
     margin-top: 0.5rem;
   }
   .combined {
-    max-width: 44rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
     margin-top: 3rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
+    border-top: 2px solid var(--highlight);
+    padding-top: 1.25rem;
+  }
+  .combined img {
+    aspect-ratio: 16 / 9;
+  }
+  .combined h3 {
+    margin: 0 0 0.25rem;
   }
   .combined p {
     text-wrap: balance;
@@ -97,6 +114,9 @@ const factsLine = (f: (typeof cards)[number]["facts"]) =>
     }
     article:nth-child(2) {
       margin-top: 0;
+    }
+    .combined {
+      grid-template-columns: 1fr;
     }
   }
 </style>
