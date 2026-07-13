@@ -1,0 +1,37 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="Book Now | The Hillside Retreat"
+  description="Check availability and book Hillside House or Hillside Villa on Tamborine Mountain directly with The Hillside Retreat."
+>
+  <div class="book-page">
+    <h1>Book your stay</h1>
+    <p class="book-note">
+      Book Hillside House or Hillside Villa below. To book the House and Villa
+      combined for up to eight guests, <a href="/contact-us/">contact us directly</a>.
+    </p>
+    <div
+      class="ibe"
+      data-region="apac"
+      data-channelcode="thehillsideretreatdirect"
+      data-widget="embed"
+    >
+    </div>
+  </div>
+</Base>
+
+<script is:inline src="https://widget.siteminder.com/ibe.min.js"></script>
+
+<style>
+  .book-page {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+  .book-note {
+    max-width: 44rem;
+    margin: 0 0 2rem;
+  }
+</style>

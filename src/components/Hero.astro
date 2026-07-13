@@ -1,5 +1,4 @@
 ---
-import { BOOKING_URL } from "../consts";
 
 interface Props {
   video: { src: string; poster: string };
@@ -21,7 +20,7 @@ const { video, line } = Astro.props;
   />
   <div class="hero-overlay">
     <h1 class="hero-line">{line}</h1>
-    <a class="btn-glass" href={BOOKING_URL}>Check availability</a>
+    <a class="btn-glass" href="/book/">Check availability</a>
   </div>
 </section>
 

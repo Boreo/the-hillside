@@ -1,5 +1,4 @@
 ---
-import { BOOKING_URL } from "../consts";
 
 interface Props {
   image: { src: string; alt: string };
@@ -11,7 +10,7 @@ const { image, line } = Astro.props;
 <section class="closing">
   <img src={image.src} alt={image.alt} loading="lazy" />
   <p>{line}</p>
-  <a class="btn" href={BOOKING_URL}>Book Now</a>
+  <a class="btn" href="/book/">Book Now</a>
 </section>
 
 <style>
