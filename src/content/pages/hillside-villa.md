@@ -42,7 +42,7 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 
 ![Deck bar seating with panoramic valley views](/images/external/deck-with-view-day.jpg)
 
-[Book Now](https://book-directonline.com/properties/thehillsideretreatdirect)
+[Book with us](https://book-directonline.com/properties/thehillsideretreatdirect)
 
 ## Accommodation comprises
 
@@ -98,4 +98,4 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 
 Our spacious 3-bedroom [Hillside House](/hillside-house/) sleeps up to 6, with a full kitchen, wraparound verandah, and those famous coastal views.
 
-[Book Now](https://book-directonline.com/properties/thehillsideretreatdirect)
+[Book with us](https://book-directonline.com/properties/thehillsideretreatdirect)

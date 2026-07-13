@@ -37,7 +37,7 @@ The pièce de résistance is the breathtaking view, seen from the full length of
 
 ![Wraparound verandah with coastal views](/images/external/verandah-dining-views.jpg)
 
-[Book Now](https://book-directonline.com/properties/thehillsideretreatdirect)
+[Book with us](https://book-directonline.com/properties/thehillsideretreatdirect)
 
 ## Accommodation comprises
 
@@ -118,4 +118,4 @@ Our self-contained 1-bedroom [Hillside Villa](/hillside-villa/), with its own pr
 
 Book the [House and Villa together](/house-and-villa/), connected as one retreat sleeping up to 8, with exclusive use of the pool and spa.
 
-[Book Now](https://book-directonline.com/properties/thehillsideretreatdirect)
+[Book with us](https://book-directonline.com/properties/thehillsideretreatdirect)
