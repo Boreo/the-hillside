@@ -1,5 +1,6 @@
 ---
 import { getEntry } from "astro:content";
+import { DEMO_MODE } from "../consts";
 
 interface Props {
   reviewId: string;
@@ -16,7 +17,7 @@ if (!review) throw new Error(`Review ${reviewId} not found in reviews.yaml`);
     <p>“{excerpt}”</p>
     <footer>
       — {review.data.author}, {review.data.location} ·
-      <a class="quote-link" href="/reviews/">more reviews</a>
+      <a class="quote-link" href={DEMO_MODE ? undefined : "/reviews/"} aria-disabled={DEMO_MODE ? "true" : undefined}>more reviews</a>
     </footer>
   </blockquote>
 </section>
