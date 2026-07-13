@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import { DEMO_MODE } from "../consts";
+import FactIcon from "./FactIcon.astro";
 
 interface Props {
   dwellings: {
@@ -22,8 +23,10 @@ const cards = await Promise.all(
   }),
 );
 
-const factsLine = (f: (typeof cards)[number]["facts"]) =>
-  `Sleeps ${f.sleeps} · ${f.bedrooms.length} ${f.bedrooms.length === 1 ? "bedroom" : "bedrooms"}`;
+const factsParts = (f: (typeof cards)[number]["facts"]) => ({
+  sleeps: `Sleeps ${f.sleeps}`,
+  bedrooms: `${f.bedrooms.length} ${f.bedrooms.length === 1 ? "bedroom" : "bedrooms"}`,
+});
 ---
 
 <section class="dwellings" id="accommodation">
@@ -33,7 +36,10 @@ const factsLine = (f: (typeof cards)[number]["facts"]) =>
       <article>
         <img src={card.image.src} alt={card.image.alt} loading="lazy" />
         <h3>{card.facts.name}</h3>
-        <p class="facts-line">{factsLine(card.facts)}</p>
+        <p class="facts-line">
+          <span><FactIcon name="users" /> {factsParts(card.facts).sleeps}</span>
+          <span><FactIcon name="bed" /> {factsParts(card.facts).bedrooms}</span>
+        </p>
         <p>{card.line}</p>
         <a class="btn" href={DEMO_MODE ? undefined : card.href} aria-disabled={DEMO_MODE ? "true" : undefined}>See {card.facts.name}</a>
       </article>
@@ -47,7 +53,10 @@ const factsLine = (f: (typeof cards)[number]["facts"]) =>
     />
     <div>
       <h3>House &amp; Villa combined</h3>
-      <p class="facts-line">Sleeps 8 · 4 bedrooms</p>
+      <p class="facts-line">
+        <span><FactIcon name="users" /> Sleeps 8</span>
+        <span><FactIcon name="bed" /> 4 bedrooms</span>
+      </p>
       <p>{combinedLine}</p>
       <a class="btn btn-outline" href={DEMO_MODE ? undefined : "/house-and-villa/"} aria-disabled={DEMO_MODE ? "true" : undefined}>About House &amp; Villa</a>
     </div>
@@ -86,6 +95,14 @@ const factsLine = (f: (typeof cards)[number]["facts"]) =>
     color: var(--muted);
     font-weight: 600;
     margin: 0 0 0.75rem;
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+  }
+  .facts-line span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
   }
   article .btn {
     margin-top: 0.5rem;
