@@ -1,35 +1,35 @@
 ---
 title: "Tamborine Mountain Accommodation | The Hillside Retreat"
-description: "The Hillside Retreat — a house and a villa on the eastern edge of Tamborine Mountain, looking down the Guanaba Valley to the Gold Coast. Heated pool and spa, wood fires, resident koala."
+description: "The Hillside Retreat is a house and a villa on the eastern edge of Tamborine Mountain, looking down the Guanaba Valley to the Gold Coast. Heated pool and spa, wood fires, resident koala."
 heroVideo:
   src: /videos/hero.mp4
   poster: /images/hero-poster.jpg
 homepage:
   heroLine: "A house and a villa on a hillside above the Guanaba Valley, Tamborine Mountain."
   arrival:
-    - "The Hillside Retreat sits on the eastern edge of Tamborine Mountain, looking down the Guanaba Valley to the coast. On a clear morning you can watch the sun come up over the Gold Coast from the verandah."
-    - "Surfers Paradise is a 30-minute drive; Brisbane is an hour. Up here it is quiet — birdsong, the heated pool, and sometimes a koala in the gum beside the drive."
+    - "The Hillside Retreat sits on the eastern edge of Tamborine Mountain, looking down the Guanaba Valley to the coast.\nOn a clear morning you can watch the sun come up over the Gold Coast from the verandah."
+    - "Surfers Paradise is a 30-minute drive and Brisbane about an hour, but the property itself is private and quiet.\nThe gums are full of birds and wildlife, and the pool and spa are heated year-round."
   dwellings:
     - slug: hillside-house
       href: /hillside-house/
       image:
         src: /images/external/deck-with-view-day.jpg
         alt: "Wraparound verandah at Hillside House with sweeping coastal views"
-      line: "A family home with a wraparound verandah, a wood fireplace, and the full sweep of the valley and coastline from the living room."
+      line: "A spacious three-bedroom family home with views of the coastline and Guanaba Valley from the living room, and a wraparound verandah for dining outside."
     - slug: hillside-villa
       href: /hillside-villa/
       image:
         src: /images/villa/hillside-villa-dining-area.jpeg
         alt: "Hillside Villa dining area"
       line: "A self-contained villa with its own entry, a private courtyard, and a fireplace for cold mountain nights."
-  combinedLine: "Travelling as a group? A connecting door joins the House and Villa into one stay for up to eight guests. Combined bookings are arranged directly with us."
+  combinedLine: "For larger groups and families, a connecting door joins the House and Villa into one retreat for up to eight guests. To book the combination, get in touch with us directly."
   photoBand:
     - src: /images/external/goldcoast-at-dusk.jpeg
       alt: "Gold Coast skyline lit up at dusk, seen from the mountain"
       caption: "The Gold Coast at dusk, from the hillside."
     - src: /images/external/resident-koala.jpg
-      alt: "The resident koala resting in a gum tree on the property"
-      caption: "The resident koala, most often in the gum beside the drive."
+      alt: "A resident koala resting in a gum tree on the property"
+      caption: "A resident koala in the gums."
     - src: /images/external/heated-pool-evening.jpg
       alt: "Heated pool glowing in the evening light"
       caption: "The heated pool and spa, warm year-round."
@@ -40,5 +40,5 @@ homepage:
     image:
       src: /images/external/goldcoast-sunset.jpeg
       alt: "Sunset over the Gold Coast from The Hillside Retreat"
-    line: "Wine in the fridge, kindling by the fire, and the valley out every window."
+    line: "We can't wait to welcome you to The Hillside Retreat."
 ---
