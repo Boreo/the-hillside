@@ -396,10 +396,3 @@ blockquote footer {
   border-radius: 4px;
   display: block;
 }
-
-/* Demo mode: links to pages outside the demo render without href and dimmed. */
-a[aria-disabled="true"] {
-  opacity: 0.45;
-  pointer-events: none;
-  cursor: default;
-}

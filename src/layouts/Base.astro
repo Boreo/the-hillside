@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import "@fontsource-variable/fraunces/index.css";
-import { BOOKING_URL, DEMO_MODE } from "../consts";
+import { BOOKING_URL } from "../consts";
 
 interface Props {
   title: string;
@@ -34,13 +34,7 @@ const nav = [
   { href: "/gallery/", label: "Gallery" },
   { href: "/reviews/", label: "Reviews" },
   { href: "/contact-us/", label: "Contact" },
-  ...(DEMO_MODE ? [{ href: "/palette-demo/", label: "Palette" }] : []),
 ];
-
-// In demo mode only the homepage, /book/ and /palette-demo/ are shown;
-// every other internal link renders disabled.
-const demoAllowed = new Set(["/", "/book/", "/palette-demo/", "/#accommodation"]);
-const demoHref = (href: string) => (!DEMO_MODE || demoAllowed.has(href) ? href : undefined);
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -90,17 +84,15 @@ const jsonLd = {
     {nav.map((item) =>
       "children" in item && item.children ? (
         <div class="nav-drop">
-          <a class="nav-parent" href={demoHref(item.href)} aria-haspopup="true">
+          <a class="nav-parent" href={item.href} aria-haspopup="true">
             {item.label} <span class="caret" aria-hidden="true">▾</span>
           </a>
           <div class="drop-menu">
-            {item.children.map((c) => (
-              <a href={demoHref(c.href)} aria-disabled={demoHref(c.href) ? undefined : "true"}>{c.label}</a>
-            ))}
+            {item.children.map((c) => <a href={c.href}>{c.label}</a>)}
           </div>
         </div>
       ) : (
-        <a href={demoHref(item.href)} aria-disabled={demoHref(item.href) ? undefined : "true"}>{item.label}</a>
+        <a href={item.href}>{item.label}</a>
       ),
     )}
     <a class="btn" href="/book/">Book Now</a>
@@ -144,16 +136,12 @@ const jsonLd = {
     </div>
     <nav class="footer-col" aria-label="Footer">
       <h2>Explore</h2>
-      {[
-        { href: "/#accommodation", label: "Accommodation" },
-        { href: "/gallery/", label: "Gallery" },
-        { href: "/reviews/", label: "Reviews" },
-        { href: "/location/", label: "Location" },
-        { href: "/guest-info/", label: "Guest Info" },
-        { href: "/mountain-mobile-massage/", label: "Mobile Massage" },
-      ].map((l) => (
-        <a href={demoHref(l.href)} aria-disabled={demoHref(l.href) ? undefined : "true"}>{l.label}</a>
-      ))}
+      <a href="/#accommodation">Accommodation</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/reviews/">Reviews</a>
+      <a href="/location/">Location</a>
+      <a href="/guest-info/">Guest Info</a>
+      <a href="/mountain-mobile-massage/">Mobile Massage</a>
     </nav>
     <div class="footer-col">
       <h2>Contact</h2>

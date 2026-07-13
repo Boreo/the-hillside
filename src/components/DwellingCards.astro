@@ -1,6 +1,5 @@
 ---
 import { getEntry } from "astro:content";
-import { DEMO_MODE } from "../consts";
 import FactIcon from "./FactIcon.astro";
 
 interface Props {
@@ -41,7 +40,7 @@ const factsParts = (f: (typeof cards)[number]["facts"]) => ({
           <span><FactIcon name="bed" /> {factsParts(card.facts).bedrooms}</span>
         </p>
         <p>{card.line}</p>
-        <a class="btn" href={DEMO_MODE ? undefined : card.href} aria-disabled={DEMO_MODE ? "true" : undefined}>See {card.facts.name}</a>
+        <a class="btn" href={card.href}>See {card.facts.name}</a>
       </article>
     ))}
   </div>
@@ -58,7 +57,7 @@ const factsParts = (f: (typeof cards)[number]["facts"]) => ({
         <span><FactIcon name="bed" /> 4 bedrooms</span>
       </p>
       <p>{combinedLine}</p>
-      <a class="btn btn-outline" href={DEMO_MODE ? undefined : "/house-and-villa/"} aria-disabled={DEMO_MODE ? "true" : undefined}>About House &amp; Villa</a>
+      <a class="btn btn-outline" href="/house-and-villa/">About House &amp; Villa</a>
     </div>
   </article>
 </section>

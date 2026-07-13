@@ -1,13 +1,6 @@
-import { test, expect, type Locator } from "@playwright/test";
-import { DEMO_MODE } from "../src/consts";
+import { test, expect } from "@playwright/test";
 
 const isMobile = (projectName: string) => projectName === "mobile";
-
-// Demo mode strips hrefs from links outside the demo, so child-navigation
-// tests can't run against a demo build.
-const skipIfDisabled = async (link: Locator) => {
-  test.skip(DEMO_MODE && (await link.getAttribute("aria-disabled")) === "true", "link disabled in demo mode");
-};
 
 test("accommodation anchor target exists on homepage", async ({ page }) => {
   await page.goto("/");
@@ -44,7 +37,6 @@ test("desktop: menu stays open crossing gap and child navigates", async ({ page 
   const drop = page.locator(".nav-drop", { hasText: "Your Stay" });
   await drop.locator(".nav-parent").hover();
   const link = drop.locator(".drop-menu a", { hasText: "Location" });
-  await skipIfDisabled(link);
   await link.hover();
   await link.click();
   await expect(page).toHaveURL(/\/location\/$/);
@@ -71,9 +63,7 @@ test("mobile: tapping a child link navigates", async ({ page }, testInfo) => {
   await page.goto("/");
   const drop = page.locator(".nav-drop", { hasText: "Accommodation" });
   await drop.locator(".nav-parent").tap();
-  const villa = drop.locator(".drop-menu a", { hasText: "Hillside Villa" });
-  await skipIfDisabled(villa);
-  await villa.tap();
+  await drop.locator(".drop-menu a", { hasText: "Hillside Villa" }).tap();
   await expect(page).toHaveURL(/\/hillside-villa\/$/);
 });
 
