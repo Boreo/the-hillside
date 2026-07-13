@@ -1,0 +1,77 @@
+---
+import { getEntry } from "astro:content";
+
+interface Props {
+  quotes: { reviewId: string; excerpt: string }[];
+}
+const { quotes } = Astro.props;
+
+const resolved = await Promise.all(
+  quotes.map(async (q) => {
+    const review = await getEntry("reviews", q.reviewId);
+    if (!review) throw new Error(`Review ${q.reviewId} not found in reviews.yaml`);
+    return { excerpt: q.excerpt, ...review.data };
+  }),
+);
+---
+
+<section class="review-band">
+  <div class="band-inner">
+    <div class="quotes">
+      {resolved.map((q) => (
+        <blockquote>
+          <p>"{q.excerpt}"</p>
+          <footer>— {q.author}, {q.location}</footer>
+        </blockquote>
+      ))}
+    </div>
+    <p class="more"><a class="editorial-link" href="/reviews/">more reviews</a></p>
+  </div>
+</section>
+
+<style>
+  /* Full-bleed mint band: breaks out of main's max-width to span the viewport. */
+  .review-band {
+    margin: 0 calc(50% - 50vw) 4rem;
+    padding: 3.5rem 1.5rem;
+    background: var(--wash);
+  }
+  .band-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .quotes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+  blockquote {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  blockquote p {
+    font-family: "Fraunces Variable", Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    text-wrap: balance;
+    color: var(--ink);
+    margin: 0 0 0.75rem;
+  }
+  footer {
+    border: none;
+    padding: 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .more {
+    margin: 2rem 0 0;
+    text-align: center;
+  }
+  @media (max-width: 40rem) {
+    .quotes {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

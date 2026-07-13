@@ -4,6 +4,7 @@ import Base from "../layouts/Base.astro";
 import Hero from "../components/Hero.astro";
 import Arrival from "../components/Arrival.astro";
 import DwellingCards from "../components/DwellingCards.astro";
+import ReviewBand from "../components/ReviewBand.astro";
 import PhotoBand from "../components/PhotoBand.astro";
 import PullQuote from "../components/PullQuote.astro";
 import Closing from "../components/Closing.astro";
@@ -20,6 +21,7 @@ const home = page.data.homepage;
     <Hero video={page.data.heroVideo} line={home.heroLine} />
     <Arrival paragraphs={home.arrival} />
     <DwellingCards dwellings={home.dwellings} combinedLine={home.combinedLine} />
+    <ReviewBand quotes={home.reviewBand} />
     <PhotoBand photos={home.photoBand} />
     <PullQuote reviewId={home.pullQuote.reviewId} excerpt={home.pullQuote.excerpt} />
     <Closing image={home.closing.image} line={home.closing.line} />
