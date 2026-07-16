@@ -10,7 +10,7 @@ Static site for a two-dwelling holiday accommodation business on Tamborine Mount
 - **Styles**: plain CSS with custom properties (brand palette tokens); Fraunces variable font.
 - **Hosting**: Cloudflare Workers (GitHub-connected), which runs `npm run build` and serves `dist/`. Staging: https://the-hillside.github-e53.workers.dev/
 - **Tests**: Playwright in `tests/`.
-- **Booking**: SiteMinder/Little Hotelier direct booking engine. Pending domain whitelist approval.
+- **Booking**: SiteMinder/Little Hotelier booking widget on `/book/`; renders only on SiteMinder-whitelisted domains (production domain and Workers staging URL are whitelisted).
 
 ## Structure
 
@@ -22,7 +22,7 @@ src/
     gallery.yaml     Gallery images with alt text
     reviews.yaml     Guest reviews
   layouts/           Base.astro — nav, footer, JSON-LD
-  pages/             Routes: index.astro, [...slug].astro, gallery, reviews
+  pages/             Routes: index.astro, [...slug].astro, book, gallery, reviews, palette-demo
   styles/            global.css with brand palette tokens
   content.config.ts  Content schemas
 public/
@@ -54,8 +54,8 @@ The target end state: the non-technical owner emails a change request → GitHub
 | :-- | :-- |
 | `npm install` | Install dependencies |
 | `npm run dev` | Dev server at `localhost:4321` |
-| `npm run build` | Static build to `dist/`, validates content schema |
-| `npm run preview` | Preview the production build locally |
+| `npm run build` | `astro check` + static build to `dist/`, validates content schema |
+| `npm run preview` | Build, then serve the production build via `wrangler dev` |
 | `npm test` | Playwright tests |
 
 ## Content editing
