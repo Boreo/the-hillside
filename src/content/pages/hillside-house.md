@@ -65,6 +65,8 @@ The pièce de résistance is the breathtaking view, seen from the full length of
 - EV charging on site (7.3 kW, Type 2) – fully recharges most vehicles overnight.
 - Free private parking on site.
 
+## More ways to stay
+
 ## Just the two of you?
 
 ![Front of Hillside Villa](../../assets/images/villa/hillside-villa-front.jpg)

@@ -6,6 +6,7 @@
 //  - an h2 + optional image + link-bearing paragraph + optional link-only
 //    CTA paragraph -> cross-sell card with a generated facts line;
 //    consecutive cards group into <div class="cross-sell-row">
+//  - remaining link-only paragraphs -> button-styled links
 //  - every other photo -> anchor opening a per-photo :target lightbox
 //    overlay appended at the page end
 
@@ -192,11 +193,29 @@ export default function rehypePhotoRuns() {
           if (prev && prev.type === "element" && prev.properties?.className?.[0] === "cross-sell-row") {
             prev.children.push(card);
           } else {
-            carded.push(div("cross-sell-row", [card]));
+            const row = div("cross-sell-row", [card]);
+            // An h2 directly before the first card is the section's
+            // header; pull it into the band spanning the full row.
+            const before = carded[carded.length - 1];
+            if (before && isElement(before, "h2")) {
+              carded.pop();
+              before.properties = { ...before.properties, className: ["cross-sell-heading"] };
+              row.children.unshift(before);
+            }
+            carded.push(row);
           }
           i = j;
         } else {
           carded.push(node);
+        }
+      }
+
+      // Link-only paragraphs not absorbed into a cross-sell card (e.g.
+      // "Book with us") render as buttons.
+      for (const node of carded) {
+        if (isCtaParagraph(node)) {
+          const a = node.children.find((c) => isElement(c, "a"));
+          a.properties = { ...a.properties, className: ["btn"] };
         }
       }
 

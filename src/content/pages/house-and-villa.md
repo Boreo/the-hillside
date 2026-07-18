@@ -70,6 +70,8 @@ This combination can only be booked directly with us, so we can confirm availabi
 - EV charging on site (7.3 kW, Type 2) – fully recharges most vehicles overnight.
 - Free private parking on site.
 
+## More ways to stay
+
 ## Not needing the Villa?
 
 ![Covered deck at Hillside House at dusk with valley and coastal views](../../assets/images/external/covered-deck-dusk-coastal-view.jpeg)

@@ -24,6 +24,12 @@ const cards = await Promise.all(
   }),
 );
 
+const combined = {
+  sleeps: cards.reduce((n, c) => n + c.facts.sleeps, 0),
+  bedrooms: cards.reduce((n, c) => n + c.facts.bedrooms.length, 0),
+  bathrooms: cards.reduce((n, c) => n + c.facts.bathrooms, 0),
+};
+
 const factsParts = (f: (typeof cards)[number]["facts"]) => ({
   sleeps: `Sleeps ${f.sleeps}`,
   bedrooms: `${f.bedrooms.length} ${f.bedrooms.length === 1 ? "bedroom" : "bedrooms"}`,
@@ -65,8 +71,9 @@ const factsParts = (f: (typeof cards)[number]["facts"]) => ({
     <div>
       <h3>House &amp; Villa combined</h3>
       <p class="facts-line">
-        <span><FactIcon name="users" /> Sleeps 8</span>
-        <span><FactIcon name="bed" /> 4 bedrooms</span>
+        <span><FactIcon name="users" /> Sleeps {combined.sleeps}</span>
+        <span><FactIcon name="bed" /> {combined.bedrooms} bedrooms</span>
+        <span><FactIcon name="bathtub" /> {combined.bathrooms} bathrooms</span>
       </p>
       <p>{combinedLine}</p>
       <a class="btn btn-outline" href="/house-and-villa/">About House &amp; Villa</a>

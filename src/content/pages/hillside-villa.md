@@ -66,6 +66,8 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 - EV charging on site (7.3 kW, Type 2) – fully recharges most vehicles overnight.
 - Free private parking on site.
 
+## More ways to stay
+
 ## Bringing the family?
 
 ![Covered deck at Hillside House at dusk with valley and coastal views](../../assets/images/external/covered-deck-dusk-coastal-view.jpeg)

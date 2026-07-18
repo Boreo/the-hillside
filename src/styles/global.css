@@ -715,6 +715,17 @@ body:has(.lightbox:target) {
   background: var(--wash);
 }
 
+.dwelling-body .cross-sell-row .cross-sell-heading {
+  grid-column: 1 / -1;
+  /* Negative bottom margin shrinks the heading's grid track, tightening
+     the space to the cards below past the row's 2.5rem gap. */
+  margin: 0 0 -1.25rem;
+}
+
+.dwelling-body .cross-sell-row:has(.cross-sell-heading) {
+  padding-top: 1.75rem;
+}
+
 .dwelling-body .cross-sell-card {
   border-top: 2px solid var(--highlight);
   padding-top: 1.25rem;
