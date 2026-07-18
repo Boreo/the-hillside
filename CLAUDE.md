@@ -41,4 +41,6 @@ Static Astro site for a two-dwelling holiday accommodation business on Tamborine
 
 ## Documentation
 
+- `docs/siteminder-widget.md` — booking widget parameters (room_rate preselect, currency), rate IDs, and how to re-inspect the SiteMinder embed. Read before touching `/book/` or booking CTAs.
+
 Astro docs: https://docs.astro.build (routing, content collections, styling).
