@@ -11,6 +11,157 @@ const images = await getCollection("gallery");
 >
   <h1>Gallery</h1>
   <div class="gallery-grid">
-    {images.map(({ data }) => <img src={data.src} alt={data.alt} loading="lazy" />)}
+    {
+      images.map(({ data }, i) => (
+        <a href={data.src} class="lightbox-open" data-index={i}>
+          <img src={data.src} alt={data.alt} loading="lazy" />
+        </a>
+      ))
+    }
   </div>
+
+  <dialog class="gallery-viewer" aria-label="Enlarged photo viewer">
+    <button class="viewer-close" aria-label="Close">&times;</button>
+    <button class="viewer-prev" aria-label="Previous photo">&larr;</button>
+    <figure>
+      <img src="" alt="" />
+      <figcaption>
+        <span class="viewer-caption"></span>
+        <span class="viewer-counter"></span>
+      </figcaption>
+    </figure>
+    <button class="viewer-next" aria-label="Next photo">&rarr;</button>
+  </dialog>
 </Base>
+
+<style>
+  .gallery-viewer {
+    border: none;
+    background: none;
+    padding: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .gallery-viewer[open] {
+    display: flex;
+  }
+  .gallery-viewer::backdrop {
+    background: rgb(32 38 34 / 0.78);
+  }
+  .gallery-viewer figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    min-width: 0;
+  }
+  .gallery-viewer img {
+    max-width: calc(100vw - 9rem);
+    max-height: 82vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 24px 64px rgb(9 47 28 / 0.5);
+  }
+  .gallery-viewer figcaption {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    color: var(--paper);
+  }
+  .viewer-caption {
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+  .viewer-counter {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+  .gallery-viewer button {
+    background: none;
+    border: none;
+    color: var(--paper);
+    font-size: 1.6rem;
+    line-height: 1;
+    padding: 0.75rem;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .gallery-viewer button:hover {
+    opacity: 1;
+  }
+  .viewer-close {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.75rem;
+    font-size: 1.9rem;
+  }
+  /* Arrows pinned to the viewport edges, matching the dwelling lightboxes. */
+  .viewer-prev,
+  .viewer-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .viewer-prev {
+    left: 0.5rem;
+  }
+  .viewer-next {
+    right: 0.5rem;
+  }
+  @media (max-width: 40rem) {
+    .gallery-viewer img {
+      max-width: calc(100vw - 5.5rem);
+    }
+  }
+</style>
+
+<script>
+  const grid = document.querySelector(".gallery-grid")!;
+  const links = [...grid.querySelectorAll<HTMLAnchorElement>("a.lightbox-open")];
+  const viewer = document.querySelector<HTMLDialogElement>(".gallery-viewer")!;
+  const photo = viewer.querySelector("img")!;
+  const caption = viewer.querySelector(".viewer-caption")!;
+  const counter = viewer.querySelector(".viewer-counter")!;
+  let index = 0;
+
+  const show = (i: number) => {
+    index = (i + links.length) % links.length;
+    const thumb = links[index].querySelector("img")!;
+    photo.src = thumb.getAttribute("src")!;
+    photo.alt = thumb.alt;
+    caption.textContent = thumb.alt;
+    counter.textContent = `${index + 1} / ${links.length}`;
+  };
+
+  links.forEach((link, i) =>
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      show(i);
+      viewer.showModal();
+    }),
+  );
+
+  viewer.querySelector(".viewer-prev")!.addEventListener("click", () => show(index - 1));
+  viewer.querySelector(".viewer-next")!.addEventListener("click", () => show(index + 1));
+  viewer.querySelector(".viewer-close")!.addEventListener("click", () => viewer.close());
+
+  // A click on the dialog itself (not the photo, caption or arrows) closes it.
+  viewer.addEventListener("click", (e) => {
+    if (e.target === viewer) viewer.close();
+  });
+
+  viewer.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") show(index - 1);
+    if (e.key === "ArrowRight") show(index + 1);
+  });
+</script>

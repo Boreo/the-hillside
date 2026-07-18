@@ -201,7 +201,9 @@ export default function rehypePhotoRuns() {
 
     // Wrap each photo in an anchor to a per-photo lightbox overlay
     // appended at the page end. Cross-sell card photos stay plain.
-    const overlays = [];
+    // Overlays are built after the walk so each one can link to its
+    // neighbours (wrapping around) and show its position in the set.
+    const photos = [];
     const enlarge = (parent) => {
       if (!parent.children) return;
       const classes = parent.properties?.className ?? [];
@@ -209,25 +211,8 @@ export default function rehypePhotoRuns() {
       for (const node of parent.children) {
         if (isImageParagraph(node)) {
           const img = node.children.find((c) => isElement(c, "img"));
-          const id = `photo-${overlays.length + 1}`;
-          overlays.push({
-            type: "element",
-            tagName: "a",
-            properties: {
-              id,
-              href: "#_",
-              className: ["lightbox"],
-              ariaLabel: "Close enlarged photo",
-            },
-            children: [
-              {
-                type: "element",
-                tagName: "img",
-                properties: { ...img.properties, loading: "lazy" },
-                children: [],
-              },
-            ],
-          });
+          const id = `photo-${photos.length + 1}`;
+          photos.push(img);
           node.children = [
             {
               type: "element",
@@ -246,6 +231,44 @@ export default function rehypePhotoRuns() {
       }
     };
     enlarge(tree);
-    tree.children.push(...overlays);
+
+    const el = (tagName, properties, children) => ({ type: "element", tagName, properties, children });
+    const text = (value) => ({ type: "text", value });
+    const total = photos.length;
+    tree.children.push(
+      ...photos.map((img, i) => {
+        const prev = ((i - 1 + total) % total) + 1;
+        const next = ((i + 1) % total) + 1;
+        return el("div", { id: `photo-${i + 1}`, className: ["lightbox"] }, [
+            el(
+              "a",
+              { href: "#_", className: ["lightbox-backdrop"], ariaLabel: "Close enlarged photo" },
+              [],
+            ),
+            el("img", { ...img.properties, loading: "lazy" }, []),
+            el("span", { className: ["lightbox-meta"] }, [
+              el("span", { className: ["lightbox-caption"] }, [
+                text(img.properties?.alt ?? ""),
+              ]),
+              el("span", { className: ["lightbox-counter"] }, [
+                text(`${i + 1} / ${total}`),
+              ]),
+            ]),
+            el(
+              "a",
+              { href: `#photo-${prev}`, className: ["lightbox-prev"], ariaLabel: "Previous photo" },
+              [text("←")],
+            ),
+            el(
+              "a",
+              { href: `#photo-${next}`, className: ["lightbox-next"], ariaLabel: "Next photo" },
+              [text("→")],
+            ),
+            el("a", { href: "#_", className: ["lightbox-close"], ariaLabel: "Close enlarged photo" }, [
+              text("×"),
+            ]),
+          ]);
+      }),
+    );
   };
 }
