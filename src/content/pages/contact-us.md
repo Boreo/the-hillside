@@ -5,7 +5,7 @@ description: "Contact The Hillside Retreat for booking, inquiries, and personali
 
 # Contact Us
 
-![Resort-style pool at The Hillside Retreat](/images/external/resort-style-pool.jpg)
+![Resort-style pool at The Hillside Retreat](../../assets/images/external/resort-style-pool.jpg)
 
 Please don't hesitate to contact our dedicated team, who will be delighted to assist you with availability, pricing, and any special requests you may have. We look forward to helping you create a memorable and tailored experience for your group or family getaway in the beautiful surroundings of Tamborine Mountain.
 

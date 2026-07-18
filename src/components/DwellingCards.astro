@@ -1,12 +1,14 @@
 ---
 import { getEntry } from "astro:content";
+import { Image } from "astro:assets";
 import FactIcon from "./FactIcon.astro";
+import combinedAerial from "../assets/images/drone/aerial-view-whole-property.jpg";
 
 interface Props {
   dwellings: {
     slug: string;
     href: string;
-    image: { src: string; alt: string };
+    image: { src: ImageMetadata; alt: string };
     line: string;
   }[];
   combinedLine: string;
@@ -33,7 +35,13 @@ const factsParts = (f: (typeof cards)[number]["facts"]) => ({
   <div class="pair">
     {cards.map((card) => (
       <article>
-        <img src={card.image.src} alt={card.image.alt} loading="lazy" />
+        <Image
+          src={card.image.src}
+          alt={card.image.alt}
+          widths={[480, 800, 1200]}
+          sizes="(max-width: 40rem) 100vw, 50vw"
+          loading="lazy"
+        />
         <h3>{card.facts.name}</h3>
         <p class="facts-line">
           <span><FactIcon name="users" /> {factsParts(card.facts).sleeps}</span>
@@ -45,9 +53,11 @@ const factsParts = (f: (typeof cards)[number]["facts"]) => ({
     ))}
   </div>
   <article class="combined">
-    <img
-      src="/images/drone/aerial-view-whole-property.jpg"
+    <Image
+      src={combinedAerial}
       alt="Aerial view of the whole property, House and Villa together on the hillside"
+      widths={[480, 800, 1200]}
+      sizes="(max-width: 40rem) 100vw, 55vw"
       loading="lazy"
     />
     <div>

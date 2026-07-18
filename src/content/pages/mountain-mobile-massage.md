@@ -5,7 +5,7 @@ description: "Mobile massage service at The Hillside Retreat — relaxation, the
 
 # Mobile Massage
 
-![Massage setup at The Hillside Retreat](/images/external/mobile-massage-setup.jpg)
+![Massage setup at The Hillside Retreat](../../assets/images/external/mobile-massage-setup.jpg)
 
 ## A touch of tranquility
 

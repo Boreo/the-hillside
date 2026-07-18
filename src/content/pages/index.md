@@ -3,7 +3,7 @@ title: "Tamborine Mountain Accommodation | The Hillside Retreat"
 description: "The Hillside Retreat is a house and a villa on the eastern edge of Tamborine Mountain, looking down the Guanaba Valley to the Gold Coast. Pool and heated spa, wood fires, resident koala."
 heroVideo:
   src: /videos/hero.mp4
-  poster: /images/hero-poster.jpg
+  poster: ../../assets/images/hero-poster.jpg
 homepage:
   heroLine: "A house and a villa on the hillside above Guanaba Valley, Tamborine Mountain."
   arrival:
@@ -13,24 +13,24 @@ homepage:
     - slug: hillside-house
       href: /hillside-house/
       image:
-        src: /images/external/deck-with-view-day.jpg
+        src: ../../assets/images/external/deck-with-view-day.jpg
         alt: "Wraparound verandah at Hillside House with sweeping coastal views"
       line: "A spacious three-bedroom family home with views of the coastline and Guanaba Valley from the living room, and a wraparound verandah for dining outside."
     - slug: hillside-villa
       href: /hillside-villa/
       image:
-        src: /images/villa/hillside-villa-dining-area.jpeg
+        src: ../../assets/images/villa/hillside-villa-dining-area.jpeg
         alt: "Hillside Villa dining area"
       line: "A self-contained villa with its own entry, a private courtyard, and a fireplace for cold mountain nights."
   combinedLine: "For larger groups and families, a connecting door joins the House and Villa into one retreat for up to eight guests. To book the combination, get in touch with us directly."
   photoBand:
-    - src: /images/external/goldcoast-at-dusk.jpeg
+    - src: ../../assets/images/external/goldcoast-at-dusk.jpeg
       alt: "Gold Coast skyline lit up at dusk, seen from the mountain"
       caption: "The Gold Coast at dusk, from the hillside."
-    - src: /images/external/resident-koala.jpg
+    - src: ../../assets/images/external/resident-koala.jpg
       alt: "A resident koala resting in a gum tree on the property"
       caption: "A resident koala in the gums."
-    - src: /images/external/heated-pool-evening.jpg
+    - src: ../../assets/images/external/heated-pool-evening.jpg
       alt: "Pool and heated spa glowing in the evening light"
       caption: "The pool and heated spa."
   pullQuote:
@@ -45,7 +45,7 @@ homepage:
       excerpt: "a great choice for family getaway, and it comes with an amazing view for sunrise too"
   closing:
     image:
-      src: /images/external/goldcoast-sunset.jpeg
+      src: ../../assets/images/external/goldcoast-sunset.jpeg
       alt: "Sunset over the Gold Coast from The Hillside Retreat"
     line: "We can't wait to welcome you to The Hillside Retreat."
 ---

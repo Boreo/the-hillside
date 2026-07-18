@@ -205,6 +205,12 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  /* Alt text shown while an image loads renders in the img's own color and
+     font; keep it quiet instead of inheriting link blue inside anchors. */
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-style: italic;
 }
 
 .btn {

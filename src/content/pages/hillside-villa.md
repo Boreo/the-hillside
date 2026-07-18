@@ -4,7 +4,7 @@ description: "Self-contained 1-bedroom villa on Tamborine Mountain, with private
 dwelling:
   name: Hillside Villa
   hero:
-    src: /images/villa/hillside-villa-front.jpg
+    src: ../../assets/images/villa/hillside-villa-front.jpg
     alt: Front of Hillside Villa
   sleeps: 2
   bedrooms:
@@ -23,7 +23,7 @@ Indulge in the ultimate romantic getaway at our self-contained 1-bedroom Hillsid
 
 **Your private oasis** — Step inside to discover a cozy haven complete with a well-appointed kitchenette, allowing you to prepare delicious meals together. Spacious Queen sized bedroom provides the perfect space for some R&R, whilst the bathroom provides both comfort and convenience, ensuring your stay is as enjoyable as it is romantic. The interior is tastefully and neutrally decorated, creating an ambiance of serenity and sophistication. Modern fixtures and fittings ensure your stay is as comfortable as it is stylish.
 
-![Villa entrance and private frontage](/images/villa/hillside-villa-entrance.jpg)
+![Villa entrance and private frontage](../../assets/images/villa/hillside-villa-entrance.jpg)
 
 **Secluded courtyard** — Unwind in your very own private courtyard, where you can enjoy quiet moments together amidst the lush surroundings of Tamborine Mountain. Whether it's a morning coffee or a glass of wine under the stars, this space is yours to savor.
 
@@ -39,7 +39,7 @@ Arriving by electric vehicle? Our on-site 7.3 kW Type 2 charger means you can sp
 
 The pièce de résistance is the breathtaking view. Whether you're seeking relaxation, adventure, or simply a romantic break from the ordinary, our Hillside Villa accommodation promises an unforgettable experience and vista amidst the stunning landscapes of Tamborine Mountain and beyond.
 
-![Deck bar seating with panoramic valley views](/images/external/deck-with-view-day.jpg)
+![Deck bar seating with panoramic valley views](../../assets/images/external/deck-with-view-day.jpg)
 
 > “The Villa was spotless, comfortable, with pool, spa and a fantastic view. I would recommend this accommodation to any couple looking for a quiet escape.”
 >
@@ -64,7 +64,7 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 
 ## Bringing the family?
 
-![Covered deck at Hillside House at dusk with valley and coastal views](/images/external/covered-deck-dusk-coastal-view.jpeg)
+![Covered deck at Hillside House at dusk with valley and coastal views](../../assets/images/external/covered-deck-dusk-coastal-view.jpeg)
 
 Our spacious 3-bedroom Hillside House sleeps up to 6, with a full kitchen, wraparound verandah, and those famous coastal views.
 
@@ -72,7 +72,7 @@ Our spacious 3-bedroom Hillside House sleeps up to 6, with a full kitchen, wrapa
 
 ## Travelling as a group?
 
-![Aerial view of the whole property, House and Villa together on the hillside](/images/drone/aerial-view-whole-property.jpg)
+![Aerial view of the whole property, House and Villa together on the hillside](../../assets/images/drone/aerial-view-whole-property.jpg)
 
 Book the House and Villa together, connected as one retreat sleeping up to 8, with exclusive use of the pool and spa.
 
@@ -80,36 +80,36 @@ Book the House and Villa together, connected as one retreat sleeping up to 8, wi
 
 ## A look around
 
-![Villa lounge with wood burning fireplace](/images/villa/villa-lounge-fireplace.jpg)
+![Villa lounge with wood burning fireplace](../../assets/images/villa/villa-lounge-fireplace.jpg)
 
-![Open-plan kitchen, dining and lounge](/images/villa/villa-open-plan-kitchen-lounge.jpg)
+![Open-plan kitchen, dining and lounge](../../assets/images/villa/villa-open-plan-kitchen-lounge.jpg)
 
-![Villa kitchenette](/images/villa/villa-kitchenette-cabinetry.jpg)
+![Villa kitchenette](../../assets/images/villa/villa-kitchenette-cabinetry.jpg)
 
-![Queen bedroom with teal linen](/images/villa/villa-queen-bedroom-teal-linen.jpg)
+![Queen bedroom with teal linen](../../assets/images/villa/villa-queen-bedroom-teal-linen.jpg)
 
-![Shower room with fresh linen and toiletries](/images/villa/villa-shower-room.jpg)
+![Shower room with fresh linen and toiletries](../../assets/images/villa/villa-shower-room.jpg)
 
-![Complimentary bathroom amenities](/images/amenities/amenities-on-towel.jpg)
+![Complimentary bathroom amenities](../../assets/images/amenities/amenities-on-towel.jpg)
 
-![Pool and heated spa in the evening light](/images/external/heated-pool-evening.jpg)
+![Pool and heated spa in the evening light](../../assets/images/external/heated-pool-evening.jpg)
 
-![Gated entrance to the pool area](/images/external/gated-pool-entrance.jpg)
+![Gated entrance to the pool area](../../assets/images/external/gated-pool-entrance.jpg)
 
-![Gas BBQ for outdoor dining](/images/external/gas-bbq-outdoor-dining.jpg)
+![Gas BBQ for outdoor dining](../../assets/images/external/gas-bbq-outdoor-dining.jpg)
 
-![Gold Coast skyline over the ocean](/images/external/goldcoast-skyline-over-ocean.jpeg)
+![Gold Coast skyline over the ocean](../../assets/images/external/goldcoast-skyline-over-ocean.jpeg)
 
-![Sunset over the Gold Coast](/images/external/goldcoast-sunset.jpeg)
+![Sunset over the Gold Coast](../../assets/images/external/goldcoast-sunset.jpeg)
 
-![Sunset sky over the coastal hills](/images/external/sunset-coastal-hills.jpeg)
+![Sunset sky over the coastal hills](../../assets/images/external/sunset-coastal-hills.jpeg)
 
-![The Gold Coast at dusk](/images/external/goldcoast-at-dusk.jpeg)
+![The Gold Coast at dusk](../../assets/images/external/goldcoast-at-dusk.jpeg)
 
-![Coastal view through the palms](/images/external/coastal-view-through-palms.jpg)
+![Coastal view through the palms](../../assets/images/external/coastal-view-through-palms.jpg)
 
-![Palm-framed coastal view](/images/external/palm-framed-coastal-view.jpg)
+![Palm-framed coastal view](../../assets/images/external/palm-framed-coastal-view.jpg)
 
-![Eucalypt hillside below the retreat](/images/external/eucalypt-hillside.jpg)
+![Eucalypt hillside below the retreat](../../assets/images/external/eucalypt-hillside.jpg)
 
-![EV charging on site](/images/external/ev-charging-on-site.jpeg)
+![EV charging on site](../../assets/images/external/ev-charging-on-site.jpeg)

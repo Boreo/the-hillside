@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
-  photos: { src: string; alt: string; caption: string }[];
+  photos: { src: ImageMetadata; alt: string; caption: string }[];
 }
 const { photos } = Astro.props;
 const [big, ...rest] = photos;
@@ -10,12 +12,24 @@ const [big, ...rest] = photos;
   <h2>Life here</h2>
   <div class="grid">
     <figure class="big">
-      <img src={big.src} alt={big.alt} loading="lazy" />
+      <Image
+        src={big.src}
+        alt={big.alt}
+        widths={[480, 800, 1200]}
+        sizes="(max-width: 40rem) 100vw, 60vw"
+        loading="lazy"
+      />
       <figcaption>{big.caption}</figcaption>
     </figure>
     {rest.map((p) => (
       <figure>
-        <img src={p.src} alt={p.alt} loading="lazy" />
+        <Image
+          src={p.src}
+          alt={p.alt}
+          widths={[480, 800]}
+          sizes="(max-width: 40rem) 100vw, 40vw"
+          loading="lazy"
+        />
         <figcaption>{p.caption}</figcaption>
       </figure>
     ))}

@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
+import sunrise from "../assets/images/external/sunrise-valley-coast.jpeg";
 
 const reviews = await getCollection("reviews");
 
@@ -23,7 +25,12 @@ const reviewsJsonLd = {
   extraJsonLd={reviewsJsonLd}
 >
   <h1>Reviews</h1>
-  <img src="/images/external/sunrise-valley-coast.jpeg" alt="Sunrise over the valley and coastline" />
+  <Image
+    src={sunrise}
+    alt="Sunrise over the valley and coastline"
+    widths={[480, 800, 1200, 1600]}
+    sizes="(max-width: 71rem) 100vw, 68rem"
+  />
   <p>What people are saying about The Hillside Retreat.</p>
   {
     reviews.map(({ data }) => (

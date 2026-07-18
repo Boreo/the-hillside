@@ -1,7 +1,7 @@
 ---
 
 interface Props {
-  video: { src: string; poster: string };
+  video: { src: string; poster: ImageMetadata };
   line: string;
 }
 const { video, line } = Astro.props;
@@ -11,7 +11,7 @@ const { video, line } = Astro.props;
   <video
     class="hero-video"
     src={video.src}
-    poster={video.poster}
+    poster={video.poster.src}
     autoplay
     muted
     loop

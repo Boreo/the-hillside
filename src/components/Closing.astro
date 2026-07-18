@@ -1,14 +1,21 @@
 ---
+import { Image } from "astro:assets";
 
 interface Props {
-  image: { src: string; alt: string };
+  image: { src: ImageMetadata; alt: string };
   line: string;
 }
 const { image, line } = Astro.props;
 ---
 
 <section class="closing">
-  <img src={image.src} alt={image.alt} loading="lazy" />
+  <Image
+    src={image.src}
+    alt={image.alt}
+    widths={[480, 800, 1200, 1600]}
+    sizes="(max-width: 71rem) 100vw, 68rem"
+    loading="lazy"
+  />
   <p>{line}</p>
   <a class="btn" href="/book/">Book with us</a>
 </section>

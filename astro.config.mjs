@@ -22,5 +22,7 @@ export default defineConfig({
     processor: unified({ rehypePlugins: [rehypePhotoRuns] }),
   },
 
-  adapter: isDev ? undefined : cloudflare(),
+  // 'compile' processes images with sharp at build time, so the static
+  // output needs no Cloudflare Images binding or runtime /_image endpoint.
+  adapter: isDev ? undefined : cloudflare({ imageService: 'compile' }),
 });

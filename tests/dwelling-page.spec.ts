@@ -61,11 +61,11 @@ test("clicking a photo opens the CSS lightbox and clicking it again closes it", 
   await page.goto("/hillside-house/");
   const opener = page.locator(".dwelling-body .photo-run .lightbox-open").first();
   const id = (await opener.getAttribute("href"))!.slice(1);
-  const overlay = page.locator(`a.lightbox[id="${id}"]`);
+  const overlay = page.locator(`div.lightbox[id="${id}"]`);
   await expect(overlay).toBeHidden();
   await opener.click();
   await expect(overlay).toBeVisible();
-  await overlay.click();
+  await overlay.locator(".lightbox-close").click();
   await expect(overlay).toBeHidden();
 });
 

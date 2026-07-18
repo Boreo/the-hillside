@@ -1,10 +1,11 @@
 ---
+import { Image } from "astro:assets";
 import FactIcon from "./FactIcon.astro";
 
 interface Props {
   dwelling: {
     name: string;
-    hero: { src: string; alt: string };
+    hero: { src: ImageMetadata; alt: string };
     sleeps: number;
     bedrooms: { bed: string; sleeps: number; ensuite: boolean }[];
     amenities: string[];
@@ -29,7 +30,13 @@ const bedroomsLabel = `${dwelling.bedrooms.length} ${
     </ul>
     <a class="btn" href={dwelling.cta.href}>{dwelling.cta.label}</a>
   </div>
-  <img src={dwelling.hero.src} alt={dwelling.hero.alt} />
+  <Image
+    src={dwelling.hero.src}
+    alt={dwelling.hero.alt}
+    widths={[480, 800, 1200]}
+    sizes="(max-width: 40rem) 100vw, 55vw"
+    loading="eager"
+  />
 </section>
 <div class="dwelling-body">
   <slot />

@@ -4,7 +4,7 @@ description: "Spacious 3-bedroom house on Tamborine Mountain sleeping up to 6, w
 dwelling:
   name: Hillside House
   hero:
-    src: /images/external/covered-deck-dusk-coastal-view.jpeg
+    src: ../../assets/images/external/covered-deck-dusk-coastal-view.jpeg
     alt: Covered deck at dusk with valley and coastal views
   sleeps: 6
   bedrooms:
@@ -26,7 +26,7 @@ Discover the epitome of hillside luxury with our stunning 3-bedroom accommodatio
 
 Step inside, and you'll find yourself in a beautifully appointed private space where modernity meets cleanliness and comfort. With 2 queen bedrooms and 1 twin bedroom, there's ample room for up to six guests to enjoy a restful night's sleep. The brand new fully fitted kitchen is a culinary enthusiast's dream, while the large, spacious, and open-plan dining and lounge area beckons you to unwind and enjoy the breathtaking views that surround you. Our master bedroom, complete with an ensuite shower room and large walk-in wardrobe provides a spacious and comfortable stay. Hillside House provides all the conveniences of home, including a well-equipped laundry room featuring a washer, dryer, iron and ironing board. Stay fresh and wrinkle-free throughout your visit.
 
-![Entrance to Hillside House](/images/external/retreat-entrance.jpg)
+![Entrance to Hillside House](../../assets/images/external/retreat-entrance.jpg)
 
 For those who relish outdoor dining, our BBQ and expansive al fresco dining area provide the perfect setting to savor a meal while soaking in the natural beauty of the hillside at our shared pool and heated spa. The interior is tastefully and neutrally decorated, creating an ambiance of serenity and sophistication. Modern fixtures and fittings ensure your stay is as comfortable as it is stylish.
 
@@ -34,7 +34,7 @@ Arriving by electric vehicle? Our on-site 7.3 kW Type 2 charger means you can sp
 
 The pièce de résistance is the breathtaking view, seen from the full length of the house. Whether you're seeking relaxation, adventure, or simply a break from the ordinary, our Hillside House accommodation promises an unforgettable experience and vista amidst the stunning landscapes of Tamborine Mountain and beyond.
 
-![Wraparound verandah with coastal views](/images/external/verandah-dining-views.jpg)
+![Wraparound verandah with coastal views](../../assets/images/external/verandah-dining-views.jpg)
 
 > “Facilities are very well maintained and the house is very cozy and well furnished. Definitely a great choice for family getaway, and it comes with an amazing view for sunrise too!”
 >
@@ -63,7 +63,7 @@ The pièce de résistance is the breathtaking view, seen from the full length of
 
 ## Just the two of you?
 
-![Front of Hillside Villa](/images/villa/hillside-villa-front.jpg)
+![Front of Hillside Villa](../../assets/images/villa/hillside-villa-front.jpg)
 
 Our self-contained 1-bedroom Hillside Villa, with its own private entry, courtyard, and fireplace, is perfectly sized for a couple's escape.
 
@@ -71,7 +71,7 @@ Our self-contained 1-bedroom Hillside Villa, with its own private entry, courtya
 
 ## Need room for more than 6?
 
-![Aerial view of the whole property, House and Villa together on the hillside](/images/drone/aerial-view-whole-property.jpg)
+![Aerial view of the whole property, House and Villa together on the hillside](../../assets/images/drone/aerial-view-whole-property.jpg)
 
 Book the House and Villa together, connected as one retreat sleeping up to 8, with exclusive use of the pool and spa.
 
@@ -79,52 +79,52 @@ Book the House and Villa together, connected as one retreat sleeping up to 8, wi
 
 ## A look around
 
-![Lounge and dining area](/images/house/house-lounge-dining-area.jpg)
+![Lounge and dining area](../../assets/images/house/house-lounge-dining-area.jpg)
 
-![Dining area with lounge and TV](/images/house/dining-area-lounge-tv.jpg)
+![Dining area with lounge and TV](../../assets/images/house/dining-area-lounge-tv.jpg)
 
-![Lounge area](/images/house/lounge-area.jpeg)
+![Lounge area](../../assets/images/house/lounge-area.jpeg)
 
-![Dining area](/images/house/dining-area.jpg)
+![Dining area](../../assets/images/house/dining-area.jpg)
 
-![Kitchen island with mountain views](/images/house/kitchen-island-mountain-view.jpg)
+![Kitchen island with mountain views](../../assets/images/house/kitchen-island-mountain-view.jpg)
 
-![Kitchen](/images/house/kitchen.jpg)
+![Kitchen](../../assets/images/house/kitchen.jpg)
 
-![King bedroom with white linen](/images/house/king-bedroom-white-linen.jpeg)
+![King bedroom with white linen](../../assets/images/house/king-bedroom-white-linen.jpeg)
 
-![King bedroom with teal cushions](/images/house/king-bedroom-teal-cushions.jpeg)
+![King bedroom with teal cushions](../../assets/images/house/king-bedroom-teal-cushions.jpeg)
 
-![Twin bedroom with exposed brick wall](/images/house/twin-bedroom-brick-wall.jpeg)
+![Twin bedroom with exposed brick wall](../../assets/images/house/twin-bedroom-brick-wall.jpeg)
 
-![Wood fireplace burning](/images/house/wood-fireplace-burning.jpg)
+![Wood fireplace burning](../../assets/images/house/wood-fireplace-burning.jpg)
 
-![Enjoying a glass of wine by the fire](/images/house/guest-wine-by-fireplace.jpg)
+![Enjoying a glass of wine by the fire](../../assets/images/house/guest-wine-by-fireplace.jpg)
 
-![Verandah dining and seating area](/images/external/verandah-lounge-area.jpg)
+![Verandah dining and seating area](../../assets/images/external/verandah-lounge-area.jpg)
 
-![Covered deck lounge overlooking the valley](/images/external/deck-lounge-valley-view.jpg)
+![Covered deck lounge overlooking the valley](../../assets/images/external/deck-lounge-valley-view.jpg)
 
-![Outdoor dining with a full moon over the valley](/images/external/outdoor-dining-moonlit-valley.jpeg)
+![Outdoor dining with a full moon over the valley](../../assets/images/external/outdoor-dining-moonlit-valley.jpeg)
 
-![Pool and spa seen from above](/images/external/pool-and-spa.jpg)
+![Pool and spa seen from above](../../assets/images/external/pool-and-spa.jpg)
 
-![Pool and heated spa in evening light](/images/external/heated-pool-evening.jpg)
+![Pool and heated spa in evening light](../../assets/images/external/heated-pool-evening.jpg)
 
-![Pool deck at night with city lights beyond](/images/external/pool-at-night.jpg)
+![Pool deck at night with city lights beyond](../../assets/images/external/pool-at-night.jpg)
 
-![Guest taking in the coastal view](/images/external/guest-taking-in-coastal-view.jpg)
+![Guest taking in the coastal view](../../assets/images/external/guest-taking-in-coastal-view.jpg)
 
-![Gold Coast skyline over the ocean](/images/external/goldcoast-skyline-over-ocean.jpeg)
+![Gold Coast skyline over the ocean](../../assets/images/external/goldcoast-skyline-over-ocean.jpeg)
 
-![The Gold Coast at dusk](/images/external/goldcoast-at-dusk.jpeg)
+![The Gold Coast at dusk](../../assets/images/external/goldcoast-at-dusk.jpeg)
 
-![Sunset sky over the coastal hills](/images/external/sunset-coastal-hills.jpeg)
+![Sunset sky over the coastal hills](../../assets/images/external/sunset-coastal-hills.jpeg)
 
-![Gold Coast skyline at sunset](/images/external/goldcoast-sunset.jpeg)
+![Gold Coast skyline at sunset](../../assets/images/external/goldcoast-sunset.jpeg)
 
-![Koala in a tree on the property](/images/external/koala-on-tree.jpeg)
+![Koala in a tree on the property](../../assets/images/external/koala-on-tree.jpeg)
 
-![Guest toiletries provided](/images/amenities/amenities-full-set.jpg)
+![Guest toiletries provided](../../assets/images/amenities/amenities-full-set.jpg)
 
-![Electric vehicle charging on site](/images/external/ev-charging-on-site.jpeg)
+![Electric vehicle charging on site](../../assets/images/external/ev-charging-on-site.jpeg)
