@@ -28,7 +28,7 @@ const dwellingSchema = ({ image }: SchemaContext) =>
         label: z.string().min(1),
         href: z.string().startsWith("/"),
       })
-      .default({ label: "Book direct", href: "/book/" }),
+      .default({ label: "Book Direct", href: "/book/" }),
   });
 
 // Homepage-only content: section copy, image picks, captions and the
