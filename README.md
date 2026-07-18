@@ -8,6 +8,7 @@ Static site for a two-dwelling holiday accommodation business on Tamborine Mount
 - **Content**: markdown in `src/content/pages/`, a content collection whose frontmatter is schema-validated by `src/content.config.ts`. The homepage is composed from components in `src/components/` with copy from `index.md` frontmatter.
 - **Layout**: a single base layout carries the nav (dropdowns grouped Accommodation / Your Stay), footer, and `LodgingBusiness` JSON-LD for search engines and AI answer engines.
 - **Styles**: plain CSS with custom properties (brand palette tokens); Fraunces variable font.
+- **Images**: sources in `src/assets/images/`, processed by Astro's asset pipeline at build time (sharp via the Cloudflare adapter's `imageService: 'compile'`).
 - **Hosting**: Cloudflare Workers (GitHub-connected), which runs `npm run build` and serves `dist/`. Staging: https://the-hillside.github-e53.workers.dev/
 - **Tests**: Playwright in `tests/`.
 - **Booking**: SiteMinder/Little Hotelier booking widget on `/book/`; renders only on SiteMinder-whitelisted domains (production domain and Workers staging URL are whitelisted).
@@ -16,17 +17,18 @@ Static site for a two-dwelling holiday accommodation business on Tamborine Mount
 
 ```
 src/
-  components/        Homepage sections (Hero, Arrival, DwellingCards, …)
+  assets/images/     Image sources by category: house, villa, external, drone, amenities
+  components/        Homepage sections (Hero, Arrival, DwellingCards, …) and DwellingLayout
   content/
     pages/           Page content as markdown; index.md holds homepage copy
     gallery.yaml     Gallery images with alt text
     reviews.yaml     Guest reviews
   layouts/           Base.astro — nav, footer, JSON-LD
+  lib/               rehype-photo-runs.mjs — build-time photo runs, cross-sell cards, lightboxes
   pages/             Routes: index.astro, [...slug].astro, book, gallery, reviews, palette-demo
   styles/            global.css with brand palette tokens
   content.config.ts  Content schemas
 public/
-  images/<category>/ house, villa, external, drone, amenities
   videos/            Hero drone video
 tests/               Playwright specs
 ```
@@ -61,5 +63,6 @@ The target end state: the non-technical owner emails a change request → GitHub
 ## Content editing
 
 - Content lives in `src/content/pages/*.md`; files map to routes by filename. Homepage copy is frontmatter in `index.md`.
-- Images go in `public/images/<category>/` (`house`, `villa`, `external`, `drone`, `amenities`), named `<descriptive-name>.<ext>` and pre-resized to 2000px or less. The hero video is in `public/videos/`.
+- Images go in `src/assets/images/<category>/` (`house`, `villa`, `external`, `drone`, `amenities`), named `<descriptive-name>.<ext>` and pre-resized to 2000px or less. The hero video is in `public/videos/`.
+- Dwelling pages (House, Villa, House & Villa) carry `dwelling:` frontmatter — name, hero, sleeps, bedrooms, amenities, optional `cta` — which drives the facts strip and Accommodation JSON-LD.
 - Legacy Squarespace paths (`/home`, `/further-inform`) redirect via `astro.config.mjs`.

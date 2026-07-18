@@ -5,12 +5,13 @@ Static Astro site for a two-dwelling holiday accommodation business on Tamborine
 ## Stack
 
 - Astro with static output, no client JS frameworks.
-- Content is markdown in `src/content/pages/` (collection `pages`, schema in `src/content.config.ts` with `title` required and `description` optional). `src/pages/[...slug].astro` renders each entry.
+- Content is markdown in `src/content/pages/` (collection `pages`, schemas in `src/content.config.ts`). `src/pages/[...slug].astro` renders each entry; entries with `dwelling:` frontmatter render through `src/components/DwellingLayout.astro` (hero, facts strip, amenity chips, Accommodation JSON-LD). All three dwelling pages (House, Villa, House & Villa) use it.
+- `src/lib/rehype-photo-runs.mjs` restructures markdown at build time: consecutive image paragraphs become photo runs, text+image pairs become alternating media rows, h2+image+link blocks become cross-sell cards (facts from `fact-icon-paths.mjs`), and every photo gets a CSS-only `:target` lightbox with prev/next. `/gallery` uses a `<dialog>` viewer instead.
 - The homepage is `src/pages/index.astro`, composed from `src/components/` (Hero, Arrival, DwellingCards, ReviewBand, PhotoBand, PullQuote, Closing; FactIcon renders dwelling fact icons) with copy from `src/content/pages/index.md` frontmatter.
 - Standalone routes in `src/pages/`: `book.astro` (SiteMinder embed), `gallery.astro` and `reviews.astro` (driven by `src/content/gallery.yaml` and `reviews.yaml`), `palette-demo.astro`.
 - `src/layouts/Base.astro` carries the nav (dropdowns grouped Accommodation / Your Stay), footer, `LodgingBusiness` JSON-LD with the full business details, and the booking URL constant. New pages must be added to a nav group.
 - Styles are plain CSS with custom properties (brand palette tokens) in `src/styles/global.css`; body font is Fraunces via `@fontsource-variable/fraunces`. `/palette-demo` previews the tokens.
-- Images live in `public/images/<category>/` (`house`, `villa`, `external`, `drone`, `amenities`; logo/emblem at root), named `<descriptive-name>.<ext>` and pre-resized to 2000px or less. The hero drone video is in `public/videos/`.
+- Images live in `src/assets/images/<category>/` (`house`, `villa`, `external`, `drone`, `amenities`; emblem and hero poster at root), named `<descriptive-name>.<ext>` and pre-resized to 2000px or less. They go through Astro's asset pipeline (schemas use `image()`, components use `<Image>`; sharp runs at build time via `imageService: 'compile'` in the Cloudflare adapter). `public/` holds only the favicon and the hero drone video in `public/videos/`.
 
 ## Development
 
