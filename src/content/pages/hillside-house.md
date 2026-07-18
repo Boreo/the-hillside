@@ -3,6 +3,9 @@ title: "Hillside House — The Hillside Retreat"
 description: "Spacious 3-bedroom house on Tamborine Mountain sleeping up to 6, with coastal views, wood fireplace, wraparound verandah, EV charging, and pool and heated spa."
 dwelling:
   name: Hillside House
+  hero:
+    src: /images/external/covered-deck-dusk-coastal-view.jpeg
+    alt: Covered deck at dusk with valley and coastal views
   sleeps: 6
   bedrooms:
     - bed: queen
@@ -19,10 +22,6 @@ dwelling:
     - Free private parking
 ---
 
-# Hillside House
-
-![Covered deck at dusk with valley and coastal views](/images/external/covered-deck-dusk-coastal-view.jpeg)
-
 Discover the epitome of hillside luxury with our stunning 3-bedroom accommodation option Hillside House. Nestled in the serene embrace of nature, this retreat offers a haven of tranquility on the slopes of Tamborine Mountain, Queensland, Australia and offers breathtaking views of the coastline and Guanaba Valley.
 
 Step inside, and you'll find yourself in a beautifully appointed private space where modernity meets cleanliness and comfort. With 2 queen bedrooms and 1 twin bedroom, there's ample room for up to six guests to enjoy a restful night's sleep. The brand new fully fitted kitchen is a culinary enthusiast's dream, while the large, spacious, and open-plan dining and lounge area beckons you to unwind and enjoy the breathtaking views that surround you. Our master bedroom, complete with an ensuite shower room and large walk-in wardrobe provides a spacious and comfortable stay. Hillside House provides all the conveniences of home, including a well-equipped laundry room featuring a washer, dryer, iron and ironing board. Stay fresh and wrinkle-free throughout your visit.
@@ -37,7 +36,11 @@ The pièce de résistance is the breathtaking view, seen from the full length of
 
 ![Wraparound verandah with coastal views](/images/external/verandah-dining-views.jpg)
 
-[Book with us](https://book-directonline.com/properties/thehillsideretreatdirect)
+> “Facilities are very well maintained and the house is very cozy and well furnished. Definitely a great choice for family getaway, and it comes with an amazing view for sunrise too!”
+>
+> — Cassandra, Malaysia
+
+[Book with us](/book/)
 
 ## Accommodation comprises
 
@@ -57,6 +60,24 @@ The pièce de résistance is the breathtaking view, seen from the full length of
 - Wi-fi throughout property.
 - EV charging on site (7.3 kW, Type 2) – fully recharges most vehicles overnight.
 - Free private parking on site.
+
+## Just the two of you?
+
+![Front of Hillside Villa](/images/villa/hillside-villa-front.jpg)
+
+Our self-contained 1-bedroom Hillside Villa, with its own private entry, courtyard, and fireplace, is perfectly sized for a couple's escape.
+
+[See Hillside Villa](/hillside-villa/)
+
+## Need room for more than 6?
+
+![Aerial view of the whole property, House and Villa together on the hillside](/images/drone/aerial-view-whole-property.jpg)
+
+Book the House and Villa together, connected as one retreat sleeping up to 8, with exclusive use of the pool and spa.
+
+[About House & Villa](/house-and-villa/)
+
+## A look around
 
 ![Outdoor dining with a full moon over the valley](/images/external/outdoor-dining-moonlit-valley.jpeg)
 
@@ -109,13 +130,3 @@ The pièce de résistance is the breathtaking view, seen from the full length of
 ![Guest toiletries provided](/images/amenities/amenities-full-set.jpg)
 
 ![Koala in a tree on the property](/images/external/koala-on-tree.jpeg)
-
-## Just the two of you?
-
-Our self-contained 1-bedroom [Hillside Villa](/hillside-villa/), with its own private entry, courtyard, and fireplace, is perfectly sized for a couple's escape.
-
-## Need room for more than 6?
-
-Book the [House and Villa together](/house-and-villa/), connected as one retreat sleeping up to 8, with exclusive use of the pool and spa.
-
-[Book with us](https://book-directonline.com/properties/thehillsideretreatdirect)

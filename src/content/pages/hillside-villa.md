@@ -3,6 +3,9 @@ title: "Hillside Villa — The Hillside Retreat"
 description: "Self-contained 1-bedroom villa on Tamborine Mountain, with private courtyard, fireplace and kitchenette. A romantic couples' escape in the Gold Coast Hinterland."
 dwelling:
   name: Hillside Villa
+  hero:
+    src: /images/villa/hillside-villa-front.jpg
+    alt: Front of Hillside Villa
   sleeps: 2
   bedrooms:
     - bed: queen
@@ -15,10 +18,6 @@ dwelling:
     - Wi-Fi
     - Free private parking
 ---
-
-# Hillside Villa
-
-![Front of Hillside Villa](/images/villa/hillside-villa-front.jpg)
 
 Indulge in the ultimate romantic getaway at our self-contained 1-bedroom Hillside Villa in the heart of Tamborine Mountain. This intimate retreat is thoughtfully designed for couples, making it the perfect setting for a romantic honeymoon or a special escape for two.
 
@@ -42,7 +41,11 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 
 ![Deck bar seating with panoramic valley views](/images/external/deck-with-view-day.jpg)
 
-[Book with us](https://book-directonline.com/properties/thehillsideretreatdirect)
+> “The Villa was spotless, comfortable, with pool, spa and a fantastic view. I would recommend this accommodation to any couple looking for a quiet escape.”
+>
+> — Federico, Australia
+
+[Book with us](/book/)
 
 ## Accommodation comprises
 
@@ -58,6 +61,24 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 - Wi-fi throughout property.
 - EV charging on site (7.3 kW, Type 2) – fully recharges most vehicles overnight.
 - Free private parking on site.
+
+## Bringing the family?
+
+![Covered deck at Hillside House at dusk with valley and coastal views](/images/external/covered-deck-dusk-coastal-view.jpeg)
+
+Our spacious 3-bedroom Hillside House sleeps up to 6, with a full kitchen, wraparound verandah, and those famous coastal views.
+
+[See Hillside House](/hillside-house/)
+
+## Travelling as a group?
+
+![Aerial view of the whole property, House and Villa together on the hillside](/images/drone/aerial-view-whole-property.jpg)
+
+Book the House and Villa together, connected as one retreat sleeping up to 8, with exclusive use of the pool and spa.
+
+[About House & Villa](/house-and-villa/)
+
+## A look around
 
 ![Villa lounge with wood burning fireplace](/images/villa/villa-lounge-fireplace.jpg)
 
@@ -92,10 +113,3 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 ![Eucalypt hillside below the retreat](/images/external/eucalypt-hillside.jpg)
 
 ![Palm-framed coastal view](/images/external/palm-framed-coastal-view.jpg)
-
-
-## Bringing the family?
-
-Our spacious 3-bedroom [Hillside House](/hillside-house/) sleeps up to 6, with a full kitchen, wraparound verandah, and those famous coastal views.
-
-[Book with us](https://book-directonline.com/properties/thehillsideretreatdirect)

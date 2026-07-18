@@ -6,6 +6,10 @@ import { glob, file } from "astro/loaders";
 // the page and Accommodation JSON-LD; prose should not restate these numbers.
 const dwellingSchema = z.object({
   name: z.string(),
+  hero: z.object({
+    src: z.string().startsWith("/images/"),
+    alt: z.string().min(1),
+  }),
   sleeps: z.number().int().positive(),
   bedrooms: z.array(
     z.object({

@@ -1,0 +1,101 @@
+---
+import FactIcon from "./FactIcon.astro";
+
+interface Props {
+  dwelling: {
+    name: string;
+    hero: { src: string; alt: string };
+    sleeps: number;
+    bedrooms: { bed: string; sleeps: number; ensuite: boolean }[];
+    amenities: string[];
+  };
+}
+const { dwelling } = Astro.props;
+const bedroomsLabel = `${dwelling.bedrooms.length} ${
+  dwelling.bedrooms.length === 1 ? "bedroom" : "bedrooms"
+}`;
+---
+
+<section class="dwelling-header">
+  <div class="dwelling-header-info">
+    <h1>{dwelling.name}</h1>
+    <p class="facts-line">
+      <span><FactIcon name="users" /> Sleeps {dwelling.sleeps}</span>
+      <span><FactIcon name="bed" /> {bedroomsLabel}</span>
+    </p>
+    <ul class="amenities-line">
+      {dwelling.amenities.map((a) => <li>{a}</li>)}
+    </ul>
+    <a class="btn" href="/book/">Book direct</a>
+  </div>
+  <img src={dwelling.hero.src} alt={dwelling.hero.alt} />
+</section>
+<div class="dwelling-body">
+  <slot />
+</div>
+
+<style>
+  /* Split header: info column beside a staggered rounded image, the
+     dwelling-cards treatment at page scale. */
+  .dwelling-header {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    column-gap: 2.5rem;
+    align-items: start;
+    border-bottom: 2px solid var(--highlight);
+    padding-bottom: 2.5rem;
+    margin: 1.5rem 0 2.5rem;
+  }
+  .dwelling-header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 2.5rem;
+  }
+  .dwelling-header h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.1;
+    margin: 0 0 1rem;
+  }
+  .dwelling-header .facts-line {
+    margin: 0 0 0.75rem;
+  }
+  /* Amenities as soft chips. */
+  .amenities-line {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0 0 1.75rem;
+    max-width: 30rem;
+  }
+  .amenities-line li {
+    font-family: system-ui, sans-serif;
+    font-size: 0.8rem;
+    color: var(--muted);
+    background: var(--card);
+    border: 1px solid var(--mint);
+    border-radius: 4px;
+    padding: 0.25rem 0.65rem;
+  }
+  .dwelling-header img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 5%;
+  }
+  @media (max-width: 40rem) {
+    .dwelling-header {
+      grid-template-columns: 1fr;
+    }
+    .dwelling-header-info {
+      padding-top: 0;
+    }
+    .dwelling-header img {
+      margin-top: 1.5rem;
+      order: 2;
+    }
+  }
+</style>
