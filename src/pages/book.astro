@@ -22,7 +22,47 @@ import Base from "../layouts/Base.astro";
   </div>
 </Base>
 
-<script is:inline src="https://widget.siteminder.com/ibe.min.js"></script>
+<script is:inline>
+  // The SiteMinder widget reads data-query-* attributes and whitelisted page
+  // URL params (room_rate, currency, ...) once at load, so the currency for
+  // the guest's country must be set on the embed div before the script runs.
+  // Country comes from Cloudflare's same-origin /cdn-cgi/trace (no permission
+  // prompt); AUD stays the default for Australia and anywhere unmapped.
+  (function () {
+    var currencyFor = {
+      NZ: "NZD", US: "USD", GB: "GBP", CA: "CAD", JP: "JPY", SG: "SGD",
+      HK: "HKD", CN: "CNY", IN: "INR", KR: "KRW", CH: "CHF", SE: "SEK",
+      NO: "NOK", DK: "DKK", AE: "AED", TH: "THB", TW: "TWD", MY: "MYR",
+      ID: "IDR", PH: "PHP", VN: "VND", FJ: "FJD", ZA: "ZAR", PL: "PLN",
+      CZ: "CZK",
+      AT: "EUR", BE: "EUR", CY: "EUR", DE: "EUR", EE: "EUR", ES: "EUR",
+      FI: "EUR", FR: "EUR", GR: "EUR", HR: "EUR", IE: "EUR", IT: "EUR",
+      LT: "EUR", LU: "EUR", LV: "EUR", MT: "EUR", NL: "EUR", PT: "EUR",
+      SI: "EUR", SK: "EUR",
+    };
+    var loaded = false;
+    function loadWidget(currency) {
+      if (loaded) return;
+      loaded = true;
+      if (currency) {
+        document
+          .querySelector(".ibe")
+          .setAttribute("data-query-currency", currency);
+      }
+      var s = document.createElement("script");
+      s.src = "https://widget.siteminder.com/ibe.min.js";
+      document.body.appendChild(s);
+    }
+    setTimeout(loadWidget, 1500);
+    fetch("/cdn-cgi/trace")
+      .then(function (r) { return r.text(); })
+      .then(function (t) {
+        var m = t.match(/^loc=([A-Z]+)$/m);
+        loadWidget(m && currencyFor[m[1]]);
+      })
+      .catch(function () { loadWidget(); });
+  })();
+</script>
 
 <style>
   .book-page {

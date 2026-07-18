@@ -8,6 +8,7 @@ interface Props {
     hero: { src: ImageMetadata; alt: string };
     sleeps: number;
     bedrooms: { bed: string; sleeps: number; ensuite: boolean }[];
+    bathrooms: number;
     amenities: string[];
     cta: { label: string; href: string };
   };
@@ -15,6 +16,9 @@ interface Props {
 const { dwelling } = Astro.props;
 const bedroomsLabel = `${dwelling.bedrooms.length} ${
   dwelling.bedrooms.length === 1 ? "bedroom" : "bedrooms"
+}`;
+const bathroomsLabel = `${dwelling.bathrooms} ${
+  dwelling.bathrooms === 1 ? "bathroom" : "bathrooms"
 }`;
 ---
 
@@ -24,6 +28,7 @@ const bedroomsLabel = `${dwelling.bedrooms.length} ${
     <p class="facts-line">
       <span><FactIcon name="users" /> Sleeps {dwelling.sleeps}</span>
       <span><FactIcon name="bed" /> {bedroomsLabel}</span>
+      <span><FactIcon name="bathtub" /> {bathroomsLabel}</span>
     </p>
     <ul class="amenities-line">
       {dwelling.amenities.map((a) => <li>{a}</li>)}

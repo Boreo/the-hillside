@@ -67,7 +67,7 @@ const dwellingFacts = (slug) => {
     "utf8",
   );
   const d = parse(raw.split("---")[1]).dwelling;
-  return { sleeps: d.sleeps, bedrooms: d.bedrooms.length };
+  return { sleeps: d.sleeps, bedrooms: d.bedrooms.length, bathrooms: d.bathrooms };
 };
 
 const factsFor = (href) => {
@@ -75,7 +75,11 @@ const factsFor = (href) => {
   if (slug === "house-and-villa") {
     const house = dwellingFacts("hillside-house");
     const villa = dwellingFacts("hillside-villa");
-    return { sleeps: house.sleeps + villa.sleeps, bedrooms: house.bedrooms + villa.bedrooms };
+    return {
+      sleeps: house.sleeps + villa.sleeps,
+      bedrooms: house.bedrooms + villa.bedrooms,
+      bathrooms: house.bathrooms + villa.bathrooms,
+    };
   }
   return dwellingFacts(slug);
 };
@@ -94,7 +98,7 @@ const factIcon = (name) => ({
   ],
 });
 
-const factsLine = ({ sleeps, bedrooms }) => {
+const factsLine = ({ sleeps, bedrooms, bathrooms }) => {
   const span = (icon, text) => ({
     type: "element",
     tagName: "span",
@@ -108,6 +112,7 @@ const factsLine = ({ sleeps, bedrooms }) => {
     children: [
       span("users", `Sleeps ${sleeps}`),
       span("bed", `${bedrooms} ${bedrooms === 1 ? "bedroom" : "bedrooms"}`),
+      span("bathtub", `${bathrooms} ${bathrooms === 1 ? "bathroom" : "bathrooms"}`),
     ],
   };
 };

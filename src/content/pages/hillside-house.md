@@ -12,6 +12,7 @@ dwelling:
       ensuite: true
     - bed: queen
     - bed: twin
+  bathrooms: 2
   amenities:
     - Wood fireplace
     - Pool & heated spa (shared)
@@ -20,6 +21,9 @@ dwelling:
     - Full kitchen & laundry
     - Wi-Fi
     - Free private parking
+  cta:
+    label: Book Direct
+    href: /book/?room_rate=413447
 ---
 
 Discover the epitome of hillside luxury with our stunning 3-bedroom accommodation option Hillside House. Nestled in the serene embrace of nature, this retreat offers a haven of tranquility on the slopes of Tamborine Mountain, Queensland, Australia and offers breathtaking views of the coastline and Guanaba Valley.
@@ -40,7 +44,7 @@ The pièce de résistance is the breathtaking view, seen from the full length of
 >
 > — Cassandra, Malaysia
 
-[Book with us](/book/)
+[Book with us](/book/?room_rate=413447)
 
 ## Accommodation comprises
 

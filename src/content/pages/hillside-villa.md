@@ -9,6 +9,7 @@ dwelling:
   sleeps: 2
   bedrooms:
     - bed: queen
+  bathrooms: 1
   amenities:
     - Wood fireplace
     - Private courtyard
@@ -17,6 +18,9 @@ dwelling:
     - EV charging (7.3 kW Type 2)
     - Wi-Fi
     - Free private parking
+  cta:
+    label: Book Direct
+    href: /book/?room_rate=413448
 ---
 
 Indulge in the ultimate romantic getaway at our self-contained 1-bedroom Hillside Villa in the heart of Tamborine Mountain. This intimate retreat is thoughtfully designed for couples, making it the perfect setting for a romantic honeymoon or a special escape for two.
@@ -45,7 +49,7 @@ The pièce de résistance is the breathtaking view. Whether you're seeking relax
 >
 > — Federico, Australia
 
-[Book with us](/book/)
+[Book with us](/book/?room_rate=413448)
 
 ## Accommodation comprises
 

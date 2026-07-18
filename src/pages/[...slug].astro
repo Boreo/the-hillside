@@ -24,6 +24,7 @@ const dwellingJsonLd = dwelling && {
   url: new URL(Astro.url.pathname, "https://www.thehillside.com.au").href,
   occupancy: { "@type": "QuantitativeValue", maxValue: dwelling.sleeps },
   numberOfBedrooms: dwelling.bedrooms.length,
+  numberOfBathroomsTotal: dwelling.bathrooms,
   bed: dwelling.bedrooms.map((b) => ({ "@type": "BedDetails", typeOfBed: b.bed })),
   amenityFeature: dwelling.amenities.map((name) => ({
     "@type": "LocationFeatureSpecification",

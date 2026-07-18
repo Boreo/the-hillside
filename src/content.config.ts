@@ -20,6 +20,7 @@ const dwellingSchema = ({ image }: SchemaContext) =>
         ensuite: z.boolean().default(false),
       }),
     ),
+    bathrooms: z.number().int().positive(),
     amenities: z.array(z.string().min(1)),
     // Combined House & Villa bookings are direct-only, so that page points its
     // header CTA at the contact page instead of the booking engine.

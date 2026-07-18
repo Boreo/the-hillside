@@ -13,6 +13,7 @@ dwelling:
     - bed: queen
     - bed: twin
     - bed: queen
+  bathrooms: 3
   amenities:
     - Exclusive pool & heated spa
     - Connecting door between House & Villa

@@ -27,6 +27,7 @@ const cards = await Promise.all(
 const factsParts = (f: (typeof cards)[number]["facts"]) => ({
   sleeps: `Sleeps ${f.sleeps}`,
   bedrooms: `${f.bedrooms.length} ${f.bedrooms.length === 1 ? "bedroom" : "bedrooms"}`,
+  bathrooms: `${f.bathrooms} ${f.bathrooms === 1 ? "bathroom" : "bathrooms"}`,
 });
 ---
 
@@ -46,6 +47,7 @@ const factsParts = (f: (typeof cards)[number]["facts"]) => ({
         <p class="facts-line">
           <span><FactIcon name="users" /> {factsParts(card.facts).sleeps}</span>
           <span><FactIcon name="bed" /> {factsParts(card.facts).bedrooms}</span>
+          <span><FactIcon name="bathtub" /> {factsParts(card.facts).bathrooms}</span>
         </p>
         <p>{card.line}</p>
         <a class="btn" href={card.href}>See {card.facts.name}</a>
