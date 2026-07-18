@@ -8,6 +8,7 @@ interface Props {
     sleeps: number;
     bedrooms: { bed: string; sleeps: number; ensuite: boolean }[];
     amenities: string[];
+    cta: { label: string; href: string };
   };
 }
 const { dwelling } = Astro.props;
@@ -26,7 +27,7 @@ const bedroomsLabel = `${dwelling.bedrooms.length} ${
     <ul class="amenities-line">
       {dwelling.amenities.map((a) => <li>{a}</li>)}
     </ul>
-    <a class="btn" href="/book/">Book direct</a>
+    <a class="btn" href={dwelling.cta.href}>{dwelling.cta.label}</a>
   </div>
   <img src={dwelling.hero.src} alt={dwelling.hero.alt} />
 </section>

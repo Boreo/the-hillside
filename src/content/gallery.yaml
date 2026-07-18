@@ -1,125 +1,38 @@
 # Gallery images, rendered in order on /gallery/. Every entry needs non-empty
 # alt text — the build fails otherwise. id = the image filename without extension.
-- id: goldcoast-in-background.jpg
-  src: /images/external/goldcoast-in-background.jpg
-  alt: Coastline and Gold Coast skyline seen through the palms
 - id: retreat-entrance.jpg
   src: /images/external/retreat-entrance.jpg
   alt: The Hillside Retreat welcome sign at the entrance
-- id: aerial-view-whole-property.jpg
-  src: /images/drone/aerial-view-whole-property.jpg
-  alt: Aerial view of the house, pool and surrounding rainforest
-- id: resort-style-pool.jpg
-  src: /images/external/resort-style-pool.jpg
-  alt: Pool, spa and palm-fringed deck with hinterland views
-- id: heated-pool-evening.jpg
-  src: /images/external/heated-pool-evening.jpg
-  alt: Pool deck and loungers at sunset over the hinterland
-- id: plunge-pool-spa-deck.jpg
-  src: /images/external/plunge-pool-spa-deck.jpg
-  alt: Spa on the deck beside the house
-- id: deck-beside-pool.jpg
-  src: /images/external/deck-beside-pool.jpg
-  alt: Covered deck with BBQ and seating beside the pool
-- id: hillside-villa-front.jpg
-  src: /images/villa/hillside-villa-front.jpg
-  alt: Front of Hillside Villa
-- id: house-side-view.jpg
-  src: /images/external/house-side-view.jpg
-  alt: Palm-lined deck and steps beside the house
-- id: outdoor-dining-moonlit-valley.jpeg
-  src: /images/external/outdoor-dining-moonlit-valley.jpeg
-  alt: Outdoor dining under a full moon over the valley
-- id: goldcoast-at-dusk.jpeg
-  src: /images/external/goldcoast-at-dusk.jpeg
-  alt: Gold Coast city lights at night from the garden
-- id: aerial-view-property-back.jpg
-  src: /images/drone/aerial-view-property-back.jpg
-  alt: Aerial view of the forested hillside property
-- id: resident-koala.jpg
-  src: /images/external/resident-koala.jpg
-  alt: Resident koala resting on a eucalyptus branch
-- id: garden-and-grounds-flower.jpg
-  src: /images/external/garden-and-grounds-flower.jpg
-  alt: Red ixora flowers in the garden
 - id: driveway-approach.jpg
   src: /images/external/driveway-approach.jpg
   alt: Gravel driveway approach at dusk
-- id: hinterland-forest-view.jpg
-  src: /images/external/hinterland-forest-view.jpg
-  alt: Sweeping hinterland and forest view
-- id: goldcoast-skyline-over-ocean.jpeg
-  src: /images/external/goldcoast-skyline-over-ocean.jpeg
-  alt: Gold Coast skyline over the treeline and ocean
-- id: goldcoast-sunset.jpeg
-  src: /images/external/goldcoast-sunset.jpeg
-  alt: Gold Coast skyline glowing at sunset
-- id: valley-view.jpeg
-  src: /images/external/valley-view.jpeg
-  alt: Valley view with clouds over the distant coastline
-- id: guanaba-valley-view.jpg
-  src: /images/external/guanaba-valley-view.jpg
-  alt: Dusk over the Guanaba Valley with storm clouds
-- id: sunrise-valley-coast.jpeg
-  src: /images/external/sunrise-valley-coast.jpeg
-  alt: Sunrise over the valley and coastline
-- id: fog-valley.jpeg
-  src: /images/external/fog-valley.jpeg
-  alt: Fog filling the valley below the deck
-- id: sunset-coastal-hills.jpeg
-  src: /images/external/sunset-coastal-hills.jpeg
-  alt: Sunset sky over silhouetted coastal hills
-- id: sunrise-purple-skies.jpg
-  src: /images/external/sunrise-purple-skies.jpg
-  alt: Pre-dawn purple and orange sky over the hills
-- id: hinterland-scenery-rainbow.jpeg
-  src: /images/external/hinterland-scenery-rainbow.jpeg
-  alt: Rainbow arcing over the hinterland valley
+- id: aerial-view-whole-property.jpg
+  src: /images/drone/aerial-view-whole-property.jpg
+  alt: Aerial view of the house, pool and surrounding rainforest
 - id: aerial-drone-view.jpg
   src: /images/drone/aerial-drone-view.jpg
   alt: Pool deck from above with the coastal skyline in the distance
-- id: verandah-lounge-area.jpg
-  src: /images/external/verandah-lounge-area.jpg
-  alt: Verandah with bar stools and lounge seating
-- id: verandah-dining-views.jpg
-  src: /images/external/verandah-dining-views.jpg
-  alt: Verandah dining table with sweeping hinterland views
-- id: deck-with-view-day.jpg
-  src: /images/external/deck-with-view-day.jpg
-  alt: Deck bar seating with panoramic valley views
-- id: guest-taking-in-coastal-view.jpg
-  src: /images/external/guest-taking-in-coastal-view.jpg
-  alt: Guest with a charcuterie board overlooking the coastal hills
-- id: gas-bbq-outdoor-dining.jpg
-  src: /images/external/gas-bbq-outdoor-dining.jpg
-  alt: Covered gas BBQ on the patio
-- id: ev-charging-on-site.jpeg
-  src: /images/external/ev-charging-on-site.jpeg
-  alt: EV charger on site
-- id: guest-wine-by-fireplace.jpg
-  src: /images/house/guest-wine-by-fireplace.jpg
-  alt: Guest enjoying a glass of wine by the wood fireplace
-- id: wood-fireplace-burning.jpg
-  src: /images/house/wood-fireplace-burning.jpg
-  alt: Wood fireplace burning beside the brick chimney
+- id: aerial-view-property-back.jpg
+  src: /images/drone/aerial-view-property-back.jpg
+  alt: Aerial view of the forested hillside property
+- id: house-side-view.jpg
+  src: /images/external/house-side-view.jpg
+  alt: Palm-lined deck and steps beside the house
+- id: hillside-villa-front.jpg
+  src: /images/villa/hillside-villa-front.jpg
+  alt: Front of Hillside Villa
 - id: house-lounge-dining-area.jpg
   src: /images/house/house-lounge-dining-area.jpg
   alt: Open living and dining room with wood fire
 - id: dining-area-lounge-tv.jpg
   src: /images/house/dining-area-lounge-tv.jpg
   alt: Living area with brick fireplace wall, TV and dining table
-- id: deck-lounge-valley-view.jpg
-  src: /images/external/deck-lounge-valley-view.jpg
-  alt: Covered deck lounge seating overlooking the treed valley
-- id: king-bedroom-teal-cushions.jpeg
-  src: /images/house/king-bedroom-teal-cushions.jpeg
-  alt: King bedroom with teal cushions and balcony view
-- id: king-bedroom-white-linen.jpeg
-  src: /images/house/king-bedroom-white-linen.jpeg
-  alt: King bedroom with white linen and balcony access
-- id: twin-bedroom-brick-wall.jpeg
-  src: /images/house/twin-bedroom-brick-wall.jpeg
-  alt: Twin bedroom with exposed brick wall
+- id: living-room-sofas-tv.jpeg
+  src: /images/house/living-room-sofas-tv.jpeg
+  alt: Living room with sofas and TV
+- id: lounge-area.jpeg
+  src: /images/house/lounge-area.jpeg
+  alt: Lounge with corner sofa and garden view windows
 - id: dining-area.jpg
   src: /images/house/dining-area.jpg
   alt: Open-plan dining table and kitchen with valley view
@@ -129,12 +42,99 @@
 - id: kitchen-island-mountain-view.jpg
   src: /images/house/kitchen-island-mountain-view.jpg
   alt: Kitchen with white cabinetry and sweeping mountain views
-- id: lounge-area.jpeg
-  src: /images/house/lounge-area.jpeg
-  alt: Lounge with corner sofa and garden view windows
+- id: king-bedroom-white-linen.jpeg
+  src: /images/house/king-bedroom-white-linen.jpeg
+  alt: King bedroom with white linen and balcony access
+- id: king-bedroom-teal-cushions.jpeg
+  src: /images/house/king-bedroom-teal-cushions.jpeg
+  alt: King bedroom with teal cushions and balcony view
+- id: twin-bedroom-brick-wall.jpeg
+  src: /images/house/twin-bedroom-brick-wall.jpeg
+  alt: Twin bedroom with exposed brick wall
+- id: wood-fireplace-burning.jpg
+  src: /images/house/wood-fireplace-burning.jpg
+  alt: Wood fireplace burning beside the brick chimney
+- id: guest-wine-by-fireplace.jpg
+  src: /images/house/guest-wine-by-fireplace.jpg
+  alt: Guest enjoying a glass of wine by the wood fireplace
+- id: verandah-lounge-area.jpg
+  src: /images/external/verandah-lounge-area.jpg
+  alt: Verandah with bar stools and lounge seating
+- id: verandah-dining-views.jpg
+  src: /images/external/verandah-dining-views.jpg
+  alt: Verandah dining table with sweeping hinterland views
+- id: deck-with-view-day.jpg
+  src: /images/external/deck-with-view-day.jpg
+  alt: Deck bar seating with panoramic valley views
+- id: deck-lounge-valley-view.jpg
+  src: /images/external/deck-lounge-valley-view.jpg
+  alt: Covered deck lounge seating overlooking the treed valley
 - id: covered-deck-dusk-coastal-view.jpeg
   src: /images/external/covered-deck-dusk-coastal-view.jpeg
   alt: Covered deck at dusk with valley and coastal views
-- id: living-room-sofas-tv.jpeg
-  src: /images/house/living-room-sofas-tv.jpeg
-  alt: Living room with sofas and TV
+- id: outdoor-dining-moonlit-valley.jpeg
+  src: /images/external/outdoor-dining-moonlit-valley.jpeg
+  alt: Outdoor dining under a full moon over the valley
+- id: guest-taking-in-coastal-view.jpg
+  src: /images/external/guest-taking-in-coastal-view.jpg
+  alt: Guest with a charcuterie board overlooking the coastal hills
+- id: gas-bbq-outdoor-dining.jpg
+  src: /images/external/gas-bbq-outdoor-dining.jpg
+  alt: Covered gas BBQ on the patio
+- id: deck-beside-pool.jpg
+  src: /images/external/deck-beside-pool.jpg
+  alt: Covered deck with BBQ and seating beside the pool
+- id: resort-style-pool.jpg
+  src: /images/external/resort-style-pool.jpg
+  alt: Pool, spa and palm-fringed deck with hinterland views
+- id: plunge-pool-spa-deck.jpg
+  src: /images/external/plunge-pool-spa-deck.jpg
+  alt: Spa on the deck beside the house
+- id: heated-pool-evening.jpg
+  src: /images/external/heated-pool-evening.jpg
+  alt: Pool deck and loungers at sunset over the hinterland
+- id: goldcoast-in-background.jpg
+  src: /images/external/goldcoast-in-background.jpg
+  alt: Coastline and Gold Coast skyline seen through the palms
+- id: goldcoast-skyline-over-ocean.jpeg
+  src: /images/external/goldcoast-skyline-over-ocean.jpeg
+  alt: Gold Coast skyline over the treeline and ocean
+- id: valley-view.jpeg
+  src: /images/external/valley-view.jpeg
+  alt: Valley view with clouds over the distant coastline
+- id: guanaba-valley-view.jpg
+  src: /images/external/guanaba-valley-view.jpg
+  alt: Dusk over the Guanaba Valley with storm clouds
+- id: hinterland-forest-view.jpg
+  src: /images/external/hinterland-forest-view.jpg
+  alt: Sweeping hinterland and forest view
+- id: fog-valley.jpeg
+  src: /images/external/fog-valley.jpeg
+  alt: Fog filling the valley below the deck
+- id: sunrise-valley-coast.jpeg
+  src: /images/external/sunrise-valley-coast.jpeg
+  alt: Sunrise over the valley and coastline
+- id: sunrise-purple-skies.jpg
+  src: /images/external/sunrise-purple-skies.jpg
+  alt: Pre-dawn purple and orange sky over the hills
+- id: hinterland-scenery-rainbow.jpeg
+  src: /images/external/hinterland-scenery-rainbow.jpeg
+  alt: Rainbow arcing over the hinterland valley
+- id: sunset-coastal-hills.jpeg
+  src: /images/external/sunset-coastal-hills.jpeg
+  alt: Sunset sky over silhouetted coastal hills
+- id: goldcoast-sunset.jpeg
+  src: /images/external/goldcoast-sunset.jpeg
+  alt: Gold Coast skyline glowing at sunset
+- id: goldcoast-at-dusk.jpeg
+  src: /images/external/goldcoast-at-dusk.jpeg
+  alt: Gold Coast city lights at night from the garden
+- id: garden-and-grounds-flower.jpg
+  src: /images/external/garden-and-grounds-flower.jpg
+  alt: Red ixora flowers in the garden
+- id: resident-koala.jpg
+  src: /images/external/resident-koala.jpg
+  alt: Resident koala resting on a eucalyptus branch
+- id: ev-charging-on-site.jpeg
+  src: /images/external/ev-charging-on-site.jpeg
+  alt: EV charger on site

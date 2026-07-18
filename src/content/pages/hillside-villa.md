@@ -86,19 +86,17 @@ Book the House and Villa together, connected as one retreat sleeping up to 8, wi
 
 ![Villa kitchenette](/images/villa/villa-kitchenette-cabinetry.jpg)
 
+![Queen bedroom with teal linen](/images/villa/villa-queen-bedroom-teal-linen.jpg)
+
 ![Shower room with fresh linen and toiletries](/images/villa/villa-shower-room.jpg)
 
 ![Complimentary bathroom amenities](/images/amenities/amenities-on-towel.jpg)
-
-![Queen bedroom with teal linen](/images/villa/villa-queen-bedroom-teal-linen.jpg)
 
 ![Pool and heated spa in the evening light](/images/external/heated-pool-evening.jpg)
 
 ![Gated entrance to the pool area](/images/external/gated-pool-entrance.jpg)
 
 ![Gas BBQ for outdoor dining](/images/external/gas-bbq-outdoor-dining.jpg)
-
-![EV charging on site](/images/external/ev-charging-on-site.jpeg)
 
 ![Gold Coast skyline over the ocean](/images/external/goldcoast-skyline-over-ocean.jpeg)
 
@@ -110,6 +108,8 @@ Book the House and Villa together, connected as one retreat sleeping up to 8, wi
 
 ![Coastal view through the palms](/images/external/coastal-view-through-palms.jpg)
 
+![Palm-framed coastal view](/images/external/palm-framed-coastal-view.jpg)
+
 ![Eucalypt hillside below the retreat](/images/external/eucalypt-hillside.jpg)
 
-![Palm-framed coastal view](/images/external/palm-framed-coastal-view.jpg)
+![EV charging on site](/images/external/ev-charging-on-site.jpeg)

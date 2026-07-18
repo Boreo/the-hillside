@@ -19,6 +19,14 @@ const dwellingSchema = z.object({
     }),
   ),
   amenities: z.array(z.string().min(1)),
+  // Combined House & Villa bookings are direct-only, so that page points its
+  // header CTA at the contact page instead of the booking engine.
+  cta: z
+    .object({
+      label: z.string().min(1),
+      href: z.string().startsWith("/"),
+    })
+    .default({ label: "Book direct", href: "/book/" }),
 });
 
 // Homepage-only content: section copy, image picks, captions and the

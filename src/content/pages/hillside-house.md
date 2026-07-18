@@ -79,54 +79,52 @@ Book the House and Villa together, connected as one retreat sleeping up to 8, wi
 
 ## A look around
 
-![Outdoor dining with a full moon over the valley](/images/external/outdoor-dining-moonlit-valley.jpeg)
-
-![Dining area with lounge and TV](/images/house/dining-area-lounge-tv.jpg)
-
 ![Lounge and dining area](/images/house/house-lounge-dining-area.jpg)
 
-![Twin bedroom with exposed brick wall](/images/house/twin-bedroom-brick-wall.jpeg)
-
-![King bedroom with teal cushions](/images/house/king-bedroom-teal-cushions.jpeg)
-
-
-![King bedroom with white linen](/images/house/king-bedroom-white-linen.jpeg)
-
+![Dining area with lounge and TV](/images/house/dining-area-lounge-tv.jpg)
 
 ![Lounge area](/images/house/lounge-area.jpeg)
 
 ![Dining area](/images/house/dining-area.jpg)
 
-![Verandah dining and seating area](/images/external/verandah-lounge-area.jpg)
+![Kitchen island with mountain views](/images/house/kitchen-island-mountain-view.jpg)
 
-![The Gold Coast at dusk](/images/external/goldcoast-at-dusk.jpeg)
+![Kitchen](/images/house/kitchen.jpg)
 
-![Pool deck at night with city lights beyond](/images/external/pool-at-night.jpg)
+![King bedroom with white linen](/images/house/king-bedroom-white-linen.jpeg)
 
-![Pool and spa seen from above](/images/external/pool-and-spa.jpg)
+![King bedroom with teal cushions](/images/house/king-bedroom-teal-cushions.jpeg)
 
-![Pool and heated spa in evening light](/images/external/heated-pool-evening.jpg)
+![Twin bedroom with exposed brick wall](/images/house/twin-bedroom-brick-wall.jpeg)
 
 ![Wood fireplace burning](/images/house/wood-fireplace-burning.jpg)
 
 ![Enjoying a glass of wine by the fire](/images/house/guest-wine-by-fireplace.jpg)
 
+![Verandah dining and seating area](/images/external/verandah-lounge-area.jpg)
+
 ![Covered deck lounge overlooking the valley](/images/external/deck-lounge-valley-view.jpg)
 
-![Kitchen island with mountain views](/images/house/kitchen-island-mountain-view.jpg)
+![Outdoor dining with a full moon over the valley](/images/external/outdoor-dining-moonlit-valley.jpeg)
 
-![Kitchen](/images/house/kitchen.jpg)
+![Pool and spa seen from above](/images/external/pool-and-spa.jpg)
+
+![Pool and heated spa in evening light](/images/external/heated-pool-evening.jpg)
+
+![Pool deck at night with city lights beyond](/images/external/pool-at-night.jpg)
 
 ![Guest taking in the coastal view](/images/external/guest-taking-in-coastal-view.jpg)
 
 ![Gold Coast skyline over the ocean](/images/external/goldcoast-skyline-over-ocean.jpeg)
 
+![The Gold Coast at dusk](/images/external/goldcoast-at-dusk.jpeg)
+
 ![Sunset sky over the coastal hills](/images/external/sunset-coastal-hills.jpeg)
 
 ![Gold Coast skyline at sunset](/images/external/goldcoast-sunset.jpeg)
 
-![Electric vehicle charging on site](/images/external/ev-charging-on-site.jpeg)
+![Koala in a tree on the property](/images/external/koala-on-tree.jpeg)
 
 ![Guest toiletries provided](/images/amenities/amenities-full-set.jpg)
 
-![Koala in a tree on the property](/images/external/koala-on-tree.jpeg)
+![Electric vehicle charging on site](/images/external/ev-charging-on-site.jpeg)
