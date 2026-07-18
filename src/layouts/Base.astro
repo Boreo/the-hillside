@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import "@fontsource-variable/fraunces/index.css";
-import { BOOKING_URL } from "../consts";
 
 interface Props {
   title: string;
@@ -62,7 +61,7 @@ const jsonLd = {
   ],
   potentialAction: {
     "@type": "ReserveAction",
-    target: BOOKING_URL,
+    target: "https://www.thehillside.com.au/book/",
   },
 };
 ---

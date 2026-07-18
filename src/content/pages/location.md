@@ -21,4 +21,4 @@ Welcome to Tamborine Mountain, a captivating destination nestled in the heart of
 
 Whether you're an outdoor enthusiast, a lover of art and culture, or simply seeking a serene escape, Tamborine Mountain offers a diverse range of experiences that will leave you enchanted and inspired. Plan your visit to this hidden gem and uncover the magic of Tamborine Mountain, where nature, culture, and relaxation converge in perfect harmony.
 
-[Book with us](https://book-directonline.com/properties/thehillsideretreatdirect)
+[Book with us](/book/)

@@ -18,4 +18,4 @@ Please don't hesitate to contact our dedicated team, who will be delighted to as
 **Address**
 : 25 Leona Court, Tamborine Mountain, Queensland, Australia 4272
 
-[Book with us](https://book-directonline.com/properties/thehillsideretreatdirect)
+[Book with us](/book/)
