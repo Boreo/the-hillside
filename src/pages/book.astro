@@ -51,6 +51,19 @@ import Base from "../layouts/Base.astro";
       }
       var s = document.createElement("script");
       s.src = "https://widget.siteminder.com/ibe.min.js";
+      // The widget sizes its iframe to the booking content via iframe-resizer,
+      // but only binds it on screens 768px and up; on phones it falls back to
+      // a fixed-height scrolling iframe. Bind the resizer ourselves there
+      // (ibe.min.js exposes it as window.iFrameResize) so the iframe always
+      // tracks content height and the page scrolls as one document.
+      s.onload = function () {
+        var f = document.querySelector(".ibe iframe");
+        if (!f) return;
+        f.setAttribute("scrolling", "no");
+        if (f.className.indexOf("ibefr") === -1 && window.iFrameResize) {
+          window.iFrameResize({ checkOrigin: false, scrolling: false }, f);
+        }
+      };
       document.body.appendChild(s);
     }
     setTimeout(loadWidget, 1500);
@@ -73,5 +86,14 @@ import Base from "../layouts/Base.astro";
   .book-note {
     max-width: 44rem;
     margin: 0 0 2rem;
+  }
+  /* The widget clamps its iframe with an inline max-height of ~95% of the
+     viewport, which forces an internal scrollbar; !important lifts the clamp
+     so the iframe grows to its full content height and only the page scrolls.
+     It also re-applies the clamp on window resize, so this must stay CSS. */
+  .book-page :global(.ibe iframe) {
+    max-height: none !important;
+    display: block;
+    margin-inline: auto;
   }
 </style>
