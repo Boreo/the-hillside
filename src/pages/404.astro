@@ -1,0 +1,56 @@
+---
+import Base from "../layouts/Base.astro";
+import { Image } from "astro:assets";
+import koala from "../assets/images/external/koala-on-tree.jpeg";
+---
+
+<Base
+  title="Page not found | The Hillside Retreat"
+  description="That page could not be found. Find our accommodation, gallery and booking pages from here."
+>
+  <div class="not-found">
+    <Image
+      src={koala}
+      alt="Koala in a tree on the property"
+      widths={[480, 800]}
+      sizes="(max-width: 40rem) 100vw, 24rem"
+      loading="eager"
+    />
+    <div>
+      <h1>We can't find that page</h1>
+      <p>It may have moved, or the link may be out of date. Everything you're after is a click away: our <a href="/hillside-house/">Hillside House</a>, <a href="/hillside-villa/">Hillside Villa</a>, or <a href="/book/">booking</a>.</p>
+      <p>If you were looking for something in particular, contact us at <a href="mailto:stay@thehillside.com.au">stay@thehillside.com.au</a> or on <a href="tel:+61466990185">0466 990 185</a> and we'll point you the right way.</p>
+      <a class="btn" href="/">Back to the homepage</a>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .not-found {
+    display: grid;
+    grid-template-columns: minmax(0, 24rem) 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin: 3rem 0 4rem;
+  }
+  .not-found img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .not-found h1 {
+    margin: 0 0 0.75rem;
+  }
+  .not-found p {
+    margin: 0 0 1rem;
+  }
+  .not-found .btn {
+    margin-top: 0.5rem;
+  }
+  @media (max-width: 40rem) {
+    .not-found {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
