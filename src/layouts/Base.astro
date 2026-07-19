@@ -23,18 +23,18 @@ const nav = [
       { href: "/house-and-villa/", label: "House & Villa" },
     ],
   },
+  { href: "/gallery/", label: "Gallery" },
+  { href: "/reviews/", label: "Reviews" },
   {
     href: "/guest-info/",
     label: "Your Stay",
     children: [
       { href: "/location/", label: "Location" },
+      { href: "/faq/", label: "FAQ" },
       { href: "/guest-info/", label: "Guest Info" },
       { href: "/mountain-mobile-massage/", label: "Mobile Massage" },
-      { href: "/faq/", label: "FAQ" },
     ],
   },
-  { href: "/gallery/", label: "Gallery" },
-  { href: "/reviews/", label: "Reviews" },
   { href: "/contact-us/", label: "Contact" },
 ];
 
@@ -82,7 +82,7 @@ const jsonLd = {
     <Image src={emblem} alt="" height={64} densities={[1, 2]} loading="eager" />
     <span class="brand-name">The Hillside Retreat</span>
   </a>
-  <nav>
+  <nav id="site-nav">
     {nav.map((item) =>
       "children" in item && item.children ? (
         <div class="nav-drop">
@@ -97,14 +97,28 @@ const jsonLd = {
         <a href={item.href}>{item.label}</a>
       ),
     )}
-    <a class="btn" href="/book/">Book Direct</a>
   </nav>
+  <a class="btn nav-book" href="/book/">Book Direct</a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </button>
 </header>
 
 <script>
-  // Touch devices get no hover: first tap opens the dropdown, a second tap
-  // on the parent follows its link (anchor). Desktop keeps hover + plain click.
-  if (window.matchMedia("(hover: none)").matches) {
+  const header = document.querySelector("header")!;
+  const toggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
+  toggle?.addEventListener("click", () => {
+    const open = header.classList.toggle("nav-open");
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+
+  // Wide touch devices (tablets) get no hover: first tap opens the dropdown,
+  // a second tap on the parent follows its link. Desktop keeps hover + plain
+  // click. Below the mobile breakpoint the panel shows sub-links inline, so
+  // parent links navigate on first tap.
+  if (window.matchMedia("(hover: none) and (min-width: 56.0625rem)").matches) {
     const drops = document.querySelectorAll<HTMLElement>(".nav-drop");
     drops.forEach((drop) => {
       const parent = drop.querySelector<HTMLAnchorElement>(".nav-parent");
@@ -138,13 +152,15 @@ const jsonLd = {
     </div>
     <nav class="footer-col" aria-label="Footer">
       <h2>Explore</h2>
-      <a href="/#accommodation">Accommodation</a>
+      <a href="/hillside-house/">Hillside House</a>
+      <a href="/hillside-villa/">Hillside Villa</a>
+      <a href="/house-and-villa/">House & Villa</a>
       <a href="/gallery/">Gallery</a>
       <a href="/reviews/">Reviews</a>
       <a href="/location/">Location</a>
+      <a href="/faq/">FAQ</a>
       <a href="/guest-info/">Guest Info</a>
       <a href="/mountain-mobile-massage/">Mobile Massage</a>
-      <a href="/faq/">FAQ</a>
     </nav>
     <div class="footer-col">
       <h2>Contact</h2>

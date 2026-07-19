@@ -42,50 +42,49 @@ test("desktop: menu stays open crossing gap and child navigates", async ({ page 
   await expect(page).toHaveURL(/\/location\/$/);
 });
 
-test("mobile: first tap opens menu without navigating, second tap follows anchor", async ({ page }, testInfo) => {
+test("mobile: nav hidden until hamburger tapped, panel shows sub-links inline", async ({ page }, testInfo) => {
   test.skip(!isMobile(testInfo.project.name), "mobile only");
   await page.goto("/");
-  const drop = page.locator(".nav-drop", { hasText: "Accommodation" });
-  const parent = drop.locator(".nav-parent");
-  const menu = drop.locator(".drop-menu");
+  const nav = page.locator("header nav");
+  const toggle = page.locator(".nav-toggle");
 
-  await expect(menu).toBeHidden();
-  await parent.tap();
-  await expect(menu).toBeVisible();
-  await expect(page).toHaveURL(/\/$/); // no navigation on first tap
-
-  await parent.tap();
-  await expect(page).toHaveURL(/\/#accommodation$/);
+  await expect(nav).toBeHidden();
+  await expect(toggle).toBeVisible();
+  await toggle.tap();
+  await expect(nav).toBeVisible();
+  await expect(toggle).toHaveAttribute("aria-expanded", "true");
+  await expect(page.locator(".drop-menu a", { hasText: "Hillside Villa" })).toBeVisible();
 });
 
 test("mobile: tapping a child link navigates", async ({ page }, testInfo) => {
   test.skip(!isMobile(testInfo.project.name), "mobile only");
   await page.goto("/");
-  const drop = page.locator(".nav-drop", { hasText: "Accommodation" });
-  await drop.locator(".nav-parent").tap();
-  await drop.locator(".drop-menu a", { hasText: "Hillside Villa" }).tap();
+  await page.locator(".nav-toggle").tap();
+  await page.locator(".drop-menu a", { hasText: "Hillside Villa" }).tap();
   await expect(page).toHaveURL(/\/hillside-villa\/$/);
 });
 
-test("mobile: tapping elsewhere closes an open menu", async ({ page }, testInfo) => {
+test("mobile: parent link navigates on first tap", async ({ page }, testInfo) => {
   test.skip(!isMobile(testInfo.project.name), "mobile only");
   await page.goto("/");
-  const drop = page.locator(".nav-drop", { hasText: "Accommodation" });
-  const menu = drop.locator(".drop-menu");
-  await drop.locator(".nav-parent").tap();
-  await expect(menu).toBeVisible();
-  await page.locator("h1").first().tap();
-  await expect(menu).toBeHidden();
+  await page.locator(".nav-toggle").tap();
+  await page.locator(".nav-parent", { hasText: "Accommodation" }).tap();
+  await expect(page).toHaveURL(/\/#accommodation$/);
 });
 
-test("mobile: opening one dropdown closes the other", async ({ page }, testInfo) => {
+test("mobile: book button visible without opening the menu", async ({ page }, testInfo) => {
   test.skip(!isMobile(testInfo.project.name), "mobile only");
   await page.goto("/");
-  const accom = page.locator(".nav-drop", { hasText: "Accommodation" });
-  const stay = page.locator(".nav-drop", { hasText: "Your Stay" });
-  await accom.locator(".nav-parent").tap();
-  await expect(accom.locator(".drop-menu")).toBeVisible();
-  await stay.locator(".nav-parent").tap();
-  await expect(stay.locator(".drop-menu")).toBeVisible();
-  await expect(accom.locator(".drop-menu")).toBeHidden();
+  await expect(page.locator("header .nav-book")).toBeVisible();
+});
+
+test("mobile: hamburger toggles panel closed again", async ({ page }, testInfo) => {
+  test.skip(!isMobile(testInfo.project.name), "mobile only");
+  await page.goto("/");
+  const toggle = page.locator(".nav-toggle");
+  await toggle.tap();
+  await expect(page.locator("header nav")).toBeVisible();
+  await toggle.tap();
+  await expect(page.locator("header nav")).toBeHidden();
+  await expect(toggle).toHaveAttribute("aria-expanded", "false");
 });
