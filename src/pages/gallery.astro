@@ -20,7 +20,7 @@ const images = await getCollection("gallery");
             alt={data.alt}
             widths={[400, 800]}
             sizes="(max-width: 40rem) 100vw, 33vw"
-            loading="lazy"
+            loading={i < 6 ? "eager" : "lazy"}
           />
         </a>
       ))

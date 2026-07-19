@@ -47,7 +47,7 @@ const factsParts = (f: (typeof cards)[number]["facts"]) => ({
           alt={card.image.alt}
           widths={[480, 800, 1200]}
           sizes="(max-width: 40rem) 100vw, 50vw"
-          loading="lazy"
+          loading="eager"
         />
         <h3>{card.facts.name}</h3>
         <p class="facts-line">

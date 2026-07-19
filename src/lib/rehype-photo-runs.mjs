@@ -264,6 +264,22 @@ export default function rehypePhotoRuns() {
     };
     enlarge(tree);
 
+    // The first content image sits at or near the top of the page, so
+    // load it eagerly instead of Astro's lazy default.
+    const firstImg = (parent) => {
+      for (const node of parent.children ?? []) {
+        if (isElement(node, "img")) return node;
+        const found = node.type === "element" ? firstImg(node) : null;
+        if (found) return found;
+      }
+      return null;
+    };
+    const lead = firstImg(tree);
+    if (lead) {
+      lead.properties.loading = "eager";
+      lead.properties.fetchPriority = "high";
+    }
+
     const el = (tagName, properties, children) => ({ type: "element", tagName, properties, children });
     const text = (value) => ({ type: "text", value });
     const total = photos.length;
@@ -277,7 +293,7 @@ export default function rehypePhotoRuns() {
               { href: "#_", className: ["lightbox-backdrop"], ariaLabel: "Close enlarged photo" },
               [],
             ),
-            el("img", { ...img.properties, loading: "lazy" }, []),
+            el("img", { ...img.properties, loading: "lazy", fetchpriority: undefined }, []),
             el("span", { className: ["lightbox-meta"] }, [
               el("span", { className: ["lightbox-caption"] }, [
                 text(img.properties?.alt ?? ""),
