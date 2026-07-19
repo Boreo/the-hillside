@@ -21,7 +21,7 @@ const resolved = await Promise.all(
       {resolved.map((q) => (
         <blockquote>
           <p>“{q.excerpt}”</p>
-          <footer>— {q.author}, {q.location}</footer>
+          <footer>— {q.author}{q.location && `, ${q.location}`}</footer>
         </blockquote>
       ))}
     </div>

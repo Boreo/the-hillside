@@ -1,10 +1,17 @@
 ---
 import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
-import sunrise from "../assets/images/external/sunrise-valley-coast.jpeg";
+import PullQuote from "../components/PullQuote.astro";
+import FactIcon from "../components/FactIcon.astro";
 
 const reviews = await getCollection("reviews");
+const sources = (await getCollection("reviewSources")).filter(
+  ({ data }) => data.rating !== null && data.count !== null,
+);
+
+// Long reviews span the full grid width so they don't tower over their
+// neighbour in a two-column row.
+const WIDE_THRESHOLD = 280;
 
 const reviewsJsonLd = {
   "@context": "https://schema.org",
@@ -25,22 +32,216 @@ const reviewsJsonLd = {
   extraJsonLd={reviewsJsonLd}
 >
   <h1>Reviews</h1>
-  <Image
-    src={sunrise}
-    alt="Sunrise over the valley and coastline"
-    widths={[480, 800, 1200, 1600]}
-    sizes="(max-width: 71rem) 100vw, 68rem"
-  />
-  <p>What people are saying about The Hillside Retreat.</p>
+  <p class="reviews-intro">
+    We're always grateful when guests take the time to share a few words about
+    their stay.
+  </p>
+
   {
-    reviews.map(({ data }) => (
-      <blockquote>
-        <p>“{data.quote}”</p>
-        <footer>
-          — {data.author}, {data.location}
-        </footer>
-      </blockquote>
-    ))
+    sources.length > 0 && (
+      <p class="source-badges">
+        {sources.map(({ data }) => (
+          <a class="source-badge" href={data.url}>
+            <span
+              class="stars"
+              style={`--fill: ${(data.rating! / data.scale) * 100}%`}
+              aria-hidden="true"
+            >
+              ★★★★★
+            </span>
+            <span class="source-score">
+              {data.rating}
+              {data.scale === 10 && " / 10"}
+            </span>
+            <span class="source-meta">
+              {data.count} reviews on {data.platform}
+              <FactIcon name="arrow-out" />
+            </span>
+          </a>
+        ))}
+      </p>
+    )
   }
-  <p><a class="btn" href="/book/">Book with us</a></p>
+
+  <PullQuote
+    reviewId="raquel-es"
+    excerpt="I loved the location, the views, and the space. An absolute bliss."
+  />
+
+  <div class="review-grid">
+    {
+      reviews
+        .filter(({ id }) => id !== "raquel-es")
+        .map(({ data }) => (
+          <blockquote
+            class:list={[
+              "review-card",
+              { "review-card-wide": data.quote.length > WIDE_THRESHOLD },
+            ]}
+          >
+            <p>{data.quote}</p>
+            <footer>
+              <span class="review-author">
+                — {data.author}
+                {data.location && `, ${data.location}`}
+              </span>
+            </footer>
+          </blockquote>
+        ))
+    }
+  </div>
+
+  <p class="reviews-cta"><a class="btn" href="/book/">Book with us</a></p>
 </Base>
+
+<style>
+  .reviews-intro {
+    max-width: 44rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .source-badges {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 54rem;
+    margin: 0 auto 2.75rem;
+  }
+
+  .source-badge {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: baseline;
+    column-gap: 0.6rem;
+    row-gap: 0.3rem;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-top: 2px solid var(--highlight);
+    border-radius: 0 0 10px 10px;
+    padding: 0.9rem 1.4rem 0.95rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .source-meta {
+    grid-column: 1 / -1;
+  }
+
+  .source-badge:hover {
+    border-color: var(--mint);
+    background: var(--wash);
+  }
+
+  /* Stars fill proportionally to the rating: a highlight-coloured copy of
+     the star row is clipped to --fill width over a hairline-toned base. */
+  .stars {
+    position: relative;
+    letter-spacing: 0.1em;
+    font-size: 1.15rem;
+    color: var(--line);
+  }
+
+  .stars::before {
+    content: "★★★★★";
+    position: absolute;
+    inset: 0;
+    width: var(--fill);
+    overflow: hidden;
+    color: var(--highlight);
+  }
+
+  .source-score {
+    font-family: "Fraunces Variable", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+  }
+
+  .source-meta {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .source-meta :global(.fact-icon) {
+    width: 0.85em;
+    height: 0.85em;
+    vertical-align: -0.08em;
+    margin-left: 0.15em;
+  }
+
+  .review-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .review-card {
+    position: relative;
+    margin: 0;
+    border: none;
+    border-top: 2px solid var(--highlight);
+    border-radius: 0 0 10px 10px;
+    background: var(--card);
+    padding: 2.4rem 1.6rem 1.5rem;
+    overflow: hidden;
+  }
+
+  /* Alternate card washes so the grid reads hand-laid rather than uniform. */
+  .review-card:nth-child(3n + 2) {
+    background: var(--wash);
+  }
+
+  .review-card::before {
+    content: "\201C";
+    position: absolute;
+    top: 0;
+    left: 0.9rem;
+    font-family: "Fraunces Variable", Georgia, serif;
+    font-size: 4.5rem;
+    line-height: 1;
+    color: var(--mint);
+    pointer-events: none;
+  }
+
+  .review-card:nth-child(3n + 2)::before {
+    color: var(--card);
+  }
+
+  .review-card-wide {
+    grid-column: 1 / -1;
+  }
+
+  .review-card p {
+    font-family: "Fraunces Variable", Georgia, serif;
+    font-style: italic;
+    font-size: 1.08rem;
+    line-height: 1.55;
+    text-wrap: pretty;
+    margin: 0 0 1rem;
+  }
+
+  .review-card footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    border: none;
+    padding: 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .reviews-cta {
+    text-align: center;
+  }
+
+  @media (max-width: 40rem) {
+    .review-grid,
+    .source-badges {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

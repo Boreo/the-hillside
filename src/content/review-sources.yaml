@@ -1,0 +1,21 @@
+# Platform rating badges shown on /reviews/. Update by hand: check each
+# platform page and edit rating/count here (a quarterly glance is enough).
+# scale is the platform's maximum score (5 for stars, 10 for Booking.com).
+- id: google
+  platform: Google
+  rating: 4.9
+  scale: 5
+  count: 42
+  url: https://share.google/g8ZiSaIC0EjjfrYv0
+- id: airbnb
+  platform: Airbnb
+  rating: 4.94
+  scale: 5
+  count: 100
+  url: https://www.airbnb.com.au/rooms/619063098781004488
+- id: booking
+  platform: Booking.com
+  rating: 9.6
+  scale: 10
+  count: 174
+  url: https://www.booking.com/hotel/au/the-hillside-cottage-tamborine-mountain1234567891011.en-gb.html

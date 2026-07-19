@@ -14,7 +14,7 @@ if (!review) throw new Error(`Review ${reviewId} not found in reviews.yaml`);
 <section class="pull-quote">
   <blockquote>
     <p>“{excerpt}”</p>
-    <footer>— {review.data.author}, {review.data.location}</footer>
+    <footer>— {review.data.author}{review.data.location && `, ${review.data.location}`}</footer>
   </blockquote>
 </section>
 

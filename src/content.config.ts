@@ -169,8 +169,19 @@ const reviews = defineCollection({
   schema: z.object({
     quote: z.string().min(1),
     author: z.string().min(1),
-    location: z.string().min(1),
+    location: z.string().min(1).optional(),
   }),
 });
 
-export const collections = { pages, gallery, reviews };
+const reviewSources = defineCollection({
+  loader: file("src/content/review-sources.yaml"),
+  schema: z.object({
+    platform: z.string().min(1),
+    rating: z.number().positive().nullable(),
+    scale: z.union([z.literal(5), z.literal(10)]),
+    count: z.number().int().positive().nullable(),
+    url: z.string().startsWith("https://"),
+  }),
+});
+
+export const collections = { pages, gallery, reviews, reviewSources };

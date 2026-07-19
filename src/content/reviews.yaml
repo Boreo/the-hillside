@@ -35,3 +35,27 @@
   quote: "The owner is extremely hospitable and she goes out of her way in making us feel at home. Facilities are very well maintained and the house is very cozy and well furnished. Definitely a great choice for family getaway, and it comes with an amazing view for sunrise too!"
   author: Cassandra
   location: Malaysia
+- id: nik-tripadvisor
+  quote: "Stayed in the villa, ideal for a couple. Internet included with access to the pool and hot tub. Hosts could not do enough for us. Hot tub is really hot with the jets to keep you on your toes. Sad to leave, but would happily return with the whole family."
+  author: Nik
+- id: lyndal-google
+  quote: "Lovely and clean. Very private and quiet. Our stay was very relaxing. Great views even though our 2nd day was very wet and the clouds had covered our views. Handy location."
+  author: Lyndal
+- id: bronwyn-tripadvisor
+  quote: "What a lovely place! We booked a 2 night stopover and were not disappointed. The owners Rowena and Glen were very helpful as we were unsure of our arrival time. There was a lovely surprise of wine and chocolate which was very thoughtful. The view is spectacular to say the least. Conveniently located for the Sites up in the Mountain."
+  author: Bronwyn
+- id: heidi-google
+  quote: "Rowena went the extra mile when she found out I was not feeling well, she dropped a herbal tea off to me to calm my stomach. Very comfortable and amazing views! Very close to hiking and lovely cafes and restaurants. Will definitely be back!"
+  author: Heidi
+- id: daniel-google
+  quote: "My wife and I recently stayed in the villa. Accommodation was comfortable, clean and in a beautiful location overlooking the valley. Pool and spa were lovely and hosts were kind/helpful. Highly recommend"
+  author: Daniel
+- id: john-google
+  quote: "Fantastic secluded location with a truly incredible view of the GC twinkling in the night. Large home with 2 log burners, essential for the winter months. The hosts were very accommodating and keen to make our stay memorable. Also a heated pool and spa really topped it off."
+  author: John
+- id: fiona-google
+  quote: "Amazing place felt right at home the most beautiful views and had everything we needed and more and the owners are just so accommodating and we can't wait to return soon"
+  author: Fiona
+- id: kyle-google
+  quote: "A fanstastic place to get away to and relax. Views are spectacular. Great for families or small groups"
+  author: Kyle
