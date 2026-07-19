@@ -41,7 +41,9 @@ test("gallery viewer arrow keys navigate", async ({ page }) => {
 test("book page carries the embed container and direct-booking note", async ({ page }) => {
   await page.goto("/book/");
   await expect(page.locator(".book-note")).toContainText("House and Villa");
-  await expect(page.locator(".ibe")).toHaveCount(1);
+  // The SiteMinder script may inject a second .ibe node once it loads;
+  // assert the authored container is present rather than an exact count.
+  await expect(page.locator('.ibe[data-channelcode="thehillsideretreatdirect"]').first()).toBeAttached();
 });
 
 test("404 page renders with nav back home", async ({ page }) => {

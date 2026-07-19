@@ -238,9 +238,17 @@ const reviewsJsonLd = {
     text-align: center;
   }
 
-  @media (max-width: 40rem) {
-    .review-grid,
+  /* Three-up badges run out of room for their "reviews on ..." line
+     before the mobile breakpoint; stack them early. */
+  @media (max-width: 56rem) {
     .source-badges {
+      grid-template-columns: 1fr;
+      max-width: 22rem;
+    }
+  }
+
+  @media (max-width: 40rem) {
+    .review-grid {
       grid-template-columns: 1fr;
     }
   }
