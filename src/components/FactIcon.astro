@@ -1,5 +1,5 @@
 ---
-import { FACT_ICON_PATHS } from "../lib/fact-icon-paths.mjs";
+import { FACT_ICON_PATHS, factIconHtml } from "../lib/fact-icon-paths.mjs";
 
 interface Props {
   name: keyof typeof FACT_ICON_PATHS;
@@ -7,6 +7,4 @@ interface Props {
 const { name } = Astro.props;
 ---
 
-<svg class="fact-icon" viewBox="0 0 256 256" aria-hidden="true">
-  <path fill="currentColor" d={FACT_ICON_PATHS[name]} />
-</svg>
+<Fragment set:html={factIconHtml(name)} />

@@ -1,5 +1,5 @@
 // Phosphor Regular glyphs (MIT), inlined so no icon dependency is needed.
-// Shared by FactIcon.astro and rehype-photo-runs.mjs (cross-sell facts lines).
+// Shared by FactIcon.astro and the rehype plugins (via hast-utils' factIcon).
 export const FACT_ICON_PATHS = {
   users:
     "M117.25 157.92a60 60 0 1 0-66.5 0a95.83 95.83 0 0 0-47.22 37.71a8 8 0 1 0 13.4 8.74a80 80 0 0 1 134.14 0a8 8 0 0 0 13.4-8.74a95.83 95.83 0 0 0-47.22-37.71M40 108a44 44 0 1 1 44 44a44.05 44.05 0 0 1-44-44m210.14 98.7a8 8 0 0 1-11.07-2.33A79.83 79.83 0 0 0 172 168a8 8 0 0 1 0-16a44 44 0 1 0-16.34-84.87a8 8 0 1 1-5.94-14.85a60 60 0 0 1 55.53 105.64a95.83 95.83 0 0 1 47.22 37.71a8 8 0 0 1-2.33 11.07",
@@ -22,3 +22,12 @@ export const FACT_ICON_PATHS = {
   calendar:
     "M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-68-76a12,12,0,1,1-12-12A12,12,0,0,1,140,132Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,132ZM96,172a12,12,0,1,1-12-12A12,12,0,0,1,96,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,140,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,172Z",
 };
+
+/**
+ * The fact-icon SVG as an HTML string, for contexts that render raw HTML
+ * (FactIcon.astro, set:html intros in CardGroups.astro).
+ * @param {keyof typeof FACT_ICON_PATHS} name
+ * @param {string} [extraClass]
+ */
+export const factIconHtml = (name, extraClass) =>
+  `<svg class="fact-icon${extraClass ? ` ${extraClass}` : ""}" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="${FACT_ICON_PATHS[name]}"/></svg>`;

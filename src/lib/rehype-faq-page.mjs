@@ -31,6 +31,38 @@ const CHIP_RULES = [
   { icon: "paw-print", pattern: /(we keep the property pet-free)/i },
 ];
 
+// A trailing h2 section with no questions beneath it: the contact card.
+// The prose sits in a wrapper div so rehype-photo-runs (which runs later)
+// doesn't match its h2 + link-paragraph cross-sell pattern.
+const faqClosing = (h2, body) =>
+  el("section", { className: ["faq-closing"], id: slugOf(h2) }, [
+    h2,
+    el("div", { className: ["faq-closing-body"] }, body),
+  ]);
+
+// An h2 topic group: each h3 question and its answer becomes an article
+// with a slug id for deep links; pairs are also pushed onto faqItems for
+// the FAQPage JSON-LD.
+const faqGroup = (h2, questions, faqItems) =>
+  el("section", { className: ["faq-group"], id: slugOf(h2) }, [
+    h2,
+    el(
+      "div",
+      { className: ["faq-list"] },
+      questions.map(([h3, ...answer]) => {
+        faqItems.push({
+          question: textOf(h3).trim(),
+          answer: answer.map(textOf).join(" ").replace(/\s+/g, " ").trim(),
+        });
+        h3.properties = { ...h3.properties, className: ["faq-q"] };
+        return el("article", { className: ["faq-item"], id: slugOf(h3) }, [
+          h3,
+          el("div", { className: ["faq-a"] }, answer),
+        ]);
+      }),
+    ),
+  ]);
+
 export default function rehypeFaqPage() {
   return (tree, file) => {
     const frontmatter = file.data?.astro?.frontmatter;
@@ -59,38 +91,15 @@ export default function rehypeFaqPage() {
       chipStrip(nodes, CHIP_RULES),
       el("div", { className: ["faq-layout"] }, [
         toc,
-        el("div", { className: ["faq-wrap"] }, [
-          ...groups.map(([h2, ...body]) => {
-          const id = slugOf(h2);
-          const [, ...questions] = splitAt(body, "h3");
-          if (questions.length === 0) {
-            // The prose sits in a wrapper div so rehype-photo-runs (which runs
-            // later) doesn't match its h2 + link-paragraph cross-sell pattern.
-            return el("section", { className: ["faq-closing"], id }, [
-              h2,
-              el("div", { className: ["faq-closing-body"] }, body),
-            ]);
-          }
-          return el("section", { className: ["faq-group"], id }, [
-            h2,
-            el(
-              "div",
-              { className: ["faq-list"] },
-              questions.map(([h3, ...answer]) => {
-                faqItems.push({
-                  question: textOf(h3).trim(),
-                  answer: answer.map(textOf).join(" ").replace(/\s+/g, " ").trim(),
-                });
-                h3.properties = { ...h3.properties, className: ["faq-q"] };
-                return el("article", { className: ["faq-item"], id: slugOf(h3) }, [
-                  h3,
-                  el("div", { className: ["faq-a"] }, answer),
-                ]);
-              }),
-            ),
-          ]);
+        el(
+          "div",
+          { className: ["faq-wrap"] },
+          groups.map(([h2, ...body]) => {
+            const [, ...questions] = splitAt(body, "h3");
+            if (questions.length === 0) return faqClosing(h2, body);
+            return faqGroup(h2, questions, faqItems);
           }),
-        ]),
+        ),
       ]),
     ];
 

@@ -9,10 +9,7 @@ const linkSchema = z.object({
   label: z.string().min(1),
   href: z.string().min(1),
 });
-const internalLinkSchema = z.object({
-  label: z.string().min(1),
-  href: z.string().startsWith("/"),
-});
+const internalLinkSchema = linkSchema.extend({ href: z.string().startsWith("/") });
 const imageWithAlt = (image: SchemaContext["image"]) =>
   z.object({
     src: image(),
@@ -74,59 +71,48 @@ const homepageSchema = ({ image }: SchemaContext) =>
     }),
   });
 
-// Scannable place cards (walks, lookouts, markets) for area-guide pages.
-// Facts (distance, drive time, schedule) live here as data, matching the
+// Scannable card groups rendered by CardGroups.astro: facts (distance,
+// drive time, duration, schedule) live here as data, matching the
 // dwelling-facts rule: prose should not restate these numbers.
-const placeGroupSchema = ({ image }: SchemaContext) =>
+const cardItemSchema = <const T extends [string, ...string[]]>(icons: T) =>
+  z.object({
+    name: z.string().min(1),
+    facts: z
+      .array(
+        z.object({
+          icon: z.enum(icons),
+          label: z.string().min(1),
+        }),
+      )
+      .default([]),
+    tag: z.string().min(1).optional(),
+  });
+
+const cardGroupSchema = <T extends z.ZodTypeAny>(item: T) =>
   z.object({
     heading: z.string().min(1),
     intro: z.string().min(1).optional(),
-    places: z
-      .array(
-        z.object({
-          name: z.string().min(1),
-          facts: z
-            .array(
-              z.object({
-                icon: z.enum(["walk", "car", "calendar"]),
-                label: z.string().min(1),
-              }),
-            )
-            .default([]),
-          tag: z.string().min(1).optional(),
-          blurb: z.string().min(1),
-          link: linkSchema.optional(),
-          image: imageWithAlt(image).optional(),
-        }),
-      )
-      .min(1),
+    items: z.array(item).min(1),
   });
 
-// Treatment menu cards (mobile massage page). Same card treatment as
-// placeGroups: duration/price facts as data, pressure as the chip, so
-// prose never restates the numbers.
-const treatmentGroupSchema = z.object({
-  heading: z.string().min(1),
-  intro: z.string().min(1).optional(),
-  treatments: z
-    .array(
-      z.object({
-        name: z.string().min(1),
-        facts: z
-          .array(
-            z.object({
-              icon: z.enum(["clock"]),
-              label: z.string().min(1),
-            }),
-          )
-          .default([]),
-        tag: z.string().min(1).optional(),
-        blurb: z.string().min(1).optional(),
-        addons: z.string().min(1).optional(),
-      }),
-    )
-    .min(1),
-});
+// Place cards (walks, lookouts, markets) for area-guide pages.
+const placeGroupSchema = ({ image }: SchemaContext) =>
+  cardGroupSchema(
+    cardItemSchema(["walk", "car", "calendar"]).extend({
+      blurb: z.string().min(1),
+      link: linkSchema.optional(),
+      image: imageWithAlt(image).optional(),
+    }),
+  );
+
+// Treatment menu cards (mobile massage page): duration/price facts,
+// pressure as the chip.
+const treatmentGroupSchema = cardGroupSchema(
+  cardItemSchema(["clock"]).extend({
+    blurb: z.string().min(1).optional(),
+    addons: z.string().min(1).optional(),
+  }),
+);
 
 const pages = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),

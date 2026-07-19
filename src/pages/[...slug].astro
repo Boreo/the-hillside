@@ -2,8 +2,7 @@
 import { getCollection, render } from "astro:content";
 import Base from "../layouts/Base.astro";
 import DwellingLayout from "../components/DwellingLayout.astro";
-import PlaceCards from "../components/PlaceCards.astro";
-import TreatmentCards from "../components/TreatmentCards.astro";
+import CardGroups from "../components/CardGroups.astro";
 import FactIcon from "../components/FactIcon.astro";
 
 export async function getStaticPaths() {
@@ -24,7 +23,7 @@ const dwellingJsonLd = dwelling && {
   "@context": "https://schema.org",
   "@type": "Accommodation",
   name: dwelling.name,
-  url: new URL(Astro.url.pathname, "https://www.thehillside.com.au").href,
+  url: new URL(Astro.url.pathname, Astro.site).href,
   occupancy: { "@type": "QuantitativeValue", maxValue: dwelling.sleeps },
   numberOfBedrooms: dwelling.bedrooms.length,
   numberOfBathroomsTotal: dwelling.bathrooms,
@@ -69,8 +68,8 @@ const extraJsonLd = dwellingJsonLd || faqJsonLd || undefined;
       <Content />
     )
   }
-  {page.data.placeGroups && <PlaceCards groups={page.data.placeGroups} />}
-  {page.data.treatmentGroups && <TreatmentCards groups={page.data.treatmentGroups} />}
+  {page.data.placeGroups && <CardGroups groups={page.data.placeGroups} />}
+  {page.data.treatmentGroups && <CardGroups groups={page.data.treatmentGroups} />}
   {
     page.data.moreLinks && (
       <section class="more-links">

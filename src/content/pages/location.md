@@ -4,7 +4,7 @@ description: "Discover Tamborine Mountain with The Hillside Retreat. Explore lus
 placeGroups:
   - heading: Rainforest walks
     intro: "[Tamborine National Park](https://parks.des.qld.gov.au/parks/tamborine) is Queensland's oldest national park, with more than 20 kilometres of free walking track spread across six sections of the mountain. Every trailhead is within about ten minutes of us, and the park's [walking track map](https://parks.des.qld.gov.au/__data/assets/pdf_file/0021/164442/tamborine-walking-track-map.pdf) covers them all."
-    places:
+    items:
       - name: Curtis Falls
         facts:
           - icon: walk
@@ -73,7 +73,7 @@ placeGroups:
           A short track reaches a lookout over the gorge, then continues down to the rock pools below the falls.
   - heading: Lookouts and gardens
     intro: All free, all open access, and none more than about fifteen minutes from your door.
-    places:
+    items:
       - name: Rotary Lookout
         facts:
           - icon: car
@@ -132,7 +132,7 @@ placeGroups:
           label: Visit the gardens' site
   - heading: Food and wine
     intro: The mountain feeds you well, with cafes and restaurants clustered at North Tamborine and along Gallery Walk. We keep to places rather than picks, because there are too many good ones to play favourites.
-    places:
+    items:
       - name: Gallery Walk
         facts:
           - icon: car
@@ -162,7 +162,7 @@ placeGroups:
           label: Eat Local program
   - heading: Markets and festivals
     intro: The mountain keeps a busy community calendar.
-    places:
+    items:
       - name: Country Markets
         facts:
           - icon: calendar
@@ -215,7 +215,7 @@ placeGroups:
           label: Festival site
   - heading: Day trips
     intro: When you want more than the mountain, the coast's big days out are an easy drive down the hill.
-    places:
+    items:
       - name: Thunderbird Park
         facts:
           - icon: car

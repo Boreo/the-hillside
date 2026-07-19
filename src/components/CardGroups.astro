@@ -1,22 +1,23 @@
 ---
 import { Image } from "astro:assets";
 import FactIcon from "./FactIcon.astro";
-import { FACT_ICON_PATHS } from "../lib/fact-icon-paths.mjs";
+import { factIconHtml } from "../lib/fact-icon-paths.mjs";
 
 interface Fact {
-  icon: "walk" | "car" | "calendar";
+  icon: "walk" | "car" | "calendar" | "clock";
   label: string;
 }
-interface Place {
+interface Item {
   name: string;
   facts: Fact[];
   tag?: string;
-  blurb: string;
+  blurb?: string;
+  addons?: string;
   link?: { href: string; label: string };
   image?: { src: ImageMetadata; alt: string };
 }
 interface Props {
-  groups: { heading: string; intro?: string; places: Place[] }[];
+  groups: { heading: string; intro?: string; items: Item[] }[];
 }
 const { groups } = Astro.props;
 
@@ -25,7 +26,7 @@ const { groups } = Astro.props;
 // [text](url) links as anchors.
 const escapeHtml = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-const outIcon = `<svg class="fact-icon out-icon" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="${FACT_ICON_PATHS["arrow-out"]}"/></svg>`;
+const outIcon = factIconHtml("arrow-out", "out-icon");
 const renderIntro = (s: string) =>
   escapeHtml(s).replace(
     /\[([^\]]+)\]\(([^)\s]+)\)/g,
@@ -40,7 +41,7 @@ const renderIntro = (s: string) =>
       <h2>{group.heading}</h2>
       {group.intro && <p class="place-intro" set:html={renderIntro(group.intro)} />}
       <div class="place-grid">
-        {group.places.map((p) => (
+        {group.items.map((p) => (
           <article class="place-card">
             {p.image && (
               <a
@@ -67,14 +68,17 @@ const renderIntro = (s: string) =>
                 {p.tag && <span class="place-tag">{p.tag}</span>}
               </p>
             )}
-            <p class="place-blurb">
-              {p.blurb
-                .trim()
-                .split("\n")
-                .map((line) => (
-                  <span>{line}</span>
-                ))}
-            </p>
+            {p.blurb && (
+              <p class="place-blurb">
+                {p.blurb
+                  .trim()
+                  .split("\n")
+                  .map((line) => (
+                    <span>{line}</span>
+                  ))}
+              </p>
+            )}
+            {p.addons && <p class="treatment-addons">{p.addons}</p>}
             {p.link && (
               <a class="place-link" href={p.link.href}>
                 {p.link.label}

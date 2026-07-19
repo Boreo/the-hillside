@@ -14,14 +14,18 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { parse } from "yaml";
-import { isElement, isWhitespace, textOf, el, factIcon } from "./hast-utils.mjs";
-import { sumFacts } from "./dwelling-facts.mjs";
+import {
+  isElement,
+  isWhitespace,
+  textOf,
+  el,
+  text,
+  soleChild,
+  factIcon,
+} from "./hast-utils.mjs";
+import { sumFacts, factLabels } from "./dwelling-facts.mjs";
 
-const isImageParagraph = (node) => {
-  if (!isElement(node, "p")) return false;
-  const kids = node.children.filter((c) => !isWhitespace(c));
-  return kids.length === 1 && kids[0].type === "element" && kids[0].tagName === "img";
-};
+const isImageParagraph = (node) => isElement(node, "p") && !!soleChild(node, "img");
 
 const isTextParagraph = (node) =>
   isElement(node, "p") && !isImageParagraph(node) && textOf(node).trim().length > 0;
@@ -33,11 +37,7 @@ const div = (className, children) => el("div", { className: [className] }, child
 
 // A paragraph that is only a link: the card's call-to-action, styled as a
 // button.
-const isCtaParagraph = (node) => {
-  if (!node || !isElement(node, "p")) return false;
-  const kids = node.children.filter((c) => !isWhitespace(c));
-  return kids.length === 1 && kids[0].type === "element" && kids[0].tagName === "a";
-};
+const isCtaParagraph = (node) => !!node && isElement(node, "p") && !!soleChild(node, "a");
 
 const firstHref = (node) => {
   if (isElement(node, "a")) return node.properties?.href;
@@ -77,24 +77,14 @@ const factsFor = (href) => {
   return dwellingFacts(slug);
 };
 
-const factsLine = ({ sleeps, bedrooms, bathrooms }) => {
-  const span = (icon, text) => ({
-    type: "element",
-    tagName: "span",
-    properties: {},
-    children: [factIcon(icon), { type: "text", value: ` ${text}` }],
-  });
-  return {
-    type: "element",
-    tagName: "p",
-    properties: { className: ["facts-line"] },
-    children: [
-      span("users", `Sleeps ${sleeps}`),
-      span("bed", `${bedrooms} ${bedrooms === 1 ? "bedroom" : "bedrooms"}`),
-      span("bathtub", `${bathrooms} ${bathrooms === 1 ? "bathroom" : "bathrooms"}`),
-    ],
-  };
-};
+const factsLine = (facts) =>
+  el(
+    "p",
+    { className: ["facts-line"] },
+    factLabels(facts).map(([icon, label]) =>
+      el("span", {}, [factIcon(icon), text(` ${label}`)]),
+    ),
+  );
 
 export default function rehypePhotoRuns() {
   return (tree) => {
@@ -162,22 +152,24 @@ export default function rehypePhotoRuns() {
           (cta || hasLink(next)) &&
           (!after || !isTextParagraph(after))
         ) {
+          // The combined House & Villa stay books by enquiry only, so its
+          // card renders demoted (smaller, outline CTA) wherever it appears.
+          const secondary = firstHref(cta ?? next) === "/house-and-villa/";
           const body = [node, next];
           if (cta) {
             cta.properties = { ...cta.properties, className: ["cross-sell-cta"] };
-            const a = cta.children.find((c) => isElement(c, "a"));
-            a.properties = { ...a.properties, className: ["btn"] };
+            const a = soleChild(cta, "a");
+            a.properties = {
+              ...a.properties,
+              className: secondary ? ["btn", "btn-outline"] : ["btn"],
+            };
             const facts = factsFor(firstHref(cta));
             body.splice(1, 0, factsLine(facts));
             body.push(cta);
           }
           const children = [image, div("cross-sell-body", body)].filter(Boolean);
           const card = div("cross-sell-card", children);
-          // The combined House & Villa stay books by enquiry only, so its
-          // card renders demoted (smaller, outline CTA) wherever it appears.
-          if (firstHref(cta ?? next) === "/house-and-villa/") {
-            card.properties.className.push("cross-sell-secondary");
-          }
+          if (secondary) card.properties.className.push("cross-sell-secondary");
           const prev = carded[carded.length - 1];
           if (prev && prev.type === "element" && prev.properties?.className?.[0] === "cross-sell-row") {
             prev.children.push(card);
@@ -203,7 +195,7 @@ export default function rehypePhotoRuns() {
       // "Book with us") render as buttons.
       for (const node of carded) {
         if (isCtaParagraph(node)) {
-          const a = node.children.find((c) => isElement(c, "a"));
+          const a = soleChild(node, "a");
           a.properties = { ...a.properties, className: ["btn"] };
         }
       }
@@ -221,7 +213,7 @@ export default function rehypePhotoRuns() {
       if (classes.includes("cross-sell-row")) return;
       for (const node of parent.children) {
         if (isImageParagraph(node)) {
-          const img = node.children.find((c) => isElement(c, "img"));
+          const img = soleChild(node, "img");
           node.children = [
             el(
               "a",

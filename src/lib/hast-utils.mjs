@@ -27,6 +27,13 @@ export const el = (tagName, properties, children) => ({
 
 export const text = (value) => ({ type: "text", value });
 
+// The node's single non-whitespace child, if it's an element of the given
+// tag; otherwise null.
+export const soleChild = (parent, tag) => {
+  const kids = (parent.children ?? []).filter((c) => !isWhitespace(c));
+  return kids.length === 1 && isElement(kids[0], tag) ? kids[0] : null;
+};
+
 export const factIcon = (name) =>
   el("svg", { className: ["fact-icon"], viewBox: "0 0 256 256", ariaHidden: "true" }, [
     el("path", { fill: "currentColor", d: FACT_ICON_PATHS[name] }, []),

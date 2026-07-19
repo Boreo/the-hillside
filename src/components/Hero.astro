@@ -1,4 +1,5 @@
 ---
+import { BOOK_URL } from "../layouts/Base.astro";
 
 interface Props {
   video: { src: string; poster: ImageMetadata };
@@ -20,7 +21,7 @@ const { video, line } = Astro.props;
   />
   <div class="hero-overlay">
     <h1 class="hero-line">{line}</h1>
-    <a class="btn-glass" href="/book/">Check availability</a>
+    <a class="btn-glass" href={BOOK_URL}>Check availability</a>
   </div>
 </section>
 

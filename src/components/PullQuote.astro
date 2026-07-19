@@ -1,5 +1,5 @@
 ---
-import { getEntry } from "astro:content";
+import { getReview, attribution } from "../lib/reviews";
 
 interface Props {
   reviewId: string;
@@ -7,14 +7,13 @@ interface Props {
 }
 const { reviewId, excerpt } = Astro.props;
 
-const review = await getEntry("reviews", reviewId);
-if (!review) throw new Error(`Review ${reviewId} not found in reviews.yaml`);
+const review = await getReview(reviewId);
 ---
 
 <section class="pull-quote">
   <blockquote>
     <p>“{excerpt}”</p>
-    <footer>— {review.data.author}{review.data.location && `, ${review.data.location}`}</footer>
+    <footer>{attribution(review)}</footer>
   </blockquote>
 </section>
 

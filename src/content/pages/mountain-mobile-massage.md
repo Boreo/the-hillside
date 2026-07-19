@@ -3,7 +3,7 @@ title: "Mobile Massage"
 description: "Mobile massage service at The Hillside Retreat — relaxation, therapeutic and beauty treatments brought to your accommodation on Tamborine Mountain."
 treatmentGroups:
   - heading: Relaxation
-    treatments:
+    items:
       - name: Swedish
         facts:
           - icon: clock
@@ -28,7 +28,7 @@ treatmentGroups:
             label: 30min $40
         tag: light/medium/firm pressure
   - heading: Therapeutic
-    treatments:
+    items:
       - name: Remedial
         facts:
           - icon: clock
@@ -50,7 +50,7 @@ treatmentGroups:
         tag: medium/firm pressure
         blurb: Pressure applied to trigger points in the feet which activate the meridian energy channels, stimulating blood circulation flow to all areas of the body.
   - heading: Beauty
-    treatments:
+    items:
       - name: Divine Facial
         facts:
           - icon: clock

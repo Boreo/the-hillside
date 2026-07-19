@@ -446,7 +446,9 @@ nav.footer-col {
   break-inside: avoid;
 }
 
-.footer-col a {
+/* The booking CTA is a .btn; keep the plain-link styling off it so the
+   .btn/.btn-inverse rules apply unfought. */
+.footer-col a:not(.btn) {
   display: block;
   padding: 0.15rem 0;
   color: var(--wash);
@@ -454,24 +456,15 @@ nav.footer-col {
   font-size: 0.95rem;
 }
 
-.footer-col a:hover {
+.footer-col a:not(.btn):hover {
   color: var(--card);
   text-decoration: underline;
 }
 
 .footer-col a.btn-inverse {
-  display: inline-block;
   margin-top: 0.35rem;
   padding: 0.55rem 1.3rem;
   font-size: 0.95rem;
-  background: var(--paper);
-  color: var(--deep);
-}
-
-.footer-col a.btn-inverse:hover {
-  background: var(--card);
-  color: var(--accent-dark);
-  text-decoration: none;
 }
 
 .footer-base {
@@ -486,13 +479,19 @@ nav.footer-col {
   color: var(--mint);
 }
 
-/* Uppercase micro-type facts (sleeps/bedrooms) on dwelling cards and pages. */
-.facts-line {
+/* Uppercase micro-type eyebrow: dwelling facts lines, the terms contents
+   label and the effective-date line share one type treatment. */
+.facts-line,
+.policy-toc-label,
+.policy-effective {
   text-transform: uppercase;
   letter-spacing: 0.09em;
   font-size: 0.72rem;
   color: var(--muted);
   font-weight: 600;
+}
+
+.facts-line {
   margin: 0 0 0.75rem;
   display: flex;
   flex-wrap: wrap;
@@ -554,7 +553,7 @@ blockquote footer {
 }
 
 /* Anchors feeding the <dialog> photo viewer (LightboxViewer.astro);
-   rehype-photo-runs.mjs and PlaceCards.astro emit them. */
+   rehype-photo-runs.mjs and CardGroups.astro emit them. */
 .lightbox-open {
   display: block;
   height: 100%;
@@ -800,15 +799,11 @@ main > dl + p:has(> .btn) {
   font-size: 1.2rem;
 }
 
-.dwelling-body .cross-sell-card.cross-sell-secondary .cross-sell-cta a {
+/* The demoted CTA carries .btn-outline (rehype plugin); only its fill
+   differs — card surface instead of transparent, so it reads solid on
+   the wash band. */
+.dwelling-body .cross-sell-card.cross-sell-secondary .cross-sell-cta a:not(:hover) {
   background: var(--card);
-  color: var(--accent);
-  border: 1px solid var(--accent);
-}
-
-.dwelling-body .cross-sell-card.cross-sell-secondary .cross-sell-cta a:hover {
-  background: var(--accent);
-  color: var(--card);
 }
 
 /* Card headings sit at homepage-card scale so they hold to one line. */
@@ -821,16 +816,19 @@ main > dl + p:has(> .btn) {
   margin: 1.1rem 0 0;
 }
 
-/* CTA anchors carry .btn (added by the rehype plugin); other card links
-   read as prose links. */
-.dwelling-body .cross-sell-card a:not(.btn) {
+/* Card prose links: cross-sell CTA anchors carry .btn (added by the
+   rehype plugin); everything else, and place-card links, read as italic
+   prose links. */
+.dwelling-body .cross-sell-card a:not(.btn),
+.place-card .place-link {
   font-style: italic;
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid var(--highlight);
 }
 
-.dwelling-body .cross-sell-card a:not(.btn):hover {
+.dwelling-body .cross-sell-card a:not(.btn):hover,
+.place-card .place-link:hover {
   color: var(--accent-dark);
   border-bottom-color: var(--accent-dark);
 }
@@ -858,8 +856,8 @@ main > dl + p:has(> .btn) {
   }
 }
 
-/* Place cards (location page). Card grids driven by placeGroups
-   frontmatter via PlaceCards.astro: warm soft cards echoing the
+/* Place cards (location page). Card grids driven by placeGroups/treatmentGroups
+   frontmatter via CardGroups.astro: warm soft cards echoing the
    cross-sell treatment (card surface, highlight top rule), with an
    icon facts line and a difficulty/schedule chip in the amenity-chip
    style. The image slot at the card top is optional. */
@@ -876,14 +874,17 @@ main > dl + p:has(> .btn) {
   margin: 0;
 }
 
-.place-grid {
+/* Card grid + card surface shared with the guest-info topic cards. */
+.place-grid,
+.policy-topics {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
   gap: 1.5rem;
   margin-top: 1.75rem;
 }
 
-.place-card {
+.place-card,
+.policy-topic {
   background: var(--card);
   border-top: 2px solid var(--highlight);
   border-radius: 0 0 10px 10px;
@@ -902,7 +903,8 @@ main > dl + p:has(> .btn) {
   margin-bottom: 1.1rem;
 }
 
-.place-card h3 {
+.place-card h3,
+.policy-topic h3 {
   font-size: 1.25rem;
   margin: 0 0 0.6rem;
 }
@@ -948,13 +950,10 @@ main > dl + p:has(> .btn) {
   margin-top: 0.4rem;
 }
 
+/* Type treatment shared with cross-sell prose links (see above). */
 .place-card .place-link {
   display: inline-block;
   margin-top: 0.85rem;
-  font-style: italic;
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid var(--highlight);
 }
 
 /* Out-link icons sit on the text baseline, slightly smaller than type. */
@@ -965,11 +964,6 @@ main > dl + p:has(> .btn) {
   height: 0.85em;
   vertical-align: -0.08em;
   margin-left: 0.1em;
-}
-
-.place-card .place-link:hover {
-  color: var(--accent-dark);
-  border-bottom-color: var(--accent-dark);
 }
 
 /* Treatment cards (mobile massage page) share the place-card classes;
@@ -1022,27 +1016,7 @@ main > dl + p:has(> .btn) {
   margin: 2.75rem 0;
 }
 
-.policy-topics {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.75rem;
-}
-
-/* Topic cards mirror the location page's place cards: card surface with
-   a highlight top rule. */
-.policy-topic {
-  background: var(--card);
-  border-top: 2px solid var(--highlight);
-  border-radius: 0 0 10px 10px;
-  padding: 1.4rem 1.5rem 1.5rem;
-}
-
-.policy-topic h3 {
-  margin: 0 0 0.6rem;
-  font-size: 1.25rem;
-}
-
+/* Topic grid and cards share the location page's place-card rules. */
 .policy-topic p {
   margin: 0.5rem 0;
   font-size: 0.97rem;
@@ -1063,7 +1037,9 @@ main > dl + p:has(> .btn) {
   flex-shrink: 0;
 }
 
-.policy-legal {
+/* Sticky-contents layout shared by the terms section and the FAQ page. */
+.policy-legal,
+.faq-layout {
   display: grid;
   grid-template-columns: 15rem minmax(0, 1fr);
   column-gap: 3rem;
@@ -1082,11 +1058,6 @@ main > dl + p:has(> .btn) {
 }
 
 .policy-toc-label {
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--muted);
   margin: 0.35rem 0 0.6rem;
 }
 
@@ -1135,14 +1106,6 @@ main .policy-toc a:not([class]):hover {
   font-variant-numeric: tabular-nums;
 }
 
-.policy-effective {
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--muted);
-}
-
 /* Must-read lines (cancellation terms, noise rules) authored as
    blockquotes lift into soft callout boxes. */
 .policy-legal-body blockquote {
@@ -1158,7 +1121,8 @@ main .policy-toc a:not([class]):hover {
 }
 
 @media (max-width: 56rem) {
-  .policy-legal {
+  .policy-legal,
+  .faq-layout {
     display: block;
   }
 
@@ -1253,13 +1217,9 @@ main .policy-toc a:not([class]):hover {
   margin: 0;
 }
 
-/* Sticky contents list (shared .policy-toc styling) beside the question
-   column, mirroring the guest-info terms layout. */
+/* Sticky contents list beside the question column; the grid itself is
+   shared with .policy-legal above. */
 .faq-layout {
-  display: grid;
-  grid-template-columns: 15rem minmax(0, 1fr);
-  column-gap: 3rem;
-  align-items: start;
   margin-top: 2.5rem;
 }
 
@@ -1270,16 +1230,6 @@ main .policy-toc a:not([class]):hover {
 /* The first group tops out level with the contents list. */
 .faq-wrap > :first-child {
   margin-top: 0;
-}
-
-.faq-layout .policy-toc {
-  top: 1.5rem;
-}
-
-@media (max-width: 56rem) {
-  .faq-layout {
-    display: block;
-  }
 }
 
 .faq-a {

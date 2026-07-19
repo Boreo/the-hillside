@@ -1,4 +1,5 @@
 ---
+import { BOOK_URL } from "../layouts/Base.astro";
 import { Image } from "astro:assets";
 
 interface Props {
@@ -17,7 +18,7 @@ const { image, line } = Astro.props;
     loading="lazy"
   />
   <p>{line}</p>
-  <a class="btn" href="/book/">Book with us</a>
+  <a class="btn" href={BOOK_URL}>Book with us</a>
 </section>
 
 <style>

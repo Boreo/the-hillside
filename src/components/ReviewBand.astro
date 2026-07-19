@@ -1,5 +1,5 @@
 ---
-import { getEntry } from "astro:content";
+import { getReview, attribution } from "../lib/reviews";
 
 interface Props {
   quotes: { reviewId: string; excerpt: string }[];
@@ -7,11 +7,7 @@ interface Props {
 const { quotes } = Astro.props;
 
 const resolved = await Promise.all(
-  quotes.map(async (q) => {
-    const review = await getEntry("reviews", q.reviewId);
-    if (!review) throw new Error(`Review ${q.reviewId} not found in reviews.yaml`);
-    return { excerpt: q.excerpt, ...review.data };
-  }),
+  quotes.map(async (q) => ({ excerpt: q.excerpt, ...(await getReview(q.reviewId)) })),
 );
 ---
 
@@ -21,7 +17,7 @@ const resolved = await Promise.all(
       {resolved.map((q) => (
         <blockquote>
           <p>“{q.excerpt}”</p>
-          <footer>— {q.author}{q.location && `, ${q.location}`}</footer>
+          <footer>{attribution(q)}</footer>
         </blockquote>
       ))}
     </div>

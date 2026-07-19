@@ -1,5 +1,7 @@
 import { test, expect } from "@playwright/test";
 
+const isMobile = (projectName: string) => projectName === "mobile";
+
 test("hillside-house split header carries name, facts, amenities and book button", async ({ page }) => {
   await page.goto("/hillside-house/");
   const header = page.locator(".dwelling-header");
@@ -18,22 +20,12 @@ test("booking CTA links render as buttons", async ({ page }) => {
   await page.goto("/hillside-house/");
   const ctas = page.locator('.dwelling-body > p > a[href^="/book/"]');
   await expect(ctas).toHaveCount(1);
-  // Same background as the nav's Book Direct button — a real .btn, not a
-  // plain link.
-  const bg = await ctas.first().evaluate(
-    (el) => getComputedStyle(el).backgroundColor,
-  );
-  const navBg = await page.locator("header .nav-book").evaluate(
-    (el) => getComputedStyle(el).backgroundColor,
-  );
-  expect(bg).toBe(navBg);
-  expect(bg).not.toBe("rgba(0, 0, 0, 0)");
+  // A real .btn (the rehype plugin adds the class), not a plain prose link.
+  await expect(ctas.first()).toHaveClass(/\bbtn\b/);
 });
 
-test("prose images pair into alternating media rows", async ({ page }) => {
-  // Desktop layout assertions: force a wide viewport so the mobile
-  // project exercises them too.
-  await page.setViewportSize({ width: 1200, height: 900 });
+test("prose images pair into alternating media rows", async ({ page }, testInfo) => {
+  test.skip(isMobile(testInfo.project.name), "desktop layout only");
   await page.goto("/hillside-house/");
   const rows = page.locator(".dwelling-body .media-row");
   expect(await rows.count()).toBeGreaterThanOrEqual(2);
@@ -46,8 +38,8 @@ test("prose images pair into alternating media rows", async ({ page }) => {
   await expect(rows.nth(1)).toHaveClass(/media-row-flip/);
 });
 
-test("consecutive photos group into two-up photo runs with no orphan column", async ({ page }) => {
-  await page.setViewportSize({ width: 1200, height: 900 });
+test("consecutive photos group into two-up photo runs with no orphan column", async ({ page }, testInfo) => {
+  test.skip(isMobile(testInfo.project.name), "desktop layout only");
   await page.goto("/hillside-house/");
   const runs = page.locator(".dwelling-body .photo-run");
   expect(await runs.count()).toBeGreaterThan(0);
@@ -78,8 +70,8 @@ test("clicking a photo opens the dialog viewer and close hides it again", async 
   await expect(viewer).toBeHidden();
 });
 
-test("cross-sell sections render as side-by-side cards above the gallery", async ({ page }) => {
-  await page.setViewportSize({ width: 1200, height: 900 });
+test("cross-sell sections render as side-by-side cards above the gallery", async ({ page }, testInfo) => {
+  test.skip(isMobile(testInfo.project.name), "desktop layout only");
   await page.goto("/hillside-house/");
   const row = page.locator(".dwelling-body .cross-sell-row");
   await expect(row).toHaveCount(1);

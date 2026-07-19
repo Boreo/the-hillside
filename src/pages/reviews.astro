@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
 import PullQuote from "../components/PullQuote.astro";
 import FactIcon from "../components/FactIcon.astro";
+import { attribution } from "../lib/reviews";
+import { BOOK_URL } from "../layouts/Base.astro";
 
 const reviews = await getCollection("reviews");
 // The review carrying a `featured` excerpt becomes the pull-quote and is
@@ -20,7 +22,7 @@ const reviewsJsonLd = {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
   name: "The Hillside Retreat",
-  url: "https://www.thehillside.com.au/",
+  url: Astro.site!.href,
   review: reviews.map(({ data }) => ({
     "@type": "Review",
     reviewBody: data.quote,
@@ -81,17 +83,14 @@ const reviewsJsonLd = {
           >
             <p>{data.quote}</p>
             <footer>
-              <span class="review-author">
-                — {data.author}
-                {data.location && `, ${data.location}`}
-              </span>
+              <span class="review-author">{attribution(data)}</span>
             </footer>
           </blockquote>
         ))
     }
   </div>
 
-  <p class="reviews-cta"><a class="btn" href="/book/">Book with us</a></p>
+  <p class="reviews-cta"><a class="btn" href={BOOK_URL}>Book with us</a></p>
 </Base>
 
 <style>
