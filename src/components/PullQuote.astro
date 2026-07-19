@@ -33,8 +33,8 @@ if (!review) throw new Error(`Review ${reviewId} not found in reviews.yaml`);
     max-width: 38rem;
   }
   blockquote p {
-    font-family: "Fraunces Variable", Georgia, serif;
-    font-variation-settings: "SOFT" 60, "WONK" 0;
+    font-family: var(--font-display);
+    font-variation-settings: var(--font-display-settings);
     font-style: italic;
     font-weight: 500;
     font-size: clamp(1.35rem, 3vw, 1.8rem);

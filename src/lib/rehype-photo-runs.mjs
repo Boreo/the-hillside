@@ -14,21 +14,12 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { parse } from "yaml";
-import { FACT_ICON_PATHS } from "./fact-icon-paths.mjs";
-
-const isWhitespace = (node) => node.type === "text" && !node.value.trim();
-
-const isElement = (node, tag) => node.type === "element" && node.tagName === tag;
+import { isElement, isWhitespace, textOf, el, text, factIcon } from "./hast-utils.mjs";
 
 const isImageParagraph = (node) => {
   if (!isElement(node, "p")) return false;
   const kids = node.children.filter((c) => !isWhitespace(c));
   return kids.length === 1 && kids[0].type === "element" && kids[0].tagName === "img";
-};
-
-const textOf = (node) => {
-  if (node.type === "text") return node.value;
-  return (node.children ?? []).map(textOf).join("");
 };
 
 const isTextParagraph = (node) =>
@@ -37,12 +28,7 @@ const isTextParagraph = (node) =>
 const hasLink = (node) =>
   isElement(node, "a") || (node.children ?? []).some((c) => c.type === "element" && hasLink(c));
 
-const div = (className, children) => ({
-  type: "element",
-  tagName: "div",
-  properties: { className: [className] },
-  children,
-});
+const div = (className, children) => el("div", { className: [className] }, children);
 
 // A paragraph that is only a link: the card's call-to-action, styled as a
 // button.
@@ -85,20 +71,6 @@ const factsFor = (href) => {
   }
   return dwellingFacts(slug);
 };
-
-const factIcon = (name) => ({
-  type: "element",
-  tagName: "svg",
-  properties: { className: ["fact-icon"], viewBox: "0 0 256 256", ariaHidden: "true" },
-  children: [
-    {
-      type: "element",
-      tagName: "path",
-      properties: { fill: "currentColor", d: FACT_ICON_PATHS[name] },
-      children: [],
-    },
-  ],
-});
 
 const factsLine = ({ sleeps, bedrooms, bathrooms }) => {
   const span = (icon, text) => ({
@@ -186,6 +158,8 @@ export default function rehypePhotoRuns() {
           const body = [node, next];
           if (cta) {
             cta.properties = { ...cta.properties, className: ["cross-sell-cta"] };
+            const a = cta.children.find((c) => isElement(c, "a"));
+            a.properties = { ...a.properties, className: ["btn"] };
             const facts = factsFor(firstHref(cta));
             body.splice(1, 0, factsLine(facts));
             body.push(cta);
@@ -280,8 +254,6 @@ export default function rehypePhotoRuns() {
       lead.properties.fetchPriority = "high";
     }
 
-    const el = (tagName, properties, children) => ({ type: "element", tagName, properties, children });
-    const text = (value) => ({ type: "text", value });
     const total = photos.length;
     tree.children.push(
       ...photos.map((img, i) => {

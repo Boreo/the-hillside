@@ -11,31 +11,16 @@
 //    with CSS-numbered clauses
 //  - blockquotes and the "Effective ..." date line are styled via CSS only
 
-import { FACT_ICON_PATHS } from "./fact-icon-paths.mjs";
-
-const isElement = (node, tag) => node.type === "element" && node.tagName === tag;
-
-const isWhitespace = (node) => node.type === "text" && !node.value.trim();
-
-const textOf = (node) => {
-  if (node.type === "text") return node.value;
-  return (node.children ?? []).map(textOf).join("");
-};
-
-const slugOf = (node) =>
-  textOf(node)
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-");
-
-const el = (tagName, properties, children) => ({ type: "element", tagName, properties, children });
-const text = (value) => ({ type: "text", value });
-
-const icon = (name) =>
-  el("svg", { className: ["fact-icon"], viewBox: "0 0 256 256", ariaHidden: "true" }, [
-    el("path", { fill: "currentColor", d: FACT_ICON_PATHS[name] }, []),
-  ]);
+import {
+  isElement,
+  isWhitespace,
+  textOf,
+  slugOf,
+  el,
+  text,
+  factIcon as icon,
+  splitAt,
+} from "./hast-utils.mjs";
 
 // Quick-glance rules surfaced as chips at the top of the page. Each chip
 // quotes the first body paragraph matching its pattern verbatim, so the
@@ -64,20 +49,9 @@ const chipStrip = (nodes) => {
   return el("p", { className: ["policy-chips"] }, chips);
 };
 
-// Split a node list into a leading chunk plus one chunk per heading of the
-// given tag; each chunk is [heading, ...content up to the next heading].
-const splitAt = (nodes, tag) => {
-  const chunks = [[]];
-  for (const node of nodes) {
-    if (isElement(node, tag)) chunks.push([]);
-    chunks[chunks.length - 1].push(node);
-  }
-  return chunks;
-};
-
 export default function rehypePolicyPage() {
   return (tree, file) => {
-    if (!file?.path?.includes("guest-info")) return;
+    if (!file.data?.astro?.frontmatter?.policyPage) return;
 
     const nodes = tree.children.filter((c) => !isWhitespace(c));
     const [lead, ...sections] = splitAt(nodes, "h2");

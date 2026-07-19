@@ -50,8 +50,8 @@ const { video, line } = Astro.props;
     background: linear-gradient(to top, rgb(9 47 28 / 0.85), rgb(9 47 28 / 0.45) 55%, transparent);
   }
   .hero-line {
-    font-family: "Fraunces Variable", Georgia, serif;
-    font-variation-settings: "SOFT" 60, "WONK" 0;
+    font-family: var(--font-display);
+    font-variation-settings: var(--font-display-settings);
     font-weight: 500;
     font-size: clamp(1.9rem, 4vw, 2.8rem);
     line-height: 1.2;

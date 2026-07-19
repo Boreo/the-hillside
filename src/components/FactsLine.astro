@@ -1,0 +1,17 @@
+---
+import FactIcon from "./FactIcon.astro";
+
+interface Props {
+  sleeps: number;
+  bedrooms: number;
+  bathrooms: number;
+}
+const { sleeps, bedrooms, bathrooms } = Astro.props;
+const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
+---
+
+<p class="facts-line">
+  <span><FactIcon name="users" /> Sleeps {sleeps}</span>
+  <span><FactIcon name="bed" /> {plural(bedrooms, "bedroom")}</span>
+  <span><FactIcon name="bathtub" /> {plural(bathrooms, "bathroom")}</span>
+</p>

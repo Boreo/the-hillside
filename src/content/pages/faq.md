@@ -1,5 +1,5 @@
 ---
-title: "Frequently Asked Questions — The Hillside Retreat"
+title: "Frequently Asked Questions"
 description: "Answers to common questions about staying at The Hillside Retreat on Tamborine Mountain — capacity, pool and spa, check-in, pets, cancellations and what's included."
 faqSchema: true
 ---

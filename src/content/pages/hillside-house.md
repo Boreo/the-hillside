@@ -1,5 +1,5 @@
 ---
-title: "Hillside House — The Hillside Retreat"
+title: "Hillside House"
 description: "Spacious 3-bedroom house on Tamborine Mountain sleeping up to 6, with coastal views, wood fireplace, wraparound verandah, EV charging, and pool and heated spa."
 dwelling:
   name: Hillside House

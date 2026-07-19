@@ -32,8 +32,8 @@ const { image, line } = Astro.props;
     border-radius: 8px;
   }
   .closing p {
-    font-family: "Fraunces Variable", Georgia, serif;
-    font-variation-settings: "SOFT" 60, "WONK" 0;
+    font-family: var(--font-display);
+    font-variation-settings: var(--font-display-settings);
     font-weight: 500;
     font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     color: var(--accent-dark);

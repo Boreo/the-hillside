@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import FactIcon from "./FactIcon.astro";
+import FactsLine from "./FactsLine.astro";
 
 interface Props {
   dwelling: {
@@ -14,22 +14,16 @@ interface Props {
   };
 }
 const { dwelling } = Astro.props;
-const bedroomsLabel = `${dwelling.bedrooms.length} ${
-  dwelling.bedrooms.length === 1 ? "bedroom" : "bedrooms"
-}`;
-const bathroomsLabel = `${dwelling.bathrooms} ${
-  dwelling.bathrooms === 1 ? "bathroom" : "bathrooms"
-}`;
 ---
 
 <section class="dwelling-header">
   <div class="dwelling-header-info">
     <h1>{dwelling.name}</h1>
-    <p class="facts-line">
-      <span><FactIcon name="users" /> Sleeps {dwelling.sleeps}</span>
-      <span><FactIcon name="bed" /> {bedroomsLabel}</span>
-      <span><FactIcon name="bathtub" /> {bathroomsLabel}</span>
-    </p>
+    <FactsLine
+      sleeps={dwelling.sleeps}
+      bedrooms={dwelling.bedrooms.length}
+      bathrooms={dwelling.bathrooms}
+    />
     <ul class="amenities-line">
       {dwelling.amenities.map((a) => <li>{a}</li>)}
     </ul>
@@ -70,7 +64,7 @@ const bathroomsLabel = `${dwelling.bathrooms} ${
     line-height: 1.1;
     margin: 0 0 1rem;
   }
-  .dwelling-header .facts-line {
+  .dwelling-header :global(.facts-line) {
     margin: 0 0 0.75rem;
   }
   /* Amenities as soft chips. */

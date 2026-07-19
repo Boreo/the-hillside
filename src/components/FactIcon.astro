@@ -2,21 +2,11 @@
 import { FACT_ICON_PATHS } from "../lib/fact-icon-paths.mjs";
 
 interface Props {
-  name: "users" | "bed" | "bathtub" | "walk" | "car" | "calendar" | "clock" | "arrow-out";
+  name: keyof typeof FACT_ICON_PATHS;
 }
 const { name } = Astro.props;
-
-const paths: Record<Props["name"], string> = FACT_ICON_PATHS;
 ---
 
 <svg class="fact-icon" viewBox="0 0 256 256" aria-hidden="true">
-  <path fill="currentColor" d={paths[name]} />
+  <path fill="currentColor" d={FACT_ICON_PATHS[name]} />
 </svg>
-
-<style>
-  .fact-icon {
-    width: 1.15em;
-    height: 1.15em;
-    flex: none;
-  }
-</style>

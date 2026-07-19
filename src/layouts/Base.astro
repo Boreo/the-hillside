@@ -17,6 +17,12 @@ interface Props {
 
 const { title, description = "The Hillside Retreat — secluded accommodation on Tamborine Mountain in the Gold Coast Hinterland, with coastal views, pool and heated spa.", extraJsonLd, ogImage = heroPoster } = Astro.props;
 
+// Pages pass a bare page name; the site name is appended here. A title that
+// already carries the site name (the homepage) is used as-is.
+const fullTitle = title.includes("The Hillside Retreat")
+  ? title
+  : `${title} — The Hillside Retreat`;
+
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 
 const ogImageOptimized = await getImage({
@@ -84,7 +90,7 @@ const jsonLd = {
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>{title}</title>
+<title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalUrl} />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
@@ -92,7 +98,7 @@ const jsonLd = {
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="The Hillside Retreat" />
-<meta property="og:title" content={title} />
+<meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:image" content={ogImageUrl} />

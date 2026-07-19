@@ -1,5 +1,5 @@
 ---
-title: "Your Hosts | Contact Us — The Hillside Retreat"
+title: "Your Hosts | Contact Us"
 description: "Meet Glen and Rowena, your on-site hosts at The Hillside Retreat, Tamborine Mountain. Contact us for availability, pricing and special requests."
 ---
 

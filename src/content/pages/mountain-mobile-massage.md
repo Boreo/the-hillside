@@ -1,5 +1,5 @@
 ---
-title: "Mobile Massage — The Hillside Retreat"
+title: "Mobile Massage"
 description: "Mobile massage service at The Hillside Retreat — relaxation, therapeutic and beauty treatments brought to your accommodation on Tamborine Mountain."
 treatmentGroups:
   - heading: Relaxation

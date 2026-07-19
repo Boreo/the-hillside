@@ -1,6 +1,7 @@
 ---
-title: "Guest Information — The Hillside Retreat"
+title: "Guest Information"
 description: "Policies and procedures for guests of The Hillside Retreat — check-in and check-out times, booking terms, cancellation policy and house rules."
+policyPage: true
 ---
 
 # Guest Information

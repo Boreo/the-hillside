@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 const { page } = Astro.props;
-const { Content } = await render(page);
+const { Content, remarkPluginFrontmatter } = await render(page);
 const dwelling = page.data.dwelling;
 
 const dwellingJsonLd = dwelling && {
@@ -37,26 +37,18 @@ const dwellingJsonLd = dwelling && {
   containedInPlace: { "@type": "LodgingBusiness", name: "The Hillside Retreat" },
 };
 
-// Each h3 in the body is a question; the prose beneath it (up to the next
-// h2 or h3) is the answer. h2s are topic groupings, not questions.
-// Markdown links flatten to their label text so answers read as plain prose.
-const faqJsonLd = page.data.faqSchema && {
+// Question/answer pairs parsed by rehype-faq-page.mjs while it structures
+// the page, so the JSON-LD always matches the rendered markup.
+const faqItems: { question: string; answer: string }[] | undefined =
+  remarkPluginFrontmatter.faqItems;
+const faqJsonLd = faqItems?.length && {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [...(page.body ?? "").matchAll(/^### +(.+)\n([\s\S]*?)(?=^###? |$(?![\s\S]))/gm)].map(
-    ([, question, answer]) => ({
-      "@type": "Question",
-      name: question.trim(),
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: answer
-          .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
-          .replace(/\\\n/g, " ")
-          .replace(/\s+/g, " ")
-          .trim(),
-      },
-    }),
-  ),
+  mainEntity: faqItems.map(({ question, answer }) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: { "@type": "Answer", text: answer },
+  })),
 };
 
 const extraJsonLd = dwellingJsonLd || faqJsonLd || undefined;

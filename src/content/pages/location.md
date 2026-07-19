@@ -1,5 +1,5 @@
 ---
-title: "Location | Explore and Experience Now — The Hillside Retreat"
+title: "Location | Explore and Experience Now"
 description: "Discover Tamborine Mountain with The Hillside Retreat. Explore lush rainforests, scenic views, and local attractions for a relaxing and enriching getaway."
 placeGroups:
   - heading: Rainforest walks

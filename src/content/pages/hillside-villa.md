@@ -1,5 +1,5 @@
 ---
-title: "Hillside Villa — The Hillside Retreat"
+title: "Hillside Villa"
 description: "Self-contained 1-bedroom villa on Tamborine Mountain, with private courtyard, fireplace and kitchenette. A romantic couples' escape in the Gold Coast Hinterland."
 dwelling:
   name: Hillside Villa

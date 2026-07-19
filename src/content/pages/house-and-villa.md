@@ -1,5 +1,5 @@
 ---
-title: "House and Villa — The Hillside Retreat"
+title: "House and Villa"
 description: "Book Hillside House and Villa together as one retreat sleeping up to 8, with exclusive use of the pool and heated spa. Contact us directly to book."
 dwelling:
   name: House & Villa
