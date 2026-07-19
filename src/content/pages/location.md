@@ -1,24 +1,222 @@
 ---
 title: "Location | Explore and Experience Now — The Hillside Retreat"
 description: "Discover Tamborine Mountain with The Hillside Retreat. Explore lush rainforests, scenic views, and local attractions for a relaxing and enriching getaway."
+placeGroups:
+  - heading: Rainforest walks
+    intro: "[Tamborine National Park](https://parks.des.qld.gov.au/parks/tamborine) is Queensland's oldest national park, with more than 20 kilometres of free walking track spread across six sections of the mountain. Every trailhead is within about ten minutes of us, and the park's [walking track map](https://parks.des.qld.gov.au/__data/assets/pdf_file/0021/164442/tamborine-walking-track-map.pdf) covers them all."
+    places:
+      - name: Curtis Falls
+        facts:
+          - icon: walk
+            label: 1.1 km return · 30 min
+          - icon: car
+            label: 5 min drive
+        tag: moderate · Grade 3
+        blurb: |-
+          The walk we suggest first, dropping through flooded gums into rainforest to a lookout over the falls.
+          Platypus live in the pool below, and glow-worms light the rock face after dark.
+      - name: Lower creek circuit
+        facts:
+          - icon: walk
+            label: 2.5 km return · 1 hr
+          - icon: car
+            label: 5 min drive
+        tag: steep in parts · Grade 4
+        blurb: |-
+          The quieter continuation of Curtis Falls, following the creek deeper into the rainforest.
+          Expect a giant fallen strangler fig, basalt columns and a few rock-hopping creek crossings.
+      - name: Witches Falls circuit
+        facts:
+          - icon: walk
+            label: 3.6 km loop · 1 hr
+          - icon: car
+            label: 10 min drive
+        tag: steep in parts · Grade 4
+        blurb: |-
+          The full rainforest walk, zigzagging down the western side of the mountain.
+          Giant strangler figs, lagoons that fill after rain, and a short detour to the Witches Falls lookout.
+      - name: MacDonald rainforest circuit
+        facts:
+          - icon: walk
+            label: 1.4 km return · 30 min
+          - icon: car
+            label: 5 min drive
+        tag: moderate · Grade 3
+        blurb: |-
+          Our pick for birdwatching at an easy pace, under towering strangler figs and piccabeen palms.
+          The land was partly donated by Jessie MacDonald in 1933.
+      - name: Palm Grove circuit
+        facts:
+          - icon: walk
+            label: 2.7 km loop · 1 hr
+          - icon: car
+            label: 5 min drive
+        tag: steep in parts · Grade 4
+        blurb: |-
+          The section closest to us, winding through piccabeen palm groves and buttressed carabeens.
+          For a longer walk, the Jenyns circuit extends it to 4.8 km past hoop pines and a grove of ancient cycads.
+      - name: Cedar Creek Falls
+        facts:
+          - icon: walk
+            label: 1.1 km return · 30 min
+          - icon: car
+            label: 15 min drive
+        tag: moderate · Grade 3
+        blurb: |-
+          The area's only sanctioned swimming hole, at the northern foot of the mountain.
+          A short track reaches a lookout over the gorge, then continues down to the rock pools below the falls.
+  - heading: Lookouts and gardens
+    intro: All free, all open access, and none more than about fifteen minutes from your door.
+    places:
+      - name: Rotary Lookout
+        facts:
+          - icon: car
+            label: 10 min drive
+        tag: sunset spot
+        blurb: |-
+          The mountain's best-known place to watch the sun go down, facing west over the Scenic Rim valleys.
+          On clear mornings you can spot hot-air balloons in the valley below.
+      - name: Hang Glider Lookout
+        facts:
+          - icon: car
+            label: 10 min drive
+        tag: picnic spot
+        blurb: |-
+          A working launch ramp beside Rotary Lookout. Arrive before sundown and you may see pilots step off the escarpment.
+          Picnic tables and toilets make it an easy place to settle in for the evening.
+      - name: Eagle Heights lookout
+        facts:
+          - icon: car
+            label: 5 min drive
+        tag: sunrise spot
+        blurb: |-
+          The east-facing one, on Tamborine–Oxenford Road with uninterrupted views to the Gold Coast skyline.
+          Our pick for sunrise, and there is plenty of parking.
+      - name: Knoll Road Lookout
+        facts:
+          - icon: car
+            label: 10 min drive
+        tag: picnic spot
+        blurb: |-
+          Drive-up escarpment views from the end of Knoll Road, with no walking required.
+          The picnic area has gas barbecues, tables and toilets, and the Cameron Falls walk starts here.
+      - name: Cameron Falls
+        facts:
+          - icon: walk
+            label: 2.6 km circuit · 1 hr
+          - icon: car
+            label: 10 min drive
+        tag: steep in parts · Grade 4
+        blurb: |-
+          A rainforest circuit from The Knoll picnic area at the end of Knoll Road.
+          The platform over the falls looks out to Brisbane's southern suburbs on a clear day.
+      - name: Regional Botanic Gardens
+        facts:
+          - icon: car
+            label: 5 min drive
+          - icon: calendar
+            label: Open daily, daylight hours
+        tag: free entry
+        blurb: |-
+          Eleven hectares off Long Road, tended entirely by volunteers.
+          A lake with a stone bridge, a Japanese garden, roses and a rainforest section.
+          For anyone who wants the greenery without the walking tracks.
+        link:
+          href: https://tmbotanicgardens.org.au/
+          label: Visit the gardens' site
+  - heading: Food and wine
+    intro: The mountain feeds you well. We keep to places rather than picks, because there are too many good ones to play favourites.
+    places:
+      - name: Gallery Walk
+        facts:
+          - icon: car
+            label: 5 min drive
+        blurb: |-
+          The mountain's main strip of galleries, cafes, fudge and craft shops along Long Road.
+          An easy afternoon on foot, with coffee never more than a few doors away.
+        link:
+          href: https://visittamborinemountain.com.au/gallery-walk-shopping-antiques-on-tamborine-mountain/
+          label: What's on the strip
+      - name: Wineries and cellar doors
+        blurb: |-
+          Cellar doors are spread across the mountain, most within a ten minute drive, with a distillery and brewery among them.
+          The visitor guide keeps the full list current.
+        link:
+          href: https://visittamborinemountain.com.au/restaurants-cafes-wineries-breweries-and-distilleries-tamborine-mountain/
+          label: Wineries and dining guide
+      - name: Scenic Rim Eat Local Month
+        facts:
+          - icon: calendar
+            label: June
+        blurb: |-
+          A month of farm gates, long lunches and producer events across the Scenic Rim.
+          The opening weekend usually spotlights Tamborine Mountain.
+        link:
+          href: https://www.eatlocalmonth.com.au/
+          label: Eat Local program
+  - heading: Markets and festivals
+    intro: The mountain keeps a busy community calendar.
+    places:
+      - name: Country Markets
+        facts:
+          - icon: calendar
+            label: 2nd Sunday monthly · 7am–1pm
+        tag: Showgrounds
+        blurb: Local produce, cheeses, plants, crafts and live music at the Showgrounds each month.
+        link:
+          href: https://tamborinemountainshowgrounds.com/
+          label: Showgrounds calendar
+      - name: Green Shed producers market
+        facts:
+          - icon: calendar
+            label: Every Sunday · 7am–12pm
+        tag: Showgrounds
+        blurb: The mountain's own fruit, vegetables, flowers and honey, sold by the people who grew them.
+      - name: Arts Trail
+        facts:
+          - icon: calendar
+            label: Early May
+        blurb: |-
+          Local artists open their studios and exhibition spaces for a free self-guided weekend across the mountain.
+          The Glades Sculpture Walk is part of the trail.
+        link:
+          href: https://www.tamborinemountain.art/
+          label: Arts Trail details
+      - name: Tamborine Mountain Show
+        facts:
+          - icon: calendar
+            label: June
+        blurb: The mountain's traditional agricultural show, a full weekend of animals, pavilion exhibits and rides at the Showgrounds.
+      - name: Springtime on the Mountain
+        facts:
+          - icon: calendar
+            label: Late September
+        blurb: Private gardens across the mountain open their gates for one weekend, organised by the local garden club.
+        link:
+          href: https://www.tamborinemountaingardenclub.org.au/springtimeonthemountain
+          label: Open garden details
+      - name: Scarecrow Festival
+        facts:
+          - icon: calendar
+            label: Late October
+        blurb: Scarecrows appear along a trail of homes and businesses across the mountain, free to follow at your own pace.
+        link:
+          href: https://tamborinemountainscarecrowfestival.com.au/
+          label: Festival site
+moreLinks:
+  intro: For everything else on the mountain, the local visitor guides cover it in full.
+  links:
+    - href: https://visittamborinemountain.com.au/
+      label: Visit Tamborine Mountain
+    - href: https://www.escapetotamborinemountain.com.au/
+      label: Escape to Tamborine Mountain
+closingCta:
+  label: Book with us
+  href: /book/
 ---
 
 # Visit Tamborine Mountain
 
-![Aerial view of Tamborine Mountain and the surrounding hinterland](../../assets/images/drone/aerial-view-whole-property.jpg)
+Tamborine Mountain is a village strung along a rainforest plateau in the Gold Coast hinterland, about 500 metres up, an hour from Brisbane and half an hour from Surfers Paradise. The air is cooler than the coast, the pace is slower, and most of what is worth doing here costs nothing.
 
-Welcome to Tamborine Mountain, a captivating destination nestled in the heart of Queensland's Gold Coast Hinterland. Known for its lush rainforests, stunning vistas, and charming village atmosphere, Tamborine Mountain offers a unique and enchanting escape for travellers seeking natural beauty and relaxation.
-
-**Natural Wonders:** One of the most captivating aspects of Tamborine Mountain is its pristine natural beauty. Explore the lush rainforests of the Tamborine National Park, where you can embark on picturesque bushwalks, discover cascading waterfalls like Curtis Falls, and encounter native wildlife. The Tamborine Skywalk offers a unique treetop perspective, allowing you to walk amidst the canopy and enjoy panoramic views of the surrounding landscape.
-
-**Art and Culture:** Tamborine Mountain boasts a thriving arts and crafts scene. Stroll through the charming village to discover boutique galleries, craft shops, and artisanal products that make for perfect souvenirs. The Tamborine Mountain Heritage Centre provides insights into the area's rich history and indigenous heritage.
-
-**Wine and Dining:** Wine enthusiasts will delight in exploring the local wineries and cellar doors, where you can sample a variety of wines produced in the region. The Tamborine Mountain Distillery offers a unique experience for those interested in craft spirits. The village is also home to a diverse range of restaurants and cafes, serving up delicious cuisine to suit all tastes.
-
-**Adventure and Relaxation:** Whether you're seeking adventure or relaxation, Tamborine Mountain has you covered. Enjoy thrilling experiences like hang gliding, hot air ballooning, and horseback riding. Alternatively, indulge in spa treatments, yoga retreats, or simply unwind in the tranquility of the rainforest.
-
-**Events and Festivals:** Throughout the year, Tamborine Mountain hosts a range of events and festivals celebrating its culture and community. From the Tamborine Mountain Show to the Scarecrow Festival, there's always something happening to add to your itinerary.
-
-Whether you're an outdoor enthusiast, a lover of art and culture, or simply seeking a serene escape, Tamborine Mountain offers a diverse range of experiences that will leave you enchanted and inspired. Plan your visit to this hidden gem and uncover the magic of Tamborine Mountain, where nature, culture, and relaxation converge in perfect harmony.
-
-[Book with us](/book/)
+We've put our favourites together below: the national park walks, the lookouts we send guests to for sunrise and sunset, and the markets and festivals that fill the mountain's calendar. If you're after more than the free things, there is also a skywalk through the rainforest canopy, hot-air ballooning in the valley, tandem hang gliding off the escarpment, and day spas for the slower days.

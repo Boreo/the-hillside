@@ -857,3 +857,124 @@ body:has(.lightbox:target) {
     columns: 1;
   }
 }
+
+/* Place cards (location page). Card grids driven by placeGroups
+   frontmatter via PlaceCards.astro: warm soft cards echoing the
+   cross-sell treatment (card surface, highlight top rule), with an
+   icon facts line and a difficulty/schedule chip in the amenity-chip
+   style. The image slot at the card top is optional. */
+.place-group {
+  margin-top: 3.5rem;
+}
+
+.place-group h2 {
+  margin-bottom: 0.75rem;
+}
+
+.place-intro {
+  max-width: 80ch;
+  margin: 0;
+}
+
+.place-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.place-card {
+  background: var(--card);
+  border-top: 2px solid var(--highlight);
+  border-radius: 0 0 10px 10px;
+  padding: 1.4rem 1.5rem 1.5rem;
+}
+
+.place-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.1rem;
+}
+
+.place-card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.6rem;
+}
+
+.place-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 1rem;
+  margin: 0 0 0.85rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.place-fact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+}
+
+.place-tag {
+  background: var(--wash);
+  border: 1px solid var(--mint);
+  border-radius: 4px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.78rem;
+}
+
+.place-blurb {
+  margin: 0;
+  font-size: 0.97rem;
+}
+
+/* Blurbs author as newline-separated lines (YAML block scalars); each
+   renders as its own block with a small gap, lighter than a paragraph
+   break. */
+.place-blurb span {
+  display: block;
+}
+
+.place-blurb span + span {
+  margin-top: 0.4rem;
+}
+
+.place-card .place-link {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-style: italic;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--highlight);
+}
+
+.place-card .place-link:hover {
+  color: var(--accent-dark);
+  border-bottom-color: var(--accent-dark);
+}
+
+.more-links {
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
+.more-links p {
+  margin: 0 0 1rem;
+}
+
+.more-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.closing-cta {
+  margin: 3rem 0 0;
+  text-align: center;
+}

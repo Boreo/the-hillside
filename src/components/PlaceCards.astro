@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+import FactIcon from "./FactIcon.astro";
+
+interface Fact {
+  icon: "walk" | "car" | "calendar";
+  label: string;
+}
+interface Place {
+  name: string;
+  facts: Fact[];
+  tag?: string;
+  blurb: string;
+  link?: { href: string; label: string };
+  image?: { src: ImageMetadata; alt: string };
+}
+interface Props {
+  groups: { heading: string; intro?: string; places: Place[] }[];
+}
+const { groups } = Astro.props;
+
+// Group intros are plain frontmatter strings but may carry markdown links
+// (e.g. to the QPWS track map). Escape everything, then rebuild only the
+// [text](url) links as anchors.
+const escapeHtml = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const renderIntro = (s: string) =>
+  escapeHtml(s).replace(
+    /\[([^\]]+)\]\(([^)\s]+)\)/g,
+    '<a href="$2">$1</a>',
+  );
+---
+
+{
+  groups.map((group) => (
+    <section class="place-group">
+      <h2>{group.heading}</h2>
+      {group.intro && <p class="place-intro" set:html={renderIntro(group.intro)} />}
+      <div class="place-grid">
+        {group.places.map((p) => (
+          <article class="place-card">
+            {p.image && (
+              <Image
+                src={p.image.src}
+                alt={p.image.alt}
+                widths={[480, 800]}
+                sizes="(max-width: 40rem) 100vw, 30rem"
+              />
+            )}
+            <h3>{p.name}</h3>
+            {(p.facts.length > 0 || p.tag) && (
+              <p class="place-facts">
+                {p.facts.map((f) => (
+                  <span class="place-fact">
+                    <FactIcon name={f.icon} /> {f.label}
+                  </span>
+                ))}
+                {p.tag && <span class="place-tag">{p.tag}</span>}
+              </p>
+            )}
+            <p class="place-blurb">
+              {p.blurb
+                .trim()
+                .split("\n")
+                .map((line) => (
+                  <span>{line}</span>
+                ))}
+            </p>
+            {p.link && (
+              <a class="place-link" href={p.link.href}>
+                {p.link.label}
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  ))
+}

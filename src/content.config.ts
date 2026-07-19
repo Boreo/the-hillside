@@ -76,6 +76,44 @@ const homepageSchema = ({ image }: SchemaContext) =>
     }),
   });
 
+// Scannable place cards (walks, lookouts, markets) for area-guide pages.
+// Facts (distance, drive time, schedule) live here as data, matching the
+// dwelling-facts rule: prose should not restate these numbers.
+const placeGroupSchema = ({ image }: SchemaContext) =>
+  z.object({
+    heading: z.string().min(1),
+    intro: z.string().min(1).optional(),
+    places: z
+      .array(
+        z.object({
+          name: z.string().min(1),
+          facts: z
+            .array(
+              z.object({
+                icon: z.enum(["walk", "car", "calendar"]),
+                label: z.string().min(1),
+              }),
+            )
+            .default([]),
+          tag: z.string().min(1).optional(),
+          blurb: z.string().min(1),
+          link: z
+            .object({
+              href: z.string().min(1),
+              label: z.string().min(1),
+            })
+            .optional(),
+          image: z
+            .object({
+              src: image(),
+              alt: z.string().min(1),
+            })
+            .optional(),
+        }),
+      )
+      .min(1),
+  });
+
 const pages = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
   schema: (ctx) =>
@@ -90,6 +128,30 @@ const pages = defineCollection({
         })
         .optional(),
       homepage: homepageSchema(ctx).optional(),
+      placeGroups: z.array(placeGroupSchema(ctx)).min(1).optional(),
+      // Prominent outbound links (e.g. local visitor guides) rendered as
+      // outline buttons after the place groups.
+      moreLinks: z
+        .object({
+          intro: z.string().min(1).optional(),
+          links: z
+            .array(
+              z.object({
+                href: z.string().min(1),
+                label: z.string().min(1),
+              }),
+            )
+            .min(1),
+        })
+        .optional(),
+      // Button rendered after the place groups, since the groups render
+      // below the markdown body.
+      closingCta: z
+        .object({
+          label: z.string().min(1),
+          href: z.string().startsWith("/"),
+        })
+        .optional(),
     }),
 });
 

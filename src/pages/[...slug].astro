@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import Base from "../layouts/Base.astro";
 import DwellingLayout from "../components/DwellingLayout.astro";
+import PlaceCards from "../components/PlaceCards.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
@@ -57,6 +58,30 @@ const dwellingJsonLd = dwelling && {
       </DwellingLayout>
     ) : (
       <Content />
+    )
+  }
+  {page.data.placeGroups && <PlaceCards groups={page.data.placeGroups} />}
+  {
+    page.data.moreLinks && (
+      <section class="more-links">
+        {page.data.moreLinks.intro && <p>{page.data.moreLinks.intro}</p>}
+        <p class="more-links-row">
+          {page.data.moreLinks.links.map((l) => (
+            <a class="btn btn-outline" href={l.href}>
+              {l.label}
+            </a>
+          ))}
+        </p>
+      </section>
+    )
+  }
+  {
+    page.data.closingCta && (
+      <p class="closing-cta">
+        <a class="btn" href={page.data.closingCta.href}>
+          {page.data.closingCta.label}
+        </a>
+      </p>
     )
   }
 </Base>
