@@ -7,10 +7,10 @@ import Base from "../layouts/Base.astro";
   description="Check availability and book Hillside House or Hillside Villa on Tamborine Mountain directly with The Hillside Retreat."
 >
   <div class="book-page">
-    <h1>Book your stay</h1>
+    <h1 class="sr-only">Book your stay</h1>
     <p class="book-note">
-      Book Hillside House or Hillside Villa below. To book the House and Villa
-      combined for up to eight guests, <a href="/contact-us/">contact us directly</a>.
+      Booking the House and Villa combined for up to eight guests? <a
+        href="/contact-us/">Contact us directly</a>.
     </p>
     <div
       class="ibe"
@@ -68,11 +68,20 @@ import Base from "../layouts/Base.astro";
   .book-page {
     max-width: 70rem;
     margin: 0 auto;
-    padding: 2.5rem 1.5rem 4rem;
+    padding: 0.75rem 1.5rem 4rem;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
   .book-note {
     max-width: 44rem;
-    margin: 0 0 2rem;
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
   }
   /* Desktop/tablet: the widget clamps its iframe with an inline max-height of
      ~95% of the viewport, which forces an internal scrollbar; !important lifts
