@@ -19,6 +19,7 @@ dwelling:
     - EV charging (7.3 kW Type 2)
     - Wraparound verandah
     - Full kitchen & laundry
+    - Air-conditioning
     - Wi-Fi
     - Free private parking
   cta:
@@ -26,19 +27,19 @@ dwelling:
     href: /book/?room_rate=413447
 ---
 
-Discover the epitome of hillside luxury with our stunning 3-bedroom accommodation option Hillside House. Nestled in the serene embrace of nature, this retreat offers a haven of tranquility on the slopes of Tamborine Mountain, Queensland, Australia and offers breathtaking views of the coastline and Guanaba Valley.
-
-Step inside, and you'll find yourself in a beautifully appointed private space where modernity meets cleanliness and comfort. With 2 queen bedrooms and 1 twin bedroom, there's ample room for up to six guests to enjoy a restful night's sleep. The brand new fully fitted kitchen is a culinary enthusiast's dream, while the large, spacious, and open-plan dining and lounge area beckons you to unwind and enjoy the breathtaking views that surround you. Our master bedroom, complete with an ensuite shower room and large walk-in wardrobe provides a spacious and comfortable stay. Hillside House provides all the conveniences of home, including a well-equipped laundry room featuring a washer, dryer, iron and ironing board. Stay fresh and wrinkle-free throughout your visit.
+Hillside House is our spacious family home on the eastern slopes of Tamborine Mountain, looking out over the Guanaba Valley to the Gold Coast and the coastline beyond. The view runs the full length of the house.
 
 ![Entrance to Hillside House](../../assets/images/external/retreat-entrance.jpg)
 
-For those who relish outdoor dining, our BBQ and expansive al fresco dining area provide the perfect setting to savor a meal while soaking in the natural beauty of the hillside at our shared pool and heated spa. The interior is tastefully and neutrally decorated, creating an ambiance of serenity and sophistication. Modern fixtures and fittings ensure your stay is as comfortable as it is stylish.
+Inside, the open-plan lounge and dining area sits beside a brand new fully fitted kitchen, so whoever is cooking is never cut off from the conversation or the view. The master bedroom has an ensuite shower room and a large walk-in wardrobe, and every bedroom has air-conditioning and an overhead fan. There's a well-equipped laundry with washer, dryer, iron and ironing board, so you can stay fresh and wrinkle-free throughout your visit.
+
+The large wraparound verandah, with ample seating and a gas BBQ, is the spot for dining al fresco while the sun goes down over the valley. A few steps below, the newly renovated inground pool and heated spa (shared facilities) come with sun loungers and a view of the coastline.
+
+![Wraparound verandah with coastal views](../../assets/images/external/verandah-dining-views.jpg)
 
 Arriving by electric vehicle? Our on-site 7.3 kW Type 2 charger means you can spend the day exploring the mountain's wineries and waterfalls and wake to a fully charged car.
 
-The pièce de résistance is the breathtaking view, seen from the full length of the house. Whether you're seeking relaxation, adventure, or simply a break from the ordinary, our Hillside House accommodation promises an unforgettable experience and vista amidst the stunning landscapes of Tamborine Mountain and beyond.
-
-![Wraparound verandah with coastal views](../../assets/images/external/verandah-dining-views.jpg)
+Tamborine Mountain's wineries, walking tracks and waterfalls are a few minutes' drive away, and Surfers Paradise is 30 minutes down the mountain. In winter, light the wood burning fireplace and settle in for the evening.
 
 > “Facilities are very well maintained and the house is very cozy and well furnished. Definitely a great choice for family getaway, and it comes with an amazing view for sunrise too!”
 >
@@ -91,6 +92,8 @@ Book the House and Villa together, connected as one retreat sleeping up to 8, wi
 
 ![Lounge area](../../assets/images/house/lounge-area.jpeg)
 
+![Living room with sofas and TV](../../assets/images/house/living-room-sofas-tv.jpeg)
+
 ![Dining area](../../assets/images/house/dining-area.jpg)
 
 ![Kitchen island with mountain views](../../assets/images/house/kitchen-island-mountain-view.jpg)
@@ -120,6 +123,8 @@ Book the House and Villa together, connected as one retreat sleeping up to 8, wi
 ![Pool deck at night with city lights beyond](../../assets/images/external/pool-at-night.jpg)
 
 ![Guest taking in the coastal view](../../assets/images/external/guest-taking-in-coastal-view.jpg)
+
+![Coastal view through the palms from the verandah](../../assets/images/external/coastal-view-through-palms.jpg)
 
 ![Gold Coast skyline over the ocean](../../assets/images/external/goldcoast-skyline-over-ocean.jpeg)
 

@@ -27,19 +27,17 @@ dwelling:
     href: /contact-us/
 ---
 
-![Coastline and Gold Coast skyline through the palms](../../assets/images/external/goldcoast-in-background.jpg)
+For larger groups and families, we're delighted to offer [Hillside House](/hillside-house/) and [Hillside Villa](/hillside-villa/) as a combined booking. A connecting door joins the two accommodations, opening them up into one retreat with the whole property to yourselves.
 
-For larger groups and families, we're delighted to offer our spacious 3-bedroom [Hillside House](/hillside-house/) and intimate 1-bedroom [Hillside Villa](/hillside-villa/) as a combined booking. A connecting door joins the two accommodations, opening them up into one expansive retreat that sleeps up to 8 guests across 4 bedrooms.
-
-The combination gives you the best of both worlds: plenty of shared living space for meals and time together, with the Villa offering a self-contained space for grandparents, couples, or anyone who appreciates their own quiet corner. Whether it's a family reunion, a milestone celebration, or a getaway with friends, everyone can be together without being on top of each other.
+The House carries the shared living, with meals around the big table, evenings by the fire and the verandah for everyone. The Villa is a self-contained space for grandparents, couples, or anyone who appreciates their own quiet corner. Whether it's a family reunion, a milestone celebration, or a getaway with friends, everyone can be together without being on top of each other.
 
 ![Entrance to the retreat](../../assets/images/external/retreat-entrance.jpg)
 
-Your combined booking gives you exclusive use of the heated spa and pool, adding an extra touch of luxury to your stay.
+A combined booking also gives you exclusive use of the pool and heated spa, with no other guests sharing them for the length of your stay.
 
 ![Pool and heated spa in the evening light](../../assets/images/external/heated-pool-evening.jpg)
 
-Nestled amidst the lush landscapes of Tamborine Mountain, the retreat makes the perfect base for exploring the area's wineries, waterfalls, and walking trails, or simply enjoying the coastal and hinterland views from the verandah.
+The retreat makes an easy base for the mountain's wineries, waterfalls and walking trails, or for staying put and watching the light change over the coastline from the verandah.
 
 ![Wraparound verandah with coastal views](../../assets/images/external/verandah-dining-views.jpg)
 
@@ -90,9 +88,9 @@ Our self-contained 1-bedroom Hillside Villa, with its own private entry, courtya
 
 ## A look around
 
-![Open plan living in Hillside House](../../assets/images/external/outdoor-dining-moonlit-valley.jpeg)
+![Outdoor dining with a full moon over the valley](../../assets/images/external/outdoor-dining-moonlit-valley.jpeg)
 
-![Wood burning fireplace](../../assets/images/house/dining-area-lounge-tv.jpg)
+![Dining area with lounge and TV](../../assets/images/house/dining-area-lounge-tv.jpg)
 
 ![Lounge and dining area in Hillside House](../../assets/images/house/house-lounge-dining-area.jpg)
 
@@ -122,7 +120,7 @@ Our self-contained 1-bedroom Hillside Villa, with its own private entry, courtya
 
 ![Covered deck lounge overlooking the valley](../../assets/images/external/deck-lounge-valley-view.jpg)
 
-![Fire pit at dusk](../../assets/images/house/wood-fireplace-burning.jpg)
+![Wood fireplace burning](../../assets/images/house/wood-fireplace-burning.jpg)
 
 ![Guest taking in the coastal view](../../assets/images/external/guest-taking-in-coastal-view.jpg)
 
