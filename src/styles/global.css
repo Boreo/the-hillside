@@ -366,7 +366,7 @@ footer {
   margin: 0 auto;
   padding: 3rem 1.5rem 2.5rem;
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.2fr 1.35fr 1fr 1fr;
   gap: 2.5rem 2rem;
 }
 
@@ -432,6 +432,15 @@ footer {
 /* Global nav is flex; the footer link list stacks instead. */
 nav.footer-col {
   display: block;
+}
+
+.footer-links {
+  columns: 2;
+  column-gap: 1.25rem;
+}
+
+.footer-links a {
+  break-inside: avoid;
 }
 
 .footer-col a {
@@ -765,6 +774,30 @@ main > .media-row-flip {
   grid-template-columns: 1fr 1.15fr;
 }
 
+/* Contact details: the definition list on /contact-us/ sits on a card
+   surface, terms and values in two columns. */
+main > dl {
+  max-width: 34rem;
+  margin: 2rem auto;
+  padding: 1.75rem 2rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 2.5rem;
+  row-gap: 0.9rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--highlight);
+  border-radius: 8px;
+}
+
+main > dl dd {
+  margin: 0;
+}
+
+main > dl + p:has(> .btn) {
+  text-align: center;
+}
+
 /* Section headings pick up the homepage section rule. */
 .dwelling-body > h2 {
   border-top: 2px solid var(--highlight);
@@ -1012,6 +1045,10 @@ main > .media-row-flip {
   border-top: 2px solid var(--highlight);
   border-radius: 0 0 10px 10px;
   padding: 1.4rem 1.5rem 1.5rem;
+}
+
+.place-card .lightbox-open {
+  height: auto;
 }
 
 .place-card img {

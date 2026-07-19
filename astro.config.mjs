@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 
 import cloudflare from '@astrojs/cloudflare';
 import { unified } from '@astrojs/markdown-remark';
+import remarkDeflist from 'remark-deflist';
 import rehypePhotoRuns from './src/lib/rehype-photo-runs.mjs';
 import rehypePolicyPage from './src/lib/rehype-policy-page.mjs';
 import rehypeFaqPage from './src/lib/rehype-faq-page.mjs';
@@ -21,7 +22,10 @@ export default defineConfig({
   },
 
   markdown: {
-    processor: unified({ rehypePlugins: [rehypeFaqPage, rehypePhotoRuns, rehypePolicyPage] }),
+    processor: unified({
+      remarkPlugins: [/** @type {import('@astrojs/markdown-remark').RemarkPlugin} */ (/** @type {unknown} */ (remarkDeflist))],
+      rehypePlugins: [rehypeFaqPage, rehypePhotoRuns, rehypePolicyPage],
+    }),
   },
 
   // 'compile' processes images with sharp at build time, so the static
