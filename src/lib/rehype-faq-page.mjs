@@ -16,14 +16,13 @@ import {
   textOf,
   slugOf,
   el,
-  text,
-  factIcon as icon,
   splitAt,
+  chipStrip,
+  tocNav,
 } from "./hast-utils.mjs";
 
 // Each chip captures a phrase verbatim from the first answer paragraph that
-// matches; if the wording changes and no longer matches, the chip drops out
-// rather than drifting from the content.
+// matches (see chipStrip in hast-utils.mjs).
 const CHIP_RULES = [
   { icon: "users", pattern: /(sleeps up to 8 guests)/i },
   { icon: "clock", pattern: /(check-in is from \S+m)/i },
@@ -31,21 +30,6 @@ const CHIP_RULES = [
   { icon: "calendar", pattern: /(2 night minimum stay)/i },
   { icon: "paw-print", pattern: /(we keep the property pet-free)/i },
 ];
-
-const chipStrip = (nodes) => {
-  const paragraphs = nodes.filter((n) => isElement(n, "p")).map((n) => textOf(n));
-  const chips = CHIP_RULES.flatMap((rule) => {
-    for (const p of paragraphs) {
-      const match = p.match(rule.pattern);
-      if (match) {
-        const phrase = match[1].charAt(0).toUpperCase() + match[1].slice(1);
-        return [el("span", { className: ["policy-chip"] }, [icon(rule.icon), text(phrase)])];
-      }
-    }
-    return [];
-  });
-  return el("p", { className: ["policy-chips"] }, chips);
-};
 
 export default function rehypeFaqPage() {
   return (tree, file) => {
@@ -62,25 +46,17 @@ export default function rehypeFaqPage() {
 
     // Sticky "On this page" contents list of every question, sharing the
     // guest-info toc styling. Links target the per-question slug ids.
-    const toc = el("nav", { className: ["policy-toc"], ariaLabel: "Questions on this page" }, [
-      el("p", { className: ["policy-toc-label"] }, [text("On this page")]),
-      el(
-        "ol",
-        {},
-        nodes
-          .filter((n) => isElement(n, "h3"))
-          .map((h3) =>
-            el("li", {}, [el("a", { href: `#${slugOf(h3)}` }, [text(textOf(h3))])]),
-          ),
-      ),
-    ]);
+    const toc = tocNav(
+      nodes.filter((n) => isElement(n, "h3")),
+      "Questions on this page",
+    );
 
     // The h1, intro and chip strip span the page like every other page;
     // below them the contents list sits beside the question column, which
     // keeps a readable measure without looking cut off.
     tree.children = [
       ...lead,
-      chipStrip(nodes),
+      chipStrip(nodes, CHIP_RULES),
       el("div", { className: ["faq-layout"] }, [
         toc,
         el("div", { className: ["faq-wrap"] }, [

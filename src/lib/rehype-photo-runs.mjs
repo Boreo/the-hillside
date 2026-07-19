@@ -15,6 +15,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { parse } from "yaml";
 import { isElement, isWhitespace, textOf, el, text, factIcon } from "./hast-utils.mjs";
+import { sumFacts } from "./dwelling-facts.mjs";
 
 const isImageParagraph = (node) => {
   if (!isElement(node, "p")) return false;
@@ -58,7 +59,11 @@ const dwellingFacts = (slug) => {
     path.join(process.cwd(), "src/content/pages", `${slug}.md`),
     "utf8",
   );
-  const d = parse(raw.split("---")[1]).dwelling;
+  // Anchored to the leading delimiter so a --- inside the body or a
+  // frontmatter string can't truncate the parse.
+  const frontmatter = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!frontmatter) throw new Error(`No frontmatter in ${slug}.md`);
+  const d = parse(frontmatter[1]).dwelling;
   const facts = { sleeps: d.sleeps, bedrooms: d.bedrooms.length, bathrooms: d.bathrooms };
   factsCache.set(slug, facts);
   return facts;
@@ -67,13 +72,7 @@ const dwellingFacts = (slug) => {
 const factsFor = (href) => {
   const slug = href.replaceAll("/", "");
   if (slug === "house-and-villa") {
-    const house = dwellingFacts("hillside-house");
-    const villa = dwellingFacts("hillside-villa");
-    return {
-      sleeps: house.sleeps + villa.sleeps,
-      bedrooms: house.bedrooms + villa.bedrooms,
-      bathrooms: house.bathrooms + villa.bathrooms,
-    };
+    return sumFacts([dwellingFacts("hillside-house"), dwellingFacts("hillside-villa")]);
   }
   return dwellingFacts(slug);
 };
@@ -131,9 +130,11 @@ export default function rehypePhotoRuns() {
         const prev = paired[paired.length - 1];
         if (isImageParagraph(node) && prev && isTextParagraph(prev)) {
           paired.pop();
-          const className = flip ? ["media-row", "media-row-flip"] : ["media-row"];
-          const row = div("media-row", [prev, node]);
-          row.properties.className = className;
+          const row = el(
+            "div",
+            { className: flip ? ["media-row", "media-row-flip"] : ["media-row"] },
+            [prev, node],
+          );
           paired.push(row);
           flip = !flip;
         } else {

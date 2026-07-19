@@ -2,6 +2,7 @@
 import { getEntry } from "astro:content";
 import { Image } from "astro:assets";
 import FactsLine from "./FactsLine.astro";
+import { sumFacts } from "../lib/dwelling-facts.mjs";
 import combinedAerial from "../assets/images/drone/aerial-view-whole-property.jpg";
 
 interface Props {
@@ -24,13 +25,12 @@ const cards = await Promise.all(
   }),
 );
 
-const combined = cards.reduce(
-  (sum, c) => ({
-    sleeps: sum.sleeps + c.facts.sleeps,
-    bedrooms: sum.bedrooms + c.facts.bedrooms.length,
-    bathrooms: sum.bathrooms + c.facts.bathrooms,
-  }),
-  { sleeps: 0, bedrooms: 0, bathrooms: 0 },
+const combined = sumFacts(
+  cards.map((c) => ({
+    sleeps: c.facts.sleeps,
+    bedrooms: c.facts.bedrooms.length,
+    bathrooms: c.facts.bathrooms,
+  })),
 );
 ---
 

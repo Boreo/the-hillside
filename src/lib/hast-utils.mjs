@@ -32,6 +32,44 @@ export const factIcon = (name) =>
     el("path", { fill: "currentColor", d: FACT_ICON_PATHS[name] }, []),
   ]);
 
+// Quick-glance chip strip quoting short facts verbatim from the page body.
+// Each rule's chip quotes the first paragraph matching its pattern — the
+// capture group if the pattern has one, otherwise the whole paragraph — so
+// the strip never invents wording; if the wording changes and no longer
+// matches, the chip drops out rather than drifting from the content.
+export const chipStrip = (nodes, rules) => {
+  const paragraphs = nodes.filter((n) => isElement(n, "p")).map((n) => textOf(n).trim());
+  const chips = rules.flatMap((rule) => {
+    for (const p of paragraphs) {
+      const match = p.match(rule.pattern);
+      if (match) {
+        const phrase = (match[1] ?? p).replace(/\.$/, "");
+        return [
+          el("span", { className: ["policy-chip"] }, [
+            factIcon(rule.icon),
+            text(phrase.charAt(0).toUpperCase() + phrase.slice(1)),
+          ]),
+        ];
+      }
+    }
+    return [];
+  });
+  return el("p", { className: ["policy-chips"] }, chips);
+};
+
+// Sticky "On this page" contents list linking to the given headings' slug ids.
+export const tocNav = (headings, ariaLabel) =>
+  el("nav", { className: ["policy-toc"], ariaLabel }, [
+    el("p", { className: ["policy-toc-label"] }, [text("On this page")]),
+    el(
+      "ol",
+      {},
+      headings.map((h) =>
+        el("li", {}, [el("a", { href: `#${slugOf(h)}` }, [text(textOf(h))])]),
+      ),
+    ),
+  ]);
+
 // Split a node list into a leading chunk plus one chunk per heading of the
 // given tag; each chunk is [heading, ...content up to the next heading].
 export const splitAt = (nodes, tag) => {

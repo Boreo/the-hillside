@@ -61,20 +61,6 @@ const extraJsonLd = dwellingJsonLd || faqJsonLd || undefined;
   ogImage={page.data.dwelling?.hero.src}
 >
   {
-    page.data.heroVideo && (
-      <video
-        class="hero-video"
-        src={page.data.heroVideo.src}
-        poster={page.data.heroVideo.poster.src}
-        autoplay
-        muted
-        loop
-        playsinline
-        aria-label="Aerial drone view over The Hillside Retreat towards the Gold Coast skyline"
-      />
-    )
-  }
-  {
     dwelling ? (
       <DwellingLayout dwelling={dwelling}>
         <Content />

@@ -17,14 +17,15 @@ import {
   textOf,
   slugOf,
   el,
-  text,
   factIcon as icon,
   splitAt,
+  chipStrip,
+  tocNav,
 } from "./hast-utils.mjs";
 
 // Quick-glance rules surfaced as chips at the top of the page. Each chip
-// quotes the first body paragraph matching its pattern verbatim, so the
-// strip never invents wording.
+// quotes the first body paragraph matching its pattern verbatim (see
+// chipStrip in hast-utils.mjs).
 const CHIP_RULES = [
   { icon: "clock", pattern: /^check-in:/i },
   { icon: "clock", pattern: /^check-out:/i },
@@ -33,21 +34,6 @@ const CHIP_RULES = [
   { icon: "paw-print", pattern: /^pets are not allowed/i },
   { icon: "confetti", pattern: /^parties\/events are not allowed/i },
 ];
-
-const chipStrip = (nodes) => {
-  const paragraphs = nodes.filter((n) => isElement(n, "p")).map((n) => textOf(n).trim());
-  const chips = CHIP_RULES.flatMap((rule) => {
-    const match = paragraphs.find((t) => rule.pattern.test(t));
-    if (!match) return [];
-    return [
-      el("span", { className: ["policy-chip"] }, [
-        icon(rule.icon),
-        text(match.replace(/\.$/, "")),
-      ]),
-    ];
-  });
-  return el("p", { className: ["policy-chips"] }, chips);
-};
 
 export default function rehypePolicyPage() {
   return (tree, file) => {
@@ -58,7 +44,7 @@ export default function rehypePolicyPage() {
 
     tree.children = [
       ...lead,
-      chipStrip(nodes),
+      chipStrip(nodes, CHIP_RULES),
       ...sections.map(([h2, ...body]) => {
         const id = slugOf(h2);
         const isTerms = body.some((n) => isElement(n, "h3") && /rental contract/i.test(textOf(n)));
@@ -93,13 +79,11 @@ function practicalSection(h2, id, body) {
 
 // Terms and conditions: contents list beside long-form prose.
 function termsSection(h2, id, body) {
-  const items = [];
+  const headings = [];
   for (const node of body) {
     if (isElement(node, "h3")) {
       node.properties = { ...node.properties, id: slugOf(node) };
-      items.push(
-        el("li", {}, [el("a", { href: `#${slugOf(node)}` }, [text(textOf(node))])]),
-      );
+      headings.push(node);
     }
     if (isElement(node, "p") && /^effective /i.test(textOf(node).trim())) {
       node.properties = { ...node.properties, className: ["policy-effective"] };
@@ -107,10 +91,7 @@ function termsSection(h2, id, body) {
   }
   return el("section", { className: ["policy-section", "policy-legal"], id }, [
     h2,
-    el("nav", { className: ["policy-toc"], ariaLabel: "Policy contents" }, [
-      el("p", { className: ["policy-toc-label"] }, [text("On this page")]),
-      el("ol", {}, items),
-    ]),
+    tocNav(headings, "Policy contents"),
     el("div", { className: ["policy-legal-body"] }, body),
   ]);
 }
