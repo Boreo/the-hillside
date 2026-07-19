@@ -169,16 +169,28 @@
     const counter = viewer.querySelector(".viewer-counter")!;
     let index = 0;
 
+    // A real anchor href carries the full-size asset URL; "#" means show
+    // the thumbnail's own (already full-width) rendition.
+    const srcFor = (link: HTMLAnchorElement) => {
+      const thumb = link.querySelector("img")!;
+      return link.getAttribute("href") === "#" ? thumb.currentSrc || thumb.src : link.href;
+    };
+
+    // Warm the browser cache for a neighbouring photo so prev/next is instant.
+    const preload = (i: number) => {
+      new Image().src = srcFor(links[(i + links.length) % links.length]);
+    };
+
     const show = (i: number) => {
       index = (i + links.length) % links.length;
       const link = links[index];
       const thumb = link.querySelector("img")!;
-      // A real anchor href carries the full-size asset URL; "#" means show
-      // the thumbnail's own (already full-width) rendition.
-      photo.src = link.getAttribute("href") === "#" ? thumb.currentSrc || thumb.src : link.href;
+      photo.src = srcFor(link);
       photo.alt = thumb.alt;
       caption.textContent = thumb.alt;
       counter.textContent = `${index + 1} / ${links.length}`;
+      preload(index + 1);
+      preload(index - 1);
     };
 
     links.forEach((link, i) =>
