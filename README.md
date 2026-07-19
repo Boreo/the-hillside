@@ -25,7 +25,7 @@ src/
     reviews.yaml     Guest reviews
   layouts/           Base.astro — nav, footer, JSON-LD
   lib/               rehype-photo-runs.mjs — build-time photo runs, cross-sell cards, lightboxes
-  pages/             Routes: index.astro, [...slug].astro, book, gallery, reviews, palette-demo
+  pages/             Routes: index.astro, [...slug].astro, book, gallery, reviews
   styles/            global.css with brand palette tokens
   content.config.ts  Content schemas
 public/

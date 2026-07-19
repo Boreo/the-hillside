@@ -62,7 +62,12 @@ const faqJsonLd = page.data.faqSchema && {
 const extraJsonLd = dwellingJsonLd || faqJsonLd || undefined;
 ---
 
-<Base title={page.data.title} description={page.data.description} extraJsonLd={extraJsonLd}>
+<Base
+  title={page.data.title}
+  description={page.data.description}
+  extraJsonLd={extraJsonLd}
+  ogImage={page.data.dwelling?.hero.src}
+>
   {
     page.data.heroVideo && (
       <video

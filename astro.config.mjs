@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 import cloudflare from '@astrojs/cloudflare';
+import sitemap from '@astrojs/sitemap';
 import { unified } from '@astrojs/markdown-remark';
 import remarkDeflist from 'remark-deflist';
 import rehypePhotoRuns from './src/lib/rehype-photo-runs.mjs';
@@ -14,6 +15,8 @@ const isDev = process.argv.includes('dev');
 export default defineConfig({
   site: 'https://www.thehillside.com.au',
   trailingSlash: 'ignore',
+
+  integrations: [sitemap()],
 
   redirects: {
     // legacy Squarespace paths
