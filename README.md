@@ -17,19 +17,21 @@ Static site for a two-dwelling holiday accommodation business on Tamborine Mount
 
 ```
 src/
-  assets/images/     Image sources by category: house, villa, external, drone, amenities
-  components/        Homepage sections (Hero, Arrival, DwellingCards, …) and DwellingLayout
+  assets/images/     Image sources by category: house, villa, external, drone, amenities, location
+  components/        Homepage sections (Hero, Arrival, DwellingCards, …), DwellingLayout, LightboxViewer
   content/
     pages/           Page content as markdown; index.md holds homepage copy
     gallery.yaml     Gallery images with alt text
     reviews.yaml     Guest reviews
+    review-sources.yaml  Review platform rating badges
   layouts/           Base.astro — nav, footer, JSON-LD
-  lib/               rehype-photo-runs.mjs — build-time photo runs, cross-sell cards, lightboxes
-  pages/             Routes: index.astro, [...slug].astro, book, gallery, reviews
+  lib/               Rehype plugins (photo runs, FAQ, policy pages) and shared helpers
+  pages/             Routes: index.astro, [...slug].astro, book, gallery, reviews, 404
   styles/            global.css with brand palette tokens
   content.config.ts  Content schemas
-public/
+public/              Favicons, robots.txt, _headers (staging noindex)
   videos/            Hero drone video
+scripts/             make-icons.mjs — regenerates favicons from the emblem
 tests/               Playwright specs
 ```
 
@@ -63,6 +65,6 @@ The target end state: the non-technical owner emails a change request → GitHub
 ## Content editing
 
 - Content lives in `src/content/pages/*.md`; files map to routes by filename. Homepage copy is frontmatter in `index.md`.
-- Images go in `src/assets/images/<category>/` (`house`, `villa`, `external`, `drone`, `amenities`), named `<descriptive-name>.<ext>` and pre-resized to 2000px or less. The hero video is in `public/videos/`.
+- Images go in `src/assets/images/<category>/` (`house`, `villa`, `external`, `drone`, `amenities`, `location`), named `<descriptive-name>.<ext>` and pre-resized to 2000px or less. The hero video is in `public/videos/`.
 - Dwelling pages (House, Villa, House & Villa) carry `dwelling:` frontmatter — name, hero, sleeps, bedrooms, amenities, optional `cta` — which drives the facts strip and Accommodation JSON-LD.
 - Legacy Squarespace paths (`/home`, `/further-inform`) redirect via `astro.config.mjs`.
