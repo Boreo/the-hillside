@@ -6,17 +6,17 @@ test("hillside-house split header carries name, facts, amenities and book button
   await expect(header).toHaveCount(1);
   await expect(header.locator("h1")).toHaveText("Hillside House");
   const line = header.locator(".facts-line");
-  await expect(line.locator("svg.fact-icon")).toHaveCount(2);
+  await expect(line.locator("svg.fact-icon")).toHaveCount(3);
   await expect(line).toContainText("Sleeps 6");
   await expect(line).toContainText("3 bedrooms");
   await expect(header.locator(".amenities-line")).toContainText("Wood fireplace");
-  await expect(header.locator('a.btn[href="/book/"]')).toHaveText("Book Direct");
+  await expect(header.locator('a.btn[href^="/book/"]')).toHaveText("Book Direct");
   await expect(header.locator("img")).toHaveCount(1);
 });
 
 test("booking CTA links render as buttons", async ({ page }) => {
   await page.goto("/hillside-house/");
-  const ctas = page.locator('.dwelling-body > p > a[href="/book/"]');
+  const ctas = page.locator('.dwelling-body > p > a[href^="/book/"]');
   await expect(ctas).toHaveCount(1);
   const bg = await ctas.first().evaluate(
     (el) => getComputedStyle(el).backgroundColor,
@@ -78,7 +78,7 @@ test("cross-sell sections render as side-by-side cards above the gallery", async
   // Each card mirrors the homepage dwelling cards: photo, heading, icon
   // facts line, text, button.
   await expect(row.locator(".cross-sell-card img")).toHaveCount(2);
-  await expect(row.locator(".cross-sell-card .facts-line svg.fact-icon")).toHaveCount(4);
+  await expect(row.locator(".cross-sell-card .facts-line svg.fact-icon")).toHaveCount(6);
   await expect(row.locator(".cross-sell-card .cross-sell-cta a")).toHaveCount(2);
   await expect(row.locator(".facts-line").nth(1)).toContainText("Sleeps 8");
   const rowBox = await row.boundingBox();
