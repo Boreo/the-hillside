@@ -2,7 +2,7 @@
 import { BOOK_URL } from "../layouts/Base.astro";
 
 interface Props {
-  video: { src: string; poster: ImageMetadata };
+  video: { src: string; srcAv1?: string; poster: ImageMetadata };
   line: string;
 }
 const { video, line } = Astro.props;
@@ -11,14 +11,16 @@ const { video, line } = Astro.props;
 <section class="hero">
   <video
     class="hero-video"
-    src={video.src}
     poster={video.poster.src}
     autoplay
     muted
     loop
     playsinline
     aria-label="Aerial drone view over The Hillside Retreat towards the Gold Coast skyline"
-  />
+  >
+    {video.srcAv1 && <source src={video.srcAv1} type='video/mp4; codecs="av01.0.08M.10"' />}
+    <source src={video.src} type="video/mp4" />
+  </video>
   <div class="hero-overlay">
     <h1 class="hero-line">{line}</h1>
     <a class="btn-glass" href={BOOK_URL} data-umami-event="booking-click">Check availability</a>

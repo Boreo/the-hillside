@@ -124,6 +124,7 @@ const pages = defineCollection({
       heroVideo: z
         .object({
           src: z.string().startsWith("/videos/"),
+          srcAv1: z.string().startsWith("/videos/").optional(),
           poster: ctx.image(),
         })
         .optional(),
