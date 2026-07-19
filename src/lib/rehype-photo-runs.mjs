@@ -1,5 +1,6 @@
-// Build-time structure for markdown pages (styling is scoped to dwelling
-// pages in global.css; the wrappers are inert elsewhere):
+// Build-time structure for markdown pages (media rows style on any page;
+// the other wrappers style only inside dwelling pages and are inert
+// elsewhere — see global.css):
 //  - runs of 2+ consecutive image-only paragraphs -> <div class="photo-run">
 //  - a solitary image paragraph after a text paragraph -> <div class="media-row">
 //    holding both, alternating sides via the media-row-flip class

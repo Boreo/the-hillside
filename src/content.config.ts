@@ -114,6 +114,32 @@ const placeGroupSchema = ({ image }: SchemaContext) =>
       .min(1),
   });
 
+// Treatment menu cards (mobile massage page). Same card treatment as
+// placeGroups: duration/price facts as data, pressure as the chip, so
+// prose never restates the numbers.
+const treatmentGroupSchema = z.object({
+  heading: z.string().min(1),
+  intro: z.string().min(1).optional(),
+  treatments: z
+    .array(
+      z.object({
+        name: z.string().min(1),
+        facts: z
+          .array(
+            z.object({
+              icon: z.enum(["clock"]),
+              label: z.string().min(1),
+            }),
+          )
+          .default([]),
+        tag: z.string().min(1).optional(),
+        blurb: z.string().min(1).optional(),
+        addons: z.string().min(1).optional(),
+      }),
+    )
+    .min(1),
+});
+
 const pages = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
   schema: (ctx) =>
@@ -129,6 +155,10 @@ const pages = defineCollection({
         .optional(),
       homepage: homepageSchema(ctx).optional(),
       placeGroups: z.array(placeGroupSchema(ctx)).min(1).optional(),
+      treatmentGroups: z.array(treatmentGroupSchema).min(1).optional(),
+      // Fine-print lines rendered after the card groups (e.g. the
+      // massage oil ingredients note).
+      notes: z.array(z.string().min(1)).min(1).optional(),
       // Prominent outbound links (e.g. local visitor guides) rendered as
       // outline buttons after the place groups.
       moreLinks: z

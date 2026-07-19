@@ -619,7 +619,8 @@ body:has(.lightbox:target) {
 
 /* Media rows: a paragraph and its photo side by side, image alternating
    right (default) and left (flip). */
-.dwelling-body .media-row {
+.dwelling-body .media-row,
+main > .media-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
@@ -627,11 +628,13 @@ body:has(.lightbox:target) {
   margin: 2.5rem 0;
 }
 
-.dwelling-body .media-row > p {
+.dwelling-body .media-row > p,
+main > .media-row > p {
   margin: 0;
 }
 
-.dwelling-body .media-row img {
+.dwelling-body .media-row img,
+main > .media-row img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -843,6 +846,7 @@ body:has(.lightbox:target) {
     aspect-ratio: 4 / 3;
   }
   .dwelling-body .media-row,
+  main > .media-row,
   .dwelling-body .cross-sell-card,
   .dwelling-body .cross-sell-card.cross-sell-secondary {
     grid-template-columns: 1fr;
@@ -966,6 +970,28 @@ body:has(.lightbox:target) {
 .place-card .place-link:hover {
   color: var(--accent-dark);
   border-bottom-color: var(--accent-dark);
+}
+
+/* Treatment cards (mobile massage page) share the place-card classes;
+   only the add-on price line is their own. */
+.treatment-addons {
+  margin: 0.85rem 0 0;
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Fine-print lines after card groups (oil ingredients, sign-off). */
+.page-notes {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.page-notes li + li {
+  margin-top: 0.4rem;
 }
 
 .more-links {

@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import Base from "../layouts/Base.astro";
 import DwellingLayout from "../components/DwellingLayout.astro";
 import PlaceCards from "../components/PlaceCards.astro";
+import TreatmentCards from "../components/TreatmentCards.astro";
 import FactIcon from "../components/FactIcon.astro";
 
 export async function getStaticPaths() {
@@ -62,6 +63,7 @@ const dwellingJsonLd = dwelling && {
     )
   }
   {page.data.placeGroups && <PlaceCards groups={page.data.placeGroups} />}
+  {page.data.treatmentGroups && <TreatmentCards groups={page.data.treatmentGroups} />}
   {
     page.data.moreLinks && (
       <section class="more-links">
@@ -75,6 +77,15 @@ const dwellingJsonLd = dwelling && {
           ))}
         </p>
       </section>
+    )
+  }
+  {
+    page.data.notes && (
+      <ul class="page-notes">
+        {page.data.notes.map((note) => (
+          <li>{note}</li>
+        ))}
+      </ul>
     )
   }
   {
