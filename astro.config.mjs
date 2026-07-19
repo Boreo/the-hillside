@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 import { unified } from '@astrojs/markdown-remark';
 import rehypePhotoRuns from './src/lib/rehype-photo-runs.mjs';
+import rehypePolicyPage from './src/lib/rehype-policy-page.mjs';
 
 const isDev = process.argv.includes('dev');
 
@@ -19,7 +20,7 @@ export default defineConfig({
   },
 
   markdown: {
-    processor: unified({ rehypePlugins: [rehypePhotoRuns] }),
+    processor: unified({ rehypePlugins: [rehypePhotoRuns, rehypePolicyPage] }),
   },
 
   // 'compile' processes images with sharp at build time, so the static

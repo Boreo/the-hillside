@@ -988,3 +988,200 @@ body:has(.lightbox:target) {
   margin: 3rem 0 0;
   text-align: center;
 }
+
+/* Guest info policy page; markup comes from src/lib/rehype-policy-page.mjs.
+   Practical topics render as cards; the terms section reads as a plain
+   document with a sticky contents list and CSS-numbered clauses. */
+.policy-section {
+  margin: 2.75rem 0;
+}
+
+.policy-topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+/* Topic cards mirror the location page's place cards: card surface with
+   a highlight top rule. */
+.policy-topic {
+  background: var(--card);
+  border-top: 2px solid var(--highlight);
+  border-radius: 0 0 10px 10px;
+  padding: 1.4rem 1.5rem 1.5rem;
+}
+
+.policy-topic h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.25rem;
+}
+
+.policy-topic p {
+  margin: 0.5rem 0;
+  font-size: 0.97rem;
+}
+
+.policy-time {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+.policy-time .fact-icon {
+  width: 1.1em;
+  height: 1.1em;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.policy-legal {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  column-gap: 3rem;
+  align-items: start;
+}
+
+.policy-legal > h2 {
+  grid-column: 1 / -1;
+}
+
+.policy-toc {
+  position: sticky;
+  top: 1.5rem;
+  border-right: 1px solid var(--line);
+  padding-right: 1.5rem;
+}
+
+.policy-toc-label {
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0.35rem 0 0.6rem;
+}
+
+.policy-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.policy-toc li + li {
+  margin-top: 0.45rem;
+}
+
+.policy-toc a,
+main .policy-toc a:not([class]) {
+  color: var(--muted);
+  font-style: normal;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.policy-toc a:hover,
+main .policy-toc a:not([class]):hover {
+  color: var(--accent-dark);
+}
+
+/* Long-form terms: narrower measure and quieter type than the rest of the
+   site, so it reads as the plain document it is. */
+.policy-legal-body {
+  max-width: 62ch;
+  font-size: 0.95rem;
+  counter-reset: policy-clause;
+}
+
+.policy-legal-body h3 {
+  counter-increment: policy-clause;
+  font-size: 1.05rem;
+  margin: 2.25rem 0 0.6rem;
+}
+
+.policy-legal-body h3::before {
+  content: counter(policy-clause) ".  ";
+  color: var(--highlight);
+  font-variant-numeric: tabular-nums;
+}
+
+.policy-effective {
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Must-read lines (cancellation terms, noise rules) authored as
+   blockquotes lift into soft callout boxes. */
+.policy-legal-body blockquote {
+  background: var(--wash);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 0.9rem 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.policy-legal-body blockquote p {
+  margin: 0;
+}
+
+@media (max-width: 56rem) {
+  .policy-legal {
+    display: block;
+  }
+
+  .policy-toc {
+    position: static;
+    border-right: none;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--card);
+    padding: 0.85rem 1.2rem;
+    margin: 1.25rem 0 2rem;
+  }
+
+  .policy-toc ol {
+    columns: 2;
+    column-gap: 1.5rem;
+  }
+}
+
+@media (max-width: 34rem) {
+  .policy-toc ol {
+    columns: 1;
+  }
+}
+
+/* Key-facts chip strip under the guest-info h1: one-line rules quoted
+   verbatim from the body for a quick scan before the detail. */
+.policy-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.25rem 0 0;
+}
+
+.policy-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: var(--card);
+  border: 1px solid var(--mint);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+
+.policy-chip .fact-icon {
+  width: 1.15em;
+  height: 1.15em;
+  color: var(--accent);
+  flex-shrink: 0;
+}

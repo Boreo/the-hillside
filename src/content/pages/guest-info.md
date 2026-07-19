@@ -45,7 +45,7 @@ Reservations for short-term holiday accommodation are accepted by "The Hillside 
 
 Effective Sunday, November 17, 2024
 
-Once your booking has been confirmed and receipted by The Hillside Retreat, any payments are non-refundable. However, if the booking is cancelled and we are able to re-book the property for your dates, we will refund your payment/s less a $150 cancellation fee.
+> Once your booking has been confirmed and receipted by The Hillside Retreat, any payments are non-refundable. However, if the booking is cancelled and we are able to re-book the property for your dates, we will refund your payment/s less a $150 cancellation fee.
 
 The Hillside Retreat recommends that the Guest takes out comprehensive holiday cancellation and protection insurance with a reputable insurance company to cater for any unforeseen circumstances which may arise including accident, ill health, or any other matters beyond the Guest’s reasonable control.
 
@@ -63,7 +63,7 @@ The full amount payable in respect of the Property rental shall be paid at least
 
 ### Noise & Neighbours
 
-We want you to enjoy your stay but please be aware of the impact of your noise on others and keeping our neighbours happy is of paramount importance. Noise and music should not affect or impact any other guests and neighbours. Noise levels are always to be respectful. There is to be no outdoor music or outdoor entertaining after 9 pm. Noise complaints will result in bond deductions and possible eviction.
+> We want you to enjoy your stay but please be aware of the impact of your noise on others and keeping our neighbours happy is of paramount importance. Noise and music should not affect or impact any other guests and neighbours. Noise levels are always to be respectful. There is to be no outdoor music or outdoor entertaining after 9 pm. Noise complaints will result in bond deductions and possible eviction.
 
 ### Guest’s Obligations in Respect of the Property
 
