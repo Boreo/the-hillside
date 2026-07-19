@@ -140,6 +140,9 @@ placeGroups:
         blurb: |-
           The mountain's main strip of galleries, cafes, fudge and craft shops along Long Road.
           An easy afternoon on foot, with coffee never more than a few doors away.
+        image:
+          src: ../../assets/images/location/gallery-walk-sign.jpg
+          alt: Welcome sign at the entrance to Gallery Walk, Tamborine Mountain's strip of shops, cafes and galleries, shaded by large fig trees
         link:
           href: https://visittamborinemountain.com.au/gallery-walk-shopping-antiques-on-tamborine-mountain/
           label: What's on the strip
