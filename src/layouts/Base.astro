@@ -114,6 +114,7 @@ const jsonLd = {
 <meta property="og:image:width" content={String(ogImageOptimized.attributes.width)} />
 <meta property="og:image:height" content={String(ogImageOptimized.attributes.height)} />
 <meta name="twitter:card" content="summary_large_image" />
+<script defer src="https://cloud.umami.is/script.js" data-website-id="a3ea87f9-e118-444b-8a27-49aa9ac101cb"></script>
 <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 {extraJsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(extraJsonLd)} />}
 
@@ -138,7 +139,7 @@ const jsonLd = {
       ),
     )}
   </nav>
-  <a class="btn nav-book" href={BOOK_URL}>Book Direct</a>
+  <a class="btn nav-book" href={BOOK_URL} data-umami-event="booking-click">Book Direct</a>
   <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>

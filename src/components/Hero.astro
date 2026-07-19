@@ -21,7 +21,7 @@ const { video, line } = Astro.props;
   />
   <div class="hero-overlay">
     <h1 class="hero-line">{line}</h1>
-    <a class="btn-glass" href={BOOK_URL}>Check availability</a>
+    <a class="btn-glass" href={BOOK_URL} data-umami-event="booking-click">Check availability</a>
   </div>
 </section>
 

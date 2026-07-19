@@ -18,7 +18,7 @@ const { image, line } = Astro.props;
     loading="lazy"
   />
   <p>{line}</p>
-  <a class="btn" href={BOOK_URL}>Book with us</a>
+  <a class="btn" href={BOOK_URL} data-umami-event="booking-click">Book with us</a>
 </section>
 
 <style>
