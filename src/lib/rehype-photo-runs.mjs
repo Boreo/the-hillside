@@ -49,13 +49,19 @@ const firstHref = (node) => {
 
 // Sleeps/bedrooms for a dwelling page, read from its frontmatter so the
 // numbers stay single-sourced; /house-and-villa/ is the two combined.
+// Cached per process: in dev, frontmatter fact edits need a server restart
+// to show in cross-sell cards.
+const factsCache = new Map();
 const dwellingFacts = (slug) => {
+  if (factsCache.has(slug)) return factsCache.get(slug);
   const raw = readFileSync(
     path.join(process.cwd(), "src/content/pages", `${slug}.md`),
     "utf8",
   );
   const d = parse(raw.split("---")[1]).dwelling;
-  return { sleeps: d.sleeps, bedrooms: d.bedrooms.length, bathrooms: d.bathrooms };
+  const facts = { sleeps: d.sleeps, bedrooms: d.bedrooms.length, bathrooms: d.bathrooms };
+  factsCache.set(slug, facts);
+  return facts;
 };
 
 const factsFor = (href) => {

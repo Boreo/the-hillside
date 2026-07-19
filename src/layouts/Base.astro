@@ -57,6 +57,12 @@ const nav = [
   { href: "/contact-us/", label: "Your Hosts" },
 ];
 
+// Footer "Explore" column: every leaf page from the nav (dropdown children
+// replace their parent link).
+const footerLinks = nav.flatMap((item) =>
+  "children" in item && item.children ? item.children : [item],
+);
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
@@ -184,16 +190,7 @@ const jsonLd = {
     <nav class="footer-col" aria-label="Footer">
       <h2>Explore</h2>
       <div class="footer-links">
-        <a href="/hillside-house/">Hillside House</a>
-        <a href="/hillside-villa/">Hillside Villa</a>
-        <a href="/house-and-villa/">House & Villa</a>
-        <a href="/gallery/">Gallery</a>
-        <a href="/reviews/">Reviews</a>
-        <a href="/location/">Location</a>
-        <a href="/faq/">FAQ</a>
-        <a href="/guest-info/">Guest Info</a>
-        <a href="/contact-us/">Your Hosts</a>
-        <a href="/mountain-mobile-massage/">Mobile Massage</a>
+        {footerLinks.map((l) => <a href={l.href}>{l.label}</a>)}
       </div>
     </nav>
     <div class="footer-col">

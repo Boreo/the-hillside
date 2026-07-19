@@ -18,13 +18,21 @@ test("booking CTA links render as buttons", async ({ page }) => {
   await page.goto("/hillside-house/");
   const ctas = page.locator('.dwelling-body > p > a[href^="/book/"]');
   await expect(ctas).toHaveCount(1);
+  // Same background as the nav's Book Direct button — a real .btn, not a
+  // plain link.
   const bg = await ctas.first().evaluate(
     (el) => getComputedStyle(el).backgroundColor,
   );
-  expect(bg).toBe("rgb(58, 82, 58)"); // --accent #3a523a
+  const navBg = await page.locator("header .nav-book").evaluate(
+    (el) => getComputedStyle(el).backgroundColor,
+  );
+  expect(bg).toBe(navBg);
+  expect(bg).not.toBe("rgba(0, 0, 0, 0)");
 });
 
 test("prose images pair into alternating media rows", async ({ page }) => {
+  // Desktop layout assertions: force a wide viewport so the mobile
+  // project exercises them too.
   await page.setViewportSize({ width: 1200, height: 900 });
   await page.goto("/hillside-house/");
   const rows = page.locator(".dwelling-body .media-row");
