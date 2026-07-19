@@ -1,9 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import Base from "../layouts/Base.astro";
 
 const images = await getCollection("gallery");
+const fulls = await Promise.all(
+  images.map(({ data }) => getImage({ src: data.src, width: data.src.width })),
+);
 ---
 
 <Base
@@ -14,7 +17,7 @@ const images = await getCollection("gallery");
   <div class="gallery-grid">
     {
       images.map(({ data }, i) => (
-        <a href={data.src.src} class="lightbox-open" data-index={i}>
+        <a href={fulls[i].src} class="lightbox-open" data-index={i}>
           <Image
             src={data.src}
             alt={data.alt}

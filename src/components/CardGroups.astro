@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import FactIcon from "./FactIcon.astro";
 import { factIconHtml } from "../lib/fact-icon-paths.mjs";
 
@@ -27,6 +27,15 @@ const { groups } = Astro.props;
 const escapeHtml = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const outIcon = factIconHtml("arrow-out", "out-icon");
+
+const fullUrls = new Map<ImageMetadata, string>();
+for (const group of groups)
+  for (const item of group.items)
+    if (item.image)
+      fullUrls.set(
+        item.image.src,
+        (await getImage({ src: item.image.src, width: item.image.src.width })).src,
+      );
 const renderIntro = (s: string) =>
   escapeHtml(s).replace(
     /\[([^\]]+)\]\(([^)\s]+)\)/g,
@@ -45,7 +54,7 @@ const renderIntro = (s: string) =>
           <article class="place-card">
             {p.image && (
               <a
-                href={p.image.src.src}
+                href={fullUrls.get(p.image.src)}
                 class="lightbox-open"
                 aria-label={`Enlarge photo: ${p.image.alt}`}
               >
