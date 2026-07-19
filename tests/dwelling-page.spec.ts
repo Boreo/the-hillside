@@ -65,16 +65,17 @@ test("consecutive photos group into two-up photo runs with no orphan column", as
   }
 });
 
-test("clicking a photo opens the CSS lightbox and clicking it again closes it", async ({ page }) => {
+test("clicking a photo opens the dialog viewer and close hides it again", async ({ page }) => {
   await page.goto("/hillside-house/");
   const opener = page.locator(".dwelling-body .photo-run .lightbox-open").first();
-  const id = (await opener.getAttribute("href"))!.slice(1);
-  const overlay = page.locator(`div.lightbox[id="${id}"]`);
-  await expect(overlay).toBeHidden();
+  const viewer = page.locator(".gallery-viewer");
+  await expect(viewer).toBeHidden();
   await opener.click();
-  await expect(overlay).toBeVisible();
-  await overlay.locator(".lightbox-close").click();
-  await expect(overlay).toBeHidden();
+  await expect(viewer).toBeVisible();
+  const alt = await opener.locator("img").getAttribute("alt");
+  await expect(viewer.locator(".viewer-caption")).toHaveText(alt!);
+  await viewer.locator(".viewer-close").click();
+  await expect(viewer).toBeHidden();
 });
 
 test("cross-sell sections render as side-by-side cards above the gallery", async ({ page }) => {

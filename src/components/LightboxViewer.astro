@@ -1,0 +1,222 @@
+---
+// Site-wide photo viewer: one <dialog> per page, driven by every
+// a.lightbox-open on the page in document order. An anchor with a real href
+// (gallery, place cards) shows that full-size asset; an anchor with href="#"
+// (rehype-wrapped markdown photos) shows its thumbnail's own rendition,
+// which for markdown images is the full-width optimized asset.
+// Rendered by Base.astro; the script exits on pages with no photos.
+---
+
+<dialog class="gallery-viewer" aria-label="Enlarged photo viewer">
+  <button class="viewer-close" aria-label="Close">&times;</button>
+  <button class="viewer-prev" aria-label="Previous photo">&larr;</button>
+  <figure>
+    <img src="" alt="" />
+    <figcaption>
+      <span class="viewer-caption"></span>
+      <span class="viewer-counter"></span>
+    </figcaption>
+  </figure>
+  <button class="viewer-next" aria-label="Next photo">&rarr;</button>
+</dialog>
+
+<style>
+  .gallery-viewer {
+    border: none;
+    background: none;
+    padding: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .gallery-viewer[open] {
+    display: flex;
+  }
+  .gallery-viewer::backdrop {
+    background: rgb(32 38 34 / 0.78);
+  }
+  .gallery-viewer figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    min-width: 0;
+  }
+  .gallery-viewer img {
+    max-width: calc(100vw - 9rem);
+    max-height: 88vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 24px 64px rgb(9 47 28 / 0.5);
+  }
+  .gallery-viewer figcaption {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    color: var(--paper);
+  }
+  .viewer-caption {
+    font-style: italic;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  .viewer-counter {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    opacity: 0.7;
+    white-space: nowrap;
+  }
+  .gallery-viewer button {
+    background: none;
+    border: none;
+    color: var(--paper);
+    font-size: 2.1rem;
+    line-height: 1;
+    padding: 1rem;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .gallery-viewer button:hover {
+    opacity: 1;
+  }
+  .viewer-close {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.75rem;
+    font-size: 2.4rem;
+  }
+  /* Arrows pinned to the viewport edges so they stay put while photos of
+     different sizes cycle underneath. Each is a strip matching the current
+     photo's height (--photo-h, set by the script), glyph centred. */
+  .viewer-prev,
+  .viewer-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    height: var(--photo-h, auto);
+    display: flex;
+    align-items: center;
+  }
+  .viewer-prev {
+    left: 0.5rem;
+  }
+  .viewer-next {
+    right: 0.5rem;
+  }
+  /* Phones: the photo gets the full width, and the arrows drop to the
+     bottom corners as tappable pills clear of the image. */
+  @media (max-width: 40rem) {
+    .gallery-viewer img {
+      max-width: calc(100vw - 1rem);
+      max-height: 74vh;
+    }
+    .gallery-viewer figcaption {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      padding-inline: 1rem;
+    }
+    .viewer-prev,
+    .viewer-next {
+      top: auto;
+      bottom: 1rem;
+      transform: none;
+      justify-content: center;
+      background: rgb(250 248 244 / 0.14);
+      border-radius: 999px;
+      width: 3.5rem;
+      height: 3.5rem;
+      padding: 0;
+    }
+    .viewer-prev {
+      left: 1rem;
+    }
+    .viewer-next {
+      right: 1rem;
+    }
+  }
+</style>
+
+<style is:global>
+  /* The page behind the open viewer does not scroll. */
+  body:has(.gallery-viewer[open]) {
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  const links = [...document.querySelectorAll<HTMLAnchorElement>("a.lightbox-open")];
+  const viewer = document.querySelector<HTMLDialogElement>(".gallery-viewer")!;
+  if (links.length === 0) {
+    viewer.remove();
+  } else {
+    const photo = viewer.querySelector("img")!;
+    // Native image dragging swallows the pointerup that ends a swipe.
+    photo.draggable = false;
+    // The arrows' click strips match the displayed photo's height.
+    photo.addEventListener("load", () => {
+      viewer.style.setProperty("--photo-h", `${photo.getBoundingClientRect().height}px`);
+    });
+    const caption = viewer.querySelector(".viewer-caption")!;
+    const counter = viewer.querySelector(".viewer-counter")!;
+    let index = 0;
+
+    const show = (i: number) => {
+      index = (i + links.length) % links.length;
+      const link = links[index];
+      const thumb = link.querySelector("img")!;
+      // A real anchor href carries the full-size asset URL; "#" means show
+      // the thumbnail's own (already full-width) rendition.
+      photo.src = link.getAttribute("href") === "#" ? thumb.currentSrc || thumb.src : link.href;
+      photo.alt = thumb.alt;
+      caption.textContent = thumb.alt;
+      counter.textContent = `${index + 1} / ${links.length}`;
+    };
+
+    links.forEach((link, i) =>
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        show(i);
+        viewer.showModal();
+      }),
+    );
+
+    viewer.querySelector(".viewer-prev")!.addEventListener("click", () => show(index - 1));
+    viewer.querySelector(".viewer-next")!.addEventListener("click", () => show(index + 1));
+    viewer.querySelector(".viewer-close")!.addEventListener("click", () => viewer.close());
+
+    // Swipe left/right to change photos on touch screens. A swipe that ends
+    // over the backdrop must not also count as a close click.
+    let startX = 0;
+    let swiped = false;
+    viewer.addEventListener("pointerdown", (e) => {
+      startX = e.clientX;
+      swiped = false;
+    });
+    viewer.addEventListener("pointerup", (e) => {
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 40) {
+        swiped = true;
+        show(dx > 0 ? index - 1 : index + 1);
+      }
+    });
+
+    // A click on the dialog itself (not the photo, caption or arrows) closes it.
+    viewer.addEventListener("click", (e) => {
+      if (e.target === viewer && !swiped) viewer.close();
+    });
+
+    viewer.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") show(index - 1);
+      if (e.key === "ArrowRight") show(index + 1);
+    });
+  }
+</script>

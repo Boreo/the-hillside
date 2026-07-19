@@ -20,12 +20,6 @@ interface Props {
 }
 const { groups } = Astro.props;
 
-// Card photos share the CSS-only :target lightbox used by markdown pages
-// (styles in global.css). Ids are prefixed to avoid clashing with the
-// rehype-generated #photo-N overlays if a page has both.
-const photos = groups.flatMap((g) => g.places).filter((p) => p.image);
-const photoIndex = (p: Place) => photos.indexOf(p);
-
 // Group intros are plain frontmatter strings but may carry markdown links
 // (e.g. to the QPWS track map). Escape everything, then rebuild only the
 // [text](url) links as anchors.
@@ -50,7 +44,7 @@ const renderIntro = (s: string) =>
           <article class="place-card">
             {p.image && (
               <a
-                href={`#place-photo-${photoIndex(p) + 1}`}
+                href={p.image.src.src}
                 class="lightbox-open"
                 aria-label={`Enlarge photo: ${p.image.alt}`}
               >
@@ -92,29 +86,4 @@ const renderIntro = (s: string) =>
       </div>
     </section>
   ))
-}
-{
-  photos.map((p, i) => {
-    const prev = ((i - 1 + photos.length) % photos.length) + 1;
-    const next = ((i + 1) % photos.length) + 1;
-    return (
-      <div id={`place-photo-${i + 1}`} class="lightbox">
-        <a href="#_" class="lightbox-backdrop" aria-label="Close enlarged photo" />
-        <Image src={p.image!.src} alt={p.image!.alt} widths={[1200, 2000]} sizes="100vw" loading="lazy" />
-        <span class="lightbox-meta">
-          <span class="lightbox-caption">{p.image!.alt}</span>
-          <span class="lightbox-counter">{`${i + 1} / ${photos.length}`}</span>
-        </span>
-        <a href={`#place-photo-${prev}`} class="lightbox-prev" aria-label="Previous photo">
-          ←
-        </a>
-        <a href={`#place-photo-${next}`} class="lightbox-next" aria-label="Next photo">
-          →
-        </a>
-        <a href="#_" class="lightbox-close" aria-label="Close enlarged photo">
-          ×
-        </a>
-      </div>
-    );
-  })
 }

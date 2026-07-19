@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import "@fontsource-variable/fraunces/index.css";
 import { Image, getImage } from "astro:assets";
+import LightboxViewer from "../components/LightboxViewer.astro";
 import emblem from "../assets/images/the-hillside-retreat-emblem.png";
 import heroPoster from "../assets/images/hero-poster.jpg";
 import type { ImageMetadata } from "astro";
@@ -177,6 +178,8 @@ const jsonLd = {
 <main>
   <slot />
 </main>
+
+<LightboxViewer />
 
 <footer>
   <div class="footer-inner">

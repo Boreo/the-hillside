@@ -8,13 +8,13 @@
 //    CTA paragraph -> cross-sell card with a generated facts line;
 //    consecutive cards group into <div class="cross-sell-row">
 //  - remaining link-only paragraphs -> button-styled links
-//  - every other photo -> anchor opening a per-photo :target lightbox
-//    overlay appended at the page end
+//  - every other photo -> a.lightbox-open anchor feeding the site-wide
+//    <dialog> viewer (LightboxViewer.astro)
 
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { parse } from "yaml";
-import { isElement, isWhitespace, textOf, el, text, factIcon } from "./hast-utils.mjs";
+import { isElement, isWhitespace, textOf, el, factIcon } from "./hast-utils.mjs";
 import { sumFacts } from "./dwelling-facts.mjs";
 
 const isImageParagraph = (node) => {
@@ -212,11 +212,9 @@ export default function rehypePhotoRuns() {
     };
     walk(tree);
 
-    // Wrap each photo in an anchor to a per-photo lightbox overlay
-    // appended at the page end. Cross-sell card photos stay plain.
-    // Overlays are built after the walk so each one can link to its
-    // neighbours (wrapping around) and show its position in the set.
-    const photos = [];
+    // Wrap each photo in an anchor feeding the site-wide <dialog> viewer
+    // (LightboxViewer.astro). The "#" href tells the viewer to show the
+    // image's own rendition. Cross-sell card photos stay plain.
     const enlarge = (parent) => {
       if (!parent.children) return;
       const classes = parent.properties?.className ?? [];
@@ -224,19 +222,16 @@ export default function rehypePhotoRuns() {
       for (const node of parent.children) {
         if (isImageParagraph(node)) {
           const img = node.children.find((c) => isElement(c, "img"));
-          const id = `photo-${photos.length + 1}`;
-          photos.push(img);
           node.children = [
-            {
-              type: "element",
-              tagName: "a",
-              properties: {
-                href: `#${id}`,
+            el(
+              "a",
+              {
+                href: "#",
                 className: ["lightbox-open"],
                 ariaLabel: `Enlarge photo: ${img.properties?.alt ?? ""}`,
               },
-              children: [img],
-            },
+              [img],
+            ),
           ];
         } else {
           enlarge(node);
@@ -260,42 +255,5 @@ export default function rehypePhotoRuns() {
       lead.properties.loading = "eager";
       lead.properties.fetchPriority = "high";
     }
-
-    const total = photos.length;
-    tree.children.push(
-      ...photos.map((img, i) => {
-        const prev = ((i - 1 + total) % total) + 1;
-        const next = ((i + 1) % total) + 1;
-        return el("div", { id: `photo-${i + 1}`, className: ["lightbox"] }, [
-            el(
-              "a",
-              { href: "#_", className: ["lightbox-backdrop"], ariaLabel: "Close enlarged photo" },
-              [],
-            ),
-            el("img", { ...img.properties, loading: "lazy", fetchpriority: undefined }, []),
-            el("span", { className: ["lightbox-meta"] }, [
-              el("span", { className: ["lightbox-caption"] }, [
-                text(img.properties?.alt ?? ""),
-              ]),
-              el("span", { className: ["lightbox-counter"] }, [
-                text(`${i + 1} / ${total}`),
-              ]),
-            ]),
-            el(
-              "a",
-              { href: `#photo-${prev}`, className: ["lightbox-prev"], ariaLabel: "Previous photo" },
-              [text("←")],
-            ),
-            el(
-              "a",
-              { href: `#photo-${next}`, className: ["lightbox-next"], ariaLabel: "Next photo" },
-              [text("→")],
-            ),
-            el("a", { href: "#_", className: ["lightbox-close"], ariaLabel: "Close enlarged photo" }, [
-              text("×"),
-            ]),
-          ]);
-      }),
-    );
   };
 }
