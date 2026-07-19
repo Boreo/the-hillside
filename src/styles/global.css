@@ -1223,3 +1223,106 @@ main .policy-toc a:not([class]):hover {
   color: var(--accent);
   flex-shrink: 0;
 }
+
+/* FAQ page; markup comes from src/lib/rehype-faq-page.mjs. Questions read
+   as a guest asking in the owner's serif voice: italic Fraunces question,
+   plain answer alongside a soft rule. Group h2s render as eyebrow labels
+   so the questions themselves carry the page. */
+.faq-group {
+  margin: 3.25rem 0;
+}
+
+.faq-group > h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: system-ui, sans-serif;
+  font-variation-settings: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+.faq-group > h2::after {
+  content: "";
+  flex: 1;
+  max-width: 3.5rem;
+  height: 2px;
+  background: var(--highlight);
+}
+
+.faq-list {
+  display: grid;
+  gap: 2.25rem;
+}
+
+.faq-q {
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.5vw, 1.45rem);
+  margin: 0;
+}
+
+/* Sticky contents list (shared .policy-toc styling) beside the question
+   column, mirroring the guest-info terms layout. */
+.faq-layout {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  column-gap: 3rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+.faq-wrap {
+  max-width: 44rem;
+}
+
+/* The first group tops out level with the contents list. */
+.faq-wrap > :first-child {
+  margin-top: 0;
+}
+
+.faq-layout .policy-toc {
+  top: 1.5rem;
+}
+
+@media (max-width: 56rem) {
+  .faq-layout {
+    display: block;
+  }
+}
+
+.faq-a {
+  border-left: 2px solid var(--mint);
+  padding-left: 1.15rem;
+  margin-top: 0.8rem;
+}
+
+.faq-a p {
+  margin: 0.6rem 0;
+}
+
+/* Deep links (/faq/#are-pets-allowed) light up the landed answer. */
+.faq-item:target .faq-a {
+  border-left-color: var(--accent);
+}
+
+.faq-closing {
+  background: var(--wash);
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  margin: 3.5rem 0 1rem;
+  text-align: center;
+}
+
+.faq-closing h2 {
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  margin: 0 0 0.75rem;
+}
+
+.faq-closing-body p {
+  margin: 0 auto;
+  max-width: 46ch;
+}

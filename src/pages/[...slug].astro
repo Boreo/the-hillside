@@ -36,9 +36,33 @@ const dwellingJsonLd = dwelling && {
   })),
   containedInPlace: { "@type": "LodgingBusiness", name: "The Hillside Retreat" },
 };
+
+// Each h3 in the body is a question; the prose beneath it (up to the next
+// h2 or h3) is the answer. h2s are topic groupings, not questions.
+// Markdown links flatten to their label text so answers read as plain prose.
+const faqJsonLd = page.data.faqSchema && {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [...(page.body ?? "").matchAll(/^### +(.+)\n([\s\S]*?)(?=^###? |$(?![\s\S]))/gm)].map(
+    ([, question, answer]) => ({
+      "@type": "Question",
+      name: question.trim(),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: answer
+          .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+          .replace(/\\\n/g, " ")
+          .replace(/\s+/g, " ")
+          .trim(),
+      },
+    }),
+  ),
+};
+
+const extraJsonLd = dwellingJsonLd || faqJsonLd || undefined;
 ---
 
-<Base title={page.data.title} description={page.data.description} extraJsonLd={dwellingJsonLd}>
+<Base title={page.data.title} description={page.data.description} extraJsonLd={extraJsonLd}>
   {
     page.data.heroVideo && (
       <video
