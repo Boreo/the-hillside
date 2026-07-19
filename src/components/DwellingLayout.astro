@@ -16,7 +16,7 @@ interface Props {
 const { dwelling } = Astro.props;
 ---
 
-<section class="dwelling-header">
+<section class="dwelling-header full-bleed full-bleed-pad">
   <div class="dwelling-header-info">
     <h1>{dwelling.name}</h1>
     <FactsLine
@@ -51,8 +51,8 @@ const { dwelling } = Astro.props;
     column-gap: 2.5rem;
     align-items: start;
     background: var(--wash);
-    margin: -1rem calc(50% - 50vw) 3rem;
-    padding: 2rem calc(50vw - 50%) 2.75rem;
+    margin-block: -1rem 3rem;
+    padding-block: 2rem 2.75rem;
   }
   .dwelling-header-info {
     display: flex;

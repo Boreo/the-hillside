@@ -11,7 +11,7 @@ const resolved = await Promise.all(
 );
 ---
 
-<section class="review-band">
+<section class="review-band full-bleed">
   <div class="band-inner">
     <div class="quotes">
       {resolved.map((q) => (
@@ -26,9 +26,9 @@ const resolved = await Promise.all(
 </section>
 
 <style>
-  /* Full-bleed mint band: breaks out of main's max-width to span the viewport. */
+  /* Full-bleed mint band. */
   .review-band {
-    margin: 0 calc(50% - 50vw) 4rem;
+    margin-block: 0 4rem;
     padding: 2.75rem 1.5rem;
     background: var(--wash);
   }

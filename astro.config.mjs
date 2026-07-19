@@ -3,7 +3,6 @@ import { defineConfig } from 'astro/config';
 
 import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
-import { unified } from '@astrojs/markdown-remark';
 import remarkDeflist from 'remark-deflist';
 import rehypePhotoRuns from './src/lib/rehype-photo-runs.mjs';
 import rehypePolicyPage from './src/lib/rehype-policy-page.mjs';
@@ -25,10 +24,10 @@ export default defineConfig({
   },
 
   markdown: {
-    processor: unified({
-      remarkPlugins: [/** @type {import('@astrojs/markdown-remark').RemarkPlugin} */ (/** @type {unknown} */ (remarkDeflist))],
-      rehypePlugins: [rehypeFaqPage, rehypePhotoRuns, rehypePolicyPage],
-    }),
+    // remark-deflist ships pre-unified-10 types that don't match Astro's
+    // RemarkPlugin signature; the plugin itself works fine.
+    remarkPlugins: [/** @type {any} */ (remarkDeflist)],
+    rehypePlugins: [rehypeFaqPage, rehypePhotoRuns, rehypePolicyPage],
   },
 
   // 'compile' processes images with sharp at build time, so the static

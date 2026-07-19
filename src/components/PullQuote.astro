@@ -10,42 +10,11 @@ const { reviewId, excerpt } = Astro.props;
 const review = await getReview(reviewId);
 ---
 
-<section class="pull-quote">
+<section class="pull-quote full-bleed">
   <blockquote>
     <p>“{excerpt}”</p>
     <footer>{attribution(review)}</footer>
   </blockquote>
 </section>
 
-<style>
-  /* Full-bleed dark band: breaks out of main's max-width to span the viewport. */
-  .pull-quote {
-    margin: 0 calc(50% - 50vw) 4rem;
-    padding: 2.75rem 1.5rem;
-    background: var(--deep);
-    text-align: center;
-  }
-  blockquote {
-    margin: 0 auto;
-    padding: 0;
-    border: none;
-    max-width: 38rem;
-  }
-  blockquote p {
-    font-family: var(--font-display);
-    font-variation-settings: var(--font-display-settings);
-    font-style: italic;
-    font-weight: 500;
-    font-size: clamp(1.35rem, 3vw, 1.8rem);
-    line-height: 1.4;
-    text-wrap: pretty;
-    color: var(--paper);
-    margin: 0 0 1rem;
-  }
-  footer {
-    border: none;
-    padding: 0;
-    font-size: 0.9rem;
-    color: var(--wash);
-  }
-</style>
+<!-- Styled by the shared .pull-quote quote-band rules in global.css. -->

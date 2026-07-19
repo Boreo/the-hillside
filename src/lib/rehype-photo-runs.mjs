@@ -174,7 +174,7 @@ export default function rehypePhotoRuns() {
           if (prev && prev.type === "element" && prev.properties?.className?.[0] === "cross-sell-row") {
             prev.children.push(card);
           } else {
-            const row = div("cross-sell-row", [card]);
+            const row = el("div", { className: ["cross-sell-row", "full-bleed", "full-bleed-pad"] }, [card]);
             // An h2 directly before the first card is the section's
             // header; pull it into the band spanning the full row.
             const before = carded[carded.length - 1];
