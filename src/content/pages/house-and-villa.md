@@ -49,7 +49,7 @@ This combination can only be booked directly with us, so we can confirm availabi
 
 ## Accommodation comprises
 
-- Two self-contained accommodations joined by a connecting door. Everyone can share meals together and still have their own space to retreat to.
+- Two self-contained accommodations joined by a connecting door, so everyone can share meals together and still have their own space to retreat to.
 - Large fully fitted House kitchen with Oven, Hob, Microwave, Dishwasher, Coffee Machine and large pantry.
 - Open plan dining area and spacious lounge with 60” flat screen TV with Netflix.
 - Wood burning fireplaces in both House and Villa.
@@ -62,10 +62,10 @@ This combination can only be booked directly with us, so we can confirm availabi
 - Laundry room with washer, dryer, ironing board and iron.
 - Large wraparound verandah with ample seating and breathtaking coastal views of the Gold Coast and beyond.
 - Gas BBQ for al fresco dining.
-- Exclusive use of the newly renovated sparkling resort style inground pool and heated spa.
+- Exclusive use of the newly renovated inground pool and heated spa.
 - Sun loungers and pool seating.
-- Wi-fi throughout property.
-- EV charging on site (7.3 kW, Type 2) – fully recharges most vehicles overnight.
+- Wi-Fi throughout the property.
+- EV charging on site (7.3 kW, Type 2). Fully recharges most vehicles overnight.
 - Free private parking on site.
 
 ## More ways to stay

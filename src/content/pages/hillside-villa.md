@@ -46,17 +46,17 @@ Tamborine Mountain's rainforest walks, wineries and Gallery Walk village are a f
 
 ## Accommodation comprises
 
-- Comfortable Lounge area, well equipped kitchenette with Oven, Hob, Microwave, Dishwasher & Coffee Machine. Kettle, Toaster, utensils, cutlery and crockery provide everything you need.
-- Open plan dining area.
+- Comfortable lounge area and open plan dining.
+- Well equipped kitchenette with Oven, Hob, Microwave, Dishwasher & Coffee Machine. Kettle, Toaster, utensils, cutlery and crockery, so you have everything you need to cook for two.
 - Wood burning fireplace.
 - Flat screen TV with Netflix.
-- Spacious Queen bedroom sleeps 2, overhead fan and air-conditioning.
-- Shower room with fresh linen & toiletries.
+- Spacious Queen bedroom sleeps 2, with overhead fan and air-conditioning.
+- Shower room with fresh linen and toiletries supplied.
 - Ironing board and iron.
-- Newly renovated sparkling resort style inground pool and heated spa (shared facilities).
+- Newly renovated inground pool and heated spa (shared facilities).
 - Sun loungers and pool seating (shared facilities).
-- Wi-fi throughout property.
-- EV charging on site (7.3 kW, Type 2) – fully recharges most vehicles overnight.
+- Wi-Fi throughout the property.
+- EV charging on site (7.3 kW, Type 2). Fully recharges most vehicles overnight.
 - Free private parking on site.
 
 ## More ways to stay

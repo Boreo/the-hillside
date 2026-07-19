@@ -49,21 +49,22 @@ Tamborine Mountain's wineries, walking tracks and waterfalls are a few minutes' 
 
 ## Accommodation comprises
 
-- Large fully fitted and well equipped kitchen with Oven, Hob, Microwave, Dishwasher & Coffee Machine. Kettle, Toaster, utensils, cutlery and crockery along with large pantry provide everything you need.
+- Large fully fitted kitchen with Oven, Hob, Microwave, Dishwasher & Coffee Machine. Kettle, Toaster, utensils, cutlery, crockery and a large pantry, so you can cook for the whole group.
 - Open plan dining area.
-- Spacious open plan comfortable lounge area with 60” flat screen TV with Netflix.
+- Spacious open plan lounge with 60” flat screen TV with Netflix.
 - Wood burning fireplace.
-- Master Bedroom with Queen Bed, Ensuite Shower Room & large walk-in wardrobe, TV, overhead fan and air-conditioning.
-- Queen bedroom sleeps 2, overhead fan and air-conditioning.
-- Twin bedroom sleeps 2, overhead fan and air-conditioning.
+- Master Bedroom with Queen Bed, Ensuite Shower Room, large walk-in wardrobe and TV.
+- Second Queen bedroom sleeps 2.
+- Twin bedroom sleeps 2.
+- All bedrooms with overhead fans and air-conditioning.
 - Family Bathroom with bath and separate shower.
 - Bed linen and towels supplied.
 - Laundry room with washer, dryer, ironing board and iron.
-- Large wraparound verandah, ample seating and breathtaking coastal views of the Gold Coast and beyond.
-- Newly renovated sparkling resort style inground pool and heated spa (shared facilities).
+- Large wraparound verandah with ample seating and breathtaking coastal views of the Gold Coast and beyond.
+- Newly renovated inground pool and heated spa (shared facilities).
 - Sun loungers and pool seating (shared facilities).
-- Wi-fi throughout property.
-- EV charging on site (7.3 kW, Type 2) – fully recharges most vehicles overnight.
+- Wi-Fi throughout the property.
+- EV charging on site (7.3 kW, Type 2). Fully recharges most vehicles overnight.
 - Free private parking on site.
 
 ## More ways to stay
