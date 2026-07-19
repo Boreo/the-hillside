@@ -15,6 +15,9 @@ placeGroups:
         blurb: |-
           The walk we suggest first, dropping through flooded gums into rainforest to a lookout over the falls.
           Platypus live in the pool below, and glow-worms light the rock face after dark.
+        image:
+          src: ../../assets/images/location/curtis-falls-waterfall.jpg
+          alt: Curtis Falls waterfall cascading over a rock face into a still forest pool, surrounded by dense rainforest
       - name: Lower creek circuit
         facts:
           - icon: walk
@@ -35,6 +38,9 @@ placeGroups:
         blurb: |-
           The full rainforest walk, zigzagging down the western side of the mountain.
           Giant strangler figs, lagoons that fill after rain, and a short detour to the Witches Falls lookout.
+        image:
+          src: ../../assets/images/location/witches-falls-trail.jpg
+          alt: Stone steps ascending a rainforest walking trail with sunlight filtering through the canopy
       - name: MacDonald rainforest circuit
         facts:
           - icon: walk
@@ -125,7 +131,7 @@ placeGroups:
           href: https://tmbotanicgardens.org.au/
           label: Visit the gardens' site
   - heading: Food and wine
-    intro: The mountain feeds you well. We keep to places rather than picks, because there are too many good ones to play favourites.
+    intro: The mountain feeds you well, with cafes and restaurants clustered at North Tamborine and along Gallery Walk. We keep to places rather than picks, because there are too many good ones to play favourites.
     places:
       - name: Gallery Walk
         facts:
@@ -166,6 +172,15 @@ placeGroups:
         link:
           href: https://tamborinemountainshowgrounds.com/
           label: Showgrounds calendar
+      - name: Tamborine Mountain parkrun
+        facts:
+          - icon: calendar
+            label: Every Saturday · 7am
+        tag: Showgrounds
+        blurb: A free, timed 5 km run or walk around the Showgrounds, open to everyone. Just register once online and bring your barcode.
+        link:
+          href: https://www.parkrun.com.au/tamborinemountain/
+          label: parkrun details
       - name: Green Shed producers market
         facts:
           - icon: calendar
@@ -182,11 +197,6 @@ placeGroups:
         link:
           href: https://www.tamborinemountain.art/
           label: Arts Trail details
-      - name: Tamborine Mountain Show
-        facts:
-          - icon: calendar
-            label: June
-        blurb: The mountain's traditional agricultural show, a full weekend of animals, pavilion exhibits and rides at the Showgrounds.
       - name: Springtime on the Mountain
         facts:
           - icon: calendar
@@ -203,13 +213,66 @@ placeGroups:
         link:
           href: https://tamborinemountainscarecrowfestival.com.au/
           label: Festival site
+  - heading: Day trips
+    intro: When you want more than the mountain, the coast's big days out are an easy drive down the hill.
+    places:
+      - name: Thunderbird Park
+        facts:
+          - icon: car
+            label: 15 min drive
+        blurb: |-
+          Rainforest adventure park at Cedar Creek, with the TreeTop Challenge high ropes courses and thunderegg mining for the kids.
+        link:
+          href: https://www.thunderbirdpark.com/
+          label: Thunderbird Park site
+      - name: Gold Coast theme parks
+        facts:
+          - icon: car
+            label: 35 min drive
+        blurb: |-
+          Movie World, Wet'n'Wild, Topgolf and Dreamworld all sit along the motorway below the mountain.
+          Do a full day at the parks and be back on the verandah for sunset.
+        link:
+          href: https://experiencegoldcoast.com/things-to-do/theme-parks-and-attractions
+          label: Theme parks guide
+      - name: Surfers Paradise
+        facts:
+          - icon: car
+            label: 30 min drive
+        blurb: |-
+          The beach, the esplanade and the high-rise skyline you can see from the verandah.
+          Swim between the flags, then wander the cafes and markets along the foreshore.
+      - name: Pacific Fair
+        facts:
+          - icon: car
+            label: 45 min drive
+        blurb: |-
+          The Gold Coast's biggest shopping centre, at Broadbeach with around 400 stores.
+          Westfield Coomera is the closer option, about 25 minutes down the mountain.
+        link:
+          href: https://www.pacificfair.com.au/
+          label: Pacific Fair site
+      - name: Currumbin Wildlife Sanctuary
+        facts:
+          - icon: car
+            label: 50 min drive
+        blurb: |-
+          Koalas, kangaroos and the famous wild lorikeet feeding, run by the National Trust since 1947.
+        link:
+          href: https://currumbinsanctuary.com.au/
+          label: Sanctuary site
+      - name: Burleigh Heads
+        facts:
+          - icon: car
+            label: 50 min drive
+        blurb: |-
+          The Gold Coast's favourite beach day: swim off the point, walk the national park headland track, then eat along James Street.
+          Quieter and more local than Surfers.
 moreLinks:
-  intro: For everything else on the mountain, the local visitor guides cover it in full.
+  intro: For everything else on the mountain, the local visitor guide covers it in full.
   links:
     - href: https://visittamborinemountain.com.au/
       label: Visit Tamborine Mountain
-    - href: https://www.escapetotamborinemountain.com.au/
-      label: Escape to Tamborine Mountain
 closingCta:
   label: Book with us
   href: /book/
