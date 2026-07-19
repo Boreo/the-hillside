@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import "@fontsource-variable/fraunces/index.css";
+import { getCollection } from "astro:content";
 import { Image, getImage } from "astro:assets";
 import LightboxViewer from "../components/LightboxViewer.astro";
 import emblem from "../assets/images/the-hillside-retreat-emblem.png";
@@ -9,16 +10,22 @@ import type { ImageMetadata } from "astro";
 
 export const BOOK_URL = "/book/";
 
+/** Stable node identity for the business, referenced from per-page JSON-LD
+ * (dwelling containedInPlace, review itemReviewed) so answer engines merge
+ * every page's structured data into one entity. */
+export const BUSINESS_ID = "https://www.thehillside.com.au/#business";
+
 interface Props {
   title: string;
   description?: string;
   /** Page-specific structured data, emitted alongside the LodgingBusiness JSON-LD. */
-  extraJsonLd?: object;
+  extraJsonLd?: object | object[];
   /** Share image for link previews; defaults to the hero drone still. */
   ogImage?: ImageMetadata;
+  preloadImage?: string;
 }
 
-const { title, description = "The Hillside Retreat — secluded accommodation on Tamborine Mountain in the Gold Coast Hinterland, with coastal views, pool and heated spa.", extraJsonLd, ogImage = heroPoster } = Astro.props;
+const { title, description = "The Hillside Retreat — secluded accommodation on Tamborine Mountain in the Gold Coast Hinterland, with coastal views, pool and heated spa.", extraJsonLd, ogImage = heroPoster, preloadImage } = Astro.props;
 
 // Pages pass a bare page name; the site name is appended here. A title that
 // already carries the site name (the homepage) is used as-is.
@@ -66,35 +73,90 @@ const footerLinks = nav.flatMap((item) =>
   "children" in item && item.children ? item.children : [item],
 );
 
+// Cross-platform aggregate rating, weighted by review count and normalised
+// to a 5-point scale (Booking.com scores out of 10).
+const ratedSources = (await getCollection("reviewSources")).filter(
+  ({ data }) => data.rating !== null && data.count !== null,
+);
+const totalReviews = ratedSources.reduce((sum, { data }) => sum + data.count!, 0);
+const weightedRating =
+  ratedSources.reduce(
+    (sum, { data }) => sum + (data.rating! / data.scale) * 5 * data.count!,
+    0,
+  ) / totalReviews;
+
+const heroPosterOptimized = await getImage({ src: heroPoster, width: 1200, format: "jpg" });
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LodgingBusiness",
-  name: "The Hillside Retreat",
-  url: Astro.site!.href,
-  description:
-    "Secluded, tranquil accommodation on Tamborine Mountain in the Gold Coast Hinterland. Hillside House (3-bedroom, sleeps 6) and Hillside Villa (1-bedroom, sleeps 2), bookable separately or combined for up to 8 guests.",
-  email: "Stay@thehillside.com.au",
-  telephone: "+61466990185",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "25 Leona Court",
-    addressLocality: "Tamborine Mountain",
-    addressRegion: "QLD",
-    postalCode: "4272",
-    addressCountry: "AU",
-  },
-  amenityFeature: [
-    { "@type": "LocationFeatureSpecification", name: "Pool and heated spa", value: true },
-    { "@type": "LocationFeatureSpecification", name: "EV charging (7.3 kW Type 2)", value: true },
-    { "@type": "LocationFeatureSpecification", name: "Free private parking", value: true },
-    { "@type": "LocationFeatureSpecification", name: "Wi-Fi", value: true },
-    { "@type": "LocationFeatureSpecification", name: "Wood fireplace", value: true },
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.thehillside.com.au/#website",
+      name: "The Hillside Retreat",
+      url: Astro.site!.href,
+      publisher: { "@id": BUSINESS_ID },
+    },
+    {
+      "@type": "LodgingBusiness",
+      "@id": BUSINESS_ID,
+      name: "The Hillside Retreat",
+      url: Astro.site!.href,
+      description:
+        "Secluded, tranquil accommodation on Tamborine Mountain in the Gold Coast Hinterland. Hillside House (3-bedroom, sleeps 6) and Hillside Villa (1-bedroom, sleeps 2), bookable separately or combined for up to 8 guests.",
+      email: "stay@thehillside.com.au",
+      telephone: "+61466990185",
+      image: [new URL(heroPosterOptimized.src, Astro.site).href],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "25 Leona Court",
+        addressLocality: "Tamborine Mountain",
+        addressRegion: "QLD",
+        postalCode: "4272",
+        addressCountry: "AU",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: -27.9569,
+        longitude: 153.2228,
+      },
+      sameAs: ratedSources.map(({ data }) => data.url),
+      checkinTime: "14:00",
+      checkoutTime: "10:00",
+      petsAllowed: false,
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: Number(weightedRating.toFixed(2)),
+        bestRating: 5,
+        reviewCount: totalReviews,
+      },
+      amenityFeature: [
+        { "@type": "LocationFeatureSpecification", name: "Pool and heated spa", value: true },
+        { "@type": "LocationFeatureSpecification", name: "EV charging (7.3 kW Type 2)", value: true },
+        { "@type": "LocationFeatureSpecification", name: "Free private parking", value: true },
+        { "@type": "LocationFeatureSpecification", name: "Wi-Fi", value: true },
+        { "@type": "LocationFeatureSpecification", name: "Wood fireplace", value: true },
+      ],
+      potentialAction: {
+        "@type": "ReserveAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: new URL(BOOK_URL, Astro.site).href,
+          actionPlatform: [
+            "https://schema.org/DesktopWebPlatform",
+            "https://schema.org/MobileWebPlatform",
+          ],
+        },
+      },
+    },
   ],
-  potentialAction: {
-    "@type": "ReserveAction",
-    target: new URL(BOOK_URL, Astro.site).href,
-  },
 };
+
+const extraJsonLdBlocks = extraJsonLd
+  ? Array.isArray(extraJsonLd)
+    ? extraJsonLd
+    : [extraJsonLd]
+  : [];
 ---
 
 <meta charset="utf-8" />
@@ -105,6 +167,7 @@ const jsonLd = {
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+{preloadImage && <link rel="preload" as="image" href={preloadImage} />}
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="The Hillside Retreat" />
 <meta property="og:title" content={fullTitle} />
@@ -116,7 +179,9 @@ const jsonLd = {
 <meta name="twitter:card" content="summary_large_image" />
 <script defer src="https://cloud.umami.is/script.js" data-website-id="a3ea87f9-e118-444b-8a27-49aa9ac101cb"></script>
 <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-{extraJsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(extraJsonLd)} />}
+{extraJsonLdBlocks.map((block) => (
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(block)} />
+))}
 
 <header>
   <a href="/" class="brand">
