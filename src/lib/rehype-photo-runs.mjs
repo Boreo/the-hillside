@@ -163,9 +163,9 @@ export default function rehypePhotoRuns() {
       }
 
       // h2 + optional image paragraph + link-bearing paragraph +
-      // optional link-only CTA paragraph -> cross-sell card, rebuilt in the
-      // homepage dwelling-card order (photo, heading, facts line, text,
-      // button); consecutive cards join into one row.
+      // optional link-only CTA paragraph -> cross-sell card, rebuilt as a
+      // horizontal photo-beside-text row (the homepage combined-card
+      // treatment); consecutive cards stack into one band.
       const carded = [];
       for (let i = 0; i < paired.length; i++) {
         const node = paired[i];
@@ -182,13 +182,20 @@ export default function rehypePhotoRuns() {
           (cta || hasLink(next)) &&
           (!after || !isTextParagraph(after))
         ) {
-          const children = [image, node, next, cta].filter(Boolean);
+          const body = [node, next];
           if (cta) {
             cta.properties = { ...cta.properties, className: ["cross-sell-cta"] };
             const facts = factsFor(firstHref(cta));
-            children.splice(2, 0, factsLine(facts));
+            body.splice(1, 0, factsLine(facts));
+            body.push(cta);
           }
+          const children = [image, div("cross-sell-body", body)].filter(Boolean);
           const card = div("cross-sell-card", children);
+          // The combined House & Villa stay books by enquiry only, so its
+          // card renders demoted (smaller, outline CTA) wherever it appears.
+          if (firstHref(cta ?? next) === "/house-and-villa/") {
+            card.properties.className.push("cross-sell-secondary");
+          }
           const prev = carded[carded.length - 1];
           if (prev && prev.type === "element" && prev.properties?.className?.[0] === "cross-sell-row") {
             prev.children.push(card);

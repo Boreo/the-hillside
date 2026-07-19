@@ -703,12 +703,15 @@ body:has(.lightbox:target) {
   margin-bottom: 0.6rem;
 }
 
-/* Cross-sell sections render as photo cards (the homepage dwelling-cards
-   treatment) on a full-bleed sage band; a lone card keeps a readable
-   measure. */
+/* Cross-sell sections render as stacked horizontal photo-beside-text
+   rows (the homepage combined-card treatment) on a full-bleed sage band.
+   The House & Villa card (.cross-sell-secondary) is demoted — narrower
+   image, smaller heading, outline CTA (homepage .btn-outline treatment) —
+   because that stay books by
+   enquiry only. */
 .dwelling-body .cross-sell-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2.5rem;
   margin: 3.5rem calc(50% - 50vw);
   padding: 2.75rem calc(50vw - 50%) 3.25rem;
@@ -716,7 +719,6 @@ body:has(.lightbox:target) {
 }
 
 .dwelling-body .cross-sell-row .cross-sell-heading {
-  grid-column: 1 / -1;
   /* Negative bottom margin shrinks the heading's grid track, tightening
      the space to the cards below past the row's 2.5rem gap. */
   margin: 0 0 -1.25rem;
@@ -727,19 +729,42 @@ body:has(.lightbox:target) {
 }
 
 .dwelling-body .cross-sell-card {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
   border-top: 2px solid var(--highlight);
   padding-top: 1.25rem;
 }
 
 .dwelling-body .cross-sell-card p:has(> img:only-child) {
-  margin: 0 0 1.1rem;
+  margin: 0;
 }
 
 .dwelling-body .cross-sell-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 8px;
+}
+
+.dwelling-body .cross-sell-card.cross-sell-secondary {
+  grid-template-columns: 0.75fr 1fr;
+}
+
+.dwelling-body .cross-sell-card.cross-sell-secondary h2 {
+  font-size: 1.2rem;
+}
+
+.dwelling-body .cross-sell-card.cross-sell-secondary .cross-sell-cta a {
+  background: var(--card);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.dwelling-body .cross-sell-card.cross-sell-secondary .cross-sell-cta a:hover {
+  background: var(--accent);
+  color: var(--card);
 }
 
 /* Card headings sit at homepage-card scale so they hold to one line. */
@@ -818,8 +843,12 @@ body:has(.lightbox:target) {
     aspect-ratio: 4 / 3;
   }
   .dwelling-body .media-row,
-  .dwelling-body .cross-sell-row {
+  .dwelling-body .cross-sell-card,
+  .dwelling-body .cross-sell-card.cross-sell-secondary {
     grid-template-columns: 1fr;
+  }
+  .dwelling-body .cross-sell-card img {
+    aspect-ratio: 4 / 3;
   }
   .dwelling-body .media-row-flip > p:has(> .lightbox-open) {
     order: 0;
