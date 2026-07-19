@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 
 import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
@@ -24,10 +25,12 @@ export default defineConfig({
   },
 
   markdown: {
-    // remark-deflist ships pre-unified-10 types that don't match Astro's
-    // RemarkPlugin signature; the plugin itself works fine.
-    remarkPlugins: [/** @type {any} */ (remarkDeflist)],
-    rehypePlugins: [rehypeFaqPage, rehypePhotoRuns, rehypePolicyPage],
+    processor: unified({
+      // remark-deflist ships pre-unified-10 types that don't match Astro's
+      // RemarkPlugin signature; the plugin itself works fine.
+      remarkPlugins: [/** @type {any} */ (remarkDeflist)],
+      rehypePlugins: [rehypeFaqPage, rehypePhotoRuns, rehypePolicyPage],
+    }),
   },
 
   // 'compile' processes images with sharp at build time, so the static
