@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import Base from "../layouts/Base.astro";
 import DwellingLayout from "../components/DwellingLayout.astro";
 import PlaceCards from "../components/PlaceCards.astro";
+import FactIcon from "../components/FactIcon.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
@@ -69,6 +70,7 @@ const dwellingJsonLd = dwelling && {
           {page.data.moreLinks.links.map((l) => (
             <a class="btn btn-outline" href={l.href}>
               {l.label}
+              <FactIcon name="arrow-out" />
             </a>
           ))}
         </p>

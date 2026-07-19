@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import FactIcon from "./FactIcon.astro";
+import { FACT_ICON_PATHS } from "../lib/fact-icon-paths.mjs";
 
 interface Fact {
   icon: "walk" | "car" | "calendar";
@@ -24,10 +25,12 @@ const { groups } = Astro.props;
 // [text](url) links as anchors.
 const escapeHtml = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const outIcon = `<svg class="fact-icon out-icon" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="${FACT_ICON_PATHS["arrow-out"]}"/></svg>`;
 const renderIntro = (s: string) =>
   escapeHtml(s).replace(
     /\[([^\]]+)\]\(([^)\s]+)\)/g,
-    '<a href="$2">$1</a>',
+    (_, label, href) =>
+      `<a href="${href}">${label}${href.startsWith("http") ? outIcon : ""}</a>`,
   );
 ---
 
@@ -69,6 +72,7 @@ const renderIntro = (s: string) =>
             {p.link && (
               <a class="place-link" href={p.link.href}>
                 {p.link.label}
+                {p.link.href.startsWith("http") && <FactIcon name="arrow-out" />}
               </a>
             )}
           </article>

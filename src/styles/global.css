@@ -953,6 +953,16 @@ body:has(.lightbox:target) {
   border-bottom: 1px solid var(--highlight);
 }
 
+/* Out-link icons sit on the text baseline, slightly smaller than type. */
+.place-card .place-link .fact-icon,
+.place-intro .fact-icon,
+.more-links-row .btn .fact-icon {
+  width: 0.85em;
+  height: 0.85em;
+  vertical-align: -0.08em;
+  margin-left: 0.1em;
+}
+
 .place-card .place-link:hover {
   color: var(--accent-dark);
   border-bottom-color: var(--accent-dark);
