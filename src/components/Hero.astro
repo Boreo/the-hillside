@@ -2,7 +2,7 @@
 import { BOOK_URL } from "../layouts/Base.astro";
 
 interface Props {
-  video: { src: string; srcAv1?: string; poster: ImageMetadata };
+  video: { src: string; srcAv1?: string; posterSrc: string };
   line: string;
 }
 const { video, line } = Astro.props;
@@ -11,7 +11,7 @@ const { video, line } = Astro.props;
 <section class="hero">
   <video
     class="hero-video"
-    poster={video.poster.src}
+    poster={video.posterSrc}
     autoplay
     muted
     loop

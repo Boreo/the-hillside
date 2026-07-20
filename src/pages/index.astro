@@ -1,5 +1,6 @@
 ---
 import { getEntry } from "astro:content";
+import { getImage } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import Hero from "../components/Hero.astro";
 import Arrival from "../components/Arrival.astro";
@@ -14,11 +15,13 @@ if (!page?.data.homepage || !page.data.heroVideo) {
   throw new Error("index.md needs homepage and heroVideo frontmatter");
 }
 const home = page.data.homepage;
+
+const poster = await getImage({ src: page.data.heroVideo.poster, format: "jpg" });
 ---
 
-<Base title={page.data.title} description={page.data.description} preloadImage={page.data.heroVideo.poster.src}>
+<Base title={page.data.title} description={page.data.description} preloadImage={poster.src}>
   <div class="home">
-    <Hero video={page.data.heroVideo} line={home.heroLine} />
+    <Hero video={{ ...page.data.heroVideo, posterSrc: poster.src }} line={home.heroLine} />
     <Arrival paragraphs={home.arrival} />
     <DwellingCards dwellings={home.dwellings} combinedLine={home.combinedLine} />
     <ReviewBand quotes={home.reviewBand} />
