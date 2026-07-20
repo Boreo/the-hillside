@@ -1,3 +1,14 @@
+/* Georgia, metric-adjusted to Fraunces so the pre-font-load render
+   occupies the same space and the swap is near-invisible. */
+@font-face {
+  font-family: "Fraunces Fallback";
+  src: local("Georgia");
+  size-adjust: 110.41%;
+  ascent-override: 88.58%;
+  descent-override: 23.1%;
+  line-gap-override: 0%;
+}
+
 :root {
   color-scheme: light;
   /* Warm palette: no pure black or white anywhere. */
@@ -14,7 +25,7 @@
   --line: #e7e2d6; /* hairlines */
   --max-width: 72rem;
   /* Display serif for headings, buttons and pull quotes. */
-  --font-display: "Fraunces Variable", Georgia, serif;
+  --font-display: "Fraunces Variable", "Fraunces Fallback", Georgia, serif;
   --font-display-settings: "SOFT" 60, "WONK" 0;
 }
 
