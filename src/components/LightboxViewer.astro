@@ -8,8 +8,16 @@
 ---
 
 <dialog class="gallery-viewer" aria-label="Enlarged photo viewer">
-  <button class="viewer-close" aria-label="Close">&times;</button>
-  <button class="viewer-prev" aria-label="Previous photo">&larr;</button>
+  <button class="viewer-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18" />
+    </svg>
+  </button>
+  <button class="viewer-prev" aria-label="Previous photo">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M14.5 5.5L8 12l6.5 6.5" />
+    </svg>
+  </button>
   <figure>
     <img src="" alt="" />
     <figcaption>
@@ -17,7 +25,11 @@
       <span class="viewer-counter"></span>
     </figcaption>
   </figure>
-  <button class="viewer-next" aria-label="Next photo">&rarr;</button>
+  <button class="viewer-next" aria-label="Next photo">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M9.5 5.5L16 12l-6.5 6.5" />
+    </svg>
+  </button>
 </dialog>
 
 <style>
@@ -36,9 +48,18 @@
   }
   .gallery-viewer[open] {
     display: flex;
+    animation: viewer-fade 150ms ease-out;
   }
+  @keyframes viewer-fade {
+    from {
+      opacity: 0;
+    }
+  }
+  /* Neutral darkroom: the photo is the only warm thing on screen. */
   .gallery-viewer::backdrop {
-    background: rgb(32 38 34 / 0.78);
+    background: rgb(24 23 21 / 0.92);
+    backdrop-filter: blur(8px);
+    cursor: zoom-out;
   }
   .gallery-viewer figure {
     margin: 0;
@@ -54,65 +75,114 @@
     width: auto;
     height: auto;
     object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 24px 64px rgb(9 47 28 / 0.5);
+    border-radius: 6px;
+    transition: opacity 120ms ease-out;
+  }
+  .gallery-viewer img.is-loading {
+    opacity: 0;
   }
   .gallery-viewer figcaption {
     display: flex;
     align-items: baseline;
-    gap: 0.75rem;
+    gap: 1.25rem;
     color: var(--paper);
   }
   .viewer-caption {
     font-style: italic;
     font-size: 0.95rem;
     text-align: center;
+    max-width: 50ch;
   }
   .viewer-counter {
     font-family: system-ui, sans-serif;
     font-size: 0.75rem;
-    opacity: 0.7;
+    opacity: 0.55;
     white-space: nowrap;
   }
+  /* Glass buttons: quiet chrome so the photo owns the screen. */
   .gallery-viewer button {
-    background: none;
-    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.08);
+    border: 1px solid rgb(255 255 255 / 0.15);
+    backdrop-filter: blur(4px);
     color: var(--paper);
-    font-size: 2.1rem;
-    line-height: 1;
-    padding: 1rem;
+    padding: 0;
     cursor: pointer;
-    opacity: 0.8;
+    transition: background 150ms ease;
   }
   .gallery-viewer button:hover {
-    opacity: 1;
+    background: rgb(255 255 255 / 0.16);
   }
+  /* Hover grows the icon, never the button: a scaling hitbox chases or
+     escapes the cursor at its own edge. */
+  .gallery-viewer button:hover svg {
+    transform: scale(1.12);
+  }
+  .gallery-viewer button:focus-visible {
+    outline: 2px solid var(--paper);
+    outline-offset: 2px;
+  }
+  /* Each arrow's hit area is the full gutter beside the photo: photo height,
+     viewport edge to photo edge (--photo-h/--side-w set by the script). The
+     button's own translateY makes it the containing block, so coordinates
+     are relative to the centred circle. */
+  .viewer-prev::after,
+  .viewer-next::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: max(var(--photo-h, 16rem), 2.75rem);
+    width: var(--side-w, 4.5rem);
+  }
+  .viewer-prev::after {
+    left: -0.875rem;
+  }
+  .viewer-next::after {
+    right: -0.875rem;
+  }
+  .gallery-viewer button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 150ms ease;
+  }
+  /* Tall photos bring the next arrow's strip near the top corner; z-index
+     keeps the corner clicking as Close. */
   .viewer-close {
     position: fixed;
-    top: 0.5rem;
-    right: 0.75rem;
-    font-size: 2.4rem;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
   }
   /* Arrows pinned to the viewport edges so they stay put while photos of
-     different sizes cycle underneath. Each is a strip matching the current
-     photo's height (--photo-h, set by the script), glyph centred. */
+     different sizes cycle underneath. */
   .viewer-prev,
   .viewer-next {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    height: var(--photo-h, auto);
-    display: flex;
-    align-items: center;
   }
+  /* Circle centred in the guaranteed 4.5rem rail (photos cap at
+     100vw - 9rem), so it never moves as photos of different widths cycle;
+     only the invisible strip stretches to the current photo's edge. */
   .viewer-prev {
-    left: 0.5rem;
+    left: 0.875rem;
   }
   .viewer-next {
-    right: 0.5rem;
+    right: 0.875rem;
   }
   /* Phones: the photo gets the full width, and the arrows drop to the
-     bottom corners as tappable pills clear of the image. */
+     bottom corners as larger tap targets clear of the image. */
   @media (max-width: 40rem) {
     .gallery-viewer img {
       max-width: calc(100vw - 1rem);
@@ -129,12 +199,17 @@
       top: auto;
       bottom: 1rem;
       transform: none;
-      justify-content: center;
-      background: rgb(250 248 244 / 0.14);
-      border-radius: 999px;
       width: 3.5rem;
       height: 3.5rem;
-      padding: 0;
+    }
+    /* Bottom-corner pills get a modest halo, not the desktop gutter strip. */
+    .viewer-prev::after,
+    .viewer-next::after {
+      top: auto;
+      transform: none;
+      height: auto;
+      width: auto;
+      inset: -0.75rem;
     }
     .viewer-prev {
       left: 1rem;
@@ -161,9 +236,14 @@
     const photo = viewer.querySelector("img")!;
     // Native image dragging swallows the pointerup that ends a swipe.
     photo.draggable = false;
-    // The arrows' click strips match the displayed photo's height.
+    // The arrows' hit strips fill the gutters beside the displayed photo.
     photo.addEventListener("load", () => {
-      viewer.style.setProperty("--photo-h", `${photo.getBoundingClientRect().height}px`);
+      photo.classList.remove("is-loading");
+      const rect = photo.getBoundingClientRect();
+      viewer.style.setProperty("--photo-h", `${rect.height}px`);
+      // Floor of one button width (44px) keeps the strip usable if a photo
+      // ever renders wider than the reserved gutters.
+      viewer.style.setProperty("--side-w", `${Math.max(rect.left, 44)}px`);
     });
     const caption = viewer.querySelector(".viewer-caption")!;
     const counter = viewer.querySelector(".viewer-counter")!;
@@ -185,6 +265,9 @@
       index = (i + links.length) % links.length;
       const link = links[index];
       const thumb = link.querySelector("img")!;
+      // Dip to transparent until the new photo decodes, so swaps crossfade
+      // instead of flashing the old image at the new aspect ratio.
+      if (photo.src !== srcFor(link)) photo.classList.add("is-loading");
       photo.src = srcFor(link);
       photo.alt = thumb.alt;
       caption.textContent = thumb.alt;

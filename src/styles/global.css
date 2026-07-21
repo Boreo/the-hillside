@@ -1430,3 +1430,13 @@ main .policy-toc a:not([class]):hover {
   margin: 0 auto;
   max-width: 46ch;
 }
+
+/* Motion is decorative site-wide; reduced-motion collapses all of it. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
