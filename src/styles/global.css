@@ -136,6 +136,27 @@ nav a:hover {
   text-decoration: underline;
 }
 
+nav a[aria-current] {
+  color: var(--accent-dark);
+}
+
+/* Keyboard-only shortcut past the nav; sits off-screen until focused. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--accent-dark);
+  color: #fff;
+  border-radius: 0 0 0.4rem 0.4rem;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 /* Sliding underline hover cue: put .slide-underline on the element the
    line draws under. Triggers on its own hover/focus, or a hovered parent
    anchor's (drop-menu items underline the inner span). Hover-capable
