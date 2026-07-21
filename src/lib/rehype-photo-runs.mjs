@@ -8,7 +8,7 @@
 //    CTA paragraph -> cross-sell card with a generated facts line;
 //    consecutive cards group into <div class="cross-sell-row">
 //  - remaining link-only paragraphs -> button-styled links
-//  - every other photo -> a.lightbox-open anchor feeding the site-wide
+//  - every other photo -> button.lightbox-open feeding the site-wide
 //    <dialog> viewer (LightboxViewer.astro)
 
 import { readFileSync } from "node:fs";
@@ -87,7 +87,7 @@ const factsLine = (facts) =>
   );
 
 export default function rehypePhotoRuns() {
-  return (tree) => {
+  return (tree, file) => {
     const walk = (parent) => {
       if (!parent.children) return;
       // Whitespace between block elements is insignificant; dropping it
@@ -220,10 +220,10 @@ export default function rehypePhotoRuns() {
     };
     walk(tree);
 
-    // Wrap each photo in an anchor feeding the site-wide <dialog> viewer
-    // (LightboxViewer.astro). The "#" href tells the viewer to show the
-    // image's own rendition. Cross-sell card photos link to the card's
-    // page instead (wrapped above), so the pass skips those rows.
+    // Wrap each photo in a button feeding the site-wide <dialog> viewer
+    // (LightboxViewer.astro), which shows the image's own rendition.
+    // Cross-sell card photos link to the card's page instead (wrapped
+    // above), so the pass skips those rows.
     const enlarge = (parent) => {
       if (!parent.children) return;
       const classes = parent.properties?.className ?? [];
@@ -233,9 +233,9 @@ export default function rehypePhotoRuns() {
           const img = soleChild(node, "img");
           node.children = [
             el(
-              "a",
+              "button",
               {
-                href: "#",
+                type: "button",
                 className: ["lightbox-open"],
                 ariaLabel: `Enlarge photo: ${img.properties?.alt ?? ""}`,
               },
@@ -247,7 +247,9 @@ export default function rehypePhotoRuns() {
         }
       }
     };
-    enlarge(tree);
+    // Pages can opt out of the viewer with `lightbox: false` frontmatter
+    // (e.g. the hosts portrait has nothing to enlarge).
+    if (file.data.astro?.frontmatter?.lightbox !== false) enlarge(tree);
 
     // The first content image sits at or near the top of the page, so
     // load it eagerly instead of Astro's lazy default.

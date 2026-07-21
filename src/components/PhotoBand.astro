@@ -12,7 +12,7 @@ const [big, ...rest] = photos;
   <h2>Life here</h2>
   <div class="grid">
     <figure class="big">
-      <a class="lightbox-open" href="#" aria-label={`View larger: ${big.alt}`}>
+      <button type="button" class="lightbox-open" aria-label={`View larger: ${big.alt}`}>
         <Image
           src={big.src}
           alt={big.alt}
@@ -20,12 +20,12 @@ const [big, ...rest] = photos;
           sizes="(max-width: 40rem) 100vw, 60vw"
           loading="lazy"
         />
-      </a>
+      </button>
       <figcaption>{big.caption}</figcaption>
     </figure>
     {rest.map((p) => (
       <figure>
-        <a class="lightbox-open" href="#" aria-label={`View larger: ${p.alt}`}>
+        <button type="button" class="lightbox-open" aria-label={`View larger: ${p.alt}`}>
           <Image
             src={p.src}
             alt={p.alt}
@@ -33,7 +33,7 @@ const [big, ...rest] = photos;
             sizes="(max-width: 40rem) 100vw, 40vw"
             loading="lazy"
           />
-        </a>
+        </button>
         <figcaption>{p.caption}</figcaption>
       </figure>
     ))}
@@ -58,7 +58,7 @@ const [big, ...rest] = photos;
     display: flex;
     flex-direction: column;
   }
-  figure a {
+  figure .lightbox-open {
     flex: 1;
     min-height: 0;
   }
@@ -81,7 +81,7 @@ const [big, ...rest] = photos;
     .big {
       grid-row: auto;
     }
-    figure a {
+    figure .lightbox-open {
       flex: none;
     }
     img {

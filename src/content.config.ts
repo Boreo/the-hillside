@@ -132,6 +132,9 @@ const pages = defineCollection({
       // Restructure the body as an FAQ page (rehype-faq-page.mjs) and emit
       // FAQPage JSON-LD from its h3 questions (h2s are topic groups).
       faqSchema: z.boolean().default(false),
+      // Body photos open in the lightbox viewer by default; set false on
+      // pages where enlarging adds nothing (e.g. the hosts portrait).
+      lightbox: z.boolean().default(true),
       // Restructure the body as the guest-info policy page
       // (rehype-policy-page.mjs): chip strip, topic cards, numbered terms.
       policyPage: z.boolean().default(false),

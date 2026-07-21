@@ -683,6 +683,25 @@ nav.footer-col {
 .gallery-grid a {
   content-visibility: auto;
   contain-intrinsic-size: auto 16rem auto 14rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* content-visibility implies paint containment, which clips the image's
+   hover lift at the anchor's top edge — so in the gallery the anchor
+   itself lifts (its own transform and shadow aren't subject to the clip)
+   and the image's lift is neutralised. */
+@media (hover: hover) {
+  .gallery-grid a:hover,
+  .gallery-grid a:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgb(37 43 33 / 0.18);
+  }
+
+  .gallery-grid a:hover img,
+  .gallery-grid a:focus-visible img {
+    transform: translateZ(0);
+    box-shadow: none;
+  }
 }
 
 .gallery-grid img {
@@ -726,6 +745,17 @@ blockquote footer {
   display: block;
   height: 100%;
   cursor: pointer;
+}
+
+/* Markdown photos and the homepage band use <button> triggers (no real
+   destination URL exists for them); strip the native button chrome so the
+   photo alone is the control. */
+button.lightbox-open {
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
 }
 
 /* Hover hint: the whole photo swells slightly, corners and all — nothing
