@@ -33,8 +33,29 @@
   box-sizing: border-box;
 }
 
+/* Cross-fade between same-origin navigations in browsers that support
+   CSS view transitions; others fall through to instant loads. */
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none;
+  }
+}
+
+::selection {
+  background: var(--wash);
+  color: var(--accent-dark);
+}
+
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  scrollbar-color: var(--accent) var(--paper);
 }
 
 /* Anchor targets land clear of the top edge. */
