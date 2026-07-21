@@ -195,15 +195,15 @@ const extraJsonLdBlocks = extraJsonLd
     {nav.map((item) =>
       "children" in item && item.children ? (
         <div class="nav-drop">
-          <a class="nav-parent" href={item.href} aria-haspopup="true">
+          <a class="nav-parent slide-underline" href={item.href} aria-haspopup="true">
             {item.label} <span class="caret" aria-hidden="true">▾</span>
           </a>
           <div class="drop-menu">
-            {item.children.map((c) => <a href={c.href}><span>{c.label}</span></a>)}
+            {item.children.map((c) => <a href={c.href}><span class="slide-underline">{c.label}</span></a>)}
           </div>
         </div>
       ) : (
-        <a href={item.href}>{item.label}</a>
+        <a class="slide-underline" href={item.href}>{item.label}</a>
       ),
     )}
   </nav>
@@ -264,14 +264,14 @@ const extraJsonLdBlocks = extraJsonLd
     <nav class="footer-col" aria-label="Footer">
       <h2>Explore</h2>
       <div class="footer-links">
-        {footerLinks.map((l) => <a href={l.href}>{l.label}</a>)}
+        {footerLinks.map((l) => <a class="slide-underline" href={l.href}>{l.label}</a>)}
       </div>
     </nav>
     <div class="footer-col">
       <h2>Contact</h2>
       <p>25 Leona Court<br />Tamborine Mountain QLD 4272</p>
-      <a href="tel:+61466990185">(+61) 0466 990 185</a>
-      <a href="mailto:stay@thehillside.com.au?subject=Enquiry%3A%20Hillside%20Retreat">stay@thehillside.com.au</a>
+      <a class="slide-underline" href="tel:+61466990185">(+61) 0466 990 185</a>
+      <a class="slide-underline" href="mailto:stay@thehillside.com.au?subject=Enquiry%3A%20Hillside%20Retreat">stay@thehillside.com.au</a>
     </div>
     <div class="footer-col">
       <h2>Book</h2>

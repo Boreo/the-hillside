@@ -154,7 +154,23 @@ export default function rehypePhotoRuns() {
         ) {
           // The combined House & Villa stay books by enquiry only, so its
           // card renders demoted (smaller, outline CTA) wherever it appears.
-          const secondary = firstHref(cta ?? next) === "/house-and-villa/";
+          const dest = firstHref(cta ?? next);
+          const secondary = dest === "/house-and-villa/";
+          // The photo and heading link to the card's page, styled like the
+          // homepage dwelling cards (card-photo brighten, title underline).
+          if (image) {
+            const img = soleChild(image, "img");
+            image.children = [
+              el(
+                "a",
+                { href: dest, className: ["card-photo"], ariaLabel: textOf(node).trim() },
+                [img],
+              ),
+            ];
+          }
+          node.children = [
+            el("a", { href: dest, className: ["card-title", "slide-underline"] }, node.children),
+          ];
           const body = [node, next];
           if (cta) {
             cta.properties = { ...cta.properties, className: ["cross-sell-cta"] };
@@ -206,7 +222,8 @@ export default function rehypePhotoRuns() {
 
     // Wrap each photo in an anchor feeding the site-wide <dialog> viewer
     // (LightboxViewer.astro). The "#" href tells the viewer to show the
-    // image's own rendition. Cross-sell card photos stay plain.
+    // image's own rendition. Cross-sell card photos link to the card's
+    // page instead (wrapped above), so the pass skips those rows.
     const enlarge = (parent) => {
       if (!parent.children) return;
       const classes = parent.properties?.className ?? [];

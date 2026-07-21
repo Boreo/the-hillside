@@ -136,39 +136,89 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Desktop header links: underline sweeps in from the left instead of the
-   plain text-decoration. Hover-capable pointers only — on touch the nav is
-   a stacked panel where a full-width sweep looks wrong. */
+/* Sliding underline hover cue: put .slide-underline on the element the
+   line draws under. Triggers on its own hover/focus, or a hovered parent
+   anchor's (drop-menu items underline the inner span). Hover-capable
+   pointers only — on touch there is no hover state to sweep in from.
+   Knobs: --underline-offset (gap below the text) and --underline-color. */
 @media (hover: hover) {
-  header nav > a,
-  header nav .nav-parent {
+  .slide-underline {
     position: relative;
   }
 
-  header nav > a:hover,
-  header nav .nav-parent:hover {
+  .slide-underline:hover {
     text-decoration: none;
   }
 
-  header nav > a::after,
-  header nav .nav-parent::after {
+  .slide-underline::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -0.15rem;
+    bottom: var(--underline-offset, -0.15rem);
     height: 1px;
-    background: var(--accent-dark);
+    background: var(--underline-color, var(--accent-dark));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s ease;
   }
 
-  header nav > a:hover::after,
-  header nav > a:focus-visible::after,
-  header nav .nav-parent:hover::after,
-  header nav .nav-parent:focus-visible::after {
+  .slide-underline:hover::after,
+  .slide-underline:focus-visible::after,
+  a:hover > .slide-underline::after,
+  a:focus-visible > .slide-underline::after {
     transform: scaleX(1);
+  }
+}
+
+/* Card image and title links (homepage dwelling cards, cross-sell cards).
+   Hovering the photo brightens it slightly and lights up the card's
+   button — same cue as hovering the button itself, since both go to the
+   same page. Distinct from the lift that marks lightbox photos. The title
+   keeps its heading look and takes the slide underline. */
+.card-photo {
+  display: block;
+  border-radius: 8px;
+}
+
+.card-photo img {
+  transition: filter 0.2s ease;
+}
+
+.card-title {
+  color: inherit;
+  font-style: normal;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.card-title:hover,
+.card-title:focus-visible {
+  color: var(--accent-dark);
+}
+
+@media (hover: hover) {
+  .card-photo:hover img,
+  .card-photo:focus-visible img {
+    filter: brightness(1.07);
+  }
+
+  article:has(.card-photo:hover) .btn:not(.btn-outline),
+  article:has(.card-photo:focus-visible) .btn:not(.btn-outline),
+  .cross-sell-card:has(.card-photo:hover) .btn:not(.btn-outline),
+  .cross-sell-card:has(.card-photo:focus-visible) .btn:not(.btn-outline) {
+    background: var(--accent-dark);
+  }
+
+  article:has(.card-photo:hover) .btn-outline,
+  article:has(.card-photo:focus-visible) .btn-outline,
+  .cross-sell-card:has(.card-photo:hover) .btn-outline,
+  .cross-sell-card:has(.card-photo:focus-visible) .btn-outline,
+  /* Outranks the demoted card's card-surface fill below. */
+  .dwelling-body .cross-sell-secondary:has(.card-photo:hover) .cross-sell-cta a:not(:hover),
+  .dwelling-body .cross-sell-secondary:has(.card-photo:focus-visible) .cross-sell-cta a:not(:hover) {
+    background: var(--accent);
+    color: var(--card);
   }
 }
 
@@ -219,28 +269,8 @@ nav a.btn:hover {
 }
 
 .drop-menu a span {
-  position: relative;
   display: inline-block;
-}
-
-@media (hover: hover) {
-  .drop-menu a span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -0.1rem;
-    height: 1px;
-    background: var(--accent-dark);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.25s ease;
-  }
-
-  .drop-menu a:hover span::after,
-  .drop-menu a:focus-visible span::after {
-    transform: scaleX(1);
-  }
+  --underline-offset: -0.1rem;
 }
 
 .drop-menu a:hover {
@@ -534,27 +564,14 @@ nav.footer-col {
   text-decoration: underline;
 }
 
+.footer-col a:not(.btn) {
+  --underline-offset: 0;
+  --underline-color: var(--card);
+}
+
 @media (hover: hover) {
   .footer-col a:not(.btn):hover {
     text-decoration: none;
-  }
-
-  .footer-col a:not(.btn)::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background: var(--card);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.25s ease;
-  }
-
-  .footer-col a:not(.btn):hover::after,
-  .footer-col a:not(.btn):focus-visible::after {
-    transform: scaleX(1);
   }
 }
 
@@ -968,7 +985,7 @@ main > dl + p:has(> .btn) {
 /* Card prose links: cross-sell CTA anchors carry .btn (added by the
    rehype plugin); everything else, and place-card links, read as italic
    prose links. */
-.dwelling-body .cross-sell-card a:not(.btn),
+.dwelling-body .cross-sell-card a:not(.btn, .card-photo, .card-title),
 .place-card .place-link {
   font-style: italic;
   color: var(--accent);
@@ -976,7 +993,7 @@ main > dl + p:has(> .btn) {
   border-bottom: 1px solid var(--highlight);
 }
 
-.dwelling-body .cross-sell-card a:not(.btn):hover,
+.dwelling-body .cross-sell-card a:not(.btn, .card-photo, .card-title):hover,
 .place-card .place-link:hover {
   color: var(--accent-dark);
   border-bottom-color: var(--accent-dark);

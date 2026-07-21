@@ -39,14 +39,16 @@ const combined = sumFacts(
   <div class="pair">
     {cards.map((card) => (
       <article>
-        <Image
-          src={card.image.src}
-          alt={card.image.alt}
-          widths={[480, 800, 1200]}
-          sizes="(max-width: 40rem) 100vw, 50vw"
-          loading="eager"
-        />
-        <h3>{card.facts.name}</h3>
+        <a class="card-photo" href={card.href} aria-label={`See ${card.facts.name}`}>
+          <Image
+            src={card.image.src}
+            alt={card.image.alt}
+            widths={[480, 800, 1200]}
+            sizes="(max-width: 40rem) 100vw, 50vw"
+            loading="eager"
+          />
+        </a>
+        <h3><a class="card-title slide-underline" href={card.href}>{card.facts.name}</a></h3>
         <FactsLine
           sleeps={card.facts.sleeps}
           bedrooms={card.facts.bedrooms.length}
@@ -58,15 +60,17 @@ const combined = sumFacts(
     ))}
   </div>
   <article class="combined">
-    <Image
-      src={combinedAerial}
-      alt="Aerial view of the whole property, House and Villa together on the hillside"
-      widths={[480, 800, 1200]}
-      sizes="(max-width: 40rem) 100vw, 55vw"
-      loading="lazy"
-    />
+    <a class="card-photo" href="/house-and-villa/" aria-label="About House &amp; Villa">
+      <Image
+        src={combinedAerial}
+        alt="Aerial view of the whole property, House and Villa together on the hillside"
+        widths={[480, 800, 1200]}
+        sizes="(max-width: 40rem) 100vw, 55vw"
+        loading="lazy"
+      />
+    </a>
     <div>
-      <h3>House &amp; Villa combined</h3>
+      <h3><a class="card-title slide-underline" href="/house-and-villa/">House &amp; Villa combined</a></h3>
       <FactsLine {...combined} />
       <p>{combinedLine}</p>
       <a class="btn btn-outline" href="/house-and-villa/">About House &amp; Villa</a>
