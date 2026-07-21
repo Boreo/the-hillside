@@ -128,11 +128,48 @@ nav a {
   color: var(--muted);
   text-decoration: none;
   font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
   color: var(--accent-dark);
   text-decoration: underline;
+}
+
+/* Desktop header links: underline sweeps in from the left instead of the
+   plain text-decoration. Hover-capable pointers only — on touch the nav is
+   a stacked panel where a full-width sweep looks wrong. */
+@media (hover: hover) {
+  header nav > a,
+  header nav .nav-parent {
+    position: relative;
+  }
+
+  header nav > a:hover,
+  header nav .nav-parent:hover {
+    text-decoration: none;
+  }
+
+  header nav > a::after,
+  header nav .nav-parent::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.15rem;
+    height: 1px;
+    background: var(--accent-dark);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  header nav > a:hover::after,
+  header nav > a:focus-visible::after,
+  header nav .nav-parent:hover::after,
+  header nav .nav-parent:focus-visible::after {
+    transform: scaleX(1);
+  }
 }
 
 nav a.btn,
@@ -178,6 +215,32 @@ nav a.btn:hover {
   display: block;
   padding: 0.45rem 1rem;
   white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.drop-menu a span {
+  position: relative;
+  display: inline-block;
+}
+
+@media (hover: hover) {
+  .drop-menu a span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.1rem;
+    height: 1px;
+    background: var(--accent-dark);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  .drop-menu a:hover span::after,
+  .drop-menu a:focus-visible span::after {
+    transform: scaleX(1);
+  }
 }
 
 .drop-menu a:hover {
@@ -339,6 +402,7 @@ img {
   font-variation-settings: var(--font-display-settings);
   font-weight: 500;
   font-size: 1.05rem;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn:hover {
@@ -357,15 +421,10 @@ img {
   color: var(--card);
 }
 
-/* On dark surfaces (accent cards, the deep band). */
-.btn-inverse {
-  background: var(--paper);
-  color: var(--deep);
-}
-
-.btn-inverse:hover {
+/* On the deep footer band the outline button gets a card fill so it
+   reads solid against the dark background. */
+footer .btn-outline:not(:hover) {
   background: var(--card);
-  color: var(--accent-dark);
 }
 
 footer {
@@ -458,13 +517,16 @@ nav.footer-col {
 }
 
 /* The booking CTA is a .btn; keep the plain-link styling off it so the
-   .btn/.btn-inverse rules apply unfought. */
+   .btn/.btn-outline rules apply unfought. */
 .footer-col a:not(.btn) {
   display: block;
+  width: fit-content;
+  position: relative;
   padding: 0.15rem 0;
   color: var(--wash);
   text-decoration: none;
   font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .footer-col a:not(.btn):hover {
@@ -472,7 +534,31 @@ nav.footer-col {
   text-decoration: underline;
 }
 
-.footer-col a.btn-inverse {
+@media (hover: hover) {
+  .footer-col a:not(.btn):hover {
+    text-decoration: none;
+  }
+
+  .footer-col a:not(.btn)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--card);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  .footer-col a:not(.btn):hover::after,
+  .footer-col a:not(.btn):focus-visible::after {
+    transform: scaleX(1);
+  }
+}
+
+.footer-col a.btn {
   margin-top: 0.35rem;
   padding: 0.55rem 1.3rem;
   font-size: 0.95rem;
@@ -580,7 +666,29 @@ blockquote footer {
 .lightbox-open {
   display: block;
   height: 100%;
-  cursor: zoom-in;
+  cursor: pointer;
+}
+
+/* Hover hint: the whole photo swells slightly, corners and all — nothing
+   is clipped. backface-visibility pins the image to its own GPU layer,
+   which minimises resampling shimmer while the transform runs. */
+/* Hover hint: the photo lifts a few pixels with a soft shadow. A pure
+   translation never resamples the image, so it stays pixel-identical to
+   its resting render (a scale zoom made it grainy). The resting
+   translateZ(0) keeps it on a GPU layer permanently — lazy promotion on
+   first hover causes a one-frame position snap. */
+.lightbox-open img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+@media (hover: hover) {
+  .lightbox-open:hover img,
+  .lightbox-open:focus-visible img {
+    transform: translateZ(0) translateY(-4px);
+    box-shadow: 0 10px 20px rgb(37 43 33 / 0.18);
+  }
 }
 
 .hero-video {
@@ -604,6 +712,7 @@ blockquote footer {
   font-variation-settings: var(--font-display-settings);
   font-weight: 500;
   font-size: 1.05rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-glass:hover {

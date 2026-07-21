@@ -199,7 +199,7 @@ const extraJsonLdBlocks = extraJsonLd
             {item.label} <span class="caret" aria-hidden="true">▾</span>
           </a>
           <div class="drop-menu">
-            {item.children.map((c) => <a href={c.href}>{c.label}</a>)}
+            {item.children.map((c) => <a href={c.href}><span>{c.label}</span></a>)}
           </div>
         </div>
       ) : (
@@ -276,7 +276,7 @@ const extraJsonLdBlocks = extraJsonLd
     <div class="footer-col">
       <h2>Book</h2>
       <p>Two hillside dwellings — book one, or both together.</p>
-      <a class="btn btn-inverse" href={BOOK_URL}>Book with us</a>
+      <a class="btn btn-outline" href={BOOK_URL}>Book with us</a>
     </div>
   </div>
   <div class="footer-base">
