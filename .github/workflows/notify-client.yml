@@ -1,0 +1,20 @@
+name: Notify client on request completion
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  notify:
+    if: contains(github.event.issue.labels.*.name, 'client-request')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping intake worker
+        env:
+          NOTIFY_URL: ${{ secrets.INTAKE_NOTIFY_URL }}
+          ISSUE: ${{ github.event.issue.number }}
+          TITLE: ${{ github.event.issue.title }}
+        run: |
+          jq -n --argjson issue "$ISSUE" --arg title "$TITLE" \
+            '{issue: $issue, title: $title}' |
+            curl -sf -X POST -H 'content-type: application/json' -d @- "$NOTIFY_URL"
