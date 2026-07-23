@@ -71,6 +71,10 @@ jobs:
         with:
           fetch-depth: 1
 
+      # hillside-voice depends on the humanizer pattern list
+      - name: Fetch humanizer skill
+        run: git clone --depth 1 https://github.com/blader/humanizer.git .claude/skills/humanizer
+
       - name: Run Claude Code
         id: claude
         uses: anthropics/claude-code-action@v1

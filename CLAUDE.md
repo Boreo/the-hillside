@@ -36,7 +36,7 @@ Static Astro site for a two-dwelling holiday accommodation business on Tamborine
 
 ## Editing rules
 
-- Content edits go in `src/content/pages/*.md` and `src/content/{gallery,reviews}.yaml` only. Keep the owner's wording unless asked to rewrite.
+- Content edits go in `src/content/pages/*.md` and `src/content/{gallery,reviews}.yaml` only. Guest-facing copy follows the `.claude/skills/hillside-voice` profile; owner-supplied wording is raw material to polish into that voice (fix grammar, trim repetition), not text to reproduce verbatim.
 - Dwelling facts (sleeps, bedrooms, bathrooms, amenities) live in `dwelling:` frontmatter on the dwelling pages, where they drive the facts strip and Accommodation JSON-LD. Update facts there, not in prose, because prose should not restate these numbers.
 - Every image needs meaningful alt text. The gallery schema enforces this.
 - Legacy Squarespace paths `/home` and `/further-inform` redirect via `astro.config.mjs`. Keep them.
