@@ -6,7 +6,7 @@ heroVideo:
   srcAv1: /videos/hero.av1.mp4
   poster: ../../assets/images/hero-poster.jpg
 homepage:
-  heroLine: "A house and a villa on the hillside overlooking the Gold Coast, in a tranquil corner of Tamborine Mountain."
+  heroLine: "A house and a villa overlooking the Gold Coast from Tamborine Mountain."
   arrival:
     - "The Hillside Retreat sits on the eastern edge of Tamborine Mountain, looking down the valley.\nOn a clear morning you can watch the sun come up over the Gold Coast from the verandah."
     - "Surfers Paradise is a 30-minute drive and Brisbane about an hour. Up here it stays private, secluded and quiet.\nThe gum trees are full of birds and wildlife, and the spa is heated year-round."
