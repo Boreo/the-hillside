@@ -1,11 +1,5 @@
 # Gallery images, rendered in order on /gallery/. Every entry needs non-empty
 # alt text — the build fails otherwise. id = the image filename without extension.
-- id: retreat-entrance.jpg
-  src: ../assets/images/external/retreat-entrance.jpg
-  alt: The Hillside Retreat welcome sign at the entrance
-- id: driveway-approach.jpg
-  src: ../assets/images/external/driveway-approach.jpg
-  alt: Gravel driveway approach at dusk
 - id: aerial-view-whole-property.jpg
   src: ../assets/images/drone/aerial-view-whole-property.jpg
   alt: Aerial view of the house, pool and surrounding rainforest
@@ -15,48 +9,15 @@
 - id: aerial-view-property-back.jpg
   src: ../assets/images/drone/aerial-view-property-back.jpg
   alt: Aerial view of the forested hillside property
+- id: retreat-entrance.jpg
+  src: ../assets/images/external/retreat-entrance.jpg
+  alt: The Hillside Retreat welcome sign at the entrance
+- id: driveway-approach.jpg
+  src: ../assets/images/external/driveway-approach.jpg
+  alt: Gravel driveway approach at dusk
 - id: house-side-view.jpg
   src: ../assets/images/external/house-side-view.jpg
   alt: Palm-lined deck and steps beside the house
-- id: hillside-villa-front.jpg
-  src: ../assets/images/villa/hillside-villa-front.jpg
-  alt: Front of Hillside Villa
-- id: house-lounge-dining-area.jpg
-  src: ../assets/images/house/house-lounge-dining-area.jpg
-  alt: Open living and dining room with wood fire
-- id: dining-area-lounge-tv.jpg
-  src: ../assets/images/house/dining-area-lounge-tv.jpg
-  alt: Living area with brick fireplace wall, TV and dining table
-- id: living-room-sofas-tv.jpeg
-  src: ../assets/images/house/living-room-sofas-tv.jpeg
-  alt: Living room with sofas and TV
-- id: lounge-area.jpeg
-  src: ../assets/images/house/lounge-area.jpeg
-  alt: Lounge with corner sofa and garden view windows
-- id: dining-area.jpg
-  src: ../assets/images/house/dining-area.jpg
-  alt: Open-plan dining table and kitchen with valley view
-- id: kitchen.jpg
-  src: ../assets/images/house/kitchen.jpg
-  alt: Kitchen island and bar stools with panoramic valley view
-- id: kitchen-island-mountain-view.jpg
-  src: ../assets/images/house/kitchen-island-mountain-view.jpg
-  alt: Kitchen with white cabinetry and sweeping mountain views
-- id: king-bedroom-white-linen.jpeg
-  src: ../assets/images/house/king-bedroom-white-linen.jpeg
-  alt: King bedroom with white linen and balcony access
-- id: king-bedroom-teal-cushions.jpeg
-  src: ../assets/images/house/king-bedroom-teal-cushions.jpeg
-  alt: King bedroom with teal cushions and balcony view
-- id: twin-bedroom-brick-wall.jpeg
-  src: ../assets/images/house/twin-bedroom-brick-wall.jpeg
-  alt: Twin bedroom with exposed brick wall
-- id: wood-fireplace-burning.jpg
-  src: ../assets/images/house/wood-fireplace-burning.jpg
-  alt: Wood fireplace burning beside the brick chimney
-- id: guest-wine-by-fireplace.jpg
-  src: ../assets/images/house/guest-wine-by-fireplace.jpg
-  alt: Guest enjoying a glass of wine by the wood fireplace
 - id: verandah-lounge-area.jpg
   src: ../assets/images/external/verandah-lounge-area.jpg
   alt: Verandah with bar stools and lounge seating
@@ -81,6 +42,9 @@
 - id: deck-beside-pool.jpg
   src: ../assets/images/external/deck-beside-pool.jpg
   alt: Covered deck with BBQ and seating beside the pool
+- id: gated-pool-entrance.jpg
+  src: ../assets/images/external/gated-pool-entrance.jpg
+  alt: Gated entrance to the pool area
 - id: resort-style-pool.jpg
   src: ../assets/images/external/resort-style-pool.jpg
   alt: Pool, spa and palm-fringed deck with hinterland views
@@ -90,6 +54,12 @@
 - id: heated-pool-evening.jpg
   src: ../assets/images/external/heated-pool-evening.jpg
   alt: Pool deck and loungers at sunset over the hinterland
+- id: pool-and-spa.jpg
+  src: ../assets/images/external/pool-and-spa.jpg
+  alt: Pool and spa seen from above
+- id: pool-at-night.jpg
+  src: ../assets/images/external/pool-at-night.jpg
+  alt: Pool deck at night with city lights beyond
 - id: goldcoast-in-background.jpg
   src: ../assets/images/external/goldcoast-in-background.jpg
   alt: Coastline and Gold Coast skyline seen through the palms
@@ -135,3 +105,84 @@
 - id: ev-charging-on-site.jpeg
   src: ../assets/images/external/ev-charging-on-site.jpeg
   alt: EV charger on site
+- id: coastal-view-through-palms.jpg
+  src: ../assets/images/external/coastal-view-through-palms.jpg
+  alt: Coastal view through the palms from the verandah
+- id: palm-framed-coastal-view.jpg
+  src: ../assets/images/external/palm-framed-coastal-view.jpg
+  alt: Palm-framed coastal view
+- id: eucalypt-hillside.jpg
+  src: ../assets/images/external/eucalypt-hillside.jpg
+  alt: Eucalypt hillside below the retreat
+- id: koala-on-tree.jpeg
+  src: ../assets/images/external/koala-on-tree.jpeg
+  alt: Koala in a tree on the property
+- id: house-lounge-dining-area.jpg
+  src: ../assets/images/house/house-lounge-dining-area.jpg
+  alt: Open living and dining room with wood fire
+- id: dining-area-lounge-tv.jpg
+  src: ../assets/images/house/dining-area-lounge-tv.jpg
+  alt: Living area with brick fireplace wall, TV and dining table
+- id: living-room-sofas-tv.jpeg
+  src: ../assets/images/house/living-room-sofas-tv.jpeg
+  alt: Living room with sofas and TV
+- id: lounge-area.jpeg
+  src: ../assets/images/house/lounge-area.jpeg
+  alt: Lounge with corner sofa and garden view windows
+- id: dining-area.jpg
+  src: ../assets/images/house/dining-area.jpg
+  alt: Open-plan dining table and kitchen with valley view
+- id: kitchen.jpg
+  src: ../assets/images/house/kitchen.jpg
+  alt: Kitchen island and bar stools with panoramic valley view
+- id: kitchen-island-mountain-view.jpg
+  src: ../assets/images/house/kitchen-island-mountain-view.jpg
+  alt: Kitchen with white cabinetry and sweeping mountain views
+- id: king-bedroom-white-linen.jpeg
+  src: ../assets/images/house/king-bedroom-white-linen.jpeg
+  alt: King bedroom with white linen and balcony access
+- id: king-bedroom-teal-cushions.jpeg
+  src: ../assets/images/house/king-bedroom-teal-cushions.jpeg
+  alt: King bedroom with teal cushions and balcony view
+- id: twin-bedroom-brick-wall.jpeg
+  src: ../assets/images/house/twin-bedroom-brick-wall.jpeg
+  alt: Twin bedroom with exposed brick wall
+- id: wood-fireplace-burning.jpg
+  src: ../assets/images/house/wood-fireplace-burning.jpg
+  alt: Wood fireplace burning beside the brick chimney
+- id: guest-wine-by-fireplace.jpg
+  src: ../assets/images/house/guest-wine-by-fireplace.jpg
+  alt: Guest enjoying a glass of wine by the wood fireplace
+- id: bathroom-walk-in-shower.jpg
+  src: ../assets/images/house/bathroom-walk-in-shower.jpg
+  alt: Bathroom with walk-in shower and garden window
+- id: hillside-villa-front.jpg
+  src: ../assets/images/villa/hillside-villa-front.jpg
+  alt: Front of Hillside Villa
+- id: hillside-villa-dining-area.jpeg
+  src: ../assets/images/villa/hillside-villa-dining-area.jpeg
+  alt: Hillside Villa dining area
+- id: hillside-villa-entrance.jpg
+  src: ../assets/images/villa/hillside-villa-entrance.jpg
+  alt: Villa entrance and private frontage
+- id: villa-lounge-fireplace.jpg
+  src: ../assets/images/villa/villa-lounge-fireplace.jpg
+  alt: Villa lounge with wood burning fireplace
+- id: villa-open-plan-kitchen-lounge.jpg
+  src: ../assets/images/villa/villa-open-plan-kitchen-lounge.jpg
+  alt: Open-plan kitchen, dining and lounge in the Villa
+- id: villa-kitchenette-cabinetry.jpg
+  src: ../assets/images/villa/villa-kitchenette-cabinetry.jpg
+  alt: Villa kitchenette
+- id: villa-queen-bedroom-teal-linen.jpg
+  src: ../assets/images/villa/villa-queen-bedroom-teal-linen.jpg
+  alt: Villa queen bedroom with teal linen
+- id: villa-shower-room.jpg
+  src: ../assets/images/villa/villa-shower-room.jpg
+  alt: Villa shower room with fresh linen and toiletries
+- id: amenities-full-set.jpg
+  src: ../assets/images/amenities/amenities-full-set.jpg
+  alt: Guest toiletries provided
+- id: amenities-on-towel.jpg
+  src: ../assets/images/amenities/amenities-on-towel.jpg
+  alt: Complimentary bathroom amenities

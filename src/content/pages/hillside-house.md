@@ -107,6 +107,8 @@ Book the House and Villa together, connected as one retreat sleeping up to 8, wi
 
 ![Twin bedroom with exposed brick wall](../../assets/images/house/twin-bedroom-brick-wall.jpeg)
 
+![Bathroom with walk-in shower and garden window](../../assets/images/house/bathroom-walk-in-shower.jpg)
+
 ![Wood fireplace burning](../../assets/images/house/wood-fireplace-burning.jpg)
 
 ![Enjoying a glass of wine by the fire](../../assets/images/house/guest-wine-by-fireplace.jpg)
