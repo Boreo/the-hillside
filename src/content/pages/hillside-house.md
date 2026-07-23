@@ -4,8 +4,8 @@ description: "Spacious 3-bedroom house on Tamborine Mountain sleeping up to 6, w
 dwelling:
   name: Hillside House
   hero:
-    src: ../../assets/images/external/covered-deck-dusk-coastal-view.jpeg
-    alt: Covered deck at dusk with valley and coastal views
+    src: ../../assets/images/external/deck-with-view-day.jpg
+    alt: Deck bar seating with panoramic valley views
   sleeps: 6
   bedrooms:
     - bed: queen
@@ -35,7 +35,7 @@ Inside, the open-plan lounge and dining area sits beside a brand new fully fitte
 
 The large wraparound verandah, with ample seating and a gas BBQ, is the spot for dining al fresco while the sun goes down over the valley. Level with the verandah, the newly renovated inground pool and heated spa (shared facilities) come with sun loungers and a view of the coastline.
 
-![Wraparound verandah with coastal views](../../assets/images/external/verandah-dining-views.jpg)
+![Gold Coast skyline over the treeline and ocean](../../assets/images/external/goldcoast-skyline-over-ocean.jpeg)
 
 Arriving by electric vehicle? Our on-site 7.3 kW Type 2 charger means you can spend the day exploring the mountain's wineries and waterfalls and wake to a fully charged car.
 
@@ -126,8 +126,6 @@ Book the House and Villa together, connected as one retreat sleeping up to 8, wi
 ![Guest taking in the coastal view](../../assets/images/external/guest-taking-in-coastal-view.jpg)
 
 ![Coastal view through the palms from the verandah](../../assets/images/external/coastal-view-through-palms.jpg)
-
-![Gold Coast skyline over the ocean](../../assets/images/external/goldcoast-skyline-over-ocean.jpeg)
 
 ![The Gold Coast at dusk](../../assets/images/external/goldcoast-at-dusk.jpeg)
 

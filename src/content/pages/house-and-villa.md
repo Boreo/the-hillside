@@ -72,7 +72,7 @@ This combination can only be booked directly with us, so we can confirm availabi
 
 ## Not needing the Villa?
 
-![Covered deck at Hillside House at dusk with valley and coastal views](../../assets/images/external/covered-deck-dusk-coastal-view.jpeg)
+![Palm-lined deck and steps beside Hillside House](../../assets/images/external/house-side-view.jpg)
 
 Our spacious 3-bedroom Hillside House sleeps up to 6, with a full kitchen, wraparound verandah, and those famous coastal views.
 
