@@ -11,9 +11,49 @@ on:
     types: [submitted]
 
 jobs:
+  # Client-request issues arrive via the email intake worker. Post a plan
+  # comment only; work starts when the owner replies with an @claude go-ahead.
+  triage:
+    if: |
+      github.event_name == 'issues' && github.event.action == 'opened' &&
+      contains(github.event.issue.labels.*.name, 'client-request') &&
+      !contains(github.event.issue.body, '@claude')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Triage client request
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          settings: |
+            {
+              "env": {
+                "GH_TOKEN": "${{ secrets.GITHUB_TOKEN }}"
+              }
+            }
+          claude_args: |
+            --allowedTools "Bash(gh issue comment:*),Bash(gh issue view:*)"
+          prompt: |
+            Issue #${{ github.event.issue.number }} in ${{ github.repository }} is a
+            client request received by email. Read the issue and the repository's
+            CLAUDE.md, then post ONE comment on the issue containing:
+            - a one-paragraph reading of what the client wants
+            - the files you would change and roughly how
+            - any ambiguities that need the owner's call
+            - a final line: "Reply `@claude go` (plus any corrections) to proceed."
+            Do not change any files and do not start the work.
+
   claude:
     if: |
-      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude') && github.event.comment.user.type != 'Bot') ||
       (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
       (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude')) ||
       (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))

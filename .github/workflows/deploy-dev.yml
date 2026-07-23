@@ -7,6 +7,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
 
@@ -24,3 +27,12 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: deploy --name the-hillside-dev
+
+      - name: Comment preview URL on the merged PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pr=$(gh api "repos/${{ github.repository }}/commits/${{ github.sha }}/pulls" --jq '.[0].number')
+          if [ -n "$pr" ] && [ "$pr" != "null" ]; then
+            gh pr comment "$pr" --body "Deployed to dev: https://the-hillside-dev.github-e53.workers.dev/"
+          fi
