@@ -18,6 +18,8 @@ We welcome every guest personally on arrival, clean the pool and spa daily, and 
 
 The property has been welcoming holiday guests since it was purpose-built for it, back when the southern access road first opened the mountain up to the Gold Coast. Since taking over in 2022 we've continued to invest in it: an extended verandah along the view side with an insulated fly-over roof, a fully renewed house kitchen, renovated pool and spa, sound suppression between House and Villa, new plush innerspring mattresses throughout, a backup generator and an EV charger.
 
+From the beginning, our vision has been to offer our guests an exceptionally high standard of accommodation, the kind of stay we would expect if we were the guests ourselves.
+
 Many of our guests return year after year, some for birthdays and anniversaries, and one group comes back regularly for their spiritual retreat weekend, drawn by the quiet up here. We hope you'll want to come back too.
 
 ## Contact us

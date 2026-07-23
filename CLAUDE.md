@@ -6,12 +6,12 @@ Static Astro site for a two-dwelling holiday accommodation business on Tamborine
 
 - Astro with static output, no client JS frameworks.
 - Content is markdown in `src/content/pages/` (collection `pages`, schemas in `src/content.config.ts`). `src/pages/[...slug].astro` renders each entry; entries with `dwelling:` frontmatter render through `src/components/DwellingLayout.astro` (hero, facts strip, amenity chips, Accommodation JSON-LD). All three dwelling pages (House, Villa, House & Villa) use it.
-- Build-time rehype plugins in `src/lib/` (wired in `astro.config.mjs` alongside `remark-deflist`): `rehype-photo-runs.mjs` turns consecutive image paragraphs into photo runs, text+image pairs into alternating media rows, and h2+image+link blocks into cross-sell cards (facts from `fact-icon-paths.mjs`); `rehype-faq-page.mjs` groups the FAQ into Q&A sections; `rehype-policy-page.mjs` lays out guest info as policy cards. Shared HAST helpers live in `hast-utils.mjs`. All photos open in the shared `<dialog>` viewer, `src/components/LightboxViewer.astro`, with prev/next.
-- The homepage is `src/pages/index.astro`, composed from `src/components/` (Hero, Arrival, DwellingCards, ReviewBand, PhotoBand, PullQuote, Closing; FactIcon renders dwelling fact icons) with copy from `src/content/pages/index.md` frontmatter.
+- Build-time rehype plugins in `src/lib/` (wired in `astro.config.mjs` alongside `remark-deflist`): `rehype-photo-runs.mjs` turns consecutive image paragraphs into photo runs, text+image pairs into alternating media rows, and h2+image+link blocks into cross-sell cards (fact wording from `dwelling-facts.mjs`, icons from `fact-icon-paths.mjs`); `rehype-faq-page.mjs` groups the FAQ into Q&A sections; `rehype-policy-page.mjs` lays out guest info as policy cards. Shared HAST helpers live in `hast-utils.mjs`. All photos open in the shared `<dialog>` viewer, `src/components/LightboxViewer.astro`, with prev/next.
+- The homepage is `src/pages/index.astro`, composed from `src/components/` (Hero, Arrival, DwellingCards, ReviewBand, PhotoBand, PullQuote, Closing; FactsLine/FactIcon render the sleeps/bedrooms/bathrooms facts line, wording shared via `src/lib/dwelling-facts.mjs`) with copy from `src/content/pages/index.md` frontmatter.
 - Standalone routes in `src/pages/`: `book.astro` (SiteMinder embed), `gallery.astro` and `reviews.astro` (driven by `src/content/gallery.yaml`, `reviews.yaml` and `review-sources.yaml`), `404.astro`.
-- `src/layouts/Base.astro` carries the nav (dropdowns grouped Accommodation / Your Stay; hamburger menu on mobile), footer, `LodgingBusiness` JSON-LD with the full business details, and the booking URL constant. New pages must be added to a nav group.
+- `src/layouts/Base.astro` carries the nav (dropdowns grouped Accommodation / Your Stay; hamburger menu on mobile), footer, `LodgingBusiness` JSON-LD with the full business details, the booking URL constant, and Umami analytics (booking CTAs carry `data-umami-event="booking-click"`). New pages must be added to a nav group.
 - Styles are plain CSS with custom properties (brand palette tokens) in `src/styles/global.css`; body font is Fraunces via `@fontsource-variable/fraunces`.
-- Images live in `src/assets/images/<category>/` (`house`, `villa`, `external`, `drone`, `amenities`, `location`; emblem and hero poster at root), named `<descriptive-name>.<ext>` and pre-resized to 2000px or less. They go through Astro's asset pipeline (schemas use `image()`, components use `<Image>`; sharp runs at build time via `imageService: 'compile'` in the Cloudflare adapter). `public/` holds the favicons (regenerate with `scripts/make-icons.mjs`), `robots.txt`, `_headers` (staging noindex), and the hero drone video in `public/videos/`.
+- Images live in `src/assets/images/<category>/` (`house`, `villa`, `external`, `drone`, `amenities`, `location`; emblem and hero poster at root), named `<descriptive-name>.<ext>` and pre-resized to 2000px or less. They go through Astro's asset pipeline (schemas use `image()`, components use `<Image>`; sharp runs at build time via `imageService: 'compile'` in the Cloudflare adapter). `public/` holds the favicons (regenerate with `scripts/make-icons.mjs`), `robots.txt`, `_headers` (staging noindex), and the hero drone video (AV1 + H.264 sources) in `public/videos/`.
 
 ## Development
 
@@ -24,7 +24,8 @@ Static Astro site for a two-dwelling holiday accommodation business on Tamborine
 
 - Cloudflare Workers, GitHub-connected; deploys build from `main`.
 - Staging: https://the-hillside.github-e53.workers.dev/
-- Dev worker: https://the-hillside-dev.github-e53.workers.dev/ — deployed by `.github/workflows/deploy-dev.yml` on every push to `dev`.
+- Dev worker: https://the-hillside-dev.github-e53.workers.dev/ — deployed by `.github/workflows/deploy-dev.yml` on every push to `dev`; the workflow comments the preview URL on the merged PR.
+- `.github/workflows/claude.yml` runs Claude on `@claude` mentions; its triage job posts a plan comment on `client-request` issues and waits for an `@claude` go before implementing.
 
 ## Business facts (public information)
 
@@ -36,7 +37,7 @@ Static Astro site for a two-dwelling holiday accommodation business on Tamborine
 ## Editing rules
 
 - Content edits go in `src/content/pages/*.md` and `src/content/{gallery,reviews}.yaml` only. Keep the owner's wording unless asked to rewrite.
-- Dwelling facts (sleeps, bedrooms, amenities) live in `dwelling:` frontmatter on the dwelling pages, where they drive the facts strip and Accommodation JSON-LD. Update facts there, not in prose, because prose should not restate these numbers.
+- Dwelling facts (sleeps, bedrooms, bathrooms, amenities) live in `dwelling:` frontmatter on the dwelling pages, where they drive the facts strip and Accommodation JSON-LD. Update facts there, not in prose, because prose should not restate these numbers.
 - Every image needs meaningful alt text. The gallery schema enforces this.
 - Legacy Squarespace paths `/home` and `/further-inform` redirect via `astro.config.mjs`. Keep them.
 - Comments must stand alone: a comment states a constraint or non-obvious why in present terms, understandable from the current file only. No references to prior versions or rejected alternatives ("now uses X", "instead of Y"), and no restating what the adjacent code already says. Fix a bad comment by rewriting it, not blank-deleting, when it carries a real why.

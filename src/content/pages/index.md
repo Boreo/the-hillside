@@ -1,22 +1,22 @@
 ---
 title: "Tamborine Mountain Accommodation | The Hillside Retreat"
-description: "The Hillside Retreat is a house and a villa on the eastern edge of Tamborine Mountain, looking down the Guanaba Valley to the Gold Coast. Pool and heated spa, wood fires, resident koala."
+description: "The Hillside Retreat is a house and a villa on the eastern edge of Tamborine Mountain, looking down the valley to the Gold Coast. Pool and heated spa, wood fires, resident koala."
 heroVideo:
   src: /videos/hero.mp4
   srcAv1: /videos/hero.av1.mp4
   poster: ../../assets/images/hero-poster.jpg
 homepage:
-  heroLine: "A house and a villa on the hillside above Guanaba Valley, Tamborine Mountain."
+  heroLine: "A house and a villa overlooking the Gold Coast from Tamborine Mountain."
   arrival:
-    - "The Hillside Retreat sits on the eastern edge of Tamborine Mountain, looking down the Guanaba Valley to the coast.\nOn a clear morning you can watch the sun come up over the Gold Coast from the verandah."
-    - "Surfers Paradise is a 30-minute drive and Brisbane about an hour. Up here it stays private and quiet.\nThe gums are full of birds and wildlife, and the spa is heated year-round."
+    - "The Hillside Retreat sits on the eastern edge of Tamborine Mountain, looking down the valley.\nOn a clear morning you can watch the sun come up over the Gold Coast from the verandah."
+    - "Surfers Paradise is a 30-minute drive and Brisbane about an hour. Up here it stays private, secluded and quiet.\nThe gum trees are full of birds and wildlife, and the spa is heated year-round."
   dwellings:
     - slug: hillside-house
       href: /hillside-house/
       image:
         src: ../../assets/images/external/deck-with-view-day.jpg
         alt: "Wraparound verandah at Hillside House with sweeping coastal views"
-      line: "A spacious three-bedroom family home with views of the coastline and Guanaba Valley from the living room, and a wraparound verandah for dining outside."
+      line: "A spacious three-bedroom family home with views of the coastline and valley from the living room, and a wraparound verandah for dining outside."
     - slug: hillside-villa
       href: /hillside-villa/
       image:
