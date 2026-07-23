@@ -39,6 +39,7 @@ Static Astro site for a two-dwelling holiday accommodation business on Tamborine
 - Dwelling facts (sleeps, bedrooms, amenities) live in `dwelling:` frontmatter on the dwelling pages, where they drive the facts strip and Accommodation JSON-LD. Update facts there, not in prose, because prose should not restate these numbers.
 - Every image needs meaningful alt text. The gallery schema enforces this.
 - Legacy Squarespace paths `/home` and `/further-inform` redirect via `astro.config.mjs`. Keep them.
+- Comments must stand alone: a comment states a constraint or non-obvious why in present terms, understandable from the current file only. No references to prior versions or rejected alternatives ("now uses X", "instead of Y"), and no restating what the adjacent code already says. Fix a bad comment by rewriting it, not blank-deleting, when it carries a real why.
 
 ## Working from GitHub issues
 
