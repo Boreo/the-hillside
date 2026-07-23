@@ -34,7 +34,11 @@ Children of any age are welcome, and children aged 14 and above are considered a
 
 ### Is there a pool and spa?
 
-Yes. The Hillside Retreat has a resort-style inground pool and a spa that is heated year-round, both overlooking the Guanaba Valley. The pool and spa are shared between House and Villa guests. If you book the House and Villa together, they're exclusively yours for your stay.
+Yes. The Hillside Retreat has a resort-style inground pool and a spa that is heated year-round, both overlooking the valley to the Gold Coast. The pool and spa are shared between House and Villa guests. If you book the House and Villa together, they're exclusively yours for your stay.
+
+### Is the pool and spa a shared facility?
+
+Yes, the pool and heated spa are shared between Hillside House and Hillside Villa guests. If you book the House and Villa together, the pool area is exclusively yours for your stay.
 
 ### Is there a fireplace?
 
@@ -63,7 +67,7 @@ We meet every guest on arrival, so please call or text us when you reach the pro
 
 ### How far is The Hillside Retreat from the Gold Coast and Brisbane?
 
-The Hillside Retreat is at 25 Leona Court on the eastern edge of Tamborine Mountain, about a 30 minute drive from Surfers Paradise and an hour from Brisbane. The property overlooks the Guanaba Valley to the coast, and on a clear night you can see the Gold Coast skyline from the verandah.
+The Hillside Retreat is at 25 Leona Court on the eastern edge of Tamborine Mountain, about a 30 minute drive from Surfers Paradise and an hour from Brisbane. The property overlooks the valley to the coast, and on a clear night you can see the Gold Coast skyline from the verandah.
 
 ### What is there to do nearby?
 

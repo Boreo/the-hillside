@@ -26,9 +26,9 @@ Children aged 14 years and above are considered adults at this property.
 
 To see correct prices and occupancy information, please add the number of children in your group and their ages to your search.
 
-### Cot and extra bed policies
+### Extras and additional charges
 
-Supplements are not calculated automatically in the total costs and will have to be paid for separately during your stay.
+Any extras (e.g. additional firewood) are not calculated automatically in the total cost and will have to be paid for separately during your stay.
 
 All cots and extra beds are subject to availability.
 

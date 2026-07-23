@@ -27,13 +27,13 @@ dwelling:
     href: /book/?room_rate=413447
 ---
 
-Hillside House is our spacious family home on the eastern slopes of Tamborine Mountain, looking out over the Guanaba Valley to the Gold Coast and the coastline beyond. The view runs the full length of the house.
+Hillside House is our spacious family home on the eastern slopes of Tamborine Mountain, looking out over the valley to the Gold Coast and the coastline beyond. The view runs the full length of the house.
 
 ![Entrance to Hillside House](../../assets/images/external/retreat-entrance.jpg)
 
 Inside, the open-plan lounge and dining area sits beside a brand new fully fitted kitchen, so whoever is cooking is never cut off from the conversation or the view. The master bedroom has an ensuite shower room and a large walk-in wardrobe, and every bedroom has air-conditioning and an overhead fan. There's a well-equipped laundry with washer, dryer, iron and ironing board, so you can stay fresh and wrinkle-free throughout your visit.
 
-The large wraparound verandah, with ample seating and a gas BBQ, is the spot for dining al fresco while the sun goes down over the valley. A few steps below, the newly renovated inground pool and heated spa (shared facilities) come with sun loungers and a view of the coastline.
+The large wraparound verandah, with ample seating and a gas BBQ, is the spot for dining al fresco while the sun goes down over the valley. Level with the verandah, the newly renovated inground pool and heated spa (shared facilities) come with sun loungers and a view of the coastline.
 
 ![Wraparound verandah with coastal views](../../assets/images/external/verandah-dining-views.jpg)
 
