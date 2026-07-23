@@ -24,6 +24,7 @@ Static Astro site for a two-dwelling holiday accommodation business on Tamborine
 
 - Cloudflare Workers, GitHub-connected; deploys build from `main`.
 - Staging: https://the-hillside.github-e53.workers.dev/
+- Dev worker: https://the-hillside-dev.github-e53.workers.dev/ — deployed by `.github/workflows/deploy-dev.yml` on every push to `dev`.
 
 ## Business facts (public information)
 
@@ -38,6 +39,13 @@ Static Astro site for a two-dwelling holiday accommodation business on Tamborine
 - Dwelling facts (sleeps, bedrooms, amenities) live in `dwelling:` frontmatter on the dwelling pages, where they drive the facts strip and Accommodation JSON-LD. Update facts there, not in prose, because prose should not restate these numbers.
 - Every image needs meaningful alt text. The gallery schema enforces this.
 - Legacy Squarespace paths `/home` and `/further-inform` redirect via `astro.config.mjs`. Keep them.
+
+## Working from GitHub issues
+
+- Commit messages: subject is imperative, capitalised, no prefixes (no `feat:`/`fix:`), no trailing period, ~50 chars; name the concrete change ("Soften hero scrim"), compound with commas if needed. Single-change commits stop there — no body. When a commit bundles several distinct changes, add a body of dash bullets, one per change: capitalised terse fragments, no trailing periods, naming the component or file involved, with a why only when non-obvious ("overflow-x: clip guards against Chromium snapshot overflow"). Typically 3–5 bullets; the subject summarises, the bullets itemise.
+- Branch from `dev`; never push to `main` or `dev` directly. After pushing the branch, open a PR yourself with `gh pr create` (base `dev`, short title matching the commit style, body summarising the change and linking the issue). Merging to `dev` deploys the dev worker for remote review; promotion to `main` is the owner's call.
+- Run `npm run build` before pushing — `astro check` output is a defect and must be clean.
+- Issue comments: brief and plain. Lead with what changed or what you found; no headers or boilerplate for small answers.
 
 ## Documentation
 
