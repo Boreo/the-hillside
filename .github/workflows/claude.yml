@@ -29,6 +29,10 @@ jobs:
         with:
           fetch-depth: 1
 
+      # hillside-voice depends on the humanizer pattern list
+      - name: Fetch humanizer skill
+        run: git clone --depth 1 https://github.com/blader/humanizer.git .claude/skills/humanizer
+
       - name: Triage client request
         uses: anthropics/claude-code-action@v1
         with:
@@ -48,6 +52,9 @@ jobs:
             CLAUDE.md, then post ONE comment on the issue containing:
             - a one-paragraph reading of what the client wants
             - the files you would change and roughly how
+            - when the request changes guest-facing copy: ~3 candidate wordings
+              in the hillside-voice style (read .claude/skills/hillside-voice/SKILL.md
+              first), plus which one you recommend and why in a sentence
             - any ambiguities that need the owner's call
             - a final line: "Reply `@claude go` (plus any corrections) to proceed."
             Do not change any files and do not start the work.
