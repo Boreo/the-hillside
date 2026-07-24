@@ -34,7 +34,7 @@ Children of any age are welcome, and children aged 14 and above are considered a
 
 ### Is there a pool and spa?
 
-Yes. The Hillside Retreat has a resort-style inground pool and a spa that is heated year-round, both overlooking the valley to the Gold Coast. The pool and spa are shared between House and Villa guests. If you book the House and Villa together, they're exclusively yours for your stay.
+Yes. The Hillside Retreat has a resort-style inground pool and a spa that is heated year-round, both overlooking the valley to the Gold Coast.
 
 ### Is the pool and spa a shared facility?
 
