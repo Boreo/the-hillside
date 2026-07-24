@@ -40,6 +40,10 @@ Yes. The Hillside Retreat has a resort-style inground pool and a spa that is hea
 
 Yes, the pool and heated spa are shared between Hillside House and Hillside Villa guests. If you book the House and Villa together, the pool area is exclusively yours for your stay.
 
+### Is there a BBQ?
+
+Yes, both dwellings have their own gas BBQ. Hillside House's is on the wraparound verandah and Hillside Villa's is by the private courtyard, so either way you can cook outside with the view.
+
 ### Is there a fireplace?
 
 Yes, both dwellings have a wood burning fireplace, and firewood and kindling are supplied. Tamborine Mountain evenings are cool for much of the year, so the fires see plenty of use in winter.
