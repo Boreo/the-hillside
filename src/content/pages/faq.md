@@ -75,7 +75,7 @@ The Hillside Retreat is at 25 Leona Court on the eastern edge of Tamborine Mount
 
 ### What is there to do nearby?
 
-Gallery Walk's cafes, galleries and fudge shops are a 5 minute drive away, as is the Curtis Falls rainforest walk. Rotary Lookout is 10 minutes, and the mountain's wineries are all within a 10 minute drive. See our [Location page](/location/) for walks, lookouts, markets and festivals.
+Saint Bernards Hotel and The Coffee Plantation cafe are a 7 minute drive away. Gallery Walk's cafes, galleries and fudge shops are 15 minutes, as are the mountain's wineries and breweries. The rainforest walks at Curtis Falls, Witches Falls, The Knoll and The Palm Grove are all within a 15 minute drive, and Rotary Lookout is 10 minutes for sunset. See our [Location page](/location/) for walks, lookouts, markets and festivals.
 
 ## The fine print
 
