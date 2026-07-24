@@ -82,6 +82,15 @@ jobs:
       - name: Fetch humanizer skill
         run: git clone --depth 1 https://github.com/blader/humanizer.git .claude/skills/humanizer
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Run Claude Code
         id: claude
         uses: anthropics/claude-code-action@v1
@@ -104,5 +113,5 @@ jobs:
             }
 
           claude_args: |
-            --allowedTools "Bash(npm install),Bash(npm run build),Bash(npm test),Bash(npx astro check),Bash(gh pr create:*)"
+            --allowedTools "Bash(npm install),Bash(npm ci),Bash(npm run build),Bash(npm test),Bash(npx astro check),Bash(gh pr create:*)"
 
