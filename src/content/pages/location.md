@@ -10,7 +10,7 @@ placeGroups:
           - icon: walk
             label: 1.1 km return · 30 min
           - icon: car
-            label: 5 min drive
+            label: 15 min drive
         tag: moderate · Grade 3
         blurb: |-
           The walk we suggest first, dropping through flooded gums into rainforest to a lookout over the falls.
@@ -23,7 +23,7 @@ placeGroups:
           - icon: walk
             label: 2.5 km return · 1 hr
           - icon: car
-            label: 5 min drive
+            label: 15 min drive
         tag: steep in parts · Grade 4
         blurb: |-
           The quieter continuation of Curtis Falls, following the creek deeper into the rainforest.
@@ -33,7 +33,7 @@ placeGroups:
           - icon: walk
             label: 3.6 km loop · 1 hr
           - icon: car
-            label: 10 min drive
+            label: 15 min drive
         tag: steep in parts · Grade 4
         blurb: |-
           The full rainforest walk, zigzagging down the western side of the mountain.
@@ -56,7 +56,7 @@ placeGroups:
           - icon: walk
             label: 2.7 km loop · 1 hr
           - icon: car
-            label: 5 min drive
+            label: 15 min drive
         tag: steep in parts · Grade 4
         blurb: |-
           The section closest to us, winding through piccabeen palm groves and buttressed carabeens.
@@ -101,7 +101,7 @@ placeGroups:
       - name: Knoll Road Lookout
         facts:
           - icon: car
-            label: 10 min drive
+            label: 15 min drive
         tag: picnic spot
         blurb: |-
           Drive-up escarpment views from the end of Knoll Road, with no walking required.
@@ -111,7 +111,7 @@ placeGroups:
           - icon: walk
             label: 2.6 km circuit · 1 hr
           - icon: car
-            label: 10 min drive
+            label: 15 min drive
         tag: steep in parts · Grade 4
         blurb: |-
           A rainforest circuit from The Knoll picnic area at the end of Knoll Road.
@@ -136,7 +136,7 @@ placeGroups:
       - name: Gallery Walk
         facts:
           - icon: car
-            label: 5 min drive
+            label: 15 min drive
         blurb: |-
           The mountain's main strip of galleries, cafes, fudge and craft shops along Long Road.
           An easy afternoon on foot, with coffee never more than a few doors away.
@@ -148,7 +148,7 @@ placeGroups:
           label: What's on the strip
       - name: Wineries and cellar doors
         blurb: |-
-          Cellar doors are spread across the mountain, most within a ten minute drive, with a distillery and brewery among them.
+          Cellar doors are spread across the mountain, most within a fifteen minute drive, with a distillery and brewery among them.
           The visitor guide keeps the full list current.
         link:
           href: https://visittamborinemountain.com.au/restaurants-cafes-wineries-breweries-and-distilleries-tamborine-mountain/
