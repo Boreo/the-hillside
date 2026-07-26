@@ -16,7 +16,7 @@ We live on the property in a separate house below the main accommodation, a plac
 
 We welcome every guest personally on arrival, clean the pool and spa daily, and keep a local information guide in both dwellings with our favourite walks, lookouts and places to eat. Please ask us anything during your stay; local knowledge is part of the service.
 
-The property has been welcoming holiday guests since it was purpose-built for it, back when the southern access road first opened the mountain up to the Gold Coast. Since taking over in 2022 we've continued to invest in it: an extended verandah along the view side with an insulated fly-over roof, a fully renewed house kitchen, renovated pool and spa, sound suppression between House and Villa, new plush innerspring mattresses throughout, a backup generator and an EV charger.
+The property has been welcoming holiday guests since it was purpose-built for it, back when the southern access road from the Gold Coast, Henri Robert Drive, first opened up the mountain. Since taking over in 2022 we've continued to invest in it: an extended verandah along the view side with an insulated fly-over roof, a fully renewed house kitchen, renovated pool and spa, sound suppression between House and Villa, new plush innerspring mattresses throughout, a backup generator and an EV charger.
 
 From the beginning, our vision has been to offer our guests an exceptionally high standard of accommodation, the kind of stay we would expect if we were the guests ourselves.
 

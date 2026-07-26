@@ -44,9 +44,9 @@ There is a designated area for smoking. It is located outside, near the shed.
 
 Reservations for short-term holiday accommodation are accepted by "The Hillside Retreat" the Owner of the Property and to which bookings the following terms and conditions apply:
 
-Effective Sunday, November 17, 2024
+Effective Sunday, July 26, 2026
 
-> Once your booking has been confirmed and receipted by The Hillside Retreat, any payments are non-refundable. However, if the booking is cancelled and we are able to re-book the property for your dates, we will refund your payment/s less a $150 cancellation fee.
+> Bookings may be cancelled free of charge up to 7 days before the date of arrival. If the booking is cancelled within 7 days of arrival, 50% of the total price is payable. If the booking is cancelled within 24 hours of arrival, no refund will be given.
 
 The Hillside Retreat recommends that the Guest takes out comprehensive holiday cancellation and protection insurance with a reputable insurance company to cater for any unforeseen circumstances which may arise including accident, ill health, or any other matters beyond the Guest’s reasonable control.
 
@@ -54,13 +54,9 @@ The Hillside Retreat recommends that the Guest takes out comprehensive holiday c
 
 The rental contract is between the Guest and the Owner of the Property for which the accommodation booking is made and is subject to the terms and conditions herein. The contract for accommodation shall not be effective until The Hillside Retreat sends the Guest written confirmation of the booking.
 
-### Deposit
+### Payment
 
-The accommodation booking will not be confirmed by The Hillside Retreat until the Guest’s deposit payment is received and cleared. If the accommodation booking is made within 28 days of the date of commencement of the Guest’s proposed holiday, the full rental payable for the Property is required.
-
-### Final Payment
-
-The full amount payable in respect of the Property rental shall be paid at least 28 Days prior to the date of commencement of the booking. If the full payment has not been received by The Hillside Retreat at least twenty one (21) days prior to the start of the rental period, then The Hillside Retreat reserve the right to cancel the booking without notice and the Guest will forfeit the Guest’s deposit which will be non-refundable in such circumstances.
+Valid card details are required to secure the booking. No payment is taken at the time of booking. The total price will be charged 7 days before the date of arrival. If the booking is made within 7 days of arrival, the total price is charged at the time of booking. If a payment cannot be processed, The Hillside Retreat reserves the right to cancel the booking, subject to the cancellation policy above.
 
 ### Noise & Neighbours
 

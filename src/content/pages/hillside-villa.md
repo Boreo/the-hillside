@@ -29,7 +29,7 @@ Hillside Villa is our self-contained retreat beside the main house, with its own
 
 ![Villa dining area](../../assets/images/villa/hillside-villa-dining-area.jpeg)
 
-Inside, a wood burning fireplace warms the lounge and the kitchenette has everything you need to cook a proper meal for two, with an oven, hob, dishwasher and coffee machine. The queen bedroom has air-conditioning and an overhead fan, and the shower room comes stocked with fresh linen and toiletries.
+Inside, a wood burning fireplace warms the lounge and the kitchenette has everything you need to cook a proper meal for two, with an oven, hob and coffee machine. The queen bedroom has air-conditioning and an overhead fan, and the shower room comes stocked with fresh linen and toiletries.
 
 The private courtyard is yours alone, a spot for morning coffee with the birdsong or a glass of wine under the stars, and there's a gas BBQ for dining al fresco. You're also welcome at the newly renovated inground pool and heated spa (shared facilities), with sun loungers and a view over the valley to the coastline.
 
@@ -48,7 +48,7 @@ Tamborine Mountain's rainforest walks, wineries and Gallery Walk village are a f
 ## Accommodation comprises
 
 - Comfortable lounge area and open plan dining.
-- Well equipped kitchenette with Oven, Hob, Microwave, Dishwasher & Coffee Machine. Kettle, Toaster, utensils, cutlery and crockery, so you have everything you need to cook for two.
+- Well equipped kitchenette with Oven, Hob, Microwave & Coffee Machine. Kettle, Toaster, utensils, cutlery and crockery, so you have everything you need to cook for two.
 - Wood burning fireplace.
 - Gas BBQ.
 - Flat screen TV with Netflix.
