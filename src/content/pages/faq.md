@@ -81,7 +81,7 @@ Saint Bernards Hotel and The Coffee Plantation cafe are a 7 minute drive away. G
 
 ### What is the cancellation policy?
 
-Once your booking is confirmed, payments are non-refundable. If you cancel and we're able to re-book the property for your dates, we'll refund your payments less a $150 cancellation fee. Final payment is due 28 days before arrival. We recommend taking out comprehensive holiday cancellation insurance. Full terms are on our [Guest Information page](/guest-info/).
+You can cancel free of charge until 7 days before arrival. If you cancel within 7 days of arrival you'll be charged 50% of the total price, and cancellations within 24 hours of arrival are non-refundable. We recommend taking out comprehensive holiday cancellation insurance. Full terms are on our [Guest Information page](/guest-info/).
 
 ## Still wondering about something?
 
