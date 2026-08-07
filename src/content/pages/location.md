@@ -46,7 +46,7 @@ placeGroups:
           - icon: walk
             label: 1.4 km return · 30 min
           - icon: car
-            label: 5 min drive
+            label: 15 min drive
         tag: moderate · Grade 3
         blurb: |-
           Our pick for birdwatching at an easy pace, under towering strangler figs and piccabeen palms.
@@ -66,7 +66,7 @@ placeGroups:
           - icon: walk
             label: 1.1 km return · 30 min
           - icon: car
-            label: 15 min drive
+            label: 20 min drive
         tag: moderate · Grade 3
         blurb: |-
           The area's only sanctioned swimming hole, at the northern foot of the mountain.
@@ -93,7 +93,7 @@ placeGroups:
       - name: Eagle Heights lookout
         facts:
           - icon: car
-            label: 5 min drive
+            label: 15 min drive
         tag: sunrise spot
         blurb: |-
           The east-facing one, on Tamborine–Oxenford Road with uninterrupted views to the Gold Coast skyline.
@@ -119,7 +119,7 @@ placeGroups:
       - name: Regional Botanic Gardens
         facts:
           - icon: car
-            label: 5 min drive
+            label: 15 min drive
           - icon: calendar
             label: Open daily, daylight hours
         tag: free entry
@@ -222,7 +222,7 @@ placeGroups:
       - name: Thunderbird Park
         facts:
           - icon: car
-            label: 15 min drive
+            label: 20 min drive
         blurb: |-
           Rainforest adventure park at Cedar Creek, with the TreeTop Challenge high ropes courses and thunderegg mining for the kids.
         link:
@@ -231,7 +231,7 @@ placeGroups:
       - name: Gold Coast theme parks
         facts:
           - icon: car
-            label: 35 min drive
+            label: 25 min drive
         blurb: |-
           Movie World, Wet'n'Wild, Topgolf and Dreamworld all sit along the motorway below the mountain.
           Do a full day at the parks and be back on the verandah for sunset.
@@ -241,14 +241,14 @@ placeGroups:
       - name: Surfers Paradise
         facts:
           - icon: car
-            label: 30 min drive
+            label: 35 min drive
         blurb: |-
           The beach, the esplanade and the high-rise skyline you can see from the verandah.
           Swim between the flags, then wander the cafes and markets along the foreshore.
       - name: Pacific Fair
         facts:
           - icon: car
-            label: 45 min drive
+            label: 35 min drive
         blurb: |-
           The Gold Coast's biggest shopping centre, at Broadbeach with around 400 stores.
           Westfield Coomera is the closer option, about 25 minutes down the mountain.
@@ -258,7 +258,7 @@ placeGroups:
       - name: Currumbin Wildlife Sanctuary
         facts:
           - icon: car
-            label: 50 min drive
+            label: 40 min drive
         blurb: |-
           Koalas, kangaroos and the famous wild lorikeet feeding, run by the National Trust since 1947.
         link:
@@ -267,7 +267,7 @@ placeGroups:
       - name: Burleigh Heads
         facts:
           - icon: car
-            label: 50 min drive
+            label: 35 min drive
         blurb: |-
           The Gold Coast's favourite beach day: swim off the point, walk the national park headland track, then eat along James Street.
           Quieter and more local than Surfers.
