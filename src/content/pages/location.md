@@ -285,4 +285,4 @@ closingCta:
 
 Tamborine Mountain is a village strung along a rainforest plateau in the Gold Coast hinterland, about 500 metres up, an hour from Brisbane and half an hour from Surfers Paradise. The air is cooler than the coast, the pace is slower, and most of what is worth doing here costs nothing.
 
-We've put our favourites together below: the national park walks, the lookouts we send guests to for sunrise and sunset, and the markets and festivals that fill the mountain's calendar. If you're after more than the free things, there is also a skywalk through the rainforest canopy, hot-air ballooning in the valley, tandem hang gliding off the escarpment, and day spas for the slower days.
+We've put our favourites near The Hillside Retreat together below: the national park walks, the lookouts we send guests to for sunrise and sunset, and the markets and festivals that fill the mountain's calendar. If you're after more than the free things, there is also a skywalk through the rainforest canopy, hot-air ballooning in the valley, tandem hang gliding off the escarpment, and day spas for the slower days.

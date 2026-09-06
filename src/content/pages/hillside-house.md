@@ -41,7 +41,7 @@ dwelling:
     href: /book/?room_rate=413447
 ---
 
-Hillside House is our spacious family home on the eastern slopes of Tamborine Mountain, looking out over the valley to the Gold Coast and the coastline beyond. The view runs the full length of the house.
+Hillside House is our spacious family home at The Hillside Retreat, on the eastern slopes of Tamborine Mountain, looking out over the valley to the Gold Coast and the coastline beyond. The view runs the full length of the house.
 
 ![Entrance to Hillside House](../../assets/images/external/retreat-entrance.jpg)
 

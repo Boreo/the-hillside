@@ -33,7 +33,7 @@ dwelling:
     href: /book/?room_rate=413448
 ---
 
-Hillside Villa is our self-contained retreat beside the main house, with its own private entry and courtyard. It's sized for two, and most of our villa guests are couples marking something — a honeymoon, an anniversary, or simply a quiet weekend away.
+Hillside Villa sits beside the main house at The Hillside Retreat on Tamborine Mountain, self-contained with its own private entry and courtyard. It's sized for two, and most of our villa guests are couples marking something — a honeymoon, an anniversary, or simply a quiet weekend away.
 
 ![Villa dining area](../../assets/images/villa/hillside-villa-dining-area.jpeg)
 
