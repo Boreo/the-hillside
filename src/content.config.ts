@@ -22,6 +22,10 @@ const dwellingSchema = ({ image }: SchemaContext) =>
   z.object({
     name: z.string(),
     hero: imageWithAlt(image),
+    // Photos listed in the Accommodation JSON-LD image array, hero first.
+    // Search engines want several views of a place; the page prose photos
+    // are resolved after the plugins run, so the set is declared here.
+    images: z.array(image()).default([]),
     sleeps: z.number().int().positive(),
     bedrooms: z.array(
       z.object({

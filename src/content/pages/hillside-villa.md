@@ -6,6 +6,16 @@ dwelling:
   hero:
     src: ../../assets/images/villa/hillside-villa-front.jpg
     alt: Front of Hillside Villa
+  images:
+    - ../../assets/images/villa/hillside-villa-entrance.jpg
+    - ../../assets/images/villa/villa-lounge-fireplace.jpg
+    - ../../assets/images/villa/villa-open-plan-kitchen-lounge.jpg
+    - ../../assets/images/villa/villa-kitchenette-cabinetry.jpg
+    - ../../assets/images/villa/villa-queen-bedroom-teal-linen.jpg
+    - ../../assets/images/villa/villa-shower-room.jpg
+    - ../../assets/images/external/gas-bbq-outdoor-dining.jpg
+    - ../../assets/images/external/heated-pool-evening.jpg
+    - ../../assets/images/external/palm-framed-coastal-view.jpg
   sleeps: 2
   bedrooms:
     - bed: queen

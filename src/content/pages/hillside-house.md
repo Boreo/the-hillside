@@ -6,6 +6,16 @@ dwelling:
   hero:
     src: ../../assets/images/external/deck-with-view-day.jpg
     alt: Deck bar seating with panoramic valley views
+  images:
+    - ../../assets/images/external/retreat-entrance.jpg
+    - ../../assets/images/house/house-lounge-dining-area.jpg
+    - ../../assets/images/house/kitchen-island-mountain-view.jpg
+    - ../../assets/images/house/king-bedroom-white-linen.jpeg
+    - ../../assets/images/house/twin-bedroom-brick-wall.jpeg
+    - ../../assets/images/house/bathroom-walk-in-shower.jpg
+    - ../../assets/images/house/wood-fireplace-burning.jpg
+    - ../../assets/images/external/verandah-lounge-area.jpg
+    - ../../assets/images/external/pool-and-spa.jpg
   sleeps: 6
   bedrooms:
     - bed: queen

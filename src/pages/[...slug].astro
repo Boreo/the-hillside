@@ -22,12 +22,18 @@ const dwelling = page.data.dwelling;
 
 const dwellingHero =
   dwelling && (await getImage({ src: dwelling.hero.src, width: 1200, format: "jpg" }));
+const dwellingImages =
+  dwelling &&
+  (await Promise.all(
+    dwelling.images.map((src) => getImage({ src, width: 1200, format: "jpg" })),
+  ));
 const dwellingJsonLd = dwelling && {
   "@context": "https://schema.org",
-  "@type": "Accommodation",
+  "@type": ["Accommodation", "House"],
+  additionalType: "https://schema.org/EntirePlace",
   name: dwelling.name,
   url: new URL(Astro.url.pathname, Astro.site).href,
-  image: [new URL(dwellingHero!.src, Astro.site).href],
+  image: [dwellingHero!, ...dwellingImages!].map((i) => new URL(i.src, Astro.site).href),
   occupancy: {
     "@type": "QuantitativeValue",
     minValue: 1,

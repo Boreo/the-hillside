@@ -6,6 +6,16 @@ dwelling:
   hero:
     src: ../../assets/images/drone/aerial-view-whole-property.jpg
     alt: Aerial view of the whole property, House and Villa together on the hillside
+  images:
+    - ../../assets/images/external/retreat-entrance.jpg
+    - ../../assets/images/external/heated-pool-evening.jpg
+    - ../../assets/images/external/verandah-dining-views.jpg
+    - ../../assets/images/villa/hillside-villa-front.jpg
+    - ../../assets/images/house/house-lounge-dining-area.jpg
+    - ../../assets/images/house/kitchen-island-mountain-view.jpg
+    - ../../assets/images/house/king-bedroom-white-linen.jpeg
+    - ../../assets/images/house/twin-bedroom-brick-wall.jpeg
+    - ../../assets/images/villa/hillside-villa-dining-area.jpeg
   sleeps: 8
   bedrooms:
     - bed: queen
