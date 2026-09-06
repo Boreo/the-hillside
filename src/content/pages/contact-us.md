@@ -8,7 +8,7 @@ lightbox: false
 
 ![Glen and Rowena, hosts of The Hillside Retreat](../../assets/images/external/glen-and-rowena.jpg)
 
-We're Glen and Rowena. We met on the Gold Coast in 2010, and after careers in family daycare and quarry management we made our lifestyle move up the mountain to run the retreat. It has been our home, and our guests' getaway, ever since.
+We're Glen and Rowena, your hosts at The Hillside Retreat on Tamborine Mountain. We met on the Gold Coast in 2010, and after careers in family daycare and quarry management we made our lifestyle move up the mountain to run the retreat. It has been our home, and our guests' getaway, ever since.
 
 We live on the property in a separate house below the main accommodation, a place we call The Cottage. It shares the same coastal and bush views, but sits well apart from the guest dwellings. That means the House and Villa are entirely yours, whilst we're only ever a short walk away if you need anything.
 

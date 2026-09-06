@@ -8,6 +8,8 @@ policyPage: true
 
 ## Policy and Procedures
 
+These policies apply to every stay at The Hillside Retreat, Tamborine Mountain.
+
 ### Arrival and departures
 
 Check-in: 14:00 - 17:00 pm

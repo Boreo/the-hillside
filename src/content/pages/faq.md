@@ -6,7 +6,7 @@ faqSchema: true
 
 # Frequently Asked Questions
 
-Answers to the questions we're asked most often.
+Answers to the questions we're asked most often about staying at The Hillside Retreat on Tamborine Mountain.
 
 ## Planning your stay
 

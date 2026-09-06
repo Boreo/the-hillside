@@ -36,7 +36,7 @@ dwelling:
     href: /contact-us/
 ---
 
-For larger groups and families, we're delighted to offer [Hillside House](/hillside-house/) and [Hillside Villa](/hillside-villa/) as a combined booking. A connecting door joins the two accommodations, opening them up into one retreat with the whole property to yourselves.
+For larger groups and families, we're delighted to offer [Hillside House](/hillside-house/) and [Hillside Villa](/hillside-villa/), our two dwellings at The Hillside Retreat on Tamborine Mountain, as a combined booking. A connecting door joins the two accommodations, opening them up into one retreat with the whole property to yourselves.
 
 The House carries the shared living, with meals around the big table, evenings by the fire and the verandah for everyone. The Villa is a self-contained space for grandparents, couples, or anyone who appreciates their own quiet corner. Whether it's a family reunion, a milestone celebration, or a getaway with friends, everyone can be together without being on top of each other.
 
