@@ -1,4 +1,13 @@
 import { test, expect } from "@playwright/test";
+import { readFileSync } from "node:fs";
+
+// Question and group counts come from the markdown so the test tracks
+// content edits. Groups are h2s; the closing h2 has no questions under it.
+const faqMd = readFileSync("src/content/pages/faq.md", "utf8");
+const questions = faqMd.match(/^### (.+)$/gm)!.map((l) => l.slice(4).trim());
+const groups = faqMd.split(/^## /m).slice(1).filter((g) => /^### /m.test(g));
+const slugOf = (t: string) =>
+  t.toLowerCase().replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-");
 
 test("faq groups questions with a quick-answers chip strip", async ({ page }) => {
   await page.goto("/faq/");
@@ -6,14 +15,14 @@ test("faq groups questions with a quick-answers chip strip", async ({ page }) =>
   const chips = page.locator(".policy-chips .policy-chip");
   await expect(chips).toHaveCount(5);
   await expect(chips.first()).toContainText("Sleeps up to 8 guests");
-  await expect(page.locator(".faq-group")).toHaveCount(4);
-  await expect(page.locator(".faq-item")).toHaveCount(14);
+  await expect(page.locator(".faq-group")).toHaveCount(groups.length);
+  await expect(page.locator(".faq-item")).toHaveCount(questions.length);
   await expect(page.locator(".faq-closing h2")).toContainText("Still wondering");
   const toc = page.locator(".faq-layout .policy-toc");
-  await expect(toc.locator("li a")).toHaveCount(14);
+  await expect(toc.locator("li a")).toHaveCount(questions.length);
   await expect(toc.locator("li a").first()).toHaveAttribute(
     "href",
-    "#how-many-people-can-stay-at-the-hillside-retreat",
+    `#${slugOf(questions[0])}`,
   );
 });
 
@@ -31,9 +40,8 @@ test("faq page emits FAQPage JSON-LD matching the questions", async ({ page }) =
     .allTextContents();
   const faq = blocks.map((b) => JSON.parse(b)).find((d) => d["@type"] === "FAQPage");
   expect(faq).toBeTruthy();
-  expect(faq.mainEntity).toHaveLength(14);
   const names = faq.mainEntity.map((q: { name: string }) => q.name);
-  expect(names).toContain("Are pets allowed?");
+  expect(names).toEqual(questions);
   // Group headings are not questions.
   expect(names).not.toContain("The property");
   expect(names).not.toContain("Still wondering about something?");
