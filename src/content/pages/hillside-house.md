@@ -15,13 +15,27 @@ dwelling:
   bathrooms: 2
   amenities:
     - Wood fireplace
-    - Pool & heated spa (shared)
+    - Pool (shared)
+    - Heated spa (shared)
     - EV charging (7.3 kW Type 2)
     - Wraparound verandah
+    - Gas BBQ
     - Full kitchen & laundry
     - Air-conditioning
     - Wi-Fi
     - Free private parking
+  schemaAmenities:
+    - Coastal and valley views
+    - Ensuite bathroom
+    - Bath and separate shower
+    - Dishwasher
+    - Coffee machine
+    - Washer and dryer
+    - Iron and ironing board
+    - Smart TV with Netflix
+    - Ceiling fans
+    - Bed linen, towels and toiletries supplied
+    - Cot and extra bed on request
   cta:
     label: Book Direct
     href: /book/?room_rate=413447

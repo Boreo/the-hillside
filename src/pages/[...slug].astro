@@ -37,7 +37,7 @@ const dwellingJsonLd = dwelling && {
   numberOfBedrooms: dwelling.bedrooms.length,
   numberOfBathroomsTotal: dwelling.bathrooms,
   bed: dwelling.bedrooms.map((b) => ({ "@type": "BedDetails", typeOfBed: b.bed })),
-  amenityFeature: dwelling.amenities.map((name) => ({
+  amenityFeature: [...dwelling.amenities, ...dwelling.schemaAmenities].map((name) => ({
     "@type": "LocationFeatureSpecification",
     name,
     value: true,

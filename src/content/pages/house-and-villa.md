@@ -15,13 +15,22 @@ dwelling:
     - bed: queen
   bathrooms: 3
   amenities:
-    - Exclusive pool & heated spa
+    - Exclusive pool
+    - Exclusive heated spa
     - Connecting door between House & Villa
     - Two wood fireplaces
     - Full kitchen + kitchenette
     - EV charging (7.3 kW Type 2)
     - Wi-Fi
     - Free private parking
+  schemaAmenities:
+    - Coastal and valley views
+    - Two gas BBQs
+    - Air-conditioning
+    - Smart TVs with Netflix
+    - Washer and dryer
+    - Bed linen, towels and toiletries supplied
+    - Cots and extra beds on request
   cta:
     label: Enquire to book
     href: /contact-us/
