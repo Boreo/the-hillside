@@ -32,6 +32,9 @@ const dwellingSchema = ({ image }: SchemaContext) =>
     ),
     bathrooms: z.number().int().positive(),
     amenities: z.array(z.string().min(1)),
+    // Features worth declaring to search engines but too minor for the
+    // facts strip; appended to amenities in the Accommodation JSON-LD only.
+    schemaAmenities: z.array(z.string().min(1)).default([]),
     // Combined House & Villa bookings are direct-only, so that page points its
     // header CTA at the contact page instead of the booking engine.
     cta: internalLinkSchema.default({ label: "Book Direct", href: "/book/" }),

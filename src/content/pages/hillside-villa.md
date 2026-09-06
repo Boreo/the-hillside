@@ -15,11 +15,19 @@ dwelling:
     - Private courtyard
     - Gas BBQ
     - Kitchenette
-    - Pool & heated spa (shared)
+    - Pool (shared)
+    - Heated spa (shared)
     - Air-conditioning
     - EV charging (7.3 kW Type 2)
     - Wi-Fi
     - Free private parking
+  schemaAmenities:
+    - Valley views
+    - Coffee machine
+    - Benchtop oven, hob and microwave
+    - Smart TV with Netflix
+    - Ceiling fan
+    - Bed linen, towels and toiletries supplied
   cta:
     label: Book Direct
     href: /book/?room_rate=413448
